@@ -162,7 +162,7 @@ $
 	Linux
 
 # File marks:
-'0  1  29  ~/.git/COMMIT_EDITMSG
+'0  1  5  ~/.git/COMMIT_EDITMSG
 '1  29  0  ~/.gitignore
 '2  1  5  ~/.oh-my-zsh/.git/COMMIT_EDITMSG
 '3  1  0  ~/.oh-my-zsh/.gitignore
@@ -174,7 +174,7 @@ $
 '9  134  21  ~/Desktop/aliases.plugin.merged.zsh
 
 # Jumplist (newest first):
--'  1  29  ~/.git/COMMIT_EDITMSG
+-'  1  5  ~/.git/COMMIT_EDITMSG
 -'  29  0  ~/.gitignore
 -'  1  0  ~/.gitignore
 -'  42  11  ~/.git/COMMIT_EDITMSG
@@ -276,9 +276,9 @@ $
 # History of marks within files (newest to oldest):
 
 > ~/.git/COMMIT_EDITMSG
-	"	1	29
-	^	1	30
-	.	1	29
+	"	1	5
+	^	1	6
+	.	1	5
 	+	1	6
 	+	1	16
 	+	1	23
@@ -286,7 +286,7 @@ $
 	+	1	9
 	+	1	22
 	+	8	0
-	+	1	29
+	+	1	5
 	o	1	0
 
 > ~/.gitconfig

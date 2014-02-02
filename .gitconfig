@@ -85,3 +85,5 @@
 [user]
     email = jonathandavis@gilsons.org
     name = Jonathan
+[push]
+	default = simple
