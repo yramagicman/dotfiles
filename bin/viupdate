@@ -1,4 +1,0 @@
-#!/bin/bash
-
-cd ~/.vim/bundle/
-find . -type 'd' -maxdepth 1  -ls -exec git pull \;
