@@ -52,7 +52,7 @@ set laststatus=2
 " Enable mouse in all modes
 set mouse=a
 " Disable error bells
-set visualbell
+"set visualbell
 " Don’t reset cursor to start of line when moving around.
 set nostartofline
 " Show the cursor position
