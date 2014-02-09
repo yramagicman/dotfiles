@@ -121,6 +121,8 @@ if has("autocmd")
     au Bufenter *.css set tabstop=2
     au Bufenter *.scss set shiftwidth=2
     au Bufenter *.css set shiftwidth=2
+    au Bufenter *.js iabbr 90 ()
+    au Bufleave *.js iabbr 90 90
     " automattically add semicolons in css
     au Bufenter *.scss ino : :;<esc>i
     au Bufenter *.css ino : :;<esc>i
@@ -376,4 +378,5 @@ command Scratch new /dev/null/Scratch
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_c_compiler = 'clang'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+
 "}}}
