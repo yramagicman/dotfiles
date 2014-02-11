@@ -5,7 +5,8 @@ set autoread
 "pathogen call stuff
 execute pathogen#infect()
 " best color scheme ever
-colorscheme basicDark
+"colorscheme basicDark
+colorscheme tardis
 set t_Co=256
 " Make Vim more useful
 set nocompatible
