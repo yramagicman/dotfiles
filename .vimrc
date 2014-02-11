@@ -159,9 +159,9 @@ vno <right> <Nop>
 vno <up> <C-u>zz
 "}}}
 "{{{ remap escape for easier access
-nno ` <ESC>
-vno ` <ESC>
-ino ` <ESC>
+nno jk <ESC>
+vno jk <ESC>
+ino jk <ESC>
 "}}}
 "{{{Saving and closing
 "control whitespace and tabs on save
