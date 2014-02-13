@@ -7,15 +7,14 @@
 " but is fine on default linux console palette.]
 
 set bg=dark
-hi clear
 if exists("syntax_on")
     syntax reset
 endif
 
 let colors_name = "tardis"
 
-hi Normal       guifg=#c0c0c0 guibg=#000040                     ctermfg=gray ctermbg=black
-hi ErrorMsg     guifg=#ffffff guibg=#287eff                     ctermfg=white ctermbg=lightblue
+hi Normal       guifg=#c6c6c6 guibg=#00005f                     ctermfg=251 ctermbg=17
+hi ErrorMsg     guifg=#ffffff guibg=#287eff                     ctermfg=white ctermbg=16
 hi Visual       guifg=#8080ff guibg=fg      gui=reverse             ctermfg=lightblue ctermbg=fg cterm=reverse
 hi VisualNOS    guifg=#8080ff guibg=fg      gui=reverse,underline   ctermfg=lightblue ctermbg=fg cterm=reverse,underline
 hi Todo         guifg=#d14a14 guibg=#1248d1                     ctermfg=red ctermbg=darkblue
@@ -46,8 +45,8 @@ hi DiffDelete   ctermfg=blue ctermbg=cyan gui=bold guifg=Blue guibg=DarkCyan
 hi DiffText cterm=bold ctermbg=red gui=bold guibg=Red
 
 hi Cursor   guifg=black guibg=white ctermfg=black ctermbg=white
-hi lCursor  guifg=black guibg=white ctermfg=black ctermbg=white
-hi CursorLine guibg=#00005f ctermbg=17
+"hi lCursor  guifg=black guibg=white ctermfg=black ctermbg=white
+hi CursorLine guibg=#00005f ctermbg=18
 
 hi Comment  guifg=#80a0ff ctermfg=darkred
 hi Constant ctermfg=magenta guifg=#ffa0a0 cterm=none
@@ -63,4 +62,4 @@ hi Ignore   guifg=bg ctermfg=bg
 hi Pmenu guifg=#c0c0c0 guibg=#404080
 hi PmenuSel guifg=#c0c0c0 guibg=#2050d0
 hi PmenuSbar guifg=blue guibg=darkgray
-hi PmenuThumb guifg=#c0c0c0
+hi PmenuThumb guifg=#c0c016
