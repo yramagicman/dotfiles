@@ -160,9 +160,12 @@ vno <right> <Nop>
 vno <up> <C-u>zz
 "}}}
 "{{{ remap escape for easier access
-nno jk <ESC>
-vno jk <ESC>
-ino jk <ESC>
+nno <ESC> <Nop>
+ino <ESC> <Nop>
+vno <ESC> <Nop>
+nno xx <ESC>
+vno xx <ESC>
+ino xx <ESC>
 "}}}
 "{{{Saving and closing
 "control whitespace and tabs on save
