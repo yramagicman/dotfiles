@@ -336,7 +336,7 @@ vno cc cc<ESC>
 no D d$
 no <leader>D d0
 ino <leader>D <esc>d0xi
-no dw df<space>
+"no dw df<space>
 "}}}
 "{{{ Formatting, TextMate-style
 nno Q gqip
