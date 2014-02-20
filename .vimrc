@@ -12,6 +12,7 @@ set t_Co=256
 set nocompatible
 "text-width
 set textwidth=82
+set cc=80
 " Use the OS clipboard by default (on versions compiled with `+clipboard`)
 set clipboard=unnamed
 " Enhance command-line completion
