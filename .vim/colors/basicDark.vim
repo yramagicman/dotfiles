@@ -52,3 +52,4 @@ hi def IndentGuides guibg=#303030 ctermbg=237
 hi Statement gui=bold term= bold cterm=bold
 hi MatchParen term=bold ctermbg=253 ctermfg=233 guibg= #dadada guifg= #121212 gui=bold
 hi Cursor guifg=#ffffff guibg=#444444 ctermfg=231 ctermbg=238
+hi ColorColumn ctermbg=232 guibg=#080808

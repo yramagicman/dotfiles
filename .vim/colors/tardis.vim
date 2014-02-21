@@ -63,3 +63,5 @@ hi Pmenu guifg=#c0c0c0 guibg=#404080
 hi PmenuSel guifg=#c0c0c0 guibg=#2050d0
 hi PmenuSbar guifg=blue guibg=darkgray
 hi PmenuThumb guifg=#c0c016
+
+hi ColorColumn ctermbg=18 guibg=#000087
