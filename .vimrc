@@ -76,7 +76,7 @@ set synmaxcol=80
 " Start scrolling five lines before the horizontal window border when will this
 " break
 set scrolloff=5
-set nowrap sidescrolloff=15
+set nolist wrap linebreak sidescrolloff=15
 " sensible completion
 set completeopt=longest,menuone
 set ofu=syntaxcomplete#Complete
@@ -84,7 +84,6 @@ set ofu=syntaxcomplete#Complete
 set statusline=%{fugitive#statusline()}
 " Show “invisible” characters
 set lcs=tab:⟩\ ,trail:·,eol:↩,nbsp:_
-set list
 " Enable line numbers
 set relativenumber
 " Change mapleader
