@@ -76,7 +76,7 @@ set synmaxcol=80
 " Start scrolling five lines before the horizontal window border when will this
 " break
 set scrolloff=5
-set wrap linebreak sidescrolloff=15
+set nolist wrap linebreak sidescrolloff=15
 " sensible completion
 set completeopt=longest,menuone
 set ofu=syntaxcomplete#Complete
