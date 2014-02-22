@@ -1,6 +1,6 @@
-"{{{ Defaults I probably won't change... ever
+"{{{ Defaults probably won't change... ever
 set autoread
-"set spell spelllang=en_us
+set spelllang=en_us
 "set updatetime=1000
 "pathogen call stuff
 execute pathogen#infect()
@@ -346,8 +346,8 @@ vno Q gq
 nno Ql gqq
 "}}}
 "{{{ switch colorschemes
-nno <silent> <localleader><leader>l :colorscheme basicLight<CR>
-nno <silent> <localleader><leader>d :colorscheme basicDark<CR>
+nno <silent> <localleader>l :colorscheme basicLight<CR>
+nno <silent> <localleader>d :colorscheme basicDark<CR>
 "}}}
 "{{{ Convenience bindings
 " Save a file as root ('W)
