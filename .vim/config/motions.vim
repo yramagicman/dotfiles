@@ -13,9 +13,9 @@ vno <right> <Nop>
 vno <up> <C-u>zz
 "}}}
 "{{{ remap escape for easier access
-nno <ESC> <Nop>
-ino <ESC> <Nop>
-vno <ESC> <Nop>
+"nno <ESC> <Nop>
+"ino <ESC> <Nop>
+"vno <ESC> <Nop>
 nno xx <ESC>
 vno xx <ESC>
 ino xx <ESC>
