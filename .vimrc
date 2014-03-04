@@ -1,7 +1,7 @@
-source $HOME/.vim/config/functions.vim
-source $HOME/.vim/config/defaults.vim
-source $HOME/.vim/config/motions.vim
-source $HOME/.vim/config/saving.vim
-source $HOME/.vim/config/splits.vim
-source $HOME/.vim/config/autocmds.vim
-source $HOME/.vim/config/mappings.vim
+source ~/.vim/config/defaults.vim
+source ~/.vim/config/functions.vim
+source ~/.vim/config/autocmds.vim
+source ~/.vim/config/motions.vim
+source ~/.vim/config/saving.vim
+source ~/.vim/config/splits.vim
+source ~/.vim/config/mappings.vim
