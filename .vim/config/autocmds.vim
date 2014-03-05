@@ -30,6 +30,8 @@ if has("autocmd")
     " use absolute line numbering in insert mode and relative numbers elsewhere
     au InsertEnter * :set nu
     au InsertLeave * :set rnu
+    " make vim edit cron again
+    au BufEnter /private/tmp/crontab.* setl backupcopy=yes
 
 endif
 "}}}

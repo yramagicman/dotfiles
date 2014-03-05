@@ -84,7 +84,7 @@ set ofu=syntaxcomplete#Complete
 set statusline=%{fugitive#statusline()}
 " Show “invisible” characters
 set lcs=tab:⟩\ ,trail:·,eol:↩,nbsp:_
-"set list
+"set list " breaks set linebreak
 " Enable line numbers
 set relativenumber
 " Change mapleader
