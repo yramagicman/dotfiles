@@ -18,7 +18,7 @@
 ##
 ## Have fun & happy CrunchBangin'! :)
 ## GNOME PolicyKit and Keyring
-#eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
+eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
 
 ## Set root window colour
 /home/jonathan/bin/rotate-wallpaper &
@@ -29,13 +29,13 @@
 ## 4. tint2 Panel
 xset -dpms; xset s off &
 (\
-compton -Cgb & \
+compton --config /dev/null & \
 sleep 1s && \
 conky
 ) &
 #
 #network controler
-#(sleep 2s && nm-applet) &
+(sleep 2s && nm-applet) &
 ## Volume control for systray
 (sleep 2s && pnmixer) &
 
@@ -64,4 +64,4 @@ xset b off &
 
 # Autostart the Dropbox deamon
 (sleep 10s && ~/.dropbox-dist/dropboxd) &
-(sleep 2s && tint2) &
+#(sleep 2s && tint2) &
