@@ -4,4 +4,5 @@ source ~/.vim/config/autocmds.vim
 source ~/.vim/config/motions.vim
 source ~/.vim/config/saving.vim
 source ~/.vim/config/splits.vim
+source ~/.vim/config/folding.vim
 source ~/.vim/config/mappings.vim
