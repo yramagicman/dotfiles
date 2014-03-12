@@ -1,2 +1,3 @@
 #thing
-find . -maxdepth 1 -type d -exec git commit --all -q -m 'blah blah blah' --ammend\;
+find . -maxdepth 1 -type d -exec git add --all . \;
+find . -maxdepth 1 -type d -exec  git commit --amend \;
