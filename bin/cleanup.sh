@@ -4,7 +4,7 @@ sudo find . -type f -name 'npm-debug.log' -ls -delete &
 find . -type f -name '*.DS_Store' -ls -delete &
 rm -rfv ./**/.sass-cache && rm -rfv ./.sass-cache &
 sudo rm -rfv ./tmp &
-rm  ~/Library/Caches/com.spotify.client/Storage/ &
+rm -rf ~/Library/Caches/com.spotify.client/Storage/ &
 npm cache clear &
 bower cache clean &
 cd ~/Gits
