@@ -1,0 +1,111 @@
+make[4]: `complete.mdh' is up to date.
+rm -f stamp-modobjs.tmp
+gcc -c -I. -I../Src -I../Src -I../Src/Zle -I.  -DHAVE_CONFIG_H -Wall -Wmissing-prototypes -O2  -o params.o params.c
+echo '' builtin.o compat.o cond.o exec.o glob.o hashtable.o hashnameddir.o hist.o init.o input.o jobs.o lex.o linklist.o loop.o math.o mem.o module.o options.o params.o parse.o pattern.o prompt.o signals.o signames.o sort.o string.o subst.o text.o utils.o watch.o >> ../Src/stamp-modobjs.tmp
+Updated `stamp-modobjs'.
+rm -f zsh
+gcc -Wl,-x  -rdynamic -o zsh main.o  `cat stamp-modobjs`   -lgdbm -liconv -ldl -ltermcap -lm  -lc
+/bin/sh ../mkinstalldirs /usr/local/bin
+/usr/bin/install -c  zsh /usr/local/bin/zsh-5.0.5
+if test -f /usr/local/bin/zsh; then \
+	    rm -f /usr/local/bin/zsh.old; \
+	    ln /usr/local/bin/zsh /usr/local/bin/zsh.old; \
+	else :; fi
+rm -f /usr/local/bin/zsh.new
+ln /usr/local/bin/zsh-5.0.5 /usr/local/bin/zsh.new
+mv /usr/local/bin/zsh.new /usr/local/bin/zsh
+/bin/sh ../../mkinstalldirs /usr/local/lib/zsh/5.0.5/zsh
+/usr/bin/install -c  rlimits.so /usr/local/lib/zsh/5.0.5/zsh/rlimits.so
+/bin/sh ../../mkinstalldirs /usr/local/lib/zsh/5.0.5/zsh
+/usr/bin/install -c  sched.so /usr/local/lib/zsh/5.0.5/zsh/sched.so
+/bin/sh ../../mkinstalldirs /usr/local/lib/zsh/5.0.5/zsh
+/usr/bin/install -c  attr.so /usr/local/lib/zsh/5.0.5/zsh/attr.so
+/bin/sh ../../mkinstalldirs /usr/local/lib/zsh/5.0.5/zsh
+/usr/bin/install -c  cap.so /usr/local/lib/zsh/5.0.5/zsh/cap.so
+/bin/sh ../../mkinstalldirs /usr/local/lib/zsh/5.0.5/zsh
+/usr/bin/install -c  clone.so /usr/local/lib/zsh/5.0.5/zsh/clone.so
+/bin/sh ../../mkinstalldirs /usr/local/lib/zsh/5.0.5/zsh
+/usr/bin/install -c  curses.so /usr/local/lib/zsh/5.0.5/zsh/curses.so
+/bin/sh ../../mkinstalldirs /usr/local/lib/zsh/5.0.5/zsh
+/usr/bin/install -c  datetime.so /usr/local/lib/zsh/5.0.5/zsh/datetime.so
+/bin/sh ../../mkinstalldirs /usr/local/lib/zsh/5.0.5/zsh/db
+/usr/bin/install -c  db_gdbm.so /usr/local/lib/zsh/5.0.5/zsh/db/gdbm.so
+/bin/sh ../../mkinstalldirs /usr/local/lib/zsh/5.0.5/zsh
+/usr/bin/install -c  example.so /usr/local/lib/zsh/5.0.5/zsh/example.so
+/bin/sh ../../mkinstalldirs /usr/local/lib/zsh/5.0.5/zsh
+/usr/bin/install -c  files.so /usr/local/lib/zsh/5.0.5/zsh/files.so
+/bin/sh ../../mkinstalldirs /usr/local/lib/zsh/5.0.5/zsh
+/usr/bin/install -c  langinfo.so /usr/local/lib/zsh/5.0.5/zsh/langinfo.so
+/bin/sh ../../mkinstalldirs /usr/local/lib/zsh/5.0.5/zsh
+/usr/bin/install -c  mapfile.so /usr/local/lib/zsh/5.0.5/zsh/mapfile.so
+/bin/sh ../../mkinstalldirs /usr/local/lib/zsh/5.0.5/zsh
+/usr/bin/install -c  mathfunc.so /usr/local/lib/zsh/5.0.5/zsh/mathfunc.so
+/bin/sh ../../mkinstalldirs /usr/local/lib/zsh/5.0.5/zsh
+/usr/bin/install -c  newuser.so /usr/local/lib/zsh/5.0.5/zsh/newuser.so
+/bin/sh ../../mkinstalldirs /usr/local/lib/zsh/5.0.5/zsh
+/usr/bin/install -c  parameter.so /usr/local/lib/zsh/5.0.5/zsh/parameter.so
+/bin/sh ../../mkinstalldirs /usr/local/lib/zsh/5.0.5/zsh
+/usr/bin/install -c  regex.so /usr/local/lib/zsh/5.0.5/zsh/regex.so
+/bin/sh ../../mkinstalldirs /usr/local/lib/zsh/5.0.5/zsh/net
+/usr/bin/install -c  socket.so /usr/local/lib/zsh/5.0.5/zsh/net/socket.so
+/bin/sh ../../mkinstalldirs /usr/local/lib/zsh/5.0.5/zsh
+/usr/bin/install -c  stat.so /usr/local/lib/zsh/5.0.5/zsh/stat.so
+/bin/sh ../../mkinstalldirs /usr/local/lib/zsh/5.0.5/zsh
+/usr/bin/install -c  system.so /usr/local/lib/zsh/5.0.5/zsh/system.so
+/bin/sh ../../mkinstalldirs /usr/local/lib/zsh/5.0.5/zsh/net
+/usr/bin/install -c  tcp.so /usr/local/lib/zsh/5.0.5/zsh/net/tcp.so
+/bin/sh ../../mkinstalldirs /usr/local/lib/zsh/5.0.5/zsh
+/usr/bin/install -c  termcap.so /usr/local/lib/zsh/5.0.5/zsh/termcap.so
+/bin/sh ../../mkinstalldirs /usr/local/lib/zsh/5.0.5/zsh
+/usr/bin/install -c  terminfo.so /usr/local/lib/zsh/5.0.5/zsh/terminfo.so
+/bin/sh ../../mkinstalldirs /usr/local/lib/zsh/5.0.5/zsh
+/usr/bin/install -c  zftp.so /usr/local/lib/zsh/5.0.5/zsh/zftp.so
+/bin/sh ../../mkinstalldirs /usr/local/lib/zsh/5.0.5/zsh
+/usr/bin/install -c  zprof.so /usr/local/lib/zsh/5.0.5/zsh/zprof.so
+/bin/sh ../../mkinstalldirs /usr/local/lib/zsh/5.0.5/zsh
+/usr/bin/install -c  zpty.so /usr/local/lib/zsh/5.0.5/zsh/zpty.so
+/bin/sh ../../mkinstalldirs /usr/local/lib/zsh/5.0.5/zsh
+/usr/bin/install -c  zselect.so /usr/local/lib/zsh/5.0.5/zsh/zselect.so
+make[4]: `complete.mdh' is up to date.
+make[4]: `complete.export' is up to date.
+/bin/sh ../../mkinstalldirs /usr/local/lib/zsh/5.0.5/zsh
+/usr/bin/install -c  zutil.so /usr/local/lib/zsh/5.0.5/zsh/zutil.so
+/bin/sh ../../mkinstalldirs /usr/local/lib/zsh/5.0.5/zsh
+/usr/bin/install -c  compctl.so /usr/local/lib/zsh/5.0.5/zsh/compctl.so
+/bin/sh ../../mkinstalldirs /usr/local/lib/zsh/5.0.5/zsh
+/usr/bin/install -c  complete.so /usr/local/lib/zsh/5.0.5/zsh/complete.so
+/bin/sh ../../mkinstalldirs /usr/local/lib/zsh/5.0.5/zsh
+/usr/bin/install -c  complist.so /usr/local/lib/zsh/5.0.5/zsh/complist.so
+/bin/sh ../../mkinstalldirs /usr/local/lib/zsh/5.0.5/zsh
+/usr/bin/install -c  computil.so /usr/local/lib/zsh/5.0.5/zsh/computil.so
+/bin/sh ../../mkinstalldirs /usr/local/lib/zsh/5.0.5/zsh
+/usr/bin/install -c  deltochar.so /usr/local/lib/zsh/5.0.5/zsh/deltochar.so
+/bin/sh ../../mkinstalldirs /usr/local/lib/zsh/5.0.5/zsh
+/usr/bin/install -c  zle.so /usr/local/lib/zsh/5.0.5/zsh/zle.so
+/bin/sh ../../mkinstalldirs /usr/local/lib/zsh/5.0.5/zsh
+/usr/bin/install -c  zleparameter.so /usr/local/lib/zsh/5.0.5/zsh/zleparameter.so
+if test x/usr/local/share/zsh/5.0.5/functions != x && test x/usr/local/share/zsh/5.0.5/functions != xno; then \
+	  test x/usr/local/share/zsh/site-functions != xno && \
+	    /bin/sh ./mkinstalldirs /usr/local/share/zsh/site-functions; \
+	  sdir_top="." fndir="/usr/local/share/zsh/5.0.5/functions" dir_top="." \
+	  scriptdir="/usr/local/share/zsh/5.0.5/scripts" runhelpdir="/usr/local/share/zsh/5.0.5/help" \
+	  FUNCTIONS_SUBDIRS="no" \
+	  INSTALL_DATA="/usr/bin/install -c -m 644" \
+	  INSTALL_PROGRAM="/usr/bin/install -c" \
+	  DESTDIR="" VERSION="5.0.5" \
+	  /bin/sh ./Config/installfns.sh || exit 1; \
+	fi; \
+	exit 0
+/bin/sh ../mkinstalldirs /usr/local/share/man/man1
+for file in zsh.1 zshbuiltins.1 zshcalsys.1 zshcompctl.1 zshcompwid.1 zshcompsys.1 zshcontrib.1 zshexpn.1 zshmisc.1 zshmodules.1 zshoptions.1 zshparam.1 zshroadmap.1 zshtcpsys.1 zshzftpsys.1 zshzle.1 zshall.1; do \
+	    test -s ./$file || exit 1; \
+	    /usr/bin/install -c -m 644 ./$file /usr/local/share/man/man1/`echo $file | sed 's|zsh|zsh|'` || exit 1; \
+	done
+if test x"/usr/local/share/zsh/5.0.5/help" != x""; then \
+	    /bin/sh ../mkinstalldirs /usr/local/share/zsh/5.0.5/help; \
+	    /usr/bin/install -c -m 644 ./help/* /usr/local/share/zsh/5.0.5/help; \
+	    while read from to; do \
+	        rm -f /usr/local/share/zsh/5.0.5/help/$to || : ; \
+	        ln -s $from /usr/local/share/zsh/5.0.5/help/$to; \
+	    done < ./help.txt; \
+	fi
