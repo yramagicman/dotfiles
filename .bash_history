@@ -10,3 +10,16 @@ source .bash_prompt
 vi .bashrc
 vi .bash_prompt 
 clear
+python
+cd ~/Desktop/
+python
+python fileio.py 
+python fileio.py 
+python fileio.py 
+python fileio.py 
+python fileio.py 
+python fileio.py 
+python fileio.py 
+python fileio.py 
+python fileio.py 
+python fileio.py 
