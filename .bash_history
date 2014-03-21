@@ -23,3 +23,5 @@ python fileio.py
 python fileio.py 
 python fileio.py 
 python fileio.py 
+python
+clear
