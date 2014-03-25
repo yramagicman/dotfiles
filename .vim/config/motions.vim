@@ -16,9 +16,9 @@ vno <up> <C-u>zz
 "nno <ESC> <Nop>
 "ino <ESC> <Nop>
 "vno <ESC> <Nop>
-nno <C-e>  <ESC>
-vno <C-e> <ESC>
-ino <C-e> <ESC>
+nno mm  <ESC>
+vno mm <ESC>
+ino mm <ESC>
 "}}}
 
 "{{{always center when navigating
