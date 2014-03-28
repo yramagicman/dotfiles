@@ -12,14 +12,6 @@ vno <down> <C-d>zz
 vno <right> <Nop>
 vno <up> <C-u>zz
 "}}}
-"{{{ remap escape for easier access
-"nno <ESC> <Nop>
-"ino <ESC> <Nop>
-"vno <ESC> <Nop>
-nno mm  <ESC>
-vno mm <ESC>
-ino mm <ESC>
-"}}}
 
 "{{{always center when navigating
 no j jzz
