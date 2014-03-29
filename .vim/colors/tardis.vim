@@ -10,7 +10,7 @@ set bg=dark
 if exists("syntax_on")
     syntax reset
 endif
-
+hi clear
 let colors_name = "tardis"
 
 hi Normal       guifg=#c6c6c6 guibg=#00005f                     ctermfg=251 ctermbg=17
@@ -36,8 +36,8 @@ hi StatusLineNC guifg=black guibg=darkgray gui=none     ctermfg=black ctermbg=gr
 hi VertSplit    guifg=black guibg=darkgray gui=none     ctermfg=black ctermbg=gray term=none cterm=none
 
 hi Folded   guifg=#808080 guibg=#000040         ctermfg=243 ctermbg=17 cterm=bold term=bold
-hi FoldColumn   guifg=#808080 guibg=#000040         ctermfg=darkgrey ctermbg=black cterm=bold term=bold
-hi LineNr   guifg=#90f020           ctermfg=green cterm=none
+hi FoldColumn   guifg=#808080 guibg=#000040         ctermfg=darkgrey ctermbg=17 cterm=bold term=bold
+hi LineNr   guifg=#90f020  ctermbg=17          ctermfg=240 cterm=none
 
 hi DiffAdd  guibg=darkblue  ctermbg=darkblue term=none cterm=none
 hi DiffChange   guibg=darkmagenta ctermbg=magenta cterm=none
