@@ -1,8 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/Users/jdg/.oh-my-zsh'
 let g:netrw_dirhist_2='/Users/jonathan/Sites/wordpress/wp-content/themes/clothy'
 let g:netrw_dirhist_3='/Users/jonathan/.oh-my-zsh'
 let g:netrw_dirhist_4='/usr/local/sbin'
 let g:netrw_dirhist_5='/Users/jonathan/Sites/wordpress/wp-content/themes/ThinkingChristianTheme-new'
 let g:netrw_dirhist_6='/Users/jonathan/.vim/config'
+let g:netrw_dirhist_7='/Users/jonathan/Sites/wordpress/wp-content/themes/ThinkingChristianTheme-new'
