@@ -15,6 +15,8 @@ if has("autocmd")
     " automattically add semicolons in css
     au Bufenter *.scss ino : :;<esc>i
     au Bufenter *.css ino : :;<esc>i
+    au Bufleave *.scss ino : :
+    au Bufleave *.css ino : :
     " save on focus lost
     au FocusLost * :silent! wall
     " leave insert mode on focus lost
