@@ -66,4 +66,5 @@ xset b off &
 # Autostart the Dropbox deamon
 (sleep 10s && ~/.dropbox-dist/dropboxd) &
 #(sleep 2s && tint2) &
-sleep 25s && python /home/jonathan/bin/updatenotify.py &
+
+(sleep 10s && ~/bin/updatenotify.py) &
