@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 ## Openbox autostart.sh
 ## ====================
 ## When you login to your CrunchBang Openbox session, this autostart script
@@ -16,37 +16,21 @@
 ## could benefit from your hack, please consider sharing it at:
 ## http://crunchbang.org/forums/
 ##
-## Have fun & happy CrunchBangin'! :)
 ## GNOME PolicyKit and Keyring
 eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
-
 ## Set root window colour
-/home/jonathan/bin/rotate-wallpaper &
-## Group start:
-## 1. nitrogen - restores wallpaper
-## 2. compositor - start
-## 3. sleep - give compositor time to start
-## 4. tint2 Panel
-xset -dpms; xset s off &
-(\
-compton --config /dev/null & \
-sleep 1s && \
-conky
-) &
-#
-#network controler
-(sleep 2s && nm-applet) &
-## Volume control for systray
-(sleep 2s && pnmixer) &
+(sleep 1s && /home/jonathan/bin/rotate-wallpaper) &
 
+xset -dpms; xset s off &
 ## Volume keys daemon
 xfce4-volumed &
 
 ## Enable power management
-xfce4-power-manager &
-
-tint2 &
-
+#xfce4-power-manager &
+compton -b &
+conky &
+pnmixer &
+nm-applet &
 ## Detect and configure touchpad. See 'man synclient' for more info.
 #if egrep -iq 'touchpad' /proc/bus/input/devices; then
 #    synclient VertEdgeScroll=1 &
@@ -60,10 +44,11 @@ tint2 &
 ## Adjust the values according to your preferances.
 xset r rate 250 25 &
 
+(sleep 2s & /home/jonathan/.screenlayout/default.sh) &
 ## Turn on/off system beep
 xset b off &
-
+(sleep 2s && tint2) &
+(sleep 25s && python /home/jonathan/bin/updatenotify.py) &
 # Autostart the Dropbox deamon
 (sleep 10s && ~/.dropbox-dist/dropboxd) &
-#(sleep 2s && tint2) &
-sleep 25s && python /home/jonathan/bin/updatenotify.py &
+exit

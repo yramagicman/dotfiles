@@ -5,7 +5,7 @@ highlight  clear
 if         exists("syntax_on")
 syntax     reset
 endif
-let        g:colors_name                 =              "GitHubCustom"
+let        g:colors_name                 =              "githubCustom"
 hi         Cursor                        ctermfg=NONE   ctermbg=0       cterm=NONE          guifg=NONE     guibg=#aaaaaa  gui=NONE
 hi         Visual                        ctermfg=NONE   ctermbg=153     cterm=NONE          guifg=NONE     guibg=#bcd5fa  gui=NONE
 hi         CursorLine                    ctermfg=NONE   ctermbg=188     cterm=NONE          guifg=NONE     guibg=#dfdfe6  gui=NONE
