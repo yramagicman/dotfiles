@@ -6,7 +6,7 @@ set spelllang=en_us
 execute pathogen#infect()
 " best color scheme ever
 "colorscheme basicDark
-colorscheme tardis
+colorscheme githubCustom
 set t_Co=256
 " Make Vim more useful
 set nocompatible
