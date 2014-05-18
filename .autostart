@@ -16,21 +16,31 @@
 ## could benefit from your hack, please consider sharing it at:
 ## http://crunchbang.org/forums/
 ##
-## GNOME PolicyKit and Keyring
+## GNOME PolicyKit and keyring
+
+check_process(){
+    #PROCESS_NUM => get the process number regarding the given thread name
+    PROCESS_NUM=$(ps -ef | grep "$1" | grep -v "grep" | wc -l)
+    if [ $PROCESS_NUM -eq 0 ];
+    then
+        $1 &
+    fi
+}
 eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
 ## Set root window colour
-(sleep 1s && /home/jonathan/bin/rotate-wallpaper) &
+(sleep 1s && rotate-wallpaper) &
 
 xset -dpms; xset s off &
 ## Volume keys daemon
-xfce4-volumed &
+check_process xfce4-volumed &
 
 ## Enable power management
 #xfce4-power-manager &
-compton -b &
-conky &
-pnmixer &
-nm-applet &
+check_process compton
+
+check_process conky
+check_process pnmixer
+check_process nm-applet
 ## Detect and configure touchpad. See 'man synclient' for more info.
 #if egrep -iq 'touchpad' /proc/bus/input/devices; then
 #    synclient VertEdgeScroll=1 &
@@ -48,7 +58,7 @@ xset r rate 250 25 &
 ## Turn on/off system beep
 xset b off &
 (sleep 2s && tint2) &
-(sleep 25s && python /home/jonathan/bin/updatenotify.py) &
+(sleep 25s && check_process updatenotify) &
 # Autostart the Dropbox deamon
 (sleep 10s && ~/.dropbox-dist/dropboxd) &
 exit
