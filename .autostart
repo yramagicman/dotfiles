@@ -29,7 +29,7 @@ check_process(){
 eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
 (sleep 2s & /home/jonathan/.screenlayout/default.sh) &
 ## Set root window colour
-(sleep 1s && /home/jonathan/bin/rotate-wallpaper) &
+(sleep 1s && rotate-wallpaper) &
 
 xset -dpms; xset s off &
 ## Volume keys daemon
