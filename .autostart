@@ -5,11 +5,11 @@ check_process(){
     PROCESS_NUM=$(ps -ef | grep "$1" | grep -v "grep" | wc -l)
     if [ $PROCESS_NUM -eq 0 ];
     then
-       (sleep 1s && $1) &
+       $1 &
     fi
 }
 eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
-(sleep 1s && /home/jonathan/.screenlayout/default.sh) &
+( /home/jonathan/.screenlayout/default.sh) &
 ## Set root window colour
 (sleep 3s && /home/jonathan/bin/rotate-wallpaper) &
 
@@ -19,11 +19,11 @@ check_process xfce4-volumed
 
 ## Enable power management
 #xfce4-power-manager &
-check_process compton
+(sleep 1s && check_process compton) &
 
-check_process conky
-check_process pnmixer
-check_process nm-applet
+(sleep 2s && check_process conky) &
+(sleep 1s && check_process pnmixer) &
+(sleep 1s && check_process nm-applet) &
 ## Detect and configure touchpad. See 'man synclient' for more info.
 #if egrep -iq 'touchpad' /proc/bus/input/devices; then
 #    synclient VertEdgeScroll=1 &
@@ -39,7 +39,7 @@ xset r rate 250 25 &
 
 ## Turn on/off system beep
 xset b off &
-(sleep 2s && tint2) &
+(sleep 2s && check_process tint2) &
 (sleep 25s && check_process /home/jonathan/bin/updatenotifyd) &
 # Autostart the Dropbox deamon
 (sleep 10s && ~/.dropbox-dist/dropboxd) &
