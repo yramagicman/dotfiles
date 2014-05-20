@@ -29,7 +29,7 @@ check_process(){
 eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
 (sleep 2s & /home/jonathan/.screenlayout/default.sh) &
 ## Set root window colour
-(sleep 1s && rotate-wallpaper) &
+(sleep 1s && /home/jonathan/bin/rotate-wallpaper) &
 
 xset -dpms; xset s off &
 ## Volume keys daemon
@@ -58,7 +58,7 @@ xset r rate 250 25 &
 ## Turn on/off system beep
 xset b off &
 (sleep 2s && tint2) &
-(sleep 25s && check_process /home/jonathan/bin/updatenotify) &
+(sleep 25s && check_process /home/jonathan/bin/updatenotifyd) &
 # Autostart the Dropbox deamon
 (sleep 10s && ~/.dropbox-dist/dropboxd) &
 exit
