@@ -1,39 +1,21 @@
 #!/bin/bash
-## Openbox autostart.sh
-## ====================
-## When you login to your CrunchBang Openbox session, this autostart script
-## will be executed to set-up your environment and launch any applications
-## you want to run at startup.
-##
-## Note*: some programs, such as 'nm-applet' are run via XDG autostart.
-## Run '/usr/lib/openbox/openbox-xdg-autostart --list' to list any
-## XDG autostarted programs.
-##
-## More information about this can be found at:
-## http://openbox.org/wiki/Help:Autostart
-##
-## If you do something cool with your autostart script and you think others
-## could benefit from your hack, please consider sharing it at:
-## http://crunchbang.org/forums/
-##
-## GNOME PolicyKit and keyring
 
 check_process(){
     #PROCESS_NUM => get the process number regarding the given thread name
     PROCESS_NUM=$(ps -ef | grep "$1" | grep -v "grep" | wc -l)
     if [ $PROCESS_NUM -eq 0 ];
     then
-        $1 &
+       (sleep 1s && $1) &
     fi
 }
 eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
-(sleep 2s & /home/jonathan/.screenlayout/default.sh) &
+(sleep 2s && /home/jonathan/.screenlayout/default.sh) &
 ## Set root window colour
-(sleep 1s && rotate-wallpaper) &
+(sleep 3s && rotate-wallpaper) &
 
 xset -dpms; xset s off &
 ## Volume keys daemon
-check_process xfce4-volumed &
+check_process xfce4-volumed
 
 ## Enable power management
 #xfce4-power-manager &
