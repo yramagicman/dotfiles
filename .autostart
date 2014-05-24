@@ -21,7 +21,7 @@ check_process xfce4-volumed
 #xfce4-power-manager &
 (sleep 1s && check_process compton) &
 
-(sleep 2s && check_process conky) &
+(sleep 3s && check_process conky) &
 (sleep 1s && check_process pnmixer) &
 (sleep 1s && check_process nm-applet) &
 ## Detect and configure touchpad. See 'man synclient' for more info.
