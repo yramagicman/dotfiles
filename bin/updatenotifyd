@@ -12,6 +12,9 @@ while True:
     packages = packages[1]
     packagecount=len(packages.split('\n'))
     notified = 0
+    if notified > 4:
+        time.sleep(60*60)
+        notified = 0
     while retVal == 0 and packagecount > 5 and notified <= 5:
         n = pynotify.Notification("Updates Availible", packages)
         n.show()

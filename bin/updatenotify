@@ -4,8 +4,6 @@ import commands
 import time
 pynotify.init("Basic")
 
-n = pynotify.Notification("Update Notifications Active", "" )
-n.show()
 packages = commands.getstatusoutput('pacman -Qu')
 retVal = packages[0]
 packages = packages[1]
