@@ -1,8 +1,8 @@
 "{{{Saving and closing
 "control whitespace and tabs on save
-nno <silent><leader>ss :%retab<CR>:call StripWhitespace()<CR>:w<CR>
-ino <silent><leader>ss <ESC>:%retab<CR>:call StripWhitespace()<CR>:w<CR>
-vno <silent><leader>ss <ESC>:%retab<CR>:call StripWhitespace()<CR>:w<CR>
+nno <leader>ss :%retab<CR>:call StripWhitespace()<CR>:w<CR>
+ino <leader>ss <ESC>:%retab<CR>:call StripWhitespace()<CR>:w<CR>
+vno <leader>ss <ESC>:%retab<CR>:call StripWhitespace()<CR>:w<CR>
 "don't retab. usefull for some filetypes
 nno <silent><leader><leader>ss :call StripWhitespace()<CR>:w<CR>
 ino <silent><leader><leader>ss :call StripWhitespace()<CR>:w<CR>
