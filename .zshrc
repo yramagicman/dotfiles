@@ -67,3 +67,4 @@ export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$HOME/.gem/ruby/2.1.0/bin:$
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+archey
