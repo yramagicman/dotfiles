@@ -20,7 +20,6 @@ if retVal == 0 and packagecount > 5 and notified <= 5:
     retVal = packages[0]
     packages = packages[1]
     packagecount=len(packages.split('\n'))
-time.sleep(60*30)
 packages = 0
 retVal = 0
 packages = 0
