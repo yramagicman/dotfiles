@@ -12,14 +12,9 @@ notified = 0
 if retVal == 0 and packagecount > 5 and notified <= 5:
     n = pynotify.Notification("Updates Availible", packages)
     n.show()
+    updates = open(configpath + time.strftime("%m%d%Y")+'.txt','w+')
+    updates.write(packages)
     # notify me every five minutes
-    notified = notified + 1
-    # reset variables, also check to see if update has happened
-    time.sleep(60*1)
-    packages = commands.getstatusoutput('pacman -Qu')
-    retVal = packages[0]
-    packages = packages[1]
-    packagecount=len(packages.split('\n'))
 packages = 0
 retVal = 0
 packages = 0

@@ -34,4 +34,3 @@ while True:
     retVal = 0
     packages = 0
     packagecount= 0
-    onlyfiles = [ f for f in listdir(configpath) if isfile(join(configpath)) ]
