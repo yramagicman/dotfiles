@@ -1,0 +1,11 @@
+#!/bin/python2
+import pynotify
+import commands
+import time
+packages = commands.getstatusoutput('pacman -Qu')
+configpath = '/home/jonathan/.config/updates/'
+retVal = packages[0]
+packages = packages[1]
+if retVal == 0 and packagecount > 0:
+    updates = open(configpath + time.strftime("%m%d%Y")+'.txt','w+')
+    updates.write(packages)
