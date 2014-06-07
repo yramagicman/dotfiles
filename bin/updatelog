@@ -6,6 +6,7 @@ packages = commands.getstatusoutput('pacman -Qu')
 configpath = '/home/jonathan/.config/updates/'
 retVal = packages[0]
 packages = packages[1]
+packagecount = len(packages[1])
 if retVal == 0 and packagecount > 0:
     updates = open(configpath + time.strftime("%m%d%Y")+'.txt','w+')
     updates.write(packages)
