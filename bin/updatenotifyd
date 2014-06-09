@@ -24,7 +24,7 @@ while True:
         # notify me every five minutes
         notified = notified + 1
         # reset variables, also check to see if update has happened
-        time.sleep(60*1)
+        time.sleep(60*5)
         packages = commands.getstatusoutput('pacman -Qu')
         retVal = packages[0]
         packages = packages[1]

@@ -15,15 +15,15 @@ eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
 
 xset -dpms; xset s off &
 ## Volume keys daemon
-check_process xfce4-volumed
+#check_process xfce4-volumed
 
 ## Enable power management
 #xfce4-power-manager &
 (sleep 1s && check_process compton) &
 
 (sleep 3s && check_process conky) &
-(sleep 1s && check_process pnmixer) &
-(sleep 1s && check_process nm-applet) &
+(sleep 3s && check_process pnmixer) &
+(sleep 3s && check_process nm-applet) &
 ## Detect and configure touchpad. See 'man synclient' for more info.
 #if egrep -iq 'touchpad' /proc/bus/input/devices; then
 #    synclient VertEdgeScroll=1 &
@@ -41,7 +41,7 @@ xset r rate 250 25 &
 xset b off &
 (sleep 2s && check_process tint2) &
 (sleep 5s && check_process /home/jonathan/bin/updatenotifyd) &
-(sleep 10s && check_process /home/jonathan/Documents/updateserver/updateserver.py) &
+(sleep 30s && check_process /home/jonathan/Documents/updateserver/updateserver.py) &
 # Autostart the Dropbox deamon
 (sleep 10s && ~/.dropbox-dist/dropboxd) &
 exit
