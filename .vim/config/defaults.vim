@@ -96,7 +96,7 @@ set tabstop=4
 set smartindent
 set shiftwidth=4
 "tabs to spaces
-set expandtab
+"set expandtab
 "}}}
 
 "{{{ set compiler
