@@ -29,7 +29,7 @@ set encoding=utf-8
 set binary
 set eol
 " Centralize backups, swapfiles and undo history
-set backupdir=~/.vim/backups
+set backupdir=~/.vim/backups//
 "set directory=~/.vim/swaps
 "I hate swap files
 set noswapfile
@@ -88,7 +88,9 @@ set lcs=tab:⟩\ ,trail:·,eol:↩,nbsp:_
 set relativenumber
 " Change mapleader
 let mapleader=","
-let localleader="\\"
+let localleader="/"
+set tags=tags;
+set autochdir
 "}}}
 
 "{{{ Make tabs as wide as four spaces

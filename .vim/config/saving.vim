@@ -5,8 +5,8 @@
 "vno <leader>ss <ESC>:%retab<CR>:call StripWhitespace()<CR>:w<CR>
 "don't retab. usefull for some filetypes
 nno <silent><leader>ss :call StripWhitespace()<CR>:w<CR>
-ino <silent><leader>ss :call StripWhitespace()<CR>:w<CR>
-vno <silent><leader>ss :call StripWhitespace()<CR>:w<CR>
+ino <silent><leader>ss <ESC>:call StripWhitespace()<CR>:w<CR>
+vno <silent><leader>ss <ESC>:call StripWhitespace()<CR>:w<CR>
 "save and close
 "nno <silent><leader>ww :%retab<CR>:call StripWhitespace()<CR>:w<CR>:close<CR>
 "ino <silent><leader>ww <ESC>:%retab<CR>:call StripWhitespace()<CR>:w<CR>:close<CR>
