@@ -1,16 +1,16 @@
 "{{{Saving and closing
 "control whitespace and tabs on save
-nno <leader>ss :%retab<CR>:call StripWhitespace()<CR>:w<CR>
-ino <leader>ss <ESC>:%retab<CR>:call StripWhitespace()<CR>:w<CR>
-vno <leader>ss <ESC>:%retab<CR>:call StripWhitespace()<CR>:w<CR>
+"nno <leader>ss :%retab<CR>:call StripWhitespace()<CR>:w<CR>
+"ino <leader>ss <ESC>:%retab<CR>:call StripWhitespace()<CR>:w<CR>
+"vno <leader>ss <ESC>:%retab<CR>:call StripWhitespace()<CR>:w<CR>
 "don't retab. usefull for some filetypes
-nno <silent><leader><leader>ss :call StripWhitespace()<CR>:w<CR>
-ino <silent><leader><leader>ss :call StripWhitespace()<CR>:w<CR>
-vno <silent><leader><leader>ss :call StripWhitespace()<CR>:w<CR>
+nno <silent><leader>ss :call StripWhitespace()<CR>:w<CR>
+ino <silent><leader>ss <ESC>:call StripWhitespace()<CR>:w<CR>
+vno <silent><leader>ss <ESC>:call StripWhitespace()<CR>:w<CR>
 "save and close
-nno <silent><leader>ww :%retab<CR>:call StripWhitespace()<CR>:w<CR>:close<CR>
-ino <silent><leader>ww <ESC>:%retab<CR>:call StripWhitespace()<CR>:w<CR>:close<CR>
-vno <silent><leader>ww <ESC>:%retab<CR>:call StripWhitespace()<CR>:w<CR>:close<CR>
+"nno <silent><leader>ww :%retab<CR>:call StripWhitespace()<CR>:w<CR>:close<CR>
+"ino <silent><leader>ww <ESC>:%retab<CR>:call StripWhitespace()<CR>:w<CR>:close<CR>
+"vno <silent><leader>ww <ESC>:%retab<CR>:call StripWhitespace()<CR>:w<CR>:close<CR>
 "close but don't save
 nno <leader>cl <ESC>:close!
 ino <leader>cl <ESC>:close!
