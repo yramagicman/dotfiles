@@ -5,7 +5,7 @@ set spelllang=en_us
 "pathogen call stuff
 execute pathogen#infect()
 " best color scheme ever
-colorscheme githubCustom
+colorscheme muttclone
 set t_Co=256
 " Make Vim more useful
 set nocompatible

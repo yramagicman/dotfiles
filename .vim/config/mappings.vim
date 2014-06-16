@@ -84,6 +84,6 @@ nno CC 0f_x~
 
 ino <C-c> <ESC>I//
 vno <C-c> I//
-
+nno <leader>c :%!column -t<CR>
 "}}}
 
