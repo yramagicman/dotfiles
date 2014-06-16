@@ -1,29 +1,14 @@
 hi      clear
 syntax  reset
-"hi     clear            Constant
-"hi     clear            Number
-"hi     clear            Statement
-"hi     clear            PreProc
-"hi     clear            Type
-hi      clear            Special
-hi      clear            Identifier
-hi      clear            Title
-hi      clear            String
-hi      clear            Comment
-hi      clear            Error
-hi      clear            LineNr
-hi      clear            NonText
-hi      clear            SpecialKey
-hi      clear            Directory
 ""set   background=dark
 let     colors_name      =               "muttclone"
 "       Set              up              some           simple         non-intrusive  colors_name
 hi      Normal           ctermfg=253     ctermbg=234    guifg=#dadada  guibg=#121212
-hi      Type             gui=bold        term=bold      cterm=none     ctermfg=253
+hi      Type             gui=bold        term=bold      cterm=none     ctermfg=22
 hi      VertSplit        guifg=#808080   guibg=#080808  gui=bold       ctermfg=244    ctermbg=232    cterm=bold
 hi      String           term=underline  cterm=NONE     ctermfg=69l    guifg=#9e9e9e  gui=underline
 hi      Comment          term=bold       cterm=NONE     ctermfg=241    guifg=#626262
-hi      Error            term=reverse    cterm=NONE     ctermbg=234    guifg=Red
+hi      Error            term=reverse    cterm=bold     ctermfg=202    ctermbg=234
 hi      LineNr           term=bold       cterm=NONE     ctermfg=245    guifg=white
 hi      NonText          term=bold       cterm=NONE     ctermfg=238    guifg=#303030
 hi      SpecialKey       term=bold       cterm=NONE     ctermfg=238    guifg=#303030
@@ -51,4 +36,5 @@ hi      Character        ctermfg=144
 hi      Number           ctermfg=135
 hi      Conditional      ctermfg=161
 hi      Constant         ctermfg=135
+hi      Directory         ctermfg=22
 hi      def              IndentGuides    guibg=#303030  ctermbg=237
