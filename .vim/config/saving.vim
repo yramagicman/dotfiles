@@ -30,7 +30,7 @@ ino <C-s> <ESC>:call StripWhitespace()<CR>:w<CR>a
 vno <C-s> <ESC>:call StripWhitespace()<CR>:w<CR>a
 nno <C-s> <ESC>:call StripWhitespace()<CR>:w<CR>a
 
-nno <C-w> :close<CR>
+"nno <C-w> :close<CR>
 nno <C-q> :q<CR>
 nno <silent><leader>q :q<CR>
 ino <silent><leader>q :q<CR>

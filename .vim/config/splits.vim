@@ -25,4 +25,10 @@ set splitright
 nno <C-t> :tabnew<CR>
 nno <C-n> :tabn<CR>
 nno <C-p> :tabp<CR>
+
+no <S-right> <C-w>>
+no <S-up> <C-w>+
+no <S-left> <C-w><
+no <S-down> <C-w>-
+
 "}}
