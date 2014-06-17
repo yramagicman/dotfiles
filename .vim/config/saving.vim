@@ -8,9 +8,9 @@ nno <silent><leader>ss :call StripWhitespace()<CR>:w<CR>
 ino <silent><leader>ss <ESC>:call StripWhitespace()<CR>:w<CR>
 vno <silent><leader>ss <ESC>:call StripWhitespace()<CR>:w<CR>
 "save and close
-"nno <silent><leader>ww :%retab<CR>:call StripWhitespace()<CR>:w<CR>:close<CR>
-"ino <silent><leader>ww <ESC>:%retab<CR>:call StripWhitespace()<CR>:w<CR>:close<CR>
-"vno <silent><leader>ww <ESC>:%retab<CR>:call StripWhitespace()<CR>:w<CR>:close<CR>
+nno <silent><leader>ww :<CR>:call StripWhitespace()<CR>:w<CR>:close<CR>
+ino <silent><leader>ww <ESC>:<CR>:call StripWhitespace()<CR>:w<CR>:close<CR>
+vno <silent><leader>ww <ESC>:<CR>:call StripWhitespace()<CR>:w<CR>:close<CR>
 "close but don't save
 nno <leader>cl <ESC>:close!
 ino <leader>cl <ESC>:close!
@@ -32,4 +32,7 @@ nno <C-s> <ESC>:call StripWhitespace()<CR>:w<CR>a
 
 nno <C-w> :close<CR>
 nno <C-q> :q<CR>
+nno <silent><leader>q :q<CR>
+ino <silent><leader>q :q<CR>
+vno <silent><leader>q :q<CR>
 " }}}

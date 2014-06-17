@@ -2,8 +2,8 @@
 "nno <ESC> <Nop>
 "ino <ESC> <Nop>
 "vno <ESC> <Nop>
-nno mm  <ESC>
-vno mm <ESC>
+nno <leader>m  <ESC>
+vno <leader>m <ESC>
 ino <leader>m <ESC>
 "}}}
 
