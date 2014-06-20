@@ -30,10 +30,29 @@ if has("autocmd")
     " always reload files when changed outside vim
     au CursorHold,CursorMovedI,CursorMoved,Bufenter * :checktime
     " use absolute line numbering in insert mode and relative numbers elsewhere
-    au InsertEnter * :set nu
-    au InsertLeave * :set rnu
+    au InsertLeave * :set nonumber
+    au InsertLeave * :set relativenumber
+    au InsertEnter * :set number
+    au InsertEnter * :set norelativenumber
     " make vim edit cron again
     au BufEnter /private/tmp/crontab.* setl backupcopy=yes
+    " tabs to spaces, four spaces per tab
+    au Bufenter,BufRead * set tabstop=4
+    au Bufenter,BufRead * set smartindent
+    au Bufenter,BufRead * set shiftwidth=4
+    "tabs to spaces
+    au Bufenter,BufRead * set expandtab
+   " drupal coding standards
+    au Bufenter,BufRead */drupal-7.28/* set tabstop=2
+    au Bufenter,BufRead */drupal-7.28/* set smartindent
+    au Bufenter,BufRead */drupal-7.28/* set shiftwidth=2
+    au Bufenter,BufRead */drupal-7.28/* set expandtab
+    "ratiochristi coding standards
+    au Bufenter,BufRead */ratiochristi/* set tabstop=4
+    au Bufenter,BufRead */ratiochristi/* set smartindent
+    au Bufenter,BufRead */ratiochristi/* set shiftwidth=4
+    au Bufenter,BufRead */ratiochristi/* set noexpandtab
+
 
 endif
 "}}}
