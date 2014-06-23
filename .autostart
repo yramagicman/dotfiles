@@ -44,5 +44,5 @@ xset b off &
 (sleep 30s && check_process /home/jonathan/Documents/updateserver/updateserver.py) &
 # Autostart the Dropbox deamon
 (sleep 10s && ~/.dropbox-dist/dropboxd) &
-(sleep 10s && xterm -e ~/.mountdrive.sh) &
+(sleep 10s && gksu ~/.mountdrive.sh) &
 exit
