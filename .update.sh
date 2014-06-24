@@ -9,6 +9,6 @@ builtin cd ~/.oh-my-zsh/custom/plugins/zsh-aliases/
 echo "zsh custom"
 git pull
 builtin cd ~/.mutt
-git commit -m 'mail stuff'
+git commit --all -m 'mail stuff'
 git pull
 cd
