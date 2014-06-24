@@ -11,4 +11,5 @@ git pull
 builtin cd ~/.mutt
 git commit --all -m 'mail stuff'
 git pull
+git push
 cd
