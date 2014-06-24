@@ -8,9 +8,10 @@ git pull --rebase --stat origin master
 builtin cd ~/.oh-my-zsh/custom/plugins/zsh-aliases/
 echo "zsh custom"
 git pull
+echo "mutt"
 builtin cd ~/.mutt
 git commit --all -m 'mail stuff'
 git pull
 git push
 ln -fv ~/.mutt/.muttrc ~/.muttrc
-cd
+builtin cd
