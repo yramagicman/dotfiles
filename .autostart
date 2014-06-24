@@ -23,7 +23,7 @@ xset -dpms; xset s off &
 
 (sleep 3s && check_process conky) &
 (sleep 3s && check_process pnmixer) &
-(sleep 3s && check_process nm-applet) &
+(sleep 4s && check_process nm-applet) &
 ## Detect and configure touchpad. See 'man synclient' for more info.
 #if egrep -iq 'touchpad' /proc/bus/input/devices; then
 #    synclient VertEdgeScroll=1 &
@@ -31,7 +31,7 @@ xset -dpms; xset s off &
 #fi
 
 ## Start Clipboard manager
-(sleep 3s && check_process clipit) &
+(sleep 5s && check_process clipit) &
 
 ## Set keyboard settings - 250 ms delay and 25 cps (characters per second) repeat rate.
 ## Adjust the values according to your preferances.
