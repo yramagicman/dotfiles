@@ -7,7 +7,7 @@ hi      Normal           ctermfg=253     ctermbg=234    guifg=#dadada  guibg=#1c
 hi      Type             gui=bold        term=bold      cterm=none     ctermfg=34     guifg=#00af00
 hi      VertSplit        guifg=#808080   guibg=#080808  gui=bold       ctermfg=244    ctermbg=232    cterm=bold
 hi      String           term=underline  cterm=NONE     ctermfg=69     guifg=#5f87ff  gui=underline
-hi      Comment          term=bold       cterm=NONE     ctermfg=241    guifg=#626262
+hi      Comment          term=bold       cterm=NONE     ctermfg=246    guifg=#949494
 hi      Error            term=reverse    cterm=bold     ctermfg=202    ctermbg=234    guifg=#ff5f00
 hi      LineNr           term=bold       cterm=NONE     ctermfg=245    guifg=#8a8a8a
 hi      NonText          term=bold       cterm=NONE     ctermfg=238    guifg=#444444
