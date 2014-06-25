@@ -3,7 +3,6 @@ no <silent> <leader>nn :set nonumber<CR>
 no <silent> <leader>an :set number<CR>
 no <silent> <leader>rn :set relativenumber!<CR>
 "}}}
-
 "{{{ Indenting
 "bind \] to indent
 nmap <localleader>] >>
@@ -21,7 +20,6 @@ nno <silent> <leader>git :cd ~/Gits<CR>:NERDTreeToggle<CR>
 nno <silent> <leader>dt :cd ~/Desktop<CR>:NERDTreeToggle<CR>
 no <leader>rl <ESC>:source ~/.vimrc<CR>
 "}}}
-
 "{{{ Make vim work logically
 " Don't move on *
 nnoremap * *<c-o>
@@ -48,19 +46,20 @@ nno Ql gqq
 nno <silent> <localleader>l :colorscheme basicLight<CR>
 nno <silent> <localleader>d :colorscheme basicDark<CR>
 "}}}
-
 "{{{ Convenience bindings
 " Save a file as root ('W)
 no <leader>W :w !sudo tee % > /dev/null<CR>
 
 "delete blank lines
 no <leader>db :g/^$/d<ESC>:let @/ = ""<CR>
-
+" toggle word wrap
+no <silent><leader>w <ESC>:set wrap!<CR>
+ino <silent><leader>w <ESC>:set wrap!<CR>i
 "toggle nerdtree
 no <silent><leader>nt <ESC>:NERDTreeToggle<CR>
 
-"reformat
-no <leader>rf <ESC>gg=G<ESC>:%retab<CR>
+"retab
+no <leader>rt <ESC>:%retab<CR>
 
 "kill search hilighting
 no <leader>sh <ESC>:noh<CR>

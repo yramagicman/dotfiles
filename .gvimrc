@@ -1,5 +1,5 @@
-set guifont="Source Code Pro":h12
+set guifont="Source Code Pro":h13
 " Better line-height
-set linespace=8
+set linespace=10
 " Disable error bells
 set noerrorbells

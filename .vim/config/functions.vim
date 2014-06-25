@@ -7,7 +7,6 @@ function! StripWhitespace()
     call setreg('/', old_query)
 endfunction
 "}}}
-
 "{{{ indent guides
 let g:indentguides_state = 0
 function! IndentGuides()
@@ -22,7 +21,6 @@ endfunction
 nnoremap <silent> <leader>I :call IndentGuides()<CR>
 "call IndentGuides()
 "}}}
-
 "{{{ Fix Line Endings
 function! LineEndings()
     update
@@ -32,19 +30,9 @@ function! LineEndings()
 endfunction
 nno <silent><leader>le :call LineEndings()<CR>
 "}}}
-
 "{{{wordpress wrap function in 'function_exists()' check
 function! WpWrap()
     normal ^vf(hyOif(function_exists(',p'){`jo}
 endfunction
 nno <c-w><c-w> :call WpWrap()<CR>
-"}}}
-"{{{ Fix Line Endings
-function! LineEndings()
-    update
-    e ++ff=dos
-    setlocal ff=unix
-    :w
-endfunction
-nno <silent><leader>le :call LineEndings()<CR>
 "}}}
