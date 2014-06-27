@@ -61,7 +61,7 @@ if has("autocmd")
     au Bufenter,BufRead */ratiochristi/* set tabstop=4
     au Bufenter,BufRead */ratiochristi/* set smartindent
     au Bufenter,BufRead */ratiochristi/* set shiftwidth=4
-    au Bufenter,BufRead */ratiochristi/* set noexpandtab
+    au Bufenter,BufRead */ratiochristi/* set expandtab
     "}}}
 endif
 
