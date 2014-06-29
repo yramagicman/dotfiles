@@ -2,7 +2,6 @@ hi      clear
 syntax  reset
 set     background=dark
 let     colors_name      =               "muttclone"
-"       Set              up              some           simple         non-intrusive  colors_name
 hi      Normal           ctermfg=253     ctermbg=234    guifg=#dadada  guibg=#1c1c1c
 hi      Type             gui=bold        term=bold      cterm=none     ctermfg=34     guifg=#00af00
 hi      VertSplit        guifg=#808080   guibg=#080808  gui=bold       ctermfg=244    ctermbg=232    cterm=bold
@@ -37,4 +36,7 @@ hi      Number           ctermfg=135     guifg=#af5fff
 hi      Conditional      ctermfg=161     guifg=#d7005f
 hi      Constant         ctermfg=135     guifg=#af5fff
 hi      Directory        ctermfg=34      guifg=#00af00
+hi      TabLine          ctermfg=240     ctermbg=232
+hi      TabLineSel       ctermfg=253     ctermbg=234
+hi      TabLineFill      ctermfg=232     ctermbg=255
 hi      def              IndentGuides    guibg=#303030  ctermbg=237
