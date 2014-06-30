@@ -36,3 +36,12 @@ function! WpWrap()
 endfunction
 nno <c-w><c-w> :call WpWrap()<CR>
 "}}}
+function TabBind()
+    if tabpagenr('$') < 2
+        tabnew
+    else
+        tabn
+    endif
+endfunction
+nno <C-n> :call TabBind()<CR>
+
