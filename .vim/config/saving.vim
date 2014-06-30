@@ -17,9 +17,9 @@ nno <leader>cl <ESC>:close!
 ino <leader>cl <ESC>:close!
 vno <leader>cl <ESC>:close!
 "save and quit
-nno <silent><leader>ww :call Save()<CR>:qall<CR>
-ino <silent><leader>ww <ESC>:call Save()<CR>:qall<CR>
-vno <silent><leader>ww <ESC>:call Save()<CR>:qall<CR>
+nno <silent><leader>wq :call Save()<CR>:qall<CR>
+ino <silent><leader>wq <ESC>:call Save()<CR>:qall<CR>
+vno <silent><leader>wq <ESC>:call Save()<CR>:qall<CR>
 
 "ruthelessly kill vim without a care in the world for what breaks
 " quit without saving
