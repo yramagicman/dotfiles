@@ -1,24 +1,25 @@
 "{{{Saving and closing
 "control whitespace and tabs on save
-"nno <leader>ss :%retab<CR>:call StripWhitespace()<CR>:w<CR>
-"ino <leader>ss <ESC>:%retab<CR>:call StripWhitespace()<CR>:w<CR>
-"vno <leader>ss <ESC>:%retab<CR>:call StripWhitespace()<CR>:w<CR>
-"don't retab. usefull for some filetypes
-nno <silent><leader>ss :call StripWhitespace()<CR>:w<CR>
-ino <silent><leader>ss <ESC>:call StripWhitespace()<CR>:w<CR>
-vno <silent><leader>ss <ESC>:call StripWhitespace()<CR>:w<CR>
+nno <leader>ss :call Save()<CR>
+ino <leader>ss <ESC>:call Save()<CR>
+vno <leader>ss <ESC>:call Save()<CR>
+"save but don't retab
+nno <leader><leader>ss :call SaveNoRt()<CR>
+ino <leader><leader>ss <ESC>:call SaveNoRt()<CR>
+vno <leader><leader>ss <ESC>:call SaveNoRt()<CR>
+
 "save and close
-nno <silent><leader>ww :<CR>:call StripWhitespace()<CR>:w<CR>:close<CR>
-ino <silent><leader>ww <ESC>:<CR>:call StripWhitespace()<CR>:w<CR>:close<CR>
-vno <silent><leader>ww <ESC>:<CR>:call StripWhitespace()<CR>:w<CR>:close<CR>
+nno <silent><leader>ww :call Save()<CR>:close<CR>
+ino <silent><leader>ww <ESC>:call Save()<CR>:close<CR>
+vno <silent><leader>ww <ESC>:call Save()<CR>:close<CR>
 "close but don't save
 nno <leader>cl <ESC>:close!
 ino <leader>cl <ESC>:close!
 vno <leader>cl <ESC>:close!
 "save and quit
-nno <silent><leader>wq :call StripWhitespace()<cr>:wall<cr>:qall<CR>
-ino <silent><leader>wq <ESC>:call StripWhitespace()<cr>:wall<cr>:qall<CR>
-vno <silent><leader>wq <ESC>:call StripWhitespace()<cr>:wall<cr>:qall<CR>
+nno <silent><leader>ww :call Save()<CR>:qall<CR>
+ino <silent><leader>ww <ESC>:call Save()<CR>:qall<CR>
+vno <silent><leader>ww <ESC>:call Save()<CR>:qall<CR>
 
 "ruthelessly kill vim without a care in the world for what breaks
 " quit without saving
@@ -30,7 +31,6 @@ ino <C-s> <ESC>:call StripWhitespace()<CR>:w<CR>a
 vno <C-s> <ESC>:call StripWhitespace()<CR>:w<CR>a
 nno <C-s> <ESC>:call StripWhitespace()<CR>:w<CR>a
 
-"nno <C-w> :close<CR>
 nno <C-q> :q<CR>
 nno <silent><leader>q :q<CR>
 ino <silent><leader>q :q<CR>

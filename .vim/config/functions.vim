@@ -36,6 +36,7 @@ function! WpWrap()
 endfunction
 nno <c-w><c-w> :call WpWrap()<CR>
 "}}}
+"{{{ create new tabs on <C-n> if no tabs exist
 function TabBind()
     if tabpagenr('$') < 2
         tabnew
@@ -44,4 +45,27 @@ function TabBind()
     endif
 endfunction
 nno <C-n> :call TabBind()<CR>
-
+"}}}
+"{{{ kill extra newlines
+function Knl ()
+    try
+        %s#\($\n\s*\)\+\%$##
+    catch
+    endtry
+endfunction
+"}}}
+"{{{ save, kill whitespace at end of lines, and end of file, convert tabs
+function Save()
+    $retab
+    call StripWhitespace()
+    call Knl()
+    w
+endfunction
+"}}}
+"{{{ save, kill whitespace at end of lines, and end of file, don't convert tabs
+function SaveNoRt()
+    call StripWhitespace()
+    call Knl()
+    w
+endfunction
+"}}}
