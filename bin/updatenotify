@@ -4,6 +4,7 @@ import commands
 import time
 pynotify.init("Basic")
 
+configpath = '/home/jonathan/.config/updates/'
 packages = commands.getstatusoutput('pacman -Qu')
 retVal = packages[0]
 packages = packages[1]
