@@ -20,6 +20,7 @@ xset -dpms; xset s off &
 ## Enable power management
 #xfce4-power-manager &
 (sleep 1s && check_process compton) &
+(sleep 1s && /usr/bin/xscreensaver -no-splash) &
 
 (sleep 3s && check_process conky) &
 (sleep 3s && check_process pnmixer) &
