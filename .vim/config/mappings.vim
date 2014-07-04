@@ -49,7 +49,6 @@ nno <silent> <localleader>d :colorscheme basicDark<CR>
 "{{{ Convenience bindings
 " Save a file as root ('W)
 no <leader>W :w !sudo tee % > /dev/null<CR>
-
 "delete blank lines
 no <leader>db :g/^$/d<ESC>:let @/ = ""<CR>
 " toggle word wrap
@@ -57,32 +56,23 @@ no <silent><leader>w <ESC>:set wrap!<CR>
 ino <silent><leader>w <ESC>:set wrap!<CR>i
 "toggle nerdtree
 no <silent><leader>nt <ESC>:NERDTreeToggle<CR>
-
 "retab
 no <leader>rt <ESC>:%retab<CR>
-
 "kill search hilighting
 no <leader>sh <ESC>:noh<CR>
 no <silent><leader><space> <ESC>:let @/ = ""<CR>
-
 "bang last command
 nno <Leader>! q:kWgea!<CR>
-
 "uppercase words
 ino <C-u> <esc>mzgUiwza
 nno <C-u> <esc>mzgUiwza
-
 " Toggle [i]nvisible characters
 nno <silent><leader>i :set list!<cr>
-
 " reset color scheme
 nno U :syntax sync fromstart<cr>:redraw!<cr>
-
 " make this_style into cammelCase
 nno CC 0f_x~
-
 ino <C-c> <ESC>I//
 vno <C-c> I//
 nno <leader>c :%!column -t<CR>
 "}}}
-
