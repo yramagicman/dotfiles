@@ -7,7 +7,6 @@ ino <C-l> <ESC><C-w>li
 ino <C-j> <ESC><C-w>ji
 ino <C-h> <ESC><C-w>hi
 ino <C-k> <ESC><C-w>ki
-
 "splitting
 no <leader>sn <ESC>:new<CR>
 no <leader>sv <ESC>:vnew<CR>
@@ -15,20 +14,16 @@ no <leader>sv <ESC>:vnew<CR>
 set equalalways
 no <localleader>= <C-w>=
 "}}}
-
 "{{{ put splits in a logical place
 set splitbelow
 set splitright
 " }}}
-
-"{{
+"{{{
 nno <C-t> :tabnew<CR>
 "nno <C-n> :tabn<CR>
 nno <C-p> :tabp<CR>
-
 no <S-right> <C-w>>
 no <S-up> <C-w>+
 no <S-left> <C-w><
 no <S-down> <C-w>-
-
-"}}
+"}}}

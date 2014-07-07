@@ -42,10 +42,6 @@ vno Q gq
 " Reformat line.
 nno Ql gqq
 "}}}
-"{{{ switch colorschemes
-nno <silent> <localleader>l :colorscheme basicLight<CR>
-nno <silent> <localleader>d :colorscheme basicDark<CR>
-"}}}
 "{{{ Convenience bindings
 " Save a file as root ('W)
 no <leader>W :w !sudo tee % > /dev/null<CR>

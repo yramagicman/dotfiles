@@ -32,7 +32,12 @@ vno <C-s> <ESC>:call StripWhitespace()<CR>:w<CR>a
 nno <C-s> <ESC>:call StripWhitespace()<CR>:w<CR>a
 
 nno <C-q> :q<CR>
+nno <C-w> :close<CR>
 nno <silent><leader>q :q<CR>
 ino <silent><leader>q :q<CR>
 vno <silent><leader>q :q<CR>
+
+nno qq :wq
+nno qw :wq
+nno cl :close
 " }}}
