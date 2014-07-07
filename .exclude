@@ -1,0 +1,17 @@
+Library/
+VirtualBox\ VMs/
+Applications*
+Dropbox/
+.dropbox
+*cache*
+*Cache*
+.config/
+.atom/
+.cups/
+.DS_Store
+.gem/
+.adobe/
+.emacs.d/
+.git/
+.npm/
+.node-gyp/
