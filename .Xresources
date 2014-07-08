@@ -13,3 +13,7 @@ xterm*foreground: grey
 xterm*locale: true
 xterm*utf8: 1
 XTerm*VT100.translations: #override <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
+URxvt*background: #1c1c1c
+URxvt*foreground: grey
+URxvt*font: xft:Droid Sans Mono:size7:antialias=true
+URxvt*scrollBar: false
