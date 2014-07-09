@@ -57,8 +57,6 @@ no <leader>rt <ESC>:%retab<CR>
 "kill search hilighting
 no <leader>sh <ESC>:noh<CR>
 no <silent><leader><space> <ESC>:let @/ = ""<CR>
-"bang last command
-nno <Leader>! q:kWgea!<CR>
 "uppercase words
 ino <C-u> <esc>mzgUiwza
 nno <C-u> <esc>mzgUiwza

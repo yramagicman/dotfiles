@@ -15,7 +15,6 @@ if retVal == 0 and packagecount > 5 and notified <= 5:
     n.show()
     updates = open(configpath + time.strftime("%m%d%Y")+'.txt','w+')
     updates.write(packages)
-    # notify me every five minutes
 packages = 0
 retVal = 0
 packages = 0

@@ -63,5 +63,6 @@ if has("autocmd")
     au Bufenter,BufRead */ratiochristi/* set shiftwidth=4
     au Bufenter,BufRead */ratiochristi/* set expandtab
     "}}}
+    autocmd FileType make set noexpandtab
+    autocmd BufNewFile,BufRead *.md set filetype=markdown
 endif
-
