@@ -1,7 +1,6 @@
 Library/
 VirtualBox\ VMs/
 Applications*
-Dropbox/
 .dropbox
 *cache*
 *Cache*
