@@ -1,3 +1,4 @@
+workingdir=$(pwd)
 builtin cd ~/
 echo "home folder"
 git pull
@@ -14,4 +15,7 @@ git commit --all -m 'mail stuff'
 git pull
 git push
 ln -fv ~/.mutt/.muttrc ~/.muttrc
-builtin cd
+echo "updating passwords"
+pass git pull
+pass git push
+builtin cd $workingdir
