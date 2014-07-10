@@ -45,8 +45,8 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(z colored-man web-search zsh-aliases)
-
+plugins=(z tmux colored-man web-search zsh-aliases)
+ZSH_TMUX_AUTOSTART=true
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -64,7 +64,6 @@ export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$HOME/.gem/ruby/2.1.0/bin:$
 # Compilation flags
  export ARCHFLAGS="-arch x86_64"
 
-tmux new-session -s default
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 archey
