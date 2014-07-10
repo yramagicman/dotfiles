@@ -26,11 +26,11 @@ vno <silent><leader>wq <ESC>:call Save()<CR>:qall<CR>
 nno <leader>\ :q!
 ino <leader>\ <ESC>:q!
 vno <leader>\ <ESC>:q!
-"stay in or enter insert mode after current character on save
-ino <C-s> <ESC>:call StripWhitespace()<CR>:w<CR>a
-vno <C-s> <ESC>:call StripWhitespace()<CR>:w<CR>a
-nno <C-s> <ESC>:call StripWhitespace()<CR>:w<CR>a
-
+""stay in or enter insert mode after current character on save
+"ino <C-s> <ESC>:call StripWhitespace()<CR>:w<CR>a
+"vno <C-s> <ESC>:call StripWhitespace()<CR>:w<CR>a
+"nno <C-s> <ESC>:call StripWhitespace()<CR>:w<CR>a
+"
 nno <C-q> :q<CR>
 nno <C-w> :close<CR>
 nno <silent><leader>q :q<CR>

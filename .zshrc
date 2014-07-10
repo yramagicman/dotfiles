@@ -70,3 +70,4 @@ export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$HOME/.gem/ruby/2.1.0/bin:$
 archey
 
 #check_process gpg-agent --daemon
+stty -ixon

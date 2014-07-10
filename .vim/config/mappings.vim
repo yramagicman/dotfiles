@@ -14,29 +14,25 @@ vmap <localleader>[ <gv
 imap <localleader>[ <C-O><<
 "}}}
 "{{{file navigation shortcuts
-nno <silent> <leader>ev :e ~/.vimrc<CR>
+nno <silent> <leader>ev :e ~/.vim/config/<CR>
 nno <silent> <leader>wr :cd ~/Sites/wordpress/wp-content/themes<CR>:NERDTreeToggle<CR>
 nno <silent> <leader>git :cd ~/Gits<CR>:NERDTreeToggle<CR>
 nno <silent> <leader>dt :cd ~/Desktop<CR>:NERDTreeToggle<CR>
 no <leader>rl <ESC>:source ~/.vimrc<CR>
 "}}}
-"{{{ Make vim work logically
+"{{{ Make Vim work logically
 " Don't move on *
 nnoremap * *<c-o>
-"don't enter insert mode when adding blank lines
-no <leader>b o<ESC>
-no <leader>B O<ESC>
 "paste in insert mode
 ino <leader>p <ESC>pa
 "don't enter insert mode when cutting lines
 nno cc cc<ESC>
 vno cc cc<ESC>
-" delete till the beginnning of a line
+" delete till the beginning of a line
 no <leader>D d0
 ino <leader>D <esc>d0xi
-"no dw df<space>
 "}}}
-"{{{ Formatting, TextMate-style
+"!{{{ Formatting, TextMate-style
 nno Q gqip
 vno Q gq
 " Reformat line.
@@ -54,7 +50,7 @@ ino <silent><leader>w <ESC>:set wrap!<CR>i
 no <silent><leader>nt <ESC>:NERDTreeToggle<CR>
 "retab
 no <leader>rt <ESC>:%retab<CR>
-"kill search hilighting
+"kill search highlighting
 no <leader>sh <ESC>:noh<CR>
 no <silent><leader><space> <ESC>:let @/ = ""<CR>
 "uppercase words
@@ -69,4 +65,11 @@ nno CC 0f_x~
 ino <C-c> <ESC>I//
 vno <C-c> I//
 nno <leader>c :%!column -t<CR>
+"}}}
+"{{{ spelling mappings
+nno <C-s><C-s> :set spell!<cr>
+nno <C-s>a zG
+nno <C-s>n ]szo
+nno <C-s>p [szo
+nno <C-s>s z=
 "}}}

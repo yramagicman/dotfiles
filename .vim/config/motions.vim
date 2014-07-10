@@ -14,8 +14,8 @@ vno <up> <C-u>zz
 "}}}
 
 "{{{always center when navigating
-no j gjzz0
-no k gkzz0
+no j gjzz
+no k gkzz
 no G Gzz
 no n nzz
 no N Nzz
