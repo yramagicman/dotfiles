@@ -85,4 +85,3 @@ if has("autocmd")
     nmap <Leader>R :call CallInterpreter()<CR>
 endif
 " }}}
-" vim:ft=vim:fdm=marker:ff=unix

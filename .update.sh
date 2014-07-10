@@ -1,4 +1,5 @@
 #!/usr/bin/env zsh
+
 workingdir=$(pwd)
 builtin cd ~/
 echo "home folder"
