@@ -12,8 +12,8 @@ set nocompatible
 "text-width
 set textwidth=82
 set cc=81
-" Use the OS clipboard by default (on versions compiled with `+clipboard`)
-set clipboard=unnamed
+" Don't use os clipboard with tmux can't yank between buffers
+"set clipboard=unnamed
 " Enhance command-line completion
 set wildmenu
 " Allow cursor keys in insert mode
