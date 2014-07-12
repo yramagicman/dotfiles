@@ -62,12 +62,14 @@ export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$HOME/.gem/ruby/2.1.0/bin:$
 # fi
 
 # Compilation flags
- export ARCHFLAGS="-arch x86_64"
+export ARCHFLAGS="-arch x86_64"
+
 processid=$(ps aux | grep 'tmuxcopy' | grep -v grep | awk '{print $12}')
-if [[ $processid != '/Users/jonathan/bin/tmuxcopy' ]]; then
-    ~/bin/tmuxcopy &
+if [[ $processid != "$HOME/bin/tmuxcopy" ]]; then
+    echo "HI"
+    $HOME/bin/tmuxcopy &
 fi
-#clear
+clear
 # echo $processid >> ~/pid.txt
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
