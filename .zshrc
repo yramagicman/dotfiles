@@ -67,7 +67,7 @@ processid=$(ps aux | grep 'tmuxcopy' | grep -v grep | awk '{print $12}')
 if [[ $processid != '/Users/jonathan/bin/tmuxcopy' ]]; then
     ~/bin/tmuxcopy &
 fi
-clear
+#clear
 # echo $processid >> ~/pid.txt
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
