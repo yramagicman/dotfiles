@@ -92,7 +92,6 @@ let localleader="/"
 set tags=tags;
 set autochdir
 "}}}
-
 "{{{ Make tabs as wide as four spaces
 set tabstop=4
 set smartindent
@@ -100,11 +99,9 @@ set shiftwidth=4
 "tabs to spaces
 set expandtab
 "}}}
-
 "{{{ set compiler
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_c_compiler = 'clang'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 "}}}
-
 noremap ; :

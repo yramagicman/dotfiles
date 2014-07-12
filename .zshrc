@@ -1,4 +1,4 @@
-# Path to your oh-my-zsh configuration.
+# Path to your oh-my-zsh configuration. 
 ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
@@ -63,10 +63,17 @@ export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$HOME/.gem/ruby/2.1.0/bin:$
 
 # Compilation flags
  export ARCHFLAGS="-arch x86_64"
-
+processid=$(ps aux | grep 'tmuxcopy' | grep -v grep | awk '{print $12}')
+if [[ $processid != '/Users/jonathan/bin/tmuxcopy' ]]; then
+    ~/bin/tmuxcopy &
+fi
+clear
+# echo $processid >> ~/pid.txt
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 archey
-
+echo '\n Press enter to get started \n'
+read -
+clear
 #check_process gpg-agent --daemon
 stty -ixon
