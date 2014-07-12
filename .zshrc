@@ -46,7 +46,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(z tmux colored-man web-search zsh-aliases)
-ZSH_TMUX_AUTOSTART=true
+#ZSH_TMUX_AUTOSTART=true
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
