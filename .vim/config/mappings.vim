@@ -73,3 +73,9 @@ nno <C-s>n ]szo
 nno <C-s>p [szo
 nno <C-s>s z=
 "}}}
+"{{{ No... I don't want to record a macro now
+"I never use replace mode anyway
+nno R q
+" there, now q won't do dumb stuff
+nno q <NOP>
+"}}}
