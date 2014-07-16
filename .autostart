@@ -12,6 +12,7 @@ eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
 ( /home/jonathan/.screenlayout/default.sh) &
 ## Set root window colour
 (/home/jonathan/bin/rotate-wallpaper) &
+rm $HOME/.session-active &
 check_process urxvtd
 xset -dpms; xset s off &
 ## Volume keys daemon
