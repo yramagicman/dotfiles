@@ -73,9 +73,12 @@ clear
 # echo $processid >> ~/pid.txt
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
-archey
-echo '\n Press enter to get started \n'
-read -
+if [[ ! -a .startup ]]; then
+    touch .startup
+    archey
+    echo '\n Press enter to get started \n'
+    read -
 clear
+fi
 #check_process gpg-agent --daemon
 stty -ixon
