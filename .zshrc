@@ -66,7 +66,6 @@ export ARCHFLAGS="-arch x86_64"
 
 processid=$(ps aux | grep 'tmuxcopy' | grep -v grep | awk '{print $12}')
 if [[ $processid != "$HOME/bin/tmuxcopy" ]]; then
-    echo "HI"
     $HOME/bin/tmuxcopy &
 fi
 clear
