@@ -77,7 +77,7 @@ if [[ ! -a .session-active ]]; then
     archey
     echo '\n Press enter to get started \n'
     read -
-clear
+    clear
 fi
 #check_process gpg-agent --daemon
 stty -ixon
