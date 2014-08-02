@@ -4,6 +4,7 @@ Applications*
 .dropbox
 *cache*
 *Cache*
+.cache*
 .config/
 .atom/
 .cups/
