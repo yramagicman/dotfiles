@@ -40,4 +40,6 @@ vno <silent><leader>q :q<CR>
 nno qq :wq
 nno qw :wq
 nno cl :close
+ino q q
+ino qq qq
 " }}}
