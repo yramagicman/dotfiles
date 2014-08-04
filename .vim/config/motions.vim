@@ -17,14 +17,12 @@ vno <up> <C-u>zz
 no j gjzz
 no k gkzz
 no G Gzz
-no n nzz
-no N Nzz
 no { {zz
 no ( (zz
 no } }zz
 no ) )zz
-no n nzz
-no N Nzz
+no n nzzzo
+no N Nzzzo
 vno j jzz
 vno k kzz
 
