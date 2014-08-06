@@ -1,0 +1,15 @@
+#!/bin/zsh
+now=$(date +"%m-%d-%Y")
+echo $now
+cd ~/.mutt
+pwd
+sleep 3s
+gzip Sent
+tar -czf cache.tar.gz cache
+mv Sent.gz "sent$now.gz"
+mv cache.tar.gz "cache$now.tar.gz"
+rm -rf cache
+touch Sent
+git add --all
+git commit -m "backup sent emails $now"
+git push

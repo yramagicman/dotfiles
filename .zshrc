@@ -72,7 +72,7 @@ clear
 # echo $processid >> ~/pid.txt
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
-if [[ ! -a .session-active ]]; then
+if [[ ! -a $HOME/.session-active ]]; then
     touch .session-active
     archey
     echo '\n Press enter to get started \n'

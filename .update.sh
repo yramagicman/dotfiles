@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-
+now=$(date +"%m-%d-%Y")
 workingdir=$(pwd)
 builtin cd ~/
 echo "home folder\n"
@@ -13,7 +13,7 @@ echo "\nzsh custom\n"
 git pull
 echo "\nmutt\n"
 builtin cd ~/.mutt
-git commit --all -m 'mail stuff'
+git commit --all -m "mail $now"
 git pull
 git push
 ln -fv ~/.mutt/.muttrc ~/.muttrc
