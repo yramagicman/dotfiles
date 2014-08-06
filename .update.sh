@@ -2,22 +2,22 @@
 
 workingdir=$(pwd)
 builtin cd ~/
-echo "home folder"
+echo "home folder\n"
 git pull
 builtin cd ~/.oh-my-zsh/
-echo "oh my zsh"
+echo "\noh my zsh\n"
 git commit -m 'blah blah blah'
 git pull --rebase --stat origin master
 builtin cd ~/.oh-my-zsh/custom/plugins/zsh-aliases/
-echo "zsh custom"
+echo "\nzsh custom\n"
 git pull
-echo "mutt"
+echo "\nmutt\n"
 builtin cd ~/.mutt
 git commit --all -m 'mail stuff'
 git pull
 git push
 ln -fv ~/.mutt/.muttrc ~/.muttrc
-echo "updating passwords"
+echo "\nupdating passwords \n"
 pass git pull
 pass git push
 builtin cd $workingdir
