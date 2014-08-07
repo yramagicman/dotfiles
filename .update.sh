@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-now=$(date +"%m-%d-%Y")
+now=$(date +"%m-%d-%Y %H:%M")
 workingdir=$(pwd)
 builtin cd ~/
 echo "home folder\n"
