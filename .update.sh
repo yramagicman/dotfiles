@@ -4,6 +4,7 @@ workingdir=$(pwd)
 builtin cd ~/
 echo "home folder\n"
 git pull
+git push
 builtin cd ~/.oh-my-zsh/
 echo "\noh my zsh\n"
 git commit -m 'blah blah blah'
