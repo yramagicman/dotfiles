@@ -23,3 +23,5 @@ echo "\nupdating passwords \n"
 pass git pull
 pass git push
 builtin cd $workingdir
+echo "\n\n"
+pwd
