@@ -11,6 +11,7 @@ git pull --rebase --stat origin master
 builtin cd ~/.oh-my-zsh/custom/plugins/zsh-aliases/
 echo "\nzsh custom\n"
 git pull
+git push
 echo "\nmutt\n"
 builtin cd ~/.mutt
 git commit --all -m "mail $now"
