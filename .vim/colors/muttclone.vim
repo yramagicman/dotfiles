@@ -24,7 +24,7 @@ hi      Pmenu            ctermfg=81      ctermbg=16     guifg=#66D9EF  guibg=#00
 hi      PmenuSel         ctermbg=24      guibg=#005f87
 hi      PmenuSbar        ctermbg=23      guibg=#005f5f
 hi      Statement        gui=bold        term=bold      cterm=bold     ctermfg=34     guifg=#00af00
-hi      Function         gui=none        term=bold      cterm=none     ctermfg=202    guifg=#fff00
+hi      Function         gui=none        term=bold      cterm=none     ctermfg=202    guifg=#ff5f00
 hi      Operator         ctermfg=231     guifg=#ffffff
 hi      Identifier       gui=none        term=bold      cterm=none     ctermfg=34     guifg=#00af00
 hi      Keyword          gui=bold        term=bold      cterm=bold     ctermfg=39     guifg=#00afff
