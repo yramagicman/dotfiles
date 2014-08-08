@@ -64,6 +64,7 @@ export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$HOME/.gem/ruby/2.1.0/bin:$
 # export MANPATH="/usr/local/man:$MANPATH"
 
 export EDITOR='vim'
+
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
 
