@@ -3,6 +3,8 @@
 
 config defaultToCurrentScreen true
 config nudgePercentOf screenSize
+config windowHintsIgnoreHiddenWindows false
+config windowHintsShowIcons true
 config resizePercentOf screenSize
 
 # Resize Bindings
@@ -24,6 +26,7 @@ bind up:shift;ctrl  move screenOriginX;screenOriginY screenSizeX/2;screenSizeY/2
 bind right:shift;ctrl  move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY/2
 #bottom left
 bind left:shift;ctrl  move screenOriginX;screenOriginY+screenSizeY/2 screenSizeX/2;screenSizeY/2
+bind c:alt;ctrl  move screenOriginX+screenSizeX*0.1;screenOriginY screenSizeX*0.8;screenSizeY
 
 # Push Bindings
 bind right:ctrl;alt  push right bar-resize:screenSizeX/2
