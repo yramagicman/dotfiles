@@ -36,7 +36,9 @@ hi      Number           ctermfg=135     guifg=#af5fff
 hi      Conditional      ctermfg=161     guifg=#d7005f
 hi      Constant         ctermfg=135     guifg=#af5fff
 hi      Directory        ctermfg=34      guifg=#00af00
-hi      TabLine          ctermfg=240     ctermbg=232 guibg=#080808 guifg=#585858
-hi      TabLineSel       ctermfg=253     ctermbg=234 guibg=#1c1c1c guifg=#dadada
-hi      TabLineFill      ctermfg=232     ctermbg=255 guibg=#1c1c1c guifg=#080808
+hi      TabLine          ctermfg=240     ctermbg=232    guibg=#080808  guifg=#585858
+hi      TabLineSel       ctermfg=253     ctermbg=234    guibg=#1c1c1c  guifg=#dadada
+hi      TabLineFill      ctermfg=232     ctermbg=255    guibg=#1c1c1c  guifg=#080808
 hi      def              IndentGuides    guibg=#303030  ctermbg=237
+hi      StatusLine       ctermfg=16      ctermbg=246    guifg=#000000  guibg=#949494
+hi      StatusLineNC     ctermfg=16      ctermbg=239    guifg=#000000  guibg=#444444

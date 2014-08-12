@@ -1,9 +1,10 @@
 "{{{ Defaults probably won't change... ever
+noremap ; :
 set autoread
 set spelllang=en_us
 "set updatetime=1000
 "pathogen call stuff
-execute pathogen#infect()
+"execute pathogen#infect()
 " best color scheme ever
 colorscheme muttclone
 set t_Co=256
@@ -48,8 +49,6 @@ set hlsearch
 set ignorecase
 " Highlight dynamically as pattern is typed
 set incsearch
-" Always show status line
-set laststatus=2
 " Enable mouse in all modes
 set mouse=a
 " Disable error bells
@@ -79,8 +78,6 @@ set nolist wrap linebreak sidescrolloff=15
 " sensible completion
 set completeopt=longest,menuone
 set ofu=syntaxcomplete#Complete
-"fugitive statusline
-set statusline=%{fugitive#statusline()}
 " Show “invisible” characters
 set lcs=tab:⟩\ ,trail:·,eol:↩,nbsp:_
 "set list " breaks set linebreak
@@ -104,4 +101,15 @@ let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_c_compiler = 'clang'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 "}}}
-noremap ; :
+"{{{ set status line
+" Always show status line
+set laststatus=2
+"fugitive statusline
+set statusline=::\ %m%f%r\ \%y
+set statusline+=\ \%{fugitive#statusline()}
+set statusline+=%=
+set statusline+=Line:
+set statusline+=%4l/%-4L
+set statusline+=Column\ %2c
+set statusline+=\ ::
+"}}}
