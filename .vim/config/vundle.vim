@@ -1,0 +1,17 @@
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Plugin 'wincent/Command-T'
+Plugin 'mattn/emmet-vim'
+Plugin 'othree/html5.vim'
+Plugin 'Shougo/neocomplcache.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'ervandew/supertab'
+"Plugin 'Lokaltog/powerline'
+Plugin 'kana/vim-fakeclip'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+call vundle#end()

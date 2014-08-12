@@ -1,3 +1,4 @@
+source ~/.vim/config/vundle.vim
 source ~/.vim/config/defaults.vim
 source ~/.vim/config/functions.vim
 source ~/.vim/config/autocmds.vim
