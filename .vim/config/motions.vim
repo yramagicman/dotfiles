@@ -12,7 +12,6 @@ vno <down> <C-d>zz
 vno <right> <Nop>
 vno <up> <C-u>zz
 "}}}
-
 "{{{always center when navigating
 no j gjzz
 no k gkzz
@@ -25,12 +24,11 @@ no n nzzzo
 no N Nzzzo
 vno j jzz
 vno k kzz
-
 "}}}
-
 "{{{jump to ...
 no <S-l> $
 no <S-j> Gzz
 no <S-h> ^
 no <S-k> ggzz
 "}}}
+no <tab> %

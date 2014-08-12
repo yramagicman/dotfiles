@@ -49,7 +49,7 @@ ino <silent><leader>w <ESC>:set wrap!<CR>i
 "toggle nerdtree
 no <silent><leader>nt <ESC>:NERDTreeToggle<CR>
 "retab
-no <leader>rt <ESC>:%retab<CR>
+no <leader>r <ESC>:%retab<CR>
 "kill search highlighting
 no <leader>sh <ESC>:noh<CR>
 no <silent><leader><space> <ESC>:let @/ = ""<CR>
