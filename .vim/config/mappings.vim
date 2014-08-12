@@ -48,6 +48,7 @@ no <silent><leader>w <ESC>:set wrap!<CR>
 ino <silent><leader>w <ESC>:set wrap!<CR>i
 "toggle nerdtree
 no <silent><leader>nt <ESC>:Explore<CR>
+no <silent><leader>e <ESC>:Explore<CR>
 "retab
 no <leader>r <ESC>:%retab<CR>
 "kill search highlighting
@@ -65,6 +66,7 @@ nno CC 0f_x~
 ino <C-c> <ESC>I//
 vno <C-c> I//
 nno <leader>c :%!column -t<CR>
+nno <leader>s :source %<CR>
 "}}}
 "{{{ spelling mappings
 nno <C-s><C-s> :set spell!<cr>
