@@ -15,9 +15,9 @@ imap <localleader>[ <C-O><<
 "}}}
 "{{{file navigation shortcuts
 nno <silent> <leader>ev :e ~/.vim/config/<CR>
-nno <silent> <leader>wr :cd ~/Sites/wordpress/wp-content/themes<CR>:NERDTreeToggle<CR>
-nno <silent> <leader>git :cd ~/Gits<CR>:NERDTreeToggle<CR>
-nno <silent> <leader>dt :cd ~/Desktop<CR>:NERDTreeToggle<CR>
+nno <silent> <leader>wr :cd ~/Sites/wordpress/wp-content/themes<CR>:Explore<CR>
+nno <silent> <leader>git :cd ~/Gits<CR>:Explore<CR>
+nno <silent> <leader>dt :cd ~/Desktop<CR>:Explore<CR>
 no <leader>rl <ESC>:source ~/.vimrc<CR>
 "}}}
 "{{{ Make Vim work logically
@@ -47,7 +47,7 @@ no <leader>db :g/^$/d<ESC>:let @/ = ""<CR>
 no <silent><leader>w <ESC>:set wrap!<CR>
 ino <silent><leader>w <ESC>:set wrap!<CR>i
 "toggle nerdtree
-no <silent><leader>nt <ESC>:NERDTreeToggle<CR>
+no <silent><leader>nt <ESC>:Explore<CR>
 "retab
 no <leader>r <ESC>:%retab<CR>
 "kill search highlighting

@@ -27,8 +27,8 @@ if has("autocmd")
     " leave insert mode on focus lost
     au FocusLost * call feedkeys("\<ESC>")
     "{{{ open nerdtree when vim opens
-    au Bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-    au vimenter * if !argc() | NERDTree | endif
+    "au Bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+    "au vimenter * if !argc() | NERDTree | endif
     "}}}
     "{{{ fold method marker for vimrc and zshrc
     au Bufenter,BufRead *.vim set foldmethod=marker
