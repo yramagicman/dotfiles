@@ -68,10 +68,7 @@ export EDITOR='vim'
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
 
-processid=$(ps aux | grep 'tmuxcopy' | grep -v grep | awk '{print $12}')
-if [[ $processid != "$HOME/bin/tmuxcopy" ]]; then
-    $HOME/bin/tmuxcopy &
-fi
+$HOME/bin/tmuxcopy &
 clear
 # echo $processid >> ~/pid.txt
 # ssh
