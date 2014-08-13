@@ -1,4 +1,5 @@
 "{{{ Defaults probably won't change... ever
+set background=dark
 noremap ; :
 set autoread
 set spelllang=en_us
