@@ -17,8 +17,8 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="theme"
 #source "$ZSH/custom/plugins/theme.zsh-theme"
 # Example aliases
-alias zshconfig="mvim ~/.zshrc"
-alias ohmyzsh="mvim ~/.oh-my-zsh"
+alias zconfig="mvim ~/.zshrc"
+alias ohmy="mvim ~/.oh-my-zsh"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"

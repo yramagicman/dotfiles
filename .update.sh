@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 now=$(date +"%m-%d-%Y %H:%M")
-workingdir=$(pwd)
+pushd > /dev/null
 builtin cd ~/
 echo "home folder\n"
 git pull
@@ -22,6 +22,7 @@ ln -fv ~/.mutt/.muttrc ~/.muttrc
 echo "\nupdating passwords \n"
 pass git pull
 pass git push
-builtin cd $workingdir
-echo "\n\n"
-pwd
+for i in $(dirs);
+    do
+    popd > /dev/null 2>&1
+done
