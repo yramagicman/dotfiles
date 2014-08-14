@@ -8,7 +8,7 @@ config windowHintsShowIcons true
 config resizePercentOf screenSize
 
 # Resize Bindings
-bind m:ctrl;alt  move screenOriginX;screenOriginY screenSizeX;screenSizeY
+bind space:alt  move screenOriginX;screenOriginY screenSizeX;screenSizeY
 #bind right:alt       resize +5% +0
 #bind left:alt        resize -5% +0
 #bind up:alt          resize +0   -5%
@@ -64,7 +64,7 @@ bind up:cmd;alt   focus behind
 bind down:cmd;alt focus behind
 
 # Window Hints
-bind space:alt hint
+bind tab:cmd hint
 
 bind i:cmd;alt;ctrl focus 'iTerm'
 bind m:cmd;alt;ctrl focus 'iTunes'
