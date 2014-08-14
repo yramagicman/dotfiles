@@ -5,6 +5,7 @@ config defaultToCurrentScreen true
 config nudgePercentOf screenSize
 config windowHintsIgnoreHiddenWindows false
 config windowHintsShowIcons true
+config windowHintsSpread true
 config resizePercentOf screenSize
 
 # Resize Bindings
