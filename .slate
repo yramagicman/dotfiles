@@ -65,7 +65,7 @@ bind up:cmd;alt   focus behind
 bind down:cmd;alt focus behind
 
 # Window Hints
-bind tab:cmd hint
+bind tab:alt hint
 
 bind i:cmd;alt;ctrl focus 'iTerm'
 bind m:cmd;alt;ctrl focus 'iTunes'
