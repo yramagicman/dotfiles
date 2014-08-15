@@ -1,12 +1,16 @@
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'tobyS/pdv'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'tobyS/vmustache'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'wincent/Command-T'
 Plugin 'mattn/emmet-vim'
 Plugin 'othree/html5.vim'
 Plugin 'Shougo/neocomplcache.vim'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
+"Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'ervandew/supertab'
 "Plugin 'Lokaltog/powerline'
