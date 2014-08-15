@@ -2,9 +2,9 @@ if [[ -n $SSH_CONNECTION ]]; then
    #ZSH_TMUX_AUTOSTART=true
    #[[ $TERM != "screen" ]] && exec tmux
 else
-   #ZSH_TMUX_AUTOSTART=true
-    [[ $- != *i* ]] && return
-    [[ -z "$TMUX" ]] && exec tmux
+    ZSH_TMUX_AUTOSTART=true
+    #[[ $- != *i* ]] && return
+    #[[ -z "$TMUX" ]] && exec tmux
 fi
 
 # Path to your oh-my-zsh configuration.
