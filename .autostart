@@ -25,11 +25,6 @@ xset -dpms; xset s off &
 (sleep 3s && check_process conky) &
 (sleep 3s && check_process pnmixer) &
 (sleep 4s && check_process nm-applet) &
-## Detect and configure touchpad. See 'man synclient' for more info.
-#if egrep -iq 'touchpad' /proc/bus/input/devices; then
-#    synclient VertEdgeScroll=1 &
-#    synclient TapButton1=1 &
-#fi
 
 ## Start Clipboard manager
 (sleep 5s && check_process clipit) &
