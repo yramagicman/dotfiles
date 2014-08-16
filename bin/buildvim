@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+p="$HOME/.vim/config/"
+/bin/cat $p"autocmds.vim" $p"defaults.vim" \
+$p"escape.vim" $p"folding.vim" $p"functions.vim" $p"mappings.vim" \
+$p"motions.vim" $p"saving.vim" $p"splits.vim" $p"reg.vim" |\
+grep -v fugitive |\
+grep -v ^$ |\
+#egrep -v ^' '\{0,5}\"|\
+sed 's/muttclone/darkblue/' > ~/Gits/mobileVimrc/.vimrc
+
+echo $p
