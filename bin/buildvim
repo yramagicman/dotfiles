@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 p="$HOME/.vim/config/"
-now=$(date +"%m-%d-%Y")
+now=$(date)
 /bin/cat $p"autocmds.vim" $p"defaults.vim" \
 $p"escape.vim" $p"folding.vim" $p"functions.vim" $p"mappings.vim" \
 $p"motions.vim" $p"saving.vim" $p"splits.vim" $p"reg.vim" |\
