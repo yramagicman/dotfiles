@@ -10,5 +10,5 @@ grep -v ^$ |\
 sed 's/muttclone/darkblue/' > ~/Gits/mobileVimrc/.vimrc
 cd ~/Gits/mobileVimrc/
 git add --all
-git commit -m "update on $now"
+git commit -q -m "update on $now"
 git push -q
