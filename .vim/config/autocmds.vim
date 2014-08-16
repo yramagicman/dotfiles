@@ -55,7 +55,7 @@ if has("autocmd")
     au Bufenter,BufRead */drupal*/* set smartindent
     au Bufenter,BufRead */drupal*/* set shiftwidth=2
     au Bufenter,BufRead */drupal*/* set expandtab
-    au BufRead */drupal*/* call IndentGuides()
+    "au BufRead */drupal*/* call IndentGuides()
     "}}}
     "{{{ ratiochristi coding standards
     au Bufenter,BufRead */ratiochristi/* set tabstop=4

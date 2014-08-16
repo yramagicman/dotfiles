@@ -1,4 +1,4 @@
-"{{{ Strip trailing whitespace (,ss)
+"{{{ Strip trailing whitespace
 function! StripWhitespace()
     let save_cursor = getpos(".")
     let old_query = getreg('/')
@@ -34,7 +34,7 @@ nno <silent><leader>le :call LineEndings()<CR>
 function! WpWrap()
     normal ^vf(hyOif(function_exists(',p'){`jo}
 endfunction
-nno <c-w><c-w> :call WpWrap()<CR>
+nno <c-v><c-w> :call WpWrap()<CR>
 "}}}
 "{{{ create new tabs on <C-n> if no tabs exist
 function TabBind()
@@ -56,6 +56,8 @@ endfunction
 "}}}
 "{{{ save, kill whitespace at end of lines, and end of file, convert tabs
 function Save()
+    syntax sync fromstart
+    redraw!
     %retab
     call StripWhitespace()
     call Knl()
