@@ -11,4 +11,4 @@ sed 's/muttclone/darkblue/' > ~/Gits/mobileVimrc/.vimrc
 cd ~/Gits/mobileVimrc/
 git add --all
 git commit -q -m "update on $now"
-git push
+git push -q
