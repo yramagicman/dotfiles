@@ -6,7 +6,7 @@ $p"escape.vim" $p"folding.vim" $p"functions.vim" $p"mappings.vim" \
 $p"motions.vim" $p"saving.vim" $p"splits.vim" $p"reg.vim" |\
 grep -v fugitive |\
 grep -v ^$ |\
-#egrep -v ^' '\{0,5}\"|\
+egrep -v ^' '\{0,5}\"|\
 sed 's/muttclone/darkblue/' > ~/Gits/mobileVimrc/.vimrc
 cd ~/Gits/mobileVimrc/
 git add --all
