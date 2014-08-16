@@ -1,12 +1,3 @@
-if [[ -n $SSH_CONNECTION ]]; then
-   #ZSH_TMUX_AUTOSTART=true
-   #[[ $TERM != "screen" ]] && exec tmux
-else
-    ZSH_TMUX_AUTOSTART=true
-    #[[ $- != *i* ]] && return
-    #[[ -z "$TMUX" ]] && exec tmux
-fi
-
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -55,7 +46,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(z tmux colored-man web-search zsh-aliases)
-#ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_AUTOSTART=true
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
