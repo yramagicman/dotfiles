@@ -11,6 +11,7 @@ git commit -m 'blah blah blah'
 git pull --rebase --stat origin master
 builtin cd ~/.oh-my-zsh/custom/plugins/zsh-aliases/
 echo "\nzsh custom\n"
+git status
 git pull
 git push
 echo "\nmutt\n"
