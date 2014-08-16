@@ -51,11 +51,11 @@ if has("autocmd")
     au Bufenter,BufRead * set expandtab
     "}}}
     "{{{ drupal coding standards
-    au Bufenter,BufRead */drupal-7.28/* set tabstop=2
-    au Bufenter,BufRead */drupal-7.28/* set smartindent
-    au Bufenter,BufRead */drupal-7.28/* set shiftwidth=2
-    au Bufenter,BufRead */drupal-7.28/* set expandtab
-    au BufRead */drupal-7.28/* call IndentGuides()
+    au Bufenter,BufRead */drupal*/* set tabstop=2
+    au Bufenter,BufRead */drupal*/* set smartindent
+    au Bufenter,BufRead */drupal*/* set shiftwidth=2
+    au Bufenter,BufRead */drupal*/* set expandtab
+    au BufRead */drupal*/* call IndentGuides()
     "}}}
     "{{{ ratiochristi coding standards
     au Bufenter,BufRead */ratiochristi/* set tabstop=4
