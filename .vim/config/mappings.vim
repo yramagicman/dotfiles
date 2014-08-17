@@ -42,7 +42,8 @@ nno Ql gqq
 " Save a file as root ('W)
 no <leader>W :w !sudo tee % > /dev/null<CR>
 "delete blank lines
-"no <leader>db :g/^$/d<ESC>:let @/ = ""<CR>
+no <localleader>db :g/^$/d<ESC>:let @/ = ""<CR>
+" delete duplicate blank lines
 no <leader>db :%!cat -s<CR>
 " toggle word wrap
 no <silent><leader>w <ESC>:set wrap!<CR>
