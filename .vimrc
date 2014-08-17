@@ -1,5 +1,6 @@
-source ~/.vim/config/vundle.vim
-source ~/.vim/config/snippets.vim
+source ~/.vim/config/extensions/vundle.vim
+source ~/.vim/config/extensions/snippets.vim
+source ~/.vim/config/extensions/autocomplete.vim
 source ~/.vim/config/defaults.vim
 source ~/.vim/config/functions.vim
 source ~/.vim/config/autocmds.vim
@@ -9,5 +10,4 @@ source ~/.vim/config/saving.vim
 source ~/.vim/config/folding.vim
 source ~/.vim/config/mappings.vim
 source ~/.vim/config/splits.vim
-source ~/.vim/config/autocomplete.vim
 source ~/.vim/config/reg.vim
