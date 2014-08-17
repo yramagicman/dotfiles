@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 p="$HOME/.vim/config/"
 now=$(date)
-/bin/cat $p"*" |\
+/bin/cat $p* |\
 grep -v fugitive |\
 grep -v ^$ |\
 egrep -v ^' '\{0,5}\"|\
