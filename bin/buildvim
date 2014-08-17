@@ -1,10 +1,10 @@
 #!/usr/bin/env zsh
 p="$HOME/.vim/config/"
 now=$(date)
-/bin/cat $p* |\
+/bin/cat $p*".vim" |\
 grep -v fugitive |\
 grep -v ^$ |\
-egrep -v ^' '\{0,5}\"|\
+#egrep -v ^' '\{0,5}\"|\
 sed 's/muttclone/darkblue/' > ~/Gits/mobileVimrc/.vimrc
 cd ~/Gits/mobileVimrc/
 git add --all
