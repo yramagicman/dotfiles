@@ -30,7 +30,7 @@ nno cc cc<ESC>
 vno cc cc<ESC>
 " delete till the beginning of a line
 no <leader>D d0
-ino <leader>D <esc>d0xi
+ino <leader>D <ESC>d0xi
 "}}}
 "!{{{ Formatting, TextMate-style
 nno Q gqip
@@ -57,12 +57,12 @@ no <leader>r <ESC>:%retab<CR>
 no <leader>sh <ESC>:noh<CR>
 no <silent><leader><space> <ESC>:let @/ = ""<CR>
 "uppercase words
-ino <C-u> <esc>mzgUiwza
-nno <C-u> <esc>mzgUiwza
+ino <C-u> <ESC>mzgUiwza
+nno <C-u> <ESC>mzgUiwza
 " Toggle [i]nvisible characters
-nno <silent><leader>i :set list!<cr>
+nno <silent><leader>i :set list!<CR>
 " reset color scheme
-nno U :syntax sync fromstart<cr>:redraw!<cr>
+nno U :syntax sync fromstart<CR>:redraw!<cr>
 " make this_style into cammelCase
 nno CC 0f_x~
 ino <C-c> <ESC>I//
@@ -71,7 +71,7 @@ nno <leader>c :%!column -t<CR>
 nno <leader>s :source %<CR>
 "}}}
 "{{{ spelling mappings
-nno <C-s><C-s> :set spell!<cr>
+nno <C-s><C-s> :set spell!<CR>
 nno <C-s>a zG
 nno <C-s>n ]szo
 nno <C-s>p [szo

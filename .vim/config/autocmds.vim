@@ -17,8 +17,8 @@ if has("autocmd")
     au Bufleave *.js iabbr 90 90
     "}}}
     "{{{ automattically add semicolons in css
-    au Bufenter *.scss ino : :;<esc>i
-    au Bufenter *.css ino : :;<esc>i
+    au Bufenter *.scss ino : :;<ESC>i
+    au Bufenter *.css ino : :;<ESC>i
     au Bufleave *.scss ino : :
     au Bufleave *.css ino : :
     "}}}
