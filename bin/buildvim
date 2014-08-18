@@ -6,6 +6,8 @@ grep -v fugitive |\
 grep -v ^$ |\
 #egrep -v ^' '\{0,5}\"|\
 sed 's/muttclone/darkblue/' > ~/Gits/mobileVimrc/.vimrc
+sed 's/"{{{/"/' > ~/Gits/mobileVimrc/.vimrc
+sed 's/"}}}/"/' > ~/Gits/mobileVimrc/.vimrc
 cd ~/Gits/mobileVimrc/
 git add --all
 git commit -q -m "update on $now"
