@@ -1,6 +1,6 @@
 #! /bin/bash
 # ~/.scripts/ch_wallpaper.sh
-WALLPAPERS="/home/jonathan/Dropbox/Photos/dualMonitor/"
+WALLPAPERS="/home/jonathan/Dropbox/Photos/DesktopPictures/"
 ALIST=( `ls -w1 $WALLPAPERS` )
 RANGE=${#ALIST[@]}
 let "number = $RANDOM"
