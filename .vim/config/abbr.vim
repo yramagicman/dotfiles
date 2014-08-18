@@ -1,15 +1,15 @@
 "match pairs
-ino ' ''<ESC>i
-ino " ""<ESC>i
-ino ( ()<ESC>i
-ino { {}<ESC>i
-ino [ []<ESC>i
-ino [<CR> [<CR>]<ESC>O
-ino (<CR> ()<ESC>a
-ino {<CR> {<CR>}<ESC>O
+ino ' ''<esc>i
+ino " ""<esc>i
+ino ( ()<esc>i
+ino { {}<esc>i
+ino [ []<esc>i
+ino [<CR> [<CR>]<esc>O
+ino (<CR> ()<esc>a
+ino {<CR> {<CR>}<esc>O
 
-vmap ' xi'<ESC>pa<ESC>'f'a
-vmap " xi"<ESC>pa<ESC>"f"a
-vmap { xi{<ESC>pa<ESC>la
-vmap [ xi[<ESC>pa<ESC>la
-vmap ( xi(<ESC>pa<ESC>la
+vmap ' xi'<esc>pa<ESC>'f'a
+vmap " xi"<esc>pa<ESC>"f"a
+vmap { xi{<esc>pa<ESC>la
+vmap [ xi[<esc>pa<ESC>la
+vmap ( xi(<esc>pa<ESC>la

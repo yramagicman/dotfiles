@@ -1,5 +1,5 @@
 "{{{ remap escape for easier access
-nno <leader>m  <ESC>
-vno <leader>m <ESC>
-ino <leader>m <ESC>
+nno <leader>m  <esc>
+vno <leader>m <esc>
+ino <leader>m <esc>
 "}}}

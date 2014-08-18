@@ -4,14 +4,14 @@ nno <CR> za
 nno <leader><CR> zO
 "}}}
 "{{{close all folds
-nno <localleader><localleader><CR> <ESC>gg0vG$zC<ESC>
-ino <localleader><localleader><CR> <ESC>gg0vG$zC<ESC>
-vno <localleader><localleader><CR> <ESC>gg0vG$zC<ESC>
+nno <localleader><localleader><CR> <esc>gg0vG$zC<ESC>
+ino <localleader><localleader><CR> <esc>gg0vG$zC<ESC>
+vno <localleader><localleader><CR> <esc>gg0vG$zC<ESC>
 "}}}
 "{{{open all folds
-nno <leader><leader><CR> <ESC>zR<ESC>
-ino <leader><leader><CR> <ESC>zR<ESC>
-vno <leader><leader><CR> <ESC>zR<ESC>
+nno <leader><leader><CR> <esc>zR<ESC>
+ino <leader><leader><CR> <esc>zR<ESC>
+vno <leader><leader><CR> <esc>zR<ESC>
 "}}}
 "folding options
 set foldmethod=indent
@@ -27,7 +27,7 @@ ino <leader>c <C-x><C-p>
 "}}}
 "{{{ find and replace with control f
 noremap <C-F> :%s/find/replace/I
-inoremap <C-F> <ESC>:%s/find/replace/I
-vnoremap <C-F> <ESC>:%s/find/replace/it
+inoremap <C-F> <esc>:%s/find/replace/I
+vnoremap <C-F> <esc>:%s/find/replace/it
 " }}}
 " }}}

@@ -3,13 +3,13 @@ no <C-l> <C-w>l
 no <C-j> <C-w>j
 no <C-h> <C-w>h
 no <C-k> <C-w>k
-ino <C-l> <ESC><C-w>li
-ino <C-j> <ESC><C-w>ji
-ino <C-h> <ESC><C-w>hi
-ino <C-k> <ESC><C-w>ki
+ino <C-l> <esc><C-w>li
+ino <C-j> <esc><C-w>ji
+ino <C-h> <esc><C-w>hi
+ino <C-k> <esc><C-w>ki
 "splitting
-no <leader>sn <ESC>:new<CR>
-no <leader>sv <ESC>:vnew<CR>
+no <leader>sn <esc>:new<CR>
+no <leader>sv <esc>:vnew<CR>
 "window stuff
 set equalalways
 no <localleader>= <C-w>=
