@@ -8,7 +8,7 @@ check_process(){
        $1 &
     fi
 }
-( /home/jonathan/.screenlayout/default.sh) &
+( /home/jonathan/.screenlayout/single.sh) &
 ## Set root window colour
 (/home/jonathan/bin/rotate-wallpaper) &
 rm $HOME/.session-active &
