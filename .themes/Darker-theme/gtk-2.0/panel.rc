@@ -1,0 +1,157 @@
+##################### PANEL BACKGROUND ###############################
+
+
+
+style "panelbg"
+{
+	fg[NORMAL] 			= "#ffffff"
+	fg[PRELIGHT] 			= "#000000"
+	fg[ACTIVE] 			= "#222222"
+	fg[SELECTED] 			= "#ffffff"
+
+  	bg[NORMAL]			= "#9E8262"
+
+  xthickness            		= 2
+  ythickness            		= 0
+  bg_pixmap[NORMAL]		        = "Panel/panel-bg-black-24.png"
+  bg_pixmap[INSENSITIVE]		= "<parent>"
+  bg_pixmap[PRELIGHT]		        = "<parent>"
+  bg_pixmap[SELECTED]		        = "<parent>"
+  bg_pixmap[ACTIVE]			= "<parent>"
+}
+class "*Panel*" style "panelbg"
+
+###### Notification area BG fix by Wicked ########################
+style "panel-notification-bg"
+{
+	fg[NORMAL] 			= "#ffffff"
+	fg[PRELIGHT] 			= "#000000"
+	fg[ACTIVE] 			= "#222222"
+	fg[SELECTED] 			= "#ffffff"
+
+  	bg[NORMAL]			= "#9E8262"
+
+  xthickness            		= 2
+  ythickness            		= 0
+  bg_pixmap[NORMAL]		        = "Panel/panel-notification-bg.png"
+  bg_pixmap[INSENSITIVE]		= "<parent>"
+  bg_pixmap[PRELIGHT]		        = "<parent>"
+  bg_pixmap[SELECTED]		        = "<parent>"
+  bg_pixmap[ACTIVE]			= "<parent>"
+}
+widget_class "*Mail*" style "panel-notification-bg"
+widget_class "*notif*" style "panel-notification-bg"
+widget_class "*Notif*" style "panel-notification-bg"
+widget_class "*Tray*" style "panel-notification-bg"
+widget_class "*tray*" style "panel-notification-bg"
+class "*notif*" style "panel-notification-bg"
+class "*Notif*" style "panel-notification-bg"
+class "*Tray*" style "panel-notification-bg"
+class "*tray*" style "panel-notification-bg"
+widget_class "*BonoboDockItem" style "panel-notification-bg"
+class "*BonoboDockItem" style "panel-notification-bg"
+
+
+
+##################### PANEL BUTTONS ###############################
+
+style "panelbuttons" = "default"
+{
+	fg[NORMAL] 			= "#ffffff"
+	fg[PRELIGHT] 			= "#000000"
+	fg[ACTIVE] 			= "#222222"
+	fg[SELECTED] 			= "#ffffff"
+
+    xthickness            			= 1
+    ythickness            			= 1
+
+	GtkWidget::focus_padding = 1
+
+	engine "pixmap" {
+      
+		image
+		{
+			function        		= BOX
+			recolorable     		= TRUE
+			state				= NORMAL
+			file            		= "Panel/panelbutton1.png"
+			border         			= { 4, 4, 4, 4 }
+			stretch 			= TRUE
+		}
+		
+		image
+		{
+			function        			= BOX
+			recolorable     		= TRUE
+			state				= PRELIGHT
+			file            		= "Panel/panelbutton2.png"
+			border          		= { 4, 4, 4, 4 }
+			stretch         		= TRUE
+		}
+
+		image
+		{
+			function        		= BOX
+			recolorable     		= TRUE
+			shadow				= OUT
+			state				= PRELIGHT
+			file            		= "Panel/panelbutton1.png"
+			border          		= { 4, 4, 4, 4 }
+			stretch         		= TRUE
+			#overlay_file   		= "panelbutton2.png"
+			#overlay_border	= { 4, 4, 4, 4 }
+			#overlay_stretch	= TRUE
+		}
+		
+		image
+		{
+			function        		= BOX
+			recolorable     		= TRUE
+			shadow				= IN
+			state				= PRELIGHT
+			file            		= "Panel/panelbutton3.png"
+			border          		= { 4, 4, 4, 4 }
+			stretch         		= TRUE
+			#overlay_file     		= "panelbutton2.png"
+			#overlay_border	= { 4, 4, 4, 4 }
+			#overlay_stretch	= TRUE
+		}
+		
+		image
+		{
+			function        		= BOX
+			recolorable     		= TRUE
+			state				= ACTIVE
+			file            		= "Panel/panelbutton3.png"
+			border          		= { 4, 4, 4, 4 }
+			stretch         		= TRUE
+		}  
+		
+		image
+		{
+			function        		= BOX
+			recolorable     		= TRUE
+			state				= INSENSITIVE
+			file            		= "Panel/panelbutton2.png"
+			border          		= { 4, 4, 4, 4 }
+			stretch         		= TRUE
+		}  
+
+	}
+
+}
+widget_class "*Panel*GtkToggleButton" style "panelbuttons"
+widget_class "*Panel*GtkButton" style "panelbuttons"
+
+style "panel_button_label"
+{
+	fg[NORMAL] 			= "#ffffff"
+	fg[PRELIGHT] 			= "#ffffff"
+	fg[ACTIVE] 			= "#ffffff"
+	fg[SELECTED] 			= "#ffffff"
+}
+#widget_class "*.GtkToolbar*GtkLabel" style "panel_button_label"
+#widget_class "*.GtkToggleButton*GtkLabel" style "panel_button_label"
+widget_class "*.Panel*Button*GtkLabel" style "panel_button_label"
+widget_class "*.Panel*GtkLabel" style "panel_button_label"
+

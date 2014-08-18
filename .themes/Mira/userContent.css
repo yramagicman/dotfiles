@@ -1,0 +1,77 @@
+/*
+* Edit this file and copy it as userContent.css into your
+* profile-directory/chrome/
+*/
+
+/*
+* This file can be used to apply a style to all web pages you view
+* Rules without !important are overruled by author rules if the
+* author sets any.  Rules with !important overrule author rules.
+*/
+
+/*
+* example: turn off "blink" element blinking
+*
+* blink { text-decoration: none ! important; }
+*
+*/
+
+/*
+* example: give all tables a 2px border
+*
+* table { border: 2px solid; }
+*/
+
+/*
+* example: turn off "marquee" element
+*
+* marquee { -moz-binding: none; }
+*
+*/
+
+/*
+* For more examples see http://www.mozilla.org/unix/customizing.html
+*/
+
+input {
+   background-color: white !important;
+   color: black !important;
+   -moz-appearance: none !important;
+}
+
+textarea {
+   background-color: white !important;
+   color: black !important;
+   -moz-appearance: none !important;
+}
+
+select {
+   background-color: white !important;
+   color: black !important;
+   -moz-appearance: none !important;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+   background-color: white ! important;
+   color: black ! important;
+   -moz-appearance: none !important;
+}
+
+*|*::-moz-radio {
+   background-color: white !important;
+   -moz-appearance: none !important;
+}
+
+button,
+input[type="reset"],
+input[type="button"],
+input[type="submit"] {
+   background-color: #eeeeee !important;
+   color: black !important;
+   -moz-appearance: none !important;
+}
+
+body {
+   -moz-appearance: none !important;
+}

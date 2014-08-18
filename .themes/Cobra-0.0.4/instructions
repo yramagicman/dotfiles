@@ -1,0 +1,160 @@
+=====
+Contents:
+=====
+
+1. GTK2
+  1.0. Installation
+  1.1. Color chooser
+
+2. Gnome-Panel
+  2.0. Installation
+  2.1. Gnome Menu icons
+  2.2. Search icon
+
+3. Metacity
+  3.0. Installation
+  3.1. Title bar buttons
+
+4. Beryl-Emerald
+  4.0. Installation
+
+5. Program Fixes
+  5.0. Firefox
+  5.1. Gaim 2
+  5.2. Open Office 2
+  5.3. Ubuntu
+ 
+=====
+1. GTK2
+=====
+
+1.0. Installation
+-------------
+Open ""Gnome-Panel -> System -> Preferences -> Theme" and drop the .tar.gz into the Theme Preferences window.
+
+
+==========
+2. Gnome-Panel
+==========
+
+2.0. Installation
+-------------
+By default the Gnome-Panel will not look very good. You have to assign a panel background image yourself.
+
+1. Right click the panel and choose "Properties".
+
+2. Open "Background ->Background image" and choose the provided "panel.png".
+
+2.1. Gnome Menu icons
+--------------------
+To use the provided Gnome Menu icons ("start-here-apple.png" or "start-here-gnome.png") you need to use the panel menu type that does not have the "Applications Places System" text. The new icon will look best at a panel size of 23 pixels.
+
+1. Right click the panel and choose "Add to Panel". 
+
+2. Add the "Main Menu" item. You should get a panel menu that has only an icon (no text). 
+
+3. You can remove the previous menu by right click and "Remove From Panel"
+
+4. Open "Gnome-Panel -> System Tools -> Configuration Editor"
+
+5. Navigate to "apps/panel/objects".
+
+6. Find the "object_" entry where "object_type" is equal to "menu-object".
+
+7. Check "use_custom_icon".
+
+8. Set the value of "custom_icon" to the path of the icon. It should change as soon as you set the path.
+
+2.2. Search icon
+-------------
+Create an Application Launcher for the search tool you want to use, e.g. "gnome-search-tool" or "beagle-search". Select the "system-search.png" as icon and place it on the right end of the panel.
+
+
+=======
+3. Metacity
+=======
+The Metacity themes comes in two versions. One has OSX style buttons and the other has regular.
+
+3.0. Installation
+-------------
+Open "System -> Preferences -> Theme" and drop the .tar.gz into the Theme Preferences window.
+
+3.1. Title bar buttons
+------------------
+For left sided window title-bar buttons (Mac style) go to:
+
+1. "Gnome-Panel -> Applications -> System Tools -> Configuration Editor"
+
+2. Open "apps/metacity/general" and change "button_layout":
+
+Right-sided (Windows style):
+
+  menu:minimize,maximize,close
+
+Left-sided (Mac style):
+
+  close,minimize,maximize:menu
+
+
+==========
+4. Beryl-Emerald
+==========
+The Emerald themes comes in two versions. One has OSX style buttons and the other has regular.
+
+4.0. Installation
+-------------
+Import to Emerald Theme Manager.
+
+
+==========
+5. Program Fixes
+==========
+Here are some fixes for common problems using the Cobra theme package. (Or any dark Gnome theme for that matter).
+
+5.0. Firefox
+----------
+If web forms and controls appear dark and unreadable you need to add the provided file "userContent.css" to the "chrome/" subfolder in your Firefox profile. It contains settings to get the default colors back. Put "userContent.css" in your home directory and type the following in a terminal:
+
+  mv $HOME/userContent.css $HOME/.mozilla/firefox/*.default/chrome/
+
+Note that the place of this directory may vary on different Linux distributions.
+
+Restart Firefox and you should have standard colours.
+
+5.1. Gaim 2
+----------
+To make Gaim use white fonts in conversations instead of the normal black, type the following in a terminal:
+
+1. gedit $HOME/.gaim/prefs.xml
+
+2. Around line 364 (probably) change the line:
+
+  <pref name='fgcolor' type='string' value=''/>
+
+To:
+
+  <pref name='fgcolor' type='string' value='#FFFFFF'/>
+
+Save the file. (restart Gaim if it's running)
+
+5.2. Open Office 2
+---------------
+To get a white document background color instead of black, go to:
+
+Tools > Options > OpenOffice.org > Appearance > Custom Colors > Document background
+
+For dark themes Open Office 2 uses a high contrast icon theme (due to automatic icon settings). If you don't like this, do the following:
+
+1. Open "Tools -> Options dialog -> OpenOffice.org -> View"
+
+2. Change the icon theme from automatic/null to a different one.
+
+
+5.3. Ubuntu
+----------
+If you are using Ubuntu and buttons look wierd, it's necessary to install the package "gtk2-engines-pixbuf”. Type in a terminal:
+
+  sudo apt-get install gtk2-engines-pixbuf
+
+The same is valid for all the themes based on the engine "pixmap".
+

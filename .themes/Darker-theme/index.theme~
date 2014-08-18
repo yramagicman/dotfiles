@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Darker Theme
+Type=X-GNOME-Metatheme
+Comment=
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Darker theme
+MetacityTheme=Darker theme
+IconTheme=Tango-Original
