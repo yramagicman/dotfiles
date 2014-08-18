@@ -18,19 +18,19 @@ nno <silent> <leader>ev :e ~/.vim/config/<CR>
 nno <silent> <leader>wr :cd ~/Sites/wordpress/wp-content/themes<CR>:Explore<CR>
 nno <silent> <leader>git :cd ~/Gits<CR>:Explore<CR>
 nno <silent> <leader>dt :cd ~/Desktop<CR>:Explore<CR>
-no <leader>rl <esc>:source ~/.vimrc<CR>
+no <leader>rl <ESC>:source ~/.vimrc<CR>
 "}}}
 "{{{ Make Vim work logically
 " Don't move on *
 nnoremap * *<c-o>
 "paste in insert mode
-ino <leader>p <esc>pa
+ino <leader>p <ESC>pa
 "don't enter insert mode when cutting lines
-nno cc cc<esc>
-vno cc cc<esc>
+nno cc cc<ESC>
+vno cc cc<ESC>
 " delete till the beginning of a line
 no <leader>D d0
-ino <leader>D <esc>d0xi
+ino <leader>D <ESC>d0xi
 "}}}
 "!{{{ Formatting, TextMate-style
 nno Q gqip
@@ -42,30 +42,30 @@ nno Ql gqq
 " Save a file as root ('W)
 no <leader>W :w !sudo tee % > /dev/null<CR>
 "delete blank lines
-no <localleader>db :g/^$/d<esc>:let @/ = ""<CR>
+no <localleader>db :g/^$/d<ESC>:let @/ = ""<CR>
 " delete duplicate blank lines
 no <leader>db :%!cat -s<CR>
 " toggle word wrap
-no <silent><leader>w <esc>:set wrap!<CR>
-ino <silent><leader>w <esc>:set wrap!<CR>i
+no <silent><leader>w <ESC>:set wrap!<CR>
+ino <silent><leader>w <ESC>:set wrap!<CR>i
 "toggle nerdtree
-no <silent><leader>nt <esc>:Explore<CR>
-no <silent><leader>e <esc>:Explore<CR>
+no <silent><leader>nt <ESC>:Explore<CR>
+no <silent><leader>e <ESC>:Explore<CR>
 "retab
-no <leader>r <esc>:%retab<CR>
+no <leader>r <ESC>:%retab<CR>
 "kill search highlighting
-no <leader>sh <esc>:noh<CR>
-no <silent><leader><space> <esc>:let @/ = ""<CR>
+no <leader>sh <ESC>:noh<CR>
+no <silent><leader><space> <ESC>:let @/ = ""<CR>
 "uppercase words
-ino <C-u> <esc>mzgUiwza
-nno <C-u> <esc>mzgUiwza
+ino <C-u> <ESC>mzgUiwza
+nno <C-u> <ESC>mzgUiwza
 " Toggle [i]nvisible characters
 nno <silent><leader>i :set list!<CR>
 " reset color scheme
-nno U :syntax sync fromstart<CR>:redraw!<cr>
+nno U :syntax sync fromstart<CR>:redraw!<CR>
 " make this_style into cammelCase
 nno CC 0f_x~
-ino <C-c> <esc>I//
+ino <C-c> <ESC>I//
 vno <C-c> I//
 nno <leader>c :%!column -t<CR>
 nno <leader>s :source %<CR>
