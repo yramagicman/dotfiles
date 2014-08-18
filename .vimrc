@@ -2,6 +2,7 @@ source ~/.vim/config/extensions/vundle.vim
 source ~/.vim/config/extensions/snippets.vim
 source ~/.vim/config/extensions/autocomplete.vim
 source ~/.vim/config/defaults.vim
+source ~/.vim/config/abbr.vim
 source ~/.vim/config/functions.vim
 source ~/.vim/config/autocmds.vim
 source ~/.vim/config/escape.vim

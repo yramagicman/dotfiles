@@ -32,7 +32,7 @@ vno cc cc<ESC>
 no <leader>D d0
 ino <leader>D <ESC>d0xi
 "}}}
-"!{{{ Formatting, TextMate-style
+"{{{ Formatting, TextMate-style
 nno Q gqip
 vno Q gq
 " Reformat line.

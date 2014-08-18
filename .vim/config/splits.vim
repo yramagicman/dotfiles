@@ -18,7 +18,7 @@ no <localleader>= <C-w>=
 set splitbelow
 set splitright
 " }}}
-"{{{
+"{{{ tab mappings
 nno <C-t> :tabnew<CR>
 nno <C-p> :tabp<CR>
 no <S-right> <C-w>>

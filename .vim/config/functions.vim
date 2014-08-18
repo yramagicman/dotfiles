@@ -71,7 +71,7 @@ function SaveNoRt()
     w
 endfunction
 "}}}
-" {{{ Shortcut: F7 = Run anything with a shebang
+"{{{ Shortcut: F7 = Run anything with a shebang
 " Source: http://superuser.com/a/21503/48014
 if has("autocmd")
     au BufEnter * if match( getline(1) , '^\#!') == 0 |
