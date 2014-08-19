@@ -33,15 +33,15 @@ own_window_argb_visual yes
 own_window_argb_value 150
 pad_percents:1
 TEXT
-${alignc}${time %A %B %d, %Y}    \
-Local Ip: ${addr wlp4s0}     \
-CPU TOTAL ${cpu cpu0}% \
-${cpubar} \
-Running processes: $running_processes      \
-RAM $mem/$memmax \
+${alignc}[${time %A %B %d, %Y}]    \
+[Local Ip: ${addr wlp4s0}]     \
+[CPU TOTAL ${cpu cpu0}% \
+${cpubar}  \
+Running processes: $running_processes]      \
+[RAM $mem/$memmax \
 ${membar} \
-SWAP $swapperc%     \
-Disk Usage [\
+SWAP $swapperc%]     \
+[Disk Usage \
 Root: ${fs_free /}/${fs_size /} \
 Home: ${fs_free /home}/${fs_size /home}]     \
-Link Quality (max: 70) ${wireless_link_qual wlp4s0}
+[Link Quality (max: 70) ${wireless_link_qual wlp4s0}]
