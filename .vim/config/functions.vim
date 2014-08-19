@@ -30,14 +30,14 @@ function! LineEndings()
 endfunction
 nno <silent><leader>le :call LineEndings()<CR>
 "}}}
-"{{{wordpress wrap function in 'function_exists()' check
+"{{{wordpress wrap function! in 'function_exists()' check
 function! WpWrap()
     normal ^vf(hyOif(function_exists(',p'){`jo}
 endfunction
 nno <c-v><c-w> :call WpWrap()<CR>
 "}}}
 "{{{ create new tabs on <C-n> if no tabs exist
-function TabBind()
+function! TabBind()
     if tabpagenr('$') < 2
         tabnew
     else
@@ -47,7 +47,7 @@ endfunction
 nno <C-n> :call TabBind()<CR>
 "}}}
 "{{{ kill extra newlines
-function Knl ()
+function! Knl ()
     try
         %s#\($\n\s*\)\+\%$##
     catch
@@ -55,20 +55,22 @@ function Knl ()
 endfunction
 "}}}
 "{{{ save, kill whitespace at end of lines, and end of file, convert tabs
-function Save()
+function! Save()
     syntax sync fromstart
     redraw!
     %retab
     call StripWhitespace()
     call Knl()
     w
+    call CheckErrorFn()
 endfunction
 "}}}
 "{{{ save, kill whitespace at end of lines, and end of file, don't convert tabs
-function SaveNoRt()
+function! SaveNoRt()
     call StripWhitespace()
     call Knl()
     w
+    call CheckErrorFn()
 endfunction
 "}}}
 "{{{ Shortcut: F7 = Run anything with a shebang
@@ -109,4 +111,11 @@ endfunction
 command! -range=% HighlightRepeats <line1>,<line2>call HighlightRepeats()
 nmap <silent><LocalLeader>r :HighlightRepeats<CR>
 nmap <silent><LocalLeader>cr :syn clear Repeat<CR>
+"}}}
+"{{{ Check for :Error command so it can be run on save
+function! CheckErrorFn()
+    if exists(':Error')
+        Error
+    endif
+endfunction
 "}}}
