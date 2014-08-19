@@ -28,7 +28,7 @@ hi      Function         gui=none        term=bold      cterm=none     ctermfg=2
 hi      Operator         ctermfg=231     guifg=#ffffff
 hi      Identifier       gui=none        term=bold      cterm=none     ctermfg=34     guifg=#00af00
 hi      Keyword          gui=bold        term=bold      cterm=bold     ctermfg=39     guifg=#00afff
-hi      MatchParen       term=bold       ctermbg=253    ctermfg=234    guibg=#dadada  guifg=#121212  gui=bold
+hi      MatchParen       term=bold       ctermbg=22    ctermfg=253    guibg=#005f00  guifg=#dadada  gui=bold
 hi      Cursor           guifg=#ffffff   guibg=#444444  ctermfg=231    ctermbg=238
 hi      ColorColumn      ctermbg=232     guibg=#080808
 hi      Character        ctermfg=144     guifg=#afaf87

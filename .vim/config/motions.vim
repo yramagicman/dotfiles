@@ -31,4 +31,5 @@ no <S-j> Gzz
 no <S-h> ^
 no <S-k> ggzz
 "}}}
-no <tab> %
+nno <tab> %
+vno <tab> %

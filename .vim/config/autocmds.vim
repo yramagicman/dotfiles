@@ -48,6 +48,7 @@ if has("autocmd")
     au Bufenter,BufRead */drupal*/* set shiftwidth=2
     au Bufenter,BufRead */drupal*/* set expandtab
     au Bufenter,BufRead *.module set filetype=php
+    au Bufenter,BufRead *.inc set filetype=php
     au Bufenter,BufRead *.install set filetype=php
     "au BufRead */drupal*/* call IndentGuides()
     "}}}

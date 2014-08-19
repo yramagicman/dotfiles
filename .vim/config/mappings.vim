@@ -3,7 +3,6 @@ no <silent> <leader>nn :set nonumber<CR>
 no <silent> <leader>an :set number<CR>
 no <silent> <leader>rn :set relativenumber!<CR>
 "}}}
-noremap ; :
 "{{{ Indenting
 "bind \] to indent
 nmap <localleader>] >>
@@ -84,3 +83,4 @@ nno R q
 " there, now q won't do dumb stuff
 nno q <NOP>
 "}}}
+noremap ; :
