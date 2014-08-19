@@ -19,4 +19,5 @@ Plugin 'kana/vim-fakeclip'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
+Plugin 'editorconfig/editorconfig-vim'
 call vundle#end()
