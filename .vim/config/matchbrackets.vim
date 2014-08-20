@@ -27,3 +27,11 @@ vno " xi"<ESC>pa<ESC>"f"a
 vno { xi{<ESC>pa<ESC>la
 vno [ xi[<ESC>pa<ESC>la
 vno ( xi(<ESC>pa<ESC>la
+
+augroup abbrevs
+    autocmd!
+    au BufEnter mutt* iabbrev api API
+    au BufEnter mutt* iabbrev etap Etapestry
+    au BufEnter mutt* iabbrev durpal Drupal
+    au BufEnter mutt* iabbrev drupal Drupal
+augroup end
