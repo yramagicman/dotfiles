@@ -28,7 +28,10 @@ vno { xi{<ESC>pa<ESC>la
 vno [ xi[<ESC>pa<ESC>la
 vno ( xi(<ESC>pa<ESC>la
 
-iabbrev api API
-iabbrev etap Etapestry
-iabbrev durpal Drupal
-iabbrev drupal Drupal
+augroup abbrevs
+    autocmd!
+    au BufEnter mutt* iabbrev api API
+    au BufEnter mutt* iabbrev etap Etapestry
+    au BufEnter mutt* iabbrev durpal Drupal
+    au BufEnter mutt* iabbrev drupal Drupal
+augroup end
