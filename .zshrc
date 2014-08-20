@@ -8,8 +8,8 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="theme"
 #source "$ZSH/custom/plugins/theme.zsh-theme"
 # Example aliases
-alias zconfig="mvim ~/.zshrc"
-alias ohmy="mvim ~/.oh-my-zsh"
+alias zconfig="vim ~/.zshrc"
+alias ohmy="vim ~/.oh-my-zsh"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -52,7 +52,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$HOME/.gem/ruby/2.1.0/bin:$PATH
-# export MANPATH="/usr/local/man:$MANPATH"
+export MANPATH="/usr/local/man:$MANPATH"
 
 export EDITOR='vim'
 
