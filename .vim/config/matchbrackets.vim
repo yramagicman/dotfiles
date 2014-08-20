@@ -27,3 +27,8 @@ vno " xi"<ESC>pa<ESC>"f"a
 vno { xi{<ESC>pa<ESC>la
 vno [ xi[<ESC>pa<ESC>la
 vno ( xi(<ESC>pa<ESC>la
+
+iabbrev api API
+iabbrev etap Etapestry
+iabbrev durpal Drupal
+iabbrev drupal Drupal
