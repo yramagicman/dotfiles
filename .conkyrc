@@ -1,3 +1,4 @@
+lua_load ~/.config/conky/scripts/conky.lua
 background yes
 font Droid Sans Mono:size=10
 xftfont Droid Sans Mono:size=10
@@ -35,7 +36,7 @@ pad_percents:1
 TEXT
 ${alignc}[${time %A %B %d, %Y}]    \
 [Local Ip: ${addr wlp4s0}]     \
-[CPU TOTAL ${cpu cpu0}% \
+[CPU TOTAL ${lua_parse format %2.0f ${cpu cpu0}}% \
 ${cpubar}  \
 Running processes: $running_processes]      \
 [RAM $mem/$memmax \
