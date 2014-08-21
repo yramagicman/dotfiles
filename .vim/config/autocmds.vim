@@ -2,6 +2,25 @@
 if has("autocmd")
     " Enable file type detection
     filetype on
+    augroup general
+        autocmd!
+    "{{{ fold method marker for vimrc and zshrc
+        au Bufenter,BufRead *.vim set foldmethod=marker
+        au Bufenter *.zsh set foldmethod=marker
+    "}}}
+    "{{{ use absolute line numbering in insert mode and relative numbers elsewhere
+        au InsertLeave * :set nonumber
+        au InsertLeave * :set relativenumber
+        au InsertEnter * :set number
+        au InsertEnter * :set norelativenumber
+    "}}}
+    "{{{ tabs to spaces, four spaces per tab
+        au Bufenter,BufRead * set tabstop=4
+        au Bufenter,BufRead * set smartindent
+        au Bufenter,BufRead * set shiftwidth=4
+        au Bufenter,BufRead * set expandtab
+    "}}}
+    augroup end
     augroup js
     "{{{ Treat .json files as .js
         autocmd!
@@ -26,25 +45,6 @@ if has("autocmd")
         au Bufenter *.css ino : :;<ESC>i
         au Bufleave *.scss ino : :
         au Bufleave *.css ino : :
-    "}}}
-    augroup end
-    augroup general
-        autocmd!
-    "{{{ fold method marker for vimrc and zshrc
-        au Bufenter,BufRead *.vim set foldmethod=marker
-        au Bufenter *.zsh set foldmethod=marker
-    "}}}
-    "{{{ use absolute line numbering in insert mode and relative numbers elsewhere
-        au InsertLeave * :set nonumber
-        au InsertLeave * :set relativenumber
-        au InsertEnter * :set number
-        au InsertEnter * :set norelativenumber
-    "}}}
-    "{{{ tabs to spaces, four spaces per tab
-        au Bufenter,BufRead * set tabstop=4
-        au Bufenter,BufRead * set smartindent
-        au Bufenter,BufRead * set shiftwidth=4
-        au Bufenter,BufRead * set expandtab
     "}}}
     augroup end
     augroup coding
