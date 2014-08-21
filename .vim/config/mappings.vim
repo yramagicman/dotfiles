@@ -61,8 +61,8 @@ no <leader>r <ESC>:%retab<CR>
 no <leader>sh <ESC>:noh<CR>
 no <silent><leader><space> <ESC>:let @/ = ""<CR>
 "uppercase words
-ino <C-u> <ESC>mzgUiwza
-nno <C-u> <ESC>mzgUiwza
+ino <C-u> <ESC>mzgUiw
+nno <C-u> <ESC>mzgUiw
 " Toggle [i]nvisible characters
 nno <silent><leader>i :set list!<CR>
 " reset color scheme
@@ -75,11 +75,11 @@ nno <leader>c :%!column -t<CR>
 nno <leader>s :source %<CR>
 "}}}
 "{{{ spelling mappings
-nno <C-s><C-s> :set spell!<CR>
-nno <C-s>a zG
-nno <C-s>n ]szo
-nno <C-s>p [szo
-nno <C-s>s z=
+nno <C-a>s :set spell!<CR>
+nno <C-a>a zG
+nno <C-a>n ]szo
+nno <C-a>p [szo
+nno <C-a>w z=
 "}}}
 "{{{ No... I don't want to record a macro now
 "I never use replace mode anyway

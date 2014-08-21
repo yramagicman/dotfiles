@@ -21,8 +21,8 @@ set splitright
 "{{{ tab mappings
 nno <C-t> :tabnew<CR>
 nno <C-p> :tabp<CR>
-no <S-right> <C-w>>
-no <S-up> <C-w>+
-no <S-left> <C-w><
-no <S-down> <C-w>-
+nno <C-d> <C-w>>
+nno <C-w> <C-w>+
+nno <C-a> <C-w><
+nno <C-s> <C-w>-
 "}}}

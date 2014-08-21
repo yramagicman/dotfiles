@@ -27,19 +27,19 @@ nno <leader><ESC> :q!
 ino <leader><ESC> <ESC>:q!
 vno <leader><ESC> <ESC>:q!
 ""stay in or enter insert mode after current character on save
-ino <C-s> <ESC>:call Save()<CR>a
-vno <C-s> <ESC>:call Save()<CR>a
-nno <C-s> <ESC>:call Save()<CR>a
+""ino <C-s> <ESC>:call Save()<CR>a
+""vno <C-s> <ESC>:call Save()<CR>a
+""nno <C-s> <ESC>:call Save()<CR>a
 
 nno <C-q> :q<CR>
-nno <C-w> :close<CR>
+""nno <C-w> :close<CR>
 nno <silent><leader>q :q<CR>
 ino <silent><leader>q :q<CR>
 vno <silent><leader>q :q<CR>
 
 nno qq :wq
 nno qw :wq
-nno cl :close
+nno cl :close<CR>
 ino q q
 ino qq qq
 " }}}
