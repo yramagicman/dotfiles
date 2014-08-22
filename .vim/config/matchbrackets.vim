@@ -4,7 +4,6 @@ ino " ""<ESC>i
 ino ( ()<ESC>i
 ino { {}<ESC>i
 ino [ []<ESC>i
-ino < <><ESC>i
 ino [<CR> [<CR>]<ESC>O
 ino (<CR> (<Cr>)<ESC>O
 ino {<CR> {<CR>}<ESC>O
@@ -29,12 +28,12 @@ vno ( xi(<ESC>pa<ESC>la
 
 augroup abbrevs
     autocmd!
-    au BufReadPost mail iabbrev api API
-    au BufReadPost mail iabbrev etap Etapestry
-    au BufReadPost mail iabbrev durpal Drupal
-    au BufReadPost mail iabbrev drupal Drupal
-    au BufReadPost mail ino ' '
-    au FileType html ino <> <>
-    au FileType html ino < <><ESC>i
-    au FileType html vno < xi<<ESC>pa<ESC>la
+    au FileType mail iabbrev <buffer> api API
+    au FileType mail iabbrev <buffer> etap Etapestry
+    au FileType mail iabbrev <buffer> durpal Drupal
+    au FileType mail iabbrev <buffer> drupal Drupal
+    au FileType mail ino <buffer> ' '
+    au FileType html ino <buffer> <> <>
+    au FileType html ino <buffer> < <><ESC>i
+    au FileType html vno <buffer> < xi<<ESC>pa<ESC>la
 augroup end
