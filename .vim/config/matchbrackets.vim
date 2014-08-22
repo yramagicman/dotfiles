@@ -28,12 +28,12 @@ vno ( xi(<ESC>pa<ESC>la
 
 augroup abbrevs
     autocmd!
-    au FileType mail iabbrev <buffer> api API
-    au FileType mail iabbrev <buffer> etap Etapestry
-    au FileType mail iabbrev <buffer> durpal Drupal
-    au FileType mail iabbrev <buffer> drupal Drupal
-    au FileType mail ino <buffer> ' '
-    au FileType html ino <buffer> <> <>
-    au FileType html ino <buffer> < <><ESC>i
-    au FileType html vno <buffer> < xi<<ESC>pa<ESC>la
+    autocmd FileType mail iabbrev <buffer> api API
+    autocmd FileType mail iabbrev <buffer> etap Etapestry
+    autocmd FileType mail iabbrev <buffer> durpal Drupal
+    autocmd FileType mail iabbrev <buffer> drupal Drupal
+    autocmd FileType mail ino <buffer> ' '
+    autocmd FileType html ino <buffer> <> <>
+    autocmd FileType html ino <buffer> < <><ESC>i
+    autocmd FileType html vno <buffer> < xi<<ESC>pa<ESC>la
 augroup end
