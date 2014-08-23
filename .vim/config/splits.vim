@@ -1,28 +1,28 @@
 "{{{window navigation & and splits
-no <C-l> <C-w>l
-no <C-j> <C-w>j
-no <C-h> <C-w>h
-no <C-k> <C-w>k
-ino <C-l> <ESC><C-w>li
-ino <C-j> <ESC><C-w>ji
-ino <C-h> <ESC><C-w>hi
-ino <C-k> <ESC><C-w>ki
+noremap <C-l> <C-w>l
+noremap <C-j> <C-w>j
+noremap <C-h> <C-w>h
+noremap <C-k> <C-w>k
+inoremap <C-l> <ESC><C-w>li
+inoremap <C-j> <ESC><C-w>ji
+inoremap <C-h> <ESC><C-w>hi
+inoremap <C-k> <ESC><C-w>ki
 "splitting
-no <leader>sn <ESC>:new<CR>
-no <leader>sv <ESC>:vnew<CR>
+noremap <leader>sn <ESC>:new<CR>
+noremap <leader>sv <ESC>:vnew<CR>
 "window stuff
 set equalalways
-no <localleader>= <C-w>=
+noremap <localleader>= <C-w>=
 "}}}
 "{{{ put splits in a logical place
 set splitbelow
 set splitright
 " }}}
 "{{{ tab mappings
-nno <C-t> :tabnew<CR>
-nno <C-p> :tabp<CR>
-nno <C-d> <C-w>>
-nno <C-w> <C-w>+
-nno <C-a> <C-w><
-nno <C-s> <C-w>-
+nnoremap <C-t> :tabnew<CR>
+nnoremap <C-p> :tabp<CR>
+nnoremap <C-d> <C-w>>
+nnoremap <C-w> <C-w>+
+nnoremap <C-a> <C-w><
+nnoremap <C-s> <C-w>-
 "}}}

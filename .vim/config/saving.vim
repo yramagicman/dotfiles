@@ -1,45 +1,42 @@
-"{{{ Saving and closing
-"control whitespace and tabs on save
-nno <leader>ss :call Save()<CR>
-ino <leader>ss <ESC>:call Save()<CR>
-vno <leader>ss <ESC>:call Save()<CR>
-"save but don't retab
-nno <leader><leader>ss :call SaveNoRt()<CR>
-ino <leader><leader>ss <ESC>:call SaveNoRt()<CR>
-vno <leader><leader>ss <ESC>:call SaveNoRt()<CR>
-
-"save and close
-nno <silent><leader>ww :call Save()<CR>:close<CR>
-ino <silent><leader>ww <ESC>:call Save()<CR>:close<CR>
-vno <silent><leader>ww <ESC>:call Save()<CR>:close<CR>
-"close but don't save
-nno <leader>cl <ESC>:close!
-ino <leader>cl <ESC>:close!
-vno <leader>cl <ESC>:close!
-"save and quit
-nno <silent><leader>wq :call Save()<CR>:qall<CR>
-ino <silent><leader>wq <ESC>:call Save()<CR>:qall<CR>
-vno <silent><leader>wq <ESC>:call Save()<CR>:qall<CR>
-
-"ruthelessly kill vim without a care in the world for what breaks
-" quit without saving
-nno <leader><ESC> :q!
-ino <leader><ESC> <ESC>:q!
-vno <leader><ESC> <ESC>:q!
-""stay in or enter insert mode after current character on save
-""ino <C-s> <ESC>:call Save()<CR>a
-""vno <C-s> <ESC>:call Save()<CR>a
-""nno <C-s> <ESC>:call Save()<CR>a
-
-nno <C-q> :q<CR>
-""nno <C-w> :close<CR>
-nno <silent><leader>q :q<CR>
-ino <silent><leader>q :q<CR>
-vno <silent><leader>q :q<CR>
-
-nno qq :wq
-nno qw :wq
-nno cl :close<CR>
-ino q q
-ino qq qq
-" }}}
+"{{{ control whitespace and tabs on save
+nnoremap <leader>ss :call Save()<CR>
+inoremap <leader>ss <ESC>:call Save()<CR>
+vnoremap <leader>ss <ESC>:call Save()<CR>
+"}}}
+"{{{ save but don't retab
+nnoremap <leader><leader>ss :call SaveNoRt()<CR>
+inoremap <leader><leader>ss <ESC>:call SaveNoRt()<CR>
+vnoremap <leader><leader>ss <ESC>:call SaveNoRt()<CR>
+"}}}
+"{{{ save and close
+nnoremap <silent><leader>ww :call Save()<CR>:close<CR>
+inoremap <silent><leader>ww <ESC>:call Save()<CR>:close<CR>
+vnoremap <silent><leader>ww <ESC>:call Save()<CR>:close<CR>
+"}}}
+"{{{ close but don't save
+nnoremap <leader>cl <ESC>:close!
+inoremap <leader>cl <ESC>:close!
+vnoremap <leader>cl <ESC>:close!
+"}}}
+"{{{ save and quit
+nnoremap <silent><leader>wq :call Save()<CR>:qall<CR>
+inoremap <silent><leader>wq <ESC>:call Save()<CR>:qall<CR>
+vnoremap <silent><leader>wq <ESC>:call Save()<CR>:qall<CR>
+"}}}
+"{{{ quit without saving
+nnoremap <leader>Q :q!
+inoremap <leader>Q <ESC>:q!
+vnoremap <leader>Q <ESC>:q!
+"}}}
+"{{{ nice quit
+nnoremap <silent><leader>q :q<CR>
+inoremap <silent><leader>q :q<CR>
+vnoremap <silent><leader>q :q<CR>
+"}}}
+"{{{ sanity mappings
+nnoremap qq :wq
+nnoremap qw :wq
+nnoremap cl :close<CR>
+inoremap q q
+inoremap qq qq
+"}}}
