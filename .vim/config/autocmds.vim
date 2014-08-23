@@ -37,7 +37,7 @@ if has("autocmd")
         autocmd FileType css setlocal shiftwidth=2
         "}}}
         "{{{ automattically add semicolons in css
-        autocmd FileType css ino <buffer> : :;<ESC>i
+        autocmd FileType css inoremap <buffer> : :;<ESC>i
         "}}}
     augroup end
     augroup coding

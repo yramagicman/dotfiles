@@ -28,15 +28,15 @@ function! LineEndings()
     setlocal ff=unix
     :w
 endfunction
-nno <silent><leader>le :call LineEndings()<CR>
+nnoremap <silent><leader>le :call LineEndings()<CR>
 "}}}
 "{{{wordpress wrap function! in 'function_exists()' check
 function! WpWrap()
     normal ^vf(hyOif(function_exists(',p'){`jo}
 endfunction
-nno <c-v><c-w> :call WpWrap()<CR>
+nnoremap <c-v><c-w> :call WpWrap()<CR>
 "}}}
-"{{{ create new tabs on <C-n> if no tabs exist
+"{{{ create new tabs on <C-n> if noremap tabs exist
 function! TabBind()
     if tabpagenr('$') < 2
         tabnew
@@ -44,7 +44,7 @@ function! TabBind()
         tabn
     endif
 endfunction
-nno <C-n> :call TabBind()<CR>
+nnoremap <C-n> :call TabBind()<CR>
 "}}}
 "{{{ kill extra newlines
 function! Knl ()
@@ -143,6 +143,7 @@ function! PresMode()
         return g:presmode
     endif
 endfunction
+noremap <leader>x :call PresMode()
 "}}}
 "{{{ line numbers on or off
 let g:numoff = 1

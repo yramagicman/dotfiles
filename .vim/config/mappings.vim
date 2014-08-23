@@ -9,8 +9,8 @@ vnoremap <localleader>[ <gv
 inoremap <localleader>[ <C-O><<
 "}}}
 "{{{file navigation shortcuts
-nno <silent> <leader>ev :e ~/.vim/config/<CR>
-no <leader>rl <ESC>:source ~/.vimrc<CR>
+nnoremap <silent> <leader>ev :e ~/.vim/config/<CR>
+noremap <leader>rl <ESC>:source ~/.vimrc<CR>
 "}}}
 "{{{ Make Vim work logically
 " Don't move on *
@@ -32,48 +32,48 @@ inoremap <leader>D <ESC>d0xi
 nnoremap Q gqip
 vnoremap Q gq
 " Reformat line.
-nno Ql gqq
+nnoremap Ql gqq
 "}}}
 "{{{ Convenience bindings
 " Save a file as root ('W)
-no <leader>W :w !sudo tee % > /dev/null<CR>
+noremap <leader>W :w !sudo tee % > /dev/null<CR>
 "delete blank lines
-no <localleader>db :g/^$/d<ESC>:let @/ = ""<CR>
+noremap <localleader>db :g/^$/d<ESC>:let @/ = ""<CR>
 " delete duplicate blank lines
-no <leader>db :%!cat -s<CR>
+noremap <leader>db :%!cat -s<CR>
 " toggle word wrap
-no <silent><leader>w <ESC>:set wrap!<CR>
-ino <silent><leader>w <ESC>:set wrap!<CR>i
+noremap <silent><leader>w <ESC>:set wrap!<CR>
+inoremap <silent><leader>w <ESC>:set wrap!<CR>i
 "toggle file explorer
-no <silent><leader>e <ESC>:Explore<CR>
+noremap <silent><leader>e <ESC>:Explore<CR>
 "retab
-no <leader>r <ESC>:%retab<CR>
+noremap <leader>r <ESC>:%retab<CR>
 "kill search highlighting
-no <silent><leader><space> <ESC>:let @/ = ""<CR>
+noremap <silent><leader><space> <ESC>:let @/ = ""<CR>
 "uppercase words
-ino <C-u> <ESC>mzgUiw
-nno <C-u> <ESC>mzgUiw
+inoremap <C-u> <ESC>mzgUiw
+nnoremap <C-u> <ESC>mzgUiw
 " Toggle [i]nvisible characters
-nno <silent><leader>i :set list!<CR>
+nnoremap <silent><leader>i :set list!<CR>
 " reset color scheme
-nno U :syntax sync fromstart<CR>:redraw!<CR>
+nnoremap U :syntax sync fromstart<CR>:redraw!<CR>
 " make this_style into cammelCase
-nno CC 0f_x~
-ino <C-c> <ESC>I//
-vno <C-c> I//
-nno <leader>c :%!column -t<CR>
-nno <leader>s :source %<CR>
+nnoremap CC 0f_x~
+inoremap <C-c> <ESC>I//
+vnoremap <C-c> I//
+nnoremap <leader>c :%!column -t<CR>
+nnoremap <leader>s :source %<CR>
 "}}}
 "{{{ spelling mappings
-nno <C-a>s :set spell!<CR>
-nno <C-a>a zG
-nno <C-a>n ]szo
-nno <C-a>p [szo
-nno <C-a>w z=
+nnoremap <C-a>s :set spell!<CR>
+nnoremap <C-a>a zG
+nnoremap <C-a>n ]szo
+nnoremap <C-a>p [szo
+nnoremap <C-a>w z=
 "}}}
 "{{{ No... I don't want to record a macro now
 "I never use replace mode anyway
-nno R q
+nnoremap R q
 " there, now q won't do dumb stuff
-nno q <NOP>
+nnoremap q <NOP>
 "}}}
