@@ -37,7 +37,7 @@ inoremap <expr><C-l>     neocomplcache#complete_common_string()
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
 return neocomplcache#smart_close_popup() . "\<CR>"
-" For no inserting <CR> key.
+" For noremap inserting <CR> key.
 "return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
 endfunction
 " <TAB>: completion.
