@@ -1,44 +1,36 @@
-"{{{line numbering
-no <silent> <leader>nn :set nonumber<CR>
-no <silent> <leader>an :set number<CR>
-no <silent> <leader>rn :set relativenumber!<CR>
-"}}}
 "{{{ Indenting
 "bind \] to indent
-nmap <localleader>] >>
-vmap <localleader>] >gv
-imap <localleader>] <C-O>>>
+nnoremap <localleader>] >>
+vnoremap <localleader>] >gv
+inoremap <localleader>] <C-O>>>
 "bind \[ to outdent
-nmap <localleader>[ <<
-vmap <localleader>[ <gv
-imap <localleader>[ <C-O><<
+nnoremap <localleader>[ <<
+vnoremap <localleader>[ <gv
+inoremap <localleader>[ <C-O><<
 "}}}
 "{{{file navigation shortcuts
 nno <silent> <leader>ev :e ~/.vim/config/<CR>
-nno <silent> <leader>wr :cd ~/Sites/wordpress/wp-content/themes<CR>:Explore<CR>
-nno <silent> <leader>git :cd ~/Gits<CR>:Explore<CR>
-nno <silent> <leader>dt :cd ~/Desktop<CR>:Explore<CR>
 no <leader>rl <ESC>:source ~/.vimrc<CR>
 "}}}
 "{{{ Make Vim work logically
 " Don't move on *
 nnoremap * *<c-o>
 "paste in insert mode
-ino <leader>p <ESC>pa
+inoremap <leader>p <ESC>pa
 "paste from x clipboard
-nno <leader><leader>p <ESC>"+p
-ino <leader><leader>p <ESC>"+p
-vno <leader><leader>p <ESC>"+p
+nnoremap <leader><leader>p <ESC>"+p
+inoremap <leader><leader>p <ESC>"+p
+vnoremap <leader><leader>p <ESC>"+p
 "don't enter insert mode when cutting lines
-nno cc cc<ESC>
-vno cc cc<ESC>
+nnoremap cc cc<ESC>
+vnoremap cc cc<ESC>
 " delete till the beginning of a line
-no <leader>D d0
-ino <leader>D <ESC>d0xi
+nnoremap <leader>D d0
+inoremap <leader>D <ESC>d0xi
 "}}}
 "{{{ Formatting, TextMate-style
-nno Q gqip
-vno Q gq
+nnoremap Q gqip
+vnoremap Q gq
 " Reformat line.
 nno Ql gqq
 "}}}
@@ -52,13 +44,11 @@ no <leader>db :%!cat -s<CR>
 " toggle word wrap
 no <silent><leader>w <ESC>:set wrap!<CR>
 ino <silent><leader>w <ESC>:set wrap!<CR>i
-"toggle nerdtree
-no <silent><leader>nt <ESC>:Explore<CR>
+"toggle file explorer
 no <silent><leader>e <ESC>:Explore<CR>
 "retab
 no <leader>r <ESC>:%retab<CR>
 "kill search highlighting
-no <leader>sh <ESC>:noh<CR>
 no <silent><leader><space> <ESC>:let @/ = ""<CR>
 "uppercase words
 ino <C-u> <ESC>mzgUiw
@@ -87,4 +77,3 @@ nno R q
 " there, now q won't do dumb stuff
 nno q <NOP>
 "}}}
-noremap ; :

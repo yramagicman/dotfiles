@@ -2,9 +2,6 @@
 set background=dark
 set autoread
 set spelllang=en_us
-"set updatetime=1000
-"pathogen call stuff
-"execute pathogen#infect()
 " best color scheme ever
 colorscheme muttclone
 set t_Co=256
@@ -82,6 +79,7 @@ set ofu=syntaxcomplete#Complete
 set lcs=tab:⟩\ ,trail:·,eol:↩,nbsp:_
 "set list " breaks set linebreak
 " Enable line numbers
+set nonumber
 set relativenumber
 " Change mapleader
 let mapleader=","
@@ -95,6 +93,7 @@ set smartindent
 set shiftwidth=4
 "tabs to spaces
 set expandtab
+set lazyredraw
 "}}}
 "{{{ set compiler
 let g:syntastic_cpp_compiler = 'clang++'

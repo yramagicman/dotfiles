@@ -73,19 +73,17 @@ function! SaveNoRt()
     call CheckErrorFn()
 endfunction
 "}}}
-"{{{ Shortcut: F7 = Run anything with a shebang
+"{{{ Shortcut: <leader>R = Run anything with a shebang
 " Source: http://superuser.com/a/21503/48014
 if has("autocmd")
     au BufEnter * if match( getline(1) , '^\#!') == 0 |
     \ execute("let b:interpreter = getline(1)[2:]") |
     \endif
-
     fun! CallInterpreter()
         if exists("b:interpreter")
              exec ("!".b:interpreter." %")
         endif
     endfun
-
     nmap <Leader>R :call CallInterpreter()<CR>
 endif
 " }}}
@@ -107,7 +105,6 @@ function! HighlightRepeats() range
     endif
   endfor
 endfunction
-
 command! -range=% HighlightRepeats <line1>,<line2>call HighlightRepeats()
 nmap <silent><LocalLeader>r :HighlightRepeats<CR>
 nmap <silent><LocalLeader>cr :syn clear Repeat<CR>
@@ -119,3 +116,81 @@ function! CheckErrorFn()
     endif
 endfunction
 "}}}
+"{{{ presentation mode
+let g:presmode = 1
+function! PresMode()
+    if  g:presmode == 0
+        "normal opperation
+        set relativenumber
+        set nonumber
+        autocmd!
+        autocmd InsertLeave * :set nonumber
+        autocmd InsertLeave * :set relativenumber
+        autocmd InsertEnter * :set number
+        autocmd InsertEnter * :set norelativenumber
+        let g:presmode = 1
+        return g:presmode
+    else
+        let g:presmode = 0
+        "when people are watching
+        set norelativenumber
+        set number
+        autocmd!
+        autocmd InsertEnter * :set number
+        autocmd InsertLeave * :set number
+        autocmd InsertEnter * :set norelativenumber
+        autocmd InsertLeave * :set norelativenumber
+        return g:presmode
+    endif
+endfunction
+"}}}
+"{{{ line numbers on or off
+let g:numoff = 1
+function! NumOff()
+    if  g:numoff == 0
+        "normal opperation
+        set relativenumber
+        set nonumber
+        autocmd!
+        autocmd InsertLeave * :set nonumber
+        autocmd InsertLeave * :set relativenumber
+        autocmd InsertEnter * :set number
+        autocmd InsertEnter * :set norelativenumber
+        let g:numoff = 1
+        return g:numoff
+    else
+        echom g:numoff
+        let g:numoff = 0
+        "when people are watching
+        set norelativenumber
+        set nonumber
+        autocmd!
+        autocmd InsertEnter * :set nonumber
+        autocmd InsertLeave * :set nonumber
+        autocmd InsertEnter * :set norelativenumber
+        autocmd InsertLeave * :set norelativenumber
+        return g:numoff
+    endif
+endfunction
+noremap <silent> <leader>nn :call NumOff()<CR>
+noremap <silent> <leader>ns :call PresMode()<CR>
+"}}}
+"{{{ get stuff off my screen
+let g:clean = 1
+function! CleanScreen()
+    if  g:clean == 0
+        let g:numoff = 0
+        set laststatus=2
+        call NumOff()
+        let g:clean=1
+        return g:clean
+    else
+        let g:numoff = 1
+        set laststatus=0
+        set showmode!
+        call NumOff()
+        let g:clean=0
+        return g:clean
+    endif
+endfunction
+"}}}"
