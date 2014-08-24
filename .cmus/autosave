@@ -79,8 +79,8 @@ set show_remaining_time=true
 set shuffle=false
 set skip_track_info=false
 set smart_artist_sort=true
-set softvol=false
-set softvol_state=0 0
+set softvol=true
+set softvol_state=100 100
 set status_display_program=
 set wrap_search=true
 bind browser backspace browser-up
