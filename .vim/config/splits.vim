@@ -29,11 +29,11 @@ nnoremap <C-s> <C-w>-
 "{{{ buffer management <c-z>
 nnoremap <c-z> <NOP>
 nnoremap <c-z><c-z> :suspend<CR>
-nnoremap <C-Space> :ls<cr>:b<space>
+nnoremap <C-Space> :ls<CR>:b<space>
 nnoremap <C-@> <C-Space>
-nnoremap <Space><Space> :ls<cr>:b<space>
-nnoremap <leader><Space><Space> :ls<cr>:b<space>
-inoremap <leader><Space><Space> <esc>:ls<cr>:b<Space>
+nnoremap <Space><Space> :ls<CR>:b<space>
+nnoremap <leader><Space><Space> :ls<CR>:b<space>
+inoremap <leader><leader><Space> <ESC>:ls<CR>:b<Space>
 "{{{ next buffer n
 nnoremap <C-z>n :bn<CR>
 vnoremap <C-z>n <ESC>:bn<CR>

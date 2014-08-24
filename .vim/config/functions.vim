@@ -143,7 +143,7 @@ function! PresMode()
         return g:presmode
     endif
 endfunction
-noremap <leader>x :call PresMode()<cr>
+noremap <leader>x :call PresMode()<CR>
 command! Pres :call PresMode()
 "}}}
 "{{{ line numbers on or off
@@ -232,5 +232,5 @@ function! FoldColumn()
     endif
 endfunction
 command! Fc :call FoldColumn()
-nnoremap <Leader>fc :call FoldColumn()<cr>
+nnoremap <Leader>fc :call FoldColumn()<CR>
 "}}}
