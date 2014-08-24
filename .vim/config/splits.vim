@@ -28,7 +28,7 @@ nnoremap <C-s> <C-w>-
 "}}}
 "{{{ buffer management <c-z>
 nnoremap <c-z> <NOP>
-nnoremap <c-z><c-z> :suspend<cr>
+nnoremap <c-z><c-z> :suspend<CR>
 "{{{ next buffer n
 nnoremap <C-z>n :bn<CR>
 vnoremap <C-z>n <ESC>:bn<CR>
@@ -70,9 +70,9 @@ vnoremap <c-z>w <ESC>:ls!<CR>:bwipeout<space>
 inoremap <c-z>w <ESC>:ls!<CR>:bwipeout<space>
 "}}}
 "{{{ unload current buffer k
-nnoremap <c-z>k :bunload %<cr>
-vnoremap <c-z>k <ESC>:bunload %<cr>
-inoremap <c-z>k <ESC>:bunload %<cr>
+nnoremap <c-z>k :bunload %<CR>
+vnoremap <c-z>k <ESC>:bunload %<CR>
+inoremap <c-z>k <ESC>:bunload %<CR>
 "}}}
 "{{{ open all buffers vertically
 nnoremap <c-z>v :vert sball<CR>

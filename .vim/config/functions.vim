@@ -211,5 +211,5 @@ function! NewBuffer()
     wincmd k
     close
 endfunction
-nnoremap <silent><leader>n :call NewBuffer()<cr>
+nnoremap <silent><leader>n :call NewBuffer()<CR>
 "}}}
