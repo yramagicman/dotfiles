@@ -113,3 +113,6 @@ set statusline+=\ Column\ %2c
 set statusline+=\ \|
 "}}}
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
+"{{{ buffer sanity
+set bufhidden=unload
+set hidden

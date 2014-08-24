@@ -30,7 +30,7 @@ vnoremap <leader>Q <ESC>:q!
 "}}}
 "{{{ nice quit
 nnoremap <silent><leader>q :q<CR>
-inoremap <silent><leader>q :q<CR>
+inoremap <silent><leader>q <ESC>:q<CR>
 vnoremap <silent><leader>q :q<CR>
 "}}}
 "{{{ sanity mappings

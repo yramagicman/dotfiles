@@ -195,3 +195,21 @@ function! CleanScreen()
     endif
 endfunction
 "}}}"
+"{{{ open scratch buffer
+function! Scratch()
+    new
+    setlocal buftype=nofile
+    setlocal bufhidden=hide
+    setlocal noswapfile
+    setlocal nobuflisted
+    resize -15
+endfunction
+"}}}
+"{{{ open new buffer without creating extra split
+function! NewBuffer()
+    new
+    wincmd k
+    close
+endfunction
+nnoremap <silent><leader>n :call NewBuffer()<cr>
+"}}}

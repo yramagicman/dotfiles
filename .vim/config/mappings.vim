@@ -65,11 +65,11 @@ nnoremap <leader>c :%!column -t<CR>
 nnoremap <leader>s :source %<CR>
 "}}}
 "{{{ spelling mappings
-nnoremap <C-a>s :set spell!<CR>
-nnoremap <C-a>a zG
-nnoremap <C-a>n ]szo
-nnoremap <C-a>p [szo
-nnoremap <C-a>w z=
+nnoremap <C-m>s :set spell!<CR>
+nnoremap <C-m>a zG
+nnoremap <C-m>n ]szo
+nnoremap <C-m>p [szo
+nnoremap <C-m>w z=
 "}}}
 "{{{ No... I don't want to record a macro now
 "I never use replace mode anyway

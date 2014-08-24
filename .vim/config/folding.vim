@@ -1,4 +1,3 @@
-"{{{ folding
 "{{{Open folds on enter
 nnoremap <CR> za
 nnoremap <leader><CR> zO
@@ -13,9 +12,9 @@ nnoremap <leader><leader><CR> <ESC>zR<ESC>
 inoremap <leader><leader><CR> <ESC>zR<ESC>
 vnoremap <leader><leader><CR> <ESC>zR<ESC>
 "}}}
-"folding options
+"{{{folding options
 set foldmethod=indent
-set foldcolumn=1
+set foldcolumn=2
 "Close folds locally
 nnoremap <localleader><CR> zC
 "}}}
@@ -23,5 +22,4 @@ nnoremap <localleader><CR> zC
 noremap <C-F> :%s/find/replace/I
 inoremap <C-F> <ESC>:%s/find/replace/I
 vnoremap <C-F> :s/find/replace/g
-" }}}
 " }}}
