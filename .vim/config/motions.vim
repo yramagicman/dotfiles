@@ -25,11 +25,40 @@ noremap N NzzzO
 vnoremap j jzz
 vnoremap k kzz
 "}}}
-"{{{jump to ...
+"{{{ jump to ...
 noremap <S-l> $
 noremap <S-j> Gzz
 noremap <S-h> ^
 noremap <S-k> ggzz
-"}}}
 nnoremap <tab> %
 vnoremap <tab> %
+"}}}
+"{{{ command line movement mappings
+cnoremap <C-a>  <Home>
+cnoremap <C-b>  <Left>
+cnoremap <C-f>  <Right>
+cnoremap <C-d>  <Delete>
+cnoremap <Esc>b <S-Left>
+cnoremap <Esc>f <S-Right>
+cnoremap <Esc>d <S-right><Delete>
+cnoremap <C-e>  <End>
+"}}}
+"{{{ Substitute word under cursor globally
+nnoremap --r :%s/\<<C-r><C-w>\>//g<Left><Left>
+" ask for confirmation
+nnoremap -r :%s/\<<C-r><C-w>\>//gc<Left><Left><Left>
+"}}}
+"{{{ Substitute selection globally
+vnoremap --r y<Esc>:%s/<C-r>"//g<Left><Left>
+" ask for confirmation
+vnoremap -r y<Esc>:%s/<C-r>"//gc<Left><Left><Left>
+"}}}
+"{{{ find and replace with control f
+noremap <C-F> :%s/find/replace/I
+inoremap <C-F> <ESC>:%s/find/replace/I
+vnoremap <C-F> :s/find/replace/g
+"}}}
+"{{{ visual line mode is better that visual mode
+nnoremap v V
+nnoremap V v
+"}}}

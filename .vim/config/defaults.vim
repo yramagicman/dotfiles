@@ -32,6 +32,7 @@ set backupdir=~/.vim/backups//
 "I hate swap files
 set noswapfile
 if exists("&undodir")
+    set udf
     set undodir=~/.vim/undo
 endif
 " Respect modeline in files
@@ -49,7 +50,8 @@ set incsearch
 " Enable mouse in all modes
 set mouse=a
 " Disable error bells
-"set visualbell
+set novisualbell
+set noerrorbells
 " Don’t reset cursor to start of line when moving around.
 set nostartofline
 " Show the cursor position
@@ -112,7 +114,7 @@ set statusline+=%4l/%-4L
 set statusline+=\ Column\ %2c
 set statusline+=\ \|
 "}}}
-let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 "{{{ buffer sanity
-set bufhidden=unload
 set hidden
+"}}}"
+let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'

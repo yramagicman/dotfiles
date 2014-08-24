@@ -65,15 +65,21 @@ nnoremap <leader>c :%!column -t<CR>
 nnoremap <leader>s :source %<CR>
 "}}}
 "{{{ spelling mappings
-nnoremap <C-m>s :set spell!<CR>
-nnoremap <C-m>a zG
-nnoremap <C-m>n ]szo
-nnoremap <C-m>p [szo
-nnoremap <C-m>w z=
+nnoremap -s :set spell!<CR>
+nnoremap -a zG
+nnoremap -] ]szo
+nnoremap -[ [szo
+nnoremap -w z=
 "}}}
 "{{{ No... I don't want to record a macro now
 "I never use replace mode anyway
 nnoremap R q
 " there, now q won't do dumb stuff
 nnoremap q <NOP>
+"}}}
+"{{{ I've needed these mappings forever. Map '; to ; and ": to , also quickfix
+" last search
+nnoremap  qs :execute 'vimgrep /' .@/.'/g %'<CR>:copen<CR>
+nnoremap '; ;
+nnoremap ": ,
 "}}}

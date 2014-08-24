@@ -4,6 +4,9 @@ if has("autocmd")
     filetype on
     augroup general
         autocmd!
+        autocmd BufWritePost $HOME/.vim/config/* :source %
+        au VimResized * exe "normal! \<c-w>="
+        autocmd VimEnter * set vb t_vb=
         "{{{ fold method marker for vimrc and zshrc
         autocmd FileType vim setlocal foldmethod=marker
         autocmd FileType zsh setlocal foldmethod=marker
@@ -60,15 +63,15 @@ if has("autocmd")
         "}}}
     augroup end
     augroup extra
-        "{{{ Misc. individual commands that don't merrit their own fold group
+        "{{{ Misc. individual commands that don't merit their own fold group
         autocmd FileType mail set spell
         autocmd FileType make set noexpandtab
         autocmd FileType snippets set noexpandtab
         autocmd BufRead /usr/local/MERGE_MSG !ring
         autocmd BufNewFile,BufRead *.md set filetype=markdown
-        " make vim edit cron again
+        " make Vim edit cron again
         autocmd BufEnter /private/tmp/crontab.* setl backupcopy=yes
-        " always reload files when changed outside vim
+        " always reload files when changed outside Vim
         autocmd CursorHold,CursorMovedI,CursorMoved,Bufenter * :checktime
         " save on focus lost
         autocmd FocusLost,BufLeave * :silent! wall

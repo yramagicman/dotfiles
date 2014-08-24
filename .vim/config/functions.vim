@@ -143,7 +143,8 @@ function! PresMode()
         return g:presmode
     endif
 endfunction
-noremap <leader>x :call PresMode()
+noremap <leader>x :call PresMode()<cr>
+command! Pres :call PresMode()
 "}}}
 "{{{ line numbers on or off
 let g:numoff = 1
@@ -194,6 +195,7 @@ function! CleanScreen()
         return g:clean
     endif
 endfunction
+command! Clean :call CleanScreen()
 "}}}"
 "{{{ open scratch buffer
 function! Scratch()
@@ -204,6 +206,7 @@ function! Scratch()
     setlocal nobuflisted
     resize -15
 endfunction
+command! Scratch :call Scratch()
 "}}}
 "{{{ open new buffer without creating extra split
 function! NewBuffer()
@@ -212,4 +215,22 @@ function! NewBuffer()
     close
 endfunction
 nnoremap <silent><leader>n :call NewBuffer()<CR>
+cnoreabbrev new New
+command! New :call NewBuffer()
+"}}}
+"{{{ toggle fold column markers
+let g:foldon=1
+function! FoldColumn()
+    if g:foldon == 1
+        hi      FoldColumn       ctermbg=234     ctermfg=247    guifg=#1c1c1c  guibg=#1c1c1c
+        let g:foldon=0
+        return g:foldon
+    else
+        hi      FoldColumn       ctermbg=234     ctermfg=234    guifg=#1c1c1c  guibg=#1c1c1c
+        let g:foldon=1
+        return g:foldon
+    endif
+endfunction
+command! Fc :call FoldColumn()
+nnoremap <Leader>fc :call FoldColumn()<cr>
 "}}}
