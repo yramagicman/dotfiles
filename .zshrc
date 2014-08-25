@@ -8,23 +8,11 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="theme"
 #source "$ZSH/custom/plugins/theme.zsh-theme"
 # Example aliases
-alias zconfig="vim ~/.zshrc"
+alias zshrc="vim ~/.zshrc"
 alias ohmy="vim ~/.oh-my-zsh"
-
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
 
 # Uncomment this to disable bi-weekly auto-update checks
  DISABLE_AUTO_UPDATE="true"
-
-# Uncomment to change how often before auto-updates occur? (in days)
- #export UPDATE_ZSH_DAYS=30
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want to disable command autocorrection
 # DISABLE_CORRECTION="true"
@@ -36,11 +24,6 @@ COMPLETION_WAITING_DOTS="true"
 # VCS as dirty. This makes repository status check for large repositories much,
 # much faster.
 DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment following line if you want to  shown in the command execution time stamp
-# in the history command output. The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|
-# yyyy-mm-dd
-# HIST_STAMPS="mm/dd/yyyy"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -56,6 +39,10 @@ export MANPATH="/usr/local/man:$MANPATH"
 
 export EDITOR='vim'
 
+export SAVEHIST=1000
+export HIST_IGNORE_DUPS=true
+export HIST_SAVE_NO_DUPS=true
+bindkey -v
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
 
@@ -73,3 +60,11 @@ if [[ ! -a $HOME/.session-active ]]; then
 fi
 #check_process gpg-agent --daemon
 stty -ixon
+
+function zle-line-init zle-keymap-select {
+RPS1="${${KEYMAP/vicmd/NORMAL}/(main|viins)/INSERT}"
+RPS2=$RPS1
+zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
