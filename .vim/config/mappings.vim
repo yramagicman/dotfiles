@@ -79,7 +79,7 @@ nnoremap q <NOP>
 "}}}
 "{{{ I've needed these mappings forever. Map '; to ; and ": to , also quickfix
 " last search
-nnoremap  qs :execute 'vimgrep /' .@/.'/g %'<CR>:copen<CR>
+nnoremap  qf :execute 'vimgrep /' .@/.'/g %'<CR>:copen<CR>
 nnoremap '; ;
 nnoremap ": ,
 "}}}

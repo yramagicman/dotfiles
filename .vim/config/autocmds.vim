@@ -50,6 +50,7 @@ if has("autocmd")
         autocmd Bufenter,BufRead */drupal*/* set smartindent
         autocmd Bufenter,BufRead */drupal*/* set shiftwidth=2
         autocmd Bufenter,BufRead */drupal*/* set expandtab
+        autocmd Bufenter,BufRead */drupal*/* set foldmethod=marker
         autocmd Bufenter,BufRead *.module set filetype=php
         autocmd Bufenter,BufRead *.inc set filetype=php
         autocmd Bufenter,BufRead *.install set filetype=php

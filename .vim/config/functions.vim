@@ -232,5 +232,5 @@ function! FoldColumn()
     endif
 endfunction
 command! Fc :call FoldColumn()
-nnoremap <Leader>fc :call FoldColumn()<CR>
+nnoremap <LocalLeader>f :call FoldColumn()<CR>
 "}}}
