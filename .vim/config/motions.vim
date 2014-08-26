@@ -61,4 +61,6 @@ vnoremap <C-F> :s/find/replace/g
 "{{{ visual block mode is better that visual mode
 nnoremap v <c-v>
 nnoremap <c-v> v
+vnoremap    v   <C-V>
+vnoremap <C-V>     v
 "}}}

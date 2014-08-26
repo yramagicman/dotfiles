@@ -9,7 +9,10 @@ set t_Co=256
 set nocompatible
 "text-width
 set textwidth=82
-set cc=81
+" set color column to 0
+set cc=0
+" highlight long lines
+call matchadd('ColorColumn', '\%81v', 100)
 " Don't use os clipboard with tmux can't yank between buffers
 set clipboard=unnamed
 " Enhance command-line completion
@@ -63,7 +66,7 @@ set showmode
 " Show the filename in the window titlebar
 set title
 " Highlight current line
-set cursorline
+""set cursorline
 " Show the (partial) command as it’s being typed
 set showcmd
 " Enable syntax highlighting

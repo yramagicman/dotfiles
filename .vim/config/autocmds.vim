@@ -4,10 +4,16 @@ if has("autocmd")
     filetype on
     augroup general
         autocmd!
+        "{{{ show cursorline on current buffer only
+        autocmd BufEnter * set cursorline
+        autocmd BufLeave * set nocursorline
+        "}}}
+        "{{{ auto-reload vim files, auto resize splits on window resize
         autocmd BufWritePost $HOME/.vim/config/* :source %
         au VimResized * exe "normal! \<c-w>="
         autocmd VimEnter * set vb t_vb=
-        "{{{ fold method marker for vimrc and zshrc
+        "}}}
+        "{{{ fold method marker for specific files
         autocmd FileType vim setlocal foldmethod=marker
         autocmd FileType zsh setlocal foldmethod=marker
         autocmd FileType lua setlocal foldmethod=marker
