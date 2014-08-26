@@ -58,7 +58,7 @@ noremap <C-F> :%s/find/replace/I
 inoremap <C-F> <ESC>:%s/find/replace/I
 vnoremap <C-F> :s/find/replace/g
 "}}}
-"{{{ visual line mode is better that visual mode
-nnoremap v V
-nnoremap V v
+"{{{ visual block mode is better that visual mode
+nnoremap v <c-v>
+nnoremap <c-v> v
 "}}}

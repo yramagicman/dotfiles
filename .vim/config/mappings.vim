@@ -64,11 +64,11 @@ vnoremap <C-c> I//
 nnoremap <leader>c :%!column -t<CR>
 nnoremap <leader>s :source %<CR>
 "}}}
-"{{{ spelling mappings
-nnoremap -s :set spell!<CR>
-nnoremap -a zG
-nnoremap -] ]szo
-nnoremap -[ [szo
+"{{{ spelling mappings 
+nnoremap --s :set spell!<CR>
+nnoremap -s zG
+nnoremap -d ]szo
+nnoremap -a [szo
 nnoremap -w z=
 "}}}
 "{{{ No... I don't want to record a macro now

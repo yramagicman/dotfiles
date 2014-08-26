@@ -46,11 +46,11 @@ hi      StatusLineNC     ctermfg=235     ctermbg=246    guifg=#080808  guibg=#94
 hi      ColorColumn      ctermbg=233     guibg=#121212
 if      has("spell")
 hi      SpellBad         guibg=#5f0000   guifg=#ffffff  ctermbg=52     ctermfg=231
-hi      SpellCap         guibg=#7070F0   gui=undercurl
+hi      SpellCap         guibg=#7070F0   gui=undercurl  ctermfg=253    ctermbg=23
 hi      SpellLocal       guibg=#70F0F0   gui=undercurl
 hi      SpellRare        guibg=#FFFFFF   gui=undercurl
 endif
-hi      DiffAdd          ctermbg=70      ctermfg=16
-hi      DiffChange       ctermfg=16      ctermbg=130
-hi      DiffDelete       ctermfg=16      ctermbg=52
-hi      DiffText         ctermbg=130     ctermfg=231 cterm=bold
+hi      DiffAdd          ctermfg=70      ctermbg=234    guifg=#5faf00  guibg=#1c1c1c
+hi      DiffChange       ctermbg=234     ctermfg=130    guifg=#af5f00  guibg=#1c1c1c
+hi      DiffDelete       ctermbg=16      ctermfg=52     guifg=#5f0000  guibg=#000000
+hi      DiffText         ctermfg=33      ctermbg=234    cterm=bold     guifg=#005fff guibg=#000000  gui=bold
