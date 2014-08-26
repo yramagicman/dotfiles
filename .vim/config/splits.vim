@@ -28,7 +28,7 @@ nnoremap <C-s> <C-w>-
 "}}}
 "{{{ buffer management <c-z>
 nnoremap <c-z> <NOP>
-nnoremap <c-z><c-z> :suspend<CR>
+nnoremap <c-z><c-z> :suspend
 nnoremap <C-Space> :ls<CR>:b<space>
 nnoremap <C-@> <C-Space>
 nnoremap <Space><Space> :ls<CR>:b<space>

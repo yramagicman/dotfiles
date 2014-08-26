@@ -1,20 +1,20 @@
 "{{{ kill arrow keys
-nnoremap <down> <C-d>zz
+nnoremap <down> <C-d>
 nnoremap <left> <Nop>
-nnoremap <up> <C-u>zz
+nnoremap <up> <C-u>
 nnoremap <right> <Nop>
 inoremap <right> <Nop>
 inoremap <down> <Nop>
 inoremap <left> <Nop>
 inoremap <up> <Nop>
 vnoremap <left> <Nop>
-vnoremap <down> <C-d>zz
+vnoremap <down> <C-d>
 vnoremap <right> <Nop>
-vnoremap <up> <C-u>zz
+vnoremap <up> <C-u>
 "}}}
 "{{{always center when navigating
-noremap j gjzz
-noremap k gkzz
+noremap j gjzt
+noremap k gkzb
 noremap G Gzz
 noremap { {zz
 noremap ( (zz
@@ -22,14 +22,14 @@ noremap } }zz
 noremap ) )zz
 noremap n nzz
 noremap N Nzz
-vnoremap j jzz
-vnoremap k kzz
+vnoremap j jzt
+vnoremap k kzb
 "}}}
 "{{{ jump to ...
-noremap <S-l> $
-noremap <S-j> Gzz
+noremap <S-l> g_
+noremap <S-j> zb
 noremap <S-h> ^
-noremap <S-k> ggzz
+noremap <S-k> zt
 nnoremap <tab> %
 vnoremap <tab> %
 "}}}
@@ -61,6 +61,6 @@ vnoremap <C-F> :s/find/replace/g
 "{{{ visual block mode is better that visual mode
 nnoremap v <c-v>
 nnoremap <c-v> v
-vnoremap    v   <C-V>
-vnoremap <C-V>     v
+vnoremap v <C-V>
+vnoremap <C-V> v
 "}}}

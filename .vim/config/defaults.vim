@@ -35,8 +35,9 @@ set backupdir=~/.vim/backups//
 "I hate swap files
 set noswapfile
 if exists("&undodir")
-    set udf
+    set undolevels=5000
     set undodir=~/.vim/undo
+    set undofile
 endif
 " Respect modeline in files
 set modeline
@@ -75,7 +76,7 @@ syntax on
 set synmaxcol=800
 " Start scrolling five lines before the horizontal window border when will this
 " break
-set scrolloff=5
+set scrolloff=7
 set nolist wrap linebreak sidescrolloff=15
 " sensible completion
 set completeopt=longest,menuone
@@ -98,7 +99,7 @@ set smartindent
 set shiftwidth=4
 "tabs to spaces
 set expandtab
-set lazyredraw
+""set lazyredraw
 "}}}
 "{{{ set compiler
 let g:syntastic_cpp_compiler = 'clang++'
@@ -119,5 +120,5 @@ set statusline+=\ \|
 "}}}
 "{{{ buffer sanity
 set hidden
-"}}}"
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
+"}}}"
