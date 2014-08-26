@@ -68,3 +68,4 @@ zle reset-prompt
 }
 zle -N zle-line-init
 zle -N zle-keymap-select
+bindkey -M vicmd '/' history-incremental-search-backward
