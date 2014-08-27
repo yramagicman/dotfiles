@@ -41,9 +41,20 @@ export HIST_SAVE_NO_DUPS=true
 export ARCHFLAGS="-arch x86_64"
 #}}}
 #{{{ Archey, startup stuff
+function check_process(){
+    #PROCESS_NUM => get the process number regarding the given thread name
+    PROCESS_NUM=$(ps -ef | grep "$1" | grep -v "grep" | wc -l)
+    if [ $PROCESS_NUM -eq 0 ];
+    then
+       echo "nope"
+       $1 &
+   else
+       echo "yup"
+    fi
+}
+check_process $HOME/bin/tmuxcopy >> ~/tmuxcopy.txt
+clear
 if [[ ! -a $HOME/.session-active ]]; then
-    clear
-    $HOME/bin/tmuxcopy &
     touch .session-active
     archey
     echo '\n Press enter to get started \n'
