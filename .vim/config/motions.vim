@@ -13,8 +13,8 @@ vnoremap <right> <Nop>
 vnoremap <up> <C-u>
 "}}}
 "{{{always center when navigating
-noremap j gjzt
-noremap k gkzb
+noremap j gj
+noremap k gk
 noremap G Gzz
 noremap { {zz
 noremap ( (zz
@@ -22,8 +22,8 @@ noremap } }zz
 noremap ) )zz
 noremap n nzz
 noremap N Nzz
-vnoremap j jzt
-vnoremap k kzb
+vnoremap j j
+vnoremap k k
 "}}}
 "{{{ jump to ...
 noremap <S-l> g_
