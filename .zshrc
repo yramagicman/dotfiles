@@ -41,9 +41,9 @@ export HIST_SAVE_NO_DUPS=true
 export ARCHFLAGS="-arch x86_64"
 #}}}
 #{{{ Archey, startup stuff
-$HOME/bin/tmuxcopy &
-clear
 if [[ ! -a $HOME/.session-active ]]; then
+    clear
+    $HOME/bin/tmuxcopy &
     touch .session-active
     archey
     echo '\n Press enter to get started \n'
