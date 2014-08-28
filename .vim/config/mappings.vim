@@ -64,9 +64,9 @@ vnoremap <C-c> I//
 nnoremap <leader>c :%!column -t<CR>
 nnoremap <leader>s :source %<CR>
 "}}}
-"{{{ spelling mappings 
+"{{{ spelling mappings
 nnoremap --s :set spell!<CR>
-nnoremap -s zG
+nnoremap -s zg
 nnoremap -d ]szo
 nnoremap -a [szo
 nnoremap -w z=
