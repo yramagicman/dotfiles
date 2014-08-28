@@ -1,3 +1,4 @@
+"defaults.vim
 "{{{ Defaults probably won't change... ever
 set background=dark
 set autoread

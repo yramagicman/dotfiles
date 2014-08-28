@@ -1,3 +1,4 @@
+"plugin-config.vim
 "{{{ snippets and documentation
 let g:UltiSnipsSnippetsDir = $HOME . "/.vim/snippets"
 let g:UltiSnipsUsePythonVersion = 2

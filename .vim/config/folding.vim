@@ -1,3 +1,4 @@
+"folding.vim"
 "{{{Open folds on enter
 nnoremap <CR> za
 nnoremap <leader><CR> zO

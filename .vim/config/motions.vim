@@ -1,3 +1,4 @@
+"motions.vim
 "{{{ kill arrow keys
 nnoremap <down> <C-d>
 nnoremap <left> <Nop>

@@ -1,3 +1,4 @@
+"mappings.vim
 "{{{ Indenting
 "bind \] to indent
 nnoremap <localleader>] >>

@@ -1,3 +1,4 @@
+" autocmds.vim
 " Automatic commands
 if has("autocmd")
     " Enable file type detection

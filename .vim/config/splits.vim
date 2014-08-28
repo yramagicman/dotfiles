@@ -1,3 +1,4 @@
+"splits.vim
 "{{{window navigation & and splits
 noremap <C-l> <C-w>l
 noremap <C-j> <C-w>j

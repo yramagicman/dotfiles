@@ -1,3 +1,4 @@
+"functions.vim
 "{{{ Strip trailing whitespace
 function! StripWhitespace()
     let save_cursor = getpos(".")

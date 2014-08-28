@@ -1,3 +1,4 @@
+"escape.vim"
 "{{{ remap escape for easier access
 nnoremap <leader>m <ESC>l
 vnoremap <leader>m <ESC>l
