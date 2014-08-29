@@ -17,6 +17,6 @@ let g:ctrlp_map='<c-y>'
 let g:ctrlp_switch_buffer='ET'
 let g:ctrlp_by_filename=1
 let g:ctrlp_show_hidden =1
-nnoremap <c-p> :CtrlP expand('%:h')<cr>
-nnoremap -ev :CtrlP ~/.vim/config<cr>
-nnoremap <leader><leader><space> :CtrlPBuffer<cr>
+nnoremap <c-p> :CtrlP expand('%:h')<CR>
+nnoremap -ev :CtrlP ~/.vim/config<CR>
+nnoremap <leader><leader><space> :CtrlPBuffer<CR>
