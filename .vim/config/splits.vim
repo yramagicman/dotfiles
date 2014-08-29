@@ -20,8 +20,6 @@ set splitbelow
 set splitright
 " }}}
 "{{{ tab mappings
-nnoremap <C-t> :tabnew<CR>
-nnoremap <C-p> :tabp<CR>
 nnoremap <C-d> <C-w>>
 nnoremap <C-w> <C-w>+
 nnoremap <C-a> <C-w><

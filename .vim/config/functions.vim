@@ -37,16 +37,6 @@ function! WpWrap()
 endfunction
 nnoremap <c-v><c-w> :call WpWrap()<CR>
 "}}}
-"{{{ create new tabs on <C-n> if noremap tabs exist
-function! TabBind()
-    if tabpagenr('$') < 2
-        tabnew
-    else
-        tabn
-    endif
-endfunction
-nnoremap <C-n> :call TabBind()<CR>
-"}}}
 "{{{ kill extra newlines
 function! Knl ()
     try
