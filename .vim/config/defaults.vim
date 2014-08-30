@@ -77,7 +77,7 @@ syntax on
 set synmaxcol=800
 " Start scrolling five lines before the horizontal window border when will this
 " break
-set scrolloff=7
+set scrolloff=2
 set nolist wrap linebreak sidescrolloff=15
 " sensible completion
 set completeopt=longest,menuone
@@ -93,6 +93,7 @@ let mapleader=","
 let localleader="/"
 set tags=tags;
 set autochdir
+set nowrapscan
 "}}}
 "{{{ Make tabs as wide as four spaces
 set tabstop=4
@@ -109,7 +110,7 @@ let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 "}}}
 "{{{ set status line
 " Always show status line
-set laststatus=2
+set laststatus=1
 "fugitive statusline
 set statusline=\|\ %m%f%r\ \%y
 set statusline+=\ \%{fugitive#statusline()}

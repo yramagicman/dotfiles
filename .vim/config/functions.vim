@@ -173,14 +173,17 @@ let g:clean = 1
 function! CleanScreen()
     if  g:clean == 0
         let g:numoff = 0
-        set laststatus=2
+        set laststatus=1
+        set foldcolumn=2
         call NumOff()
+        set showmode
         let g:clean=1
         return g:clean
     else
         let g:numoff = 1
         set laststatus=0
-        set showmode!
+        set noshowmode
+        set foldcolumn=12
         call NumOff()
         let g:clean=0
         return g:clean
