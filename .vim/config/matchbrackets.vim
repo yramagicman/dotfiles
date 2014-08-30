@@ -17,12 +17,18 @@ inoremap '' ''
 inoremap "" ""
 "}}}
 "{{{ visual mode surround text
-vnoremap ' xi''<ESC>hp<ESC>la
-vnoremap " xi""<ESC>hp<ESC>la
+vnoremap ' xi''<ESC>hp<ESC>f'a
+vnoremap " xi""<ESC>hp<ESC>f"a
 vnoremap { xi{}<ESC>hp<ESC>la
 vnoremap [ xi[]<ESC>hp<ESC>la
 vnoremap ( xi()<ESC>hp<ESC>la
 "}}}"
+"{{{ swap quotes not in insert mode, too likely to conflict with typing
+vnoremap <Leader>" ydi'xxi""<ESC>h"0p
+vnoremap <Leader>' ydi"xxi''<ESC>h"0p
+nnoremap <Leader>" <ESC>vi'ydi'xxi""<ESC>h"0p
+nnoremap <Leader>' <ESC>vi"ydi"xxi''<ESC>h"0p
+"}}}
 augroup abbrevs
     "{{{ filetype specific mappings for characters and shortcuts
     autocmd!

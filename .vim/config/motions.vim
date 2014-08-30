@@ -28,9 +28,9 @@ vnoremap k k
 "}}}
 "{{{ jump to ...
 noremap <S-l> g_
-noremap <S-j> zb
+noremap <S-j> G
 noremap <S-h> ^
-noremap <S-k> zt
+noremap <S-k> gg
 nnoremap <tab> %
 vnoremap <tab> %
 "}}}
