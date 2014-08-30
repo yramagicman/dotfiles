@@ -190,7 +190,7 @@ function! CleanScreen()
     endif
 endfunction
 command! Clean :call CleanScreen()
-"}}}"
+"}}}
 "{{{ open scratch buffer
 function! Scratch()
     new
