@@ -1,6 +1,7 @@
 "saving.vim
 "{{{ control whitespace and tabs on save
 nnoremap <leader>ss :call Save()<CR>
+nnoremap ss :call Save()<CR>
 inoremap <leader>ss <ESC>:call Save()<CR>
 vnoremap <leader>ss <ESC>:call Save()<CR>
 "}}}

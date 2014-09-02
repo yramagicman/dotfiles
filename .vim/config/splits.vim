@@ -43,6 +43,11 @@ nnoremap <C-z>p :bp<CR>
 vnoremap <C-z>p <ESC>:bp<CR>
 inoremap <C-z>p <ESC>:bp<CR>
 "}}}
+"{{{ maximize
+nnoremap <C-z>o :only<CR>
+vnoremap <C-z>o <ESC>:only<CR>
+inoremap <C-z>o <ESC>:only<CR>
+"}}}
 "{{{ list buffers l
 nnoremap <c-z>l :ls<CR>
 vnoremap <c-z>l <ESC>:ls<CR>
