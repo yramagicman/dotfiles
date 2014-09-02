@@ -46,7 +46,7 @@ hi      ColorColumn      ctermbg=233     guibg=#121212
 if      has("spell")
 hi      SpellBad         guibg=#5f0000   guifg=#ffffff  ctermbg=52     ctermfg=231
 hi      SpellCap         guibg=#7070F0   gui=undercurl  ctermfg=253    ctermbg=23
-hi      SpellLocal       guibg=#70F0F0   gui=undercurl
+hi      SpellLocal       guibg=#70F0F0   gui=undercurl  ctermbg=25
 hi      SpellRare        guibg=#FFFFFF   gui=undercurl
 endif
 hi      DiffAdd          ctermfg=70      ctermbg=234    guifg=#5faf00  guibg=#1c1c1c
