@@ -21,7 +21,7 @@ hi      VisualNOS        ctermbg=238     guibg=#444444
 hi      Visual           ctermbg=240     guibg=#585858
 hi      WildMenu         guifg=#5fd7ff   guibg=#000000  ctermfg=81     ctermbg=16
 hi      Pmenu            ctermfg=81      ctermbg=16     guifg=#66D9EF  guibg=#000000
-hi      PmenuSel         ctermbg=24      guibg=#005f87
+hi      PmenuSel         ctermbg=24      ctermfg=231    guibg=#005f87
 hi      PmenuSbar        ctermbg=23      guibg=#005f5f
 hi      Statement        gui=bold        term=bold      cterm=bold     ctermfg=34     guifg=#00af00
 hi      Function         gui=none        term=bold      cterm=none     ctermfg=202    guifg=#ff5f00
@@ -47,7 +47,7 @@ if      has("spell")
 hi      SpellBad         guibg=#5f0000   guifg=#ffffff  ctermbg=52     ctermfg=231
 hi      SpellCap         guibg=#7070F0   gui=undercurl  ctermfg=253    ctermbg=23
 hi      SpellLocal       guibg=#70F0F0   gui=undercurl  ctermbg=25
-hi      SpellRare        guibg=#FFFFFF   gui=undercurl
+hi      SpellRare        guibg=#FFFFFF   gui=undercurl  ctermbg=130
 endif
 hi      DiffAdd          ctermfg=70      ctermbg=234    guifg=#5faf00  guibg=#1c1c1c
 hi      DiffChange       ctermbg=234     ctermfg=130    guifg=#af5f00  guibg=#1c1c1c
