@@ -72,6 +72,7 @@ if has("autocmd")
     augroup end
     augroup extra
         "{{{ Misc. individual commands that don't merit their own fold group
+        autocmd!
         autocmd FileType mail set spell
         autocmd FileType make set noexpandtab
         autocmd FileType snippets set noexpandtab

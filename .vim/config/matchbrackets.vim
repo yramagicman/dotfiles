@@ -16,6 +16,13 @@ inoremap {} {}
 inoremap '' ''
 inoremap "" ""
 "}}}
+"{{{ If backspace hit, only insert one of the pair so (<BS> only inserts (.
+inoremap (<BS> (
+inoremap [<BS> [
+inoremap {<BS> {
+inoremap '<BS> '
+inoremap "<BS> "
+"}}}
 "{{{ visual mode surround text
 vnoremap ' xi''<ESC>hp<ESC>f'a
 vnoremap " xi""<ESC>hp<ESC>f"a
@@ -32,16 +39,18 @@ nnoremap <Leader>' <ESC>vi"yda"a<space>''<ESC>h"0p
 augroup abbrevs
     "{{{ filetype specific mappings for characters and shortcuts
     autocmd!
-    autocmd FileType mail iabbrev <buffer> api API
-    autocmd FileType mail iabbrev <buffer> etap Etapestry
-    autocmd FileType mail iabbrev <buffer> durpal Drupal
-    autocmd FileType mail iabbrev <buffer> drupal Drupal
+    autocmd FileType * iabbrev <buffer> api API
+    autocmd FileType * iabbrev <buffer> iso ISO
+    autocmd FileType * iabbrev <buffer> csv CSV
+    autocmd FileType * iabbrev <buffer> etap Etapestry
+    autocmd FileType * iabbrev <buffer> durpal Drupal
+    autocmd FileType * iabbrev <buffer> drupal Drupal
     autocmd FileType mail inoremap <buffer> ' '
     autocmd FileType html inoremap <buffer> <> <>
     autocmd FileType html inoremap <buffer> < <><ESC>i
     autocmd FileType html vnoremap <buffer> < xi<<ESC>pa<ESC>la
-    autocmd FileType php  iabbrev <buffer> pp> print '<pre>';
-    autocmd FileType php  iabbrev <buffer> /pp> print '</pre>';
+    autocmd FileType php  iabbrev <buffer> pp> print '<pre>';<Esc>xxi
+    autocmd FileType php  iabbrev <buffer> /pp> print '</pre>';<Esc>xxi
     autocmd FileType php  iabbrev <buffer> dsm drupal_set_message()<Esc>hi
     "}}}
 augroup end

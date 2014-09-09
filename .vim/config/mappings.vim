@@ -22,9 +22,6 @@ inoremap <leader>p <ESC>pa
 nnoremap <leader><leader>p <ESC>"+p
 inoremap <leader><leader>p <ESC>"+p
 vnoremap <leader><leader>p <ESC>"+p
-"don't enter insert mode when cutting lines
-nnoremap cc cc<ESC>
-vnoremap cc cc<ESC>
 " delete till the beginning of a line
 nnoremap <leader>D d0
 inoremap <leader>D <ESC>d0xi
@@ -53,16 +50,14 @@ noremap <leader>r <ESC>:%retab<CR>
 "kill search highlighting
 noremap <silent><leader><space> <ESC>:let @/ = ""<CR>
 "uppercase words
-inoremap <C-u> <ESC>mzgUiw
-nnoremap <C-u> <ESC>mzgUiw
+inoremap <C-u> <ESC>mzgUiwe
+nnoremap <C-u> <ESC>mzgUiwe
 " Toggle [i]nvisible characters
 nnoremap <silent><leader>i :set list!<CR>
 " reset color scheme
 nnoremap U :syntax sync fromstart<CR>:redraw!<CR>
 " make this_style into cammelCase
 nnoremap CC 0f_x~
-inoremap <C-c> <ESC>I//
-vnoremap <C-c> I//
 nnoremap <leader>c :%!column -t<CR>
 nnoremap <leader>s :source %<CR>
 "}}}
@@ -85,3 +80,5 @@ nnoremap  qf :execute 'vimgrep /' .@/.'/g %'<CR>:copen<CR>
 nnoremap '; ;
 nnoremap ": ,
 "}}}
+nnoremap <leader>O O<ESC>
+nnoremap <leader>o o<ESC>
