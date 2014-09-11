@@ -82,3 +82,4 @@ nnoremap ": ,
 "}}}
 nnoremap <leader>O O<ESC>
 nnoremap <leader>o o<ESC>
+nnoremap <silent>-b :set buftype=<CR>
