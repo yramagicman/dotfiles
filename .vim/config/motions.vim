@@ -65,3 +65,7 @@ nnoremap <c-v> v
 vnoremap v <C-V>
 vnoremap <C-V> v
 "}}}
+"{{{ Diff motions
+nnoremap <leader>dn ]c
+nnoremap <leader>dp [c
+"}}}
