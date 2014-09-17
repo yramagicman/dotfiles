@@ -51,6 +51,6 @@ augroup abbrevs
     autocmd FileType html vnoremap <buffer> < xi<<ESC>pa<ESC>la
     autocmd FileType php  iabbrev <buffer> pp> print '<pre>';<Esc>xxi
     autocmd FileType php  iabbrev <buffer> /pp> print '</pre>';<Esc>xxi
-    autocmd FileType php  iabbrev <buffer> dsm drupal_set_message()<Esc>hi
+    autocmd FileType php  iabbrev <buffer> dsm() drupal_set_message()<Esc>hi
     "}}}
 augroup end
