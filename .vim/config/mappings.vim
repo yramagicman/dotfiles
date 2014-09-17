@@ -71,8 +71,10 @@ nnoremap -w z=
 "{{{ No... I don't want to record a macro now
 "I never use replace mode anyway
 nnoremap R q
+vnoremap R q
 " there, now q won't do dumb stuff
 nnoremap q <NOP>
+vnoremap q <NOP>
 "}}}
 "{{{ I've needed these mappings forever. Map '; to ; and ": to , also quickfix
 " last search
