@@ -12,4 +12,3 @@ source ~/.vim/config/folding.vim
 source ~/.vim/config/mappings.vim
 source ~/.vim/config/splits.vim
 "source ~/.vim/config/reg.vim
-set tabpagemax=15
