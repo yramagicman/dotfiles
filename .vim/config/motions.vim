@@ -33,6 +33,8 @@ noremap <S-h> ^
 noremap <S-k> gg
 nnoremap <tab> %
 vnoremap <tab> %
+nnoremap <leader>j J
+vnoremap <leader>j J
 "}}}
 "{{{ command line movement mappings
 cnoremap <C-a>  <Home>
