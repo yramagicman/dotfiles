@@ -94,6 +94,7 @@ let localleader="/"
 set tags=tags;
 set autochdir
 set nowrapscan
+set cryptmethod=blowfish2
 "}}}
 "{{{ Make tabs as wide as four spaces
 set tabstop=4
