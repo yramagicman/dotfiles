@@ -1,1 +1,1 @@
-osascript -e 'set volume alert volume 100'; tput bel; osascript -e 'set volume alert volume 0'
+tput bel
