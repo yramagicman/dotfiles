@@ -54,9 +54,9 @@ clear
 if [[ ! -a $HOME/.session-active ]]; then
     touch .session-active
     archey
-    echo '\n Press enter to get started \n'
-    read -
-    clear
+    #echo '\n Press enter to get started \n'
+    #read -
+    #clear
 fi
 #check_process gpg-agent --daemon
 stty -ixon
