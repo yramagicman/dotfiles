@@ -5,7 +5,7 @@ import os
 import time
 configpath = '/home/jonathan/.config/updates/'
 pynotify.init("Basic")
-n = pynotify.Notification("Update Notifications Active", "Don't forget to sudo pacman -Sy" )
+n = pynotify.Notification("Update Notifications Active")
 n.show()
 while True:
     packages = commands.getstatusoutput('pacman -Qu')
