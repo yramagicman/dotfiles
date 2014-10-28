@@ -3,8 +3,9 @@
 
 config defaultToCurrentScreen true
 config nudgePercentOf screenSize
+#config windowHintsOrder
 config windowHintsIgnoreHiddenWindows false
-config windowHintsShowIcons true
+#config windowHintsShowIcons true
 config windowHintsSpread true
 config resizePercentOf screenSize
 
