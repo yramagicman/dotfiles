@@ -49,8 +49,8 @@ augroup abbrevs
     autocmd FileType html inoremap <buffer> <> <>
     autocmd FileType html inoremap <buffer> < <><ESC>i
     autocmd FileType html vnoremap <buffer> < xi<<ESC>pa<ESC>la
-    autocmd FileType php  iabbrev <buffer> pp> print '<pre>';<Esc>xxi
-    autocmd FileType php  iabbrev <buffer> /pp> print '</pre>';<Esc>xxi
-    autocmd FileType php  iabbrev <buffer> dsm() drupal_set_message()<Esc>hi
+    autocmd FileType php  iabbrev <buffer> pp> print '<pre>';<Esc>$xxi;<esc>xA
+    autocmd FileType php  iabbrev <buffer> /pp> print '</pre>';<Esc>$xxi;<esc>xA
+    autocmd FileType php  iabbrev <buffer> dsm drupal_set_message()<Esc>i
     "}}}
 augroup end
