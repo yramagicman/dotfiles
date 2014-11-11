@@ -53,7 +53,7 @@ check_process $HOME/bin/tmuxcopy
 clear
 if [[ ! -a $HOME/.session-active ]]; then
     touch .session-active
-    archey
+    #archey
     #echo '\n Press enter to get started \n'
     #read -
     #clear
