@@ -15,6 +15,15 @@ if retVal == 0 and packagecount > 5 and notified <= 5:
     n.show()
     updates = open(configpath + time.strftime("%m%d%Y")+'.txt','w+')
     updates.write(packages)
+elif packagecount > 0:
+    if packagecount > 1:
+        n = pynotify.Notification("There are " + str(packagecount) + " updates available")
+    else:
+        n = pynotify.Notification("There is " + str(packagecount) + " update available")
+    n.show()
+else:
+    n = pynotify.Notification("Nothing to update")
+    n.show()
 packages = 0
 retVal = 0
 packages = 0
