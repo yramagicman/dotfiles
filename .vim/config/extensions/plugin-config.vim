@@ -20,3 +20,4 @@ let g:ctrlp_show_hidden =1
 nnoremap <c-p> :CtrlP getcwd()<CR>
 nnoremap -ev :CtrlP ~/.vim/config<CR>
 nnoremap <leader><leader><space> :CtrlPBuffer<CR>
+nnoremap <c-t> :TlistToggle<CR>
