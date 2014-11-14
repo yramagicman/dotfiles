@@ -23,4 +23,4 @@ nnoremap <leader><leader><space> :CtrlPBuffer<CR>
 nnoremap <c-t> :TlistToggle<CR>
 
 let g:syntastic_php_phpcs_args="--standard=Drupal --tab-width=0"
-let g:syntastic_phpcs_disable=1
+let g:syntastic_php_phpcs_disable=0
