@@ -27,3 +27,12 @@ for i in $(dirs);
     do
     popd > /dev/null 2>&1
 done
+
+
+_myos="$(uname)"
+if [[ $_myos == Linux ]]; then
+    pacman -Sc
+else
+    brew cleanup
+    brew prune
+fi
