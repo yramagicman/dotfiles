@@ -3,7 +3,7 @@
 let g:UltiSnipsSnippetsDir = $HOME . "/.vim/snippets"
 let g:UltiSnipsUsePythonVersion = 2
 let g:pdv_template_dir = $HOME . "/.vim/bundle/pdv/templates"
-nnoremap <buffer> <localleader>d :call pdv#DocumentCurrentLine()<CR>
+nnoremap <buffer> -d :call pdv#DocumentCurrentLine()<CR>
 "}}}
 "{{{ git stuff
 nnoremap <c-c>w :Gwrite<CR>
@@ -21,3 +21,6 @@ nnoremap <c-p> :CtrlP getcwd()<CR>
 nnoremap -ev :CtrlP ~/.vim/config<CR>
 nnoremap <leader><leader><space> :CtrlPBuffer<CR>
 nnoremap <c-t> :TlistToggle<CR>
+
+let g:syntastic_php_phpcs_args="--standard=Drupal --tab-width=0"
+let g:syntastic_phpcs_disable=1
