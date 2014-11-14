@@ -29,11 +29,12 @@ ZSH_TMUX_AUTOSTART=true
 source $ZSH/oh-my-zsh.sh
 #}}}
 #{{{ exports
+#homebrew, personal scripts and programs
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$HOME/.gem/ruby/2.1.0/bin:$PATH
 export MANPATH="/usr/local/man:$MANPATH"
-
+#drush
+export PATH="/Applications/MAMP/Library/bin:/Applications/MAMP/bin/php/php5.5.14/bin:$PATH"
 export EDITOR='vim'
-
 export SAVEHIST=1000
 export HIST_IGNORE_DUPS=true
 export HIST_SAVE_NO_DUPS=true
@@ -51,13 +52,13 @@ function check_process(){
 }
 check_process $HOME/bin/tmuxcopy
 clear
-if [[ ! -a $HOME/.session-active ]]; then
-    touch .session-active
-    #archey
-    #echo '\n Press enter to get started \n'
-    #read -
-    #clear
-fi
+#if [[ ! -a $HOME/.session-active ]]; then
+#    touch .session-active
+#    #archey
+#    #echo '\n Press enter to get started \n'
+#    #read -
+#    #clear
+#fi
 #check_process gpg-agent --daemon
 stty -ixon
 #}}}
