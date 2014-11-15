@@ -30,8 +30,6 @@ done
 
 
 _myos="$(uname)"
-if [[ $_myos == Linux ]]; then
-    pacman -Sc
-else
+if [[ $_myos == Darwin ]]; then
     brew cleanup
 fi
