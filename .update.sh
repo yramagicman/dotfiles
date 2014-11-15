@@ -34,5 +34,4 @@ if [[ $_myos == Linux ]]; then
     pacman -Sc
 else
     brew cleanup
-    brew prune
 fi
