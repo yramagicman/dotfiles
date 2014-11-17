@@ -24,3 +24,28 @@ nnoremap <c-t> :TlistToggle<CR>
 
 let g:syntastic_php_phpcs_args="--standard=Drupal --tab-width=0"
 let g:syntastic_php_phpcs_disable=0
+
+let g:neocomplcache_enable_at_startup  = 1
+let g:neocomplcache_enable_auto_select = 1
+let g:neocomplcache_enable_smart_case  = 1
+let g:neocomplcache_min_syntax_length  = 1
+
+""if !exists('g:neocomplcache_omni_patterns')
+""  let g:neocomplcache_omni_patterns = {}
+""endif
+""if !exists('g:neocomplcache_force_omni_patterns')
+""  let g:neocomplcache_force_omni_patterns = {}
+""endif
+""let g:neocomplcache_omni_patterns.php =
+""\ '[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
+""let g:neocomplcache_omni_patterns.c =
+""\ '[^.[:digit:] *\t]\%(\.\|->\)\%(\h\w*\)\?'
+""let g:neocomplcache_omni_patterns.cpp =
+""\ '[^.[:digit:] *\t]\%(\.\|->\)\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
+
+
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html, markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
