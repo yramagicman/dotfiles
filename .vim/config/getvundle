@@ -1,3 +1,4 @@
+#!/bin/env sh
 cd ~/.vim
 mkdir -p autoload backups bundle colors config doc snippets spell swaps syntax tags undo
 cd bundle
