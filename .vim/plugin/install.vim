@@ -19,6 +19,6 @@ if !exists(':Git')
         :PluginInstall
     endif
 endif
-endfunction
-call Run()
 source ~/.vimrc
+endfunction
+command! Install :call Run()
