@@ -4,7 +4,7 @@ import os
 from subprocess import call
 home = os.path.expanduser('~')
 os.chdir(home + '/.vim/')
-call(['mkdir', '-p', 'autoload', 'backups', 'bundle', 'colors', 'config', 'doc', 'snippets', 'spell', 'swaps', 'syntax', 'tags', 'undo' ])
+call(['mkdir', '-p', 'autoload', 'backup', 'bundle', 'colors', 'config', 'doc', 'snippets', 'spell', 'swaps', 'syntax', 'tags', 'undo' ])
 os.chdir(home + '/.vim/bundle')
 call(['git', 'clone', 'https://github.com/gmarik/Vundle.vim.git'])
 #call(['./getvundle'])
