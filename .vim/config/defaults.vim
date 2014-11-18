@@ -92,7 +92,7 @@ set relativenumber
 let mapleader=","
 let localleader="/"
 ""set tags=.git/tags;
-set autochdir
+""set autochdir
 set nowrapscan
 ""set cryptmethod=blowfish2
 "}}}
