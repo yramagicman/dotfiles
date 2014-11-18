@@ -7,18 +7,17 @@ os.chdir(home + '/.vim/')
 call(['mkdir', '-p', 'autoload', 'backup', 'bundle', 'colors', 'config', 'doc', 'snippets', 'spell', 'swaps', 'syntax', 'tags', 'undo' ])
 os.chdir(home + '/.vim/bundle')
 call(['git', 'clone', 'https://github.com/gmarik/Vundle.vim.git'])
-#call(['./getvundle'])
 endpython
 endfunction
 
 function! Run()
 if !exists(':Git')
     call Install()
-    source ~/.vimrc
+    source $MYVIMRC
     if exists(':PluginInstall')
         :PluginInstall
     endif
 endif
-source ~/.vimrc
+source $MYVIMRC
 endfunction
 command! Install :call Run()
