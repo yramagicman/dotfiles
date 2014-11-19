@@ -1,4 +1,11 @@
 "defaults.vim
+"{{{ set secondary editor
+if has('mac')
+    let g:Gui_Editor = 'TextWrangler'
+elseif has('linux')
+    let g:Gui_Editor = 'geany'
+endif
+"}}}
 "{{{ Defaults probably won't change... ever
 set background=dark
 set autoread
@@ -14,8 +21,10 @@ set textwidth=82
 set cc=0
 " highlight long lines
 call matchadd('ColorColumn', '\%81v', 100)
-"Use os clipboard with
-set clipboard=unnamed
+if has('mac')
+    "Use os clipboard with mac
+    set clipboard=unnamed
+endif
 " Enhance command-line completion
 set wildmenu
 " Allow cursor keys in insert mode

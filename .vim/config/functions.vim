@@ -222,3 +222,20 @@ endfunction
 command! Fc :call FoldColumn()
 nnoremap <Leader>f :call FoldColumn()<CR>
 "}}}
+function! Tw()
+python << endpython
+import sys, os, vim
+from subprocess import call
+gui_editor = vim.eval('g:Gui_Editor')
+cur_file = vim.eval('bufname("%")')
+platform = sys.platform
+if gui_editor:
+    if platform == 'darwin':
+        call(['open', '-a', gui_editor, cur_file])
+    if platform =='linux':
+        call([gui_editor, cur_file])
+else:
+    print "Please set a secondary editor by adding let g:Gui_Editor='editor command' to your vimrc"
+endpython
+endfunction
+command! Tw :call Tw()
