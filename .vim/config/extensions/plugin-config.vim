@@ -11,6 +11,7 @@ nnoremap <c-c>c :Gcommit<CR>
 nnoremap <c-c>s :Gstatus<CR>
 nnoremap <c-c>g :Git
 nnoremap <c-c>a :Git add %<CR>
+nnoremap <c-c>r :Git checkout %<CR>
 nnoremap <c-c>d :Gdiff<CR>
 "}}}
 "{{{ Ctrlp
@@ -21,7 +22,6 @@ let g:ctrlp_show_hidden =1
 nnoremap <c-p> :CtrlP getcwd()<CR>
 nnoremap -ev :CtrlP ~/.vim/config<CR>
 nnoremap <leader><leader><space> :CtrlPBuffer<CR>
-nnoremap <c-t> :TlistToggle<CR>
 "}}}
 "{{{ syntastic
 let g:syntastic_php_phpcs_args="--standard=Drupal --tab-width=0"
@@ -57,10 +57,14 @@ augroup completetypes
 augroup end
 "}}}
 "{{{ Tag list config
-    augroup tagliststuff
-        autocmd!
-        " this one is which you're most likely to use?
-        autocmd FileType taglist set foldmethod=indent
-        autocmd FileType taglist vertical resize +15
-    augroup end
+nnoremap <c-t> :TlistOpen<CR>
+""set statusline+=\ \%{Tlist_Get_Tagname_By_Line()}\ \|
+let g:Tlist_Show_One_File=1
+let g:Tlist_Close_On_Select=1
+let g:Tlist_Compact_Format=1
+let g:Tlist_Exit_OnlyWindow=1
+augroup tagliststuff
+    autocmd!
+    autocmd FileType taglist vertical resize +15
+augroup end
 "}}}
