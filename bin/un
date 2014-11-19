@@ -18,9 +18,9 @@ if retVal == 0 and packagecount > 5:
     updates.write(packages)
 elif packagecount > 1:
     if packagecount > 2:
-        n = pynotify.Notification("There are " + str(packagecount) + " updates available", packages)
+        n = pynotify.Notification("Don't check this so often", "There are some updates available")
     else:
-        n = pynotify.Notification("There is " + str(packagecount) + " update available", packages)
+        n = pynotify.Notification("Don't check this so often", "There is one update available")
     n.show()
 else:
     n = pynotify.Notification("Nothing to update")
