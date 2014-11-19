@@ -61,7 +61,7 @@ augroup end
 "{{{ Tag list config
 nnoremap <c-t> :TlistOpen<CR>
 ""set statusline+=\ \%{Tlist_Get_Tagname_By_Line()}\ \|
-let g:Tlist_Show_One_File=1
+let g:Tlist_Show_One_File=0
 let g:Tlist_Close_On_Select=1
 let g:Tlist_Compact_Format=1
 let g:Tlist_Exit_OnlyWindow=1
