@@ -13,6 +13,8 @@ nnoremap <c-c>g :Git
 nnoremap <c-c>a :Git add %<CR>
 nnoremap <c-c>r :Git checkout %<CR>
 nnoremap <c-c>d :Gdiff<CR>
+nnoremap <c-c>ps :Git push<CR>
+nnoremap <c-c>pl :Git pull<CR>
 "}}}
 "{{{ Ctrlp
 let g:ctrlp_map='<c-y>'
