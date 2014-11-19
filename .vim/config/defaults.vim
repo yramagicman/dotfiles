@@ -2,7 +2,7 @@
 "{{{ set secondary editor
 if has('mac')
     let g:Gui_Editor = 'TextWrangler'
-elseif has('linux')
+else
     let g:Gui_Editor = 'geany'
 endif
 "}}}
