@@ -3,7 +3,7 @@
 let g:UltiSnipsSnippetsDir = $HOME . "/.vim/snippets"
 let g:UltiSnipsUsePythonVersion = 2
 let g:pdv_template_dir = $HOME . "/.vim/bundle/pdv/templates"
-nnoremap <buffer> --d :call pdv#DocumentCurrentLine()<CR>
+nnoremap  --d :call pdv#DocumentCurrentLine()<CR>
 "}}}
 "{{{ git stuff
 nnoremap <c-c>w :Gwrite<CR>
@@ -46,9 +46,20 @@ let g:neocomplcache_omni_patterns.php =
 ""let g:neocomplcache_omni_patterns.cpp =
 ""\ '[^.[:digit:] *\t]\%(\.\|->\)\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
 
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+augroup completetypes
+    autocmd!
+    autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+    autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+    autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+    autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+augroup end
+"}}}
+"{{{ Tag list config
+    augroup tagliststuff
+        autocmd!
+        " this one is which you're most likely to use?
+        autocmd FileType taglist set foldmethod=indent
+        autocmd FileType taglist vertical resize +15
+    augroup end
 "}}}
