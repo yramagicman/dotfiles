@@ -30,6 +30,10 @@ let g:syntastic_php_phpcs_args="--standard=Drupal --tab-width=0"
 "@todo find a way to toggle this.
 let g:syntastic_php_phpcs_disable=0
 "}}}
+"{{{
+    let g:SuperTabMappingForward = '<s-tab>'
+    let g:SuperTabMappingBackward = '<tab>'
+"}}}
 "{{{ autocomplete
 let g:neocomplcache_enable_at_startup  = 1
 let g:neocomplcache_enable_auto_select = 0
