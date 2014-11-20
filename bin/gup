@@ -1,5 +1,5 @@
 #!/usr/bin/env python2
-import os, multiprocessing, subprocess
+import os, multiprocessing, subprocess, sys
 class gup:
     """ updates git stuff, hopefully in parallel"""
     def __init__(self):
@@ -40,12 +40,22 @@ class gup:
         if not err:
             return output
 
+    def diff_changes(self):
+        """ Lists changes to a git repo """
+        git = subprocess.Popen(['git', 'diff', '--no-ext-diff'])
+        #grep = subprocess.Popen(['grep', 'modified'], stdin=git.stdout, stdout=subprocess.PIPE)
+        #git.stdout.close()
+        output = git.communicate()
+        #output = output.strip()
+        #if not err:
+        #    return output
+
     def list_changes(self):
         """ Lists changes to a git repo """
         git = subprocess.Popen(['git', 'status'], stdout=subprocess.PIPE)
         grep = subprocess.Popen(['grep', 'modified'], stdin=git.stdout, stdout=subprocess.PIPE)
         git.stdout.close()
-        output, err = grep.communicate()
+        output, err= grep.communicate()
         output = output.strip()
         if not err:
             return output
@@ -90,12 +100,17 @@ class gup:
         """ returns the message displayed to the user"""
         changes = self.num_changes()
         if int(changes) == 1:
-            message =  '\n' + os.getcwd() + ' is up to date with ' + self.num_changes() + ' change unstaged. \n\t' + self.list_changes()
+            message =  '\n' + os.getcwd() + ' is up to date with ' + self.num_changes() + ' change unstaged. \n\t'
         else:
             if int(changes) > 0:
-                message =  '\n' +  os.getcwd() + ' is up to date with ' + self.num_changes() + ' unstaged changes.\n\t' + self.list_changes()
+                message =  '\n' +  os.getcwd() + ' is up to date with ' + self.num_changes() + ' unstaged changes.\n\t'
             else:
                 message =  '\n' + os.getcwd() + ' is up to date with ' + self.num_changes() + ' unstaged changes.'
+        if len(sys.argv) > 1:
+            if sys.argv[1] == '--diff' or sys.argv[1] =='-d':
+                self.diff_changes()
+        else:
+            message = message + self.list_changes()
         return message
 
     def do_it(self, repo):
