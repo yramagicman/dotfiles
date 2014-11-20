@@ -5,12 +5,12 @@ class gup:
         self.home = os.path.expanduser('~')
         home = self.home
         self.repos = [
-                        home + '/.password-store',
-                        home + '/.mutt',
+                        #home + '/.password-store',
+                        #home + '/.mutt',
                         home,
-                        home + '/.oh-my-zsh/',
-                        home + '/.oh-my-zsh/custom/plugins/zsh-aliases/',
-                        home + '/.oh-my-zsh/custom/plugins/drush/',
+                        #home + '/.oh-my-zsh/',
+                        #home + '/.oh-my-zsh/custom/plugins/zsh-aliases/',
+                        #home + '/.oh-my-zsh/custom/plugins/drush/',
                      ]
         self.pull = ['git', 'pull']
         self.push = ['git', 'push']
@@ -50,13 +50,18 @@ class gup:
         c_merge = subprocess.check_output(self.merge_base)
         if c_local == c_remote:
             # ok
+            print c_local, c_remote, c_merge
             return 0
         elif c_local == c_merge:
             # pull
+            print c_local, c_remote, c_merge
             return -1
-        else:
+        elif c_remote == c_merge:
             #push
+            print c_local, c_remote, c_merge
             return 1
+        else:
+            return 2
 
     def pull_push(self, pull, push):
         stat = self.check_status()
@@ -64,6 +69,9 @@ class gup:
             if stat == -1:
                 print '\n' + os.getcwd() + '\n' + str(subprocess.call(pull))
             elif stat == 1:
+                print '\n' + os.getcwd() + '\n' + str(subprocess.call(push))
+            else:
+                print '\n' + os.getcwd() + '\n' + str(subprocess.call(pull))
                 print '\n' + os.getcwd() + '\n' + str(subprocess.call(push))
         else:
             print self.show_message()
