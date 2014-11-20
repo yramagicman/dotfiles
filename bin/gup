@@ -70,7 +70,6 @@ class gup:
     def pull_push(self, pull, push):
         """ Actually does the work """
         stat = self.check_status()
-        print stat
         if stat != 0:
             if stat == -1:
                 print '\n' + os.getcwd() + '\n' + str(subprocess.call(pull))
