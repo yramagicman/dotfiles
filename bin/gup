@@ -63,11 +63,9 @@ class gup:
         stat = self.check_status()
         if stat != 0:
             if stat == -1:
-                print os.getcwd()
-                print subprocess.call(pull)
+                print '\n' + os.getcwd() + '\n' + subprocess.call(pull)
             elif stat == 1:
-                print os.getcwd()
-                print subprocess.call(push)
+                print '\n' + os.getcwd() + subprocess.call(push)
         else:
             print self.show_message()
         return
