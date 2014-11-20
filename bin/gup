@@ -113,6 +113,7 @@ class gup:
             p.start()
 
 if __name__ == '__main__':
+    #I'm really trying to get these way off sync here
     g = gup()
     g.run()
     subprocess.call(g.mlink)
