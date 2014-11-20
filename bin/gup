@@ -40,15 +40,15 @@ class gup:
         if not err:
             return output
 
-    def diff_changes(self):
+    def diff_changes(self, ext=False):
         """ Lists changes to a git repo """
+        if ext:
+            git = subprocess.Popen(['git', 'diff'])
+            output = git.communicate()
+            return
         git = subprocess.Popen(['git', 'diff', '--no-ext-diff'])
-        #grep = subprocess.Popen(['grep', 'modified'], stdin=git.stdout, stdout=subprocess.PIPE)
-        #git.stdout.close()
         output = git.communicate()
-        #output = output.strip()
-        #if not err:
-        #    return output
+        return
 
     def list_changes(self):
         """ Lists changes to a git repo """
@@ -106,11 +106,13 @@ class gup:
                 message =  '\n' +  os.getcwd() + ' is up to date with ' + self.num_changes() + ' unstaged changes.\n\t'
             else:
                 message =  '\n' + os.getcwd() + ' is up to date with ' + self.num_changes() + ' unstaged changes.'
-        if len(sys.argv) > 1:
-            if sys.argv[1] == '--diff' or sys.argv[1] =='-d':
-                self.diff_changes()
-        else:
-            message = message + self.list_changes()
+        message = message + self.list_changes()
+        if '--diff' in sys.argv or '-d' in sys.argv:
+            if '--ext' in sys.argv or '-e' in sys.argv:
+                self.diff_changes(True)
+                return message
+            self.diff_changes()
+            return message
         return message
 
     def do_it(self, repo):
