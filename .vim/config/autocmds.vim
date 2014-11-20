@@ -2,7 +2,6 @@
 " Automatic commands
 if has("autocmd")
     " Enable file type detection
-    filetype on
     augroup general
         autocmd!
         "{{{ show cursorline on current buffer only
