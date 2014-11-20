@@ -5,12 +5,12 @@ class gup:
         self.home = os.path.expanduser('~')
         home = self.home
         self.repos = [
-                        #home + '/.password-store',
-                        #home + '/.mutt',
+                        home + '/.password-store',
+                        home + '/.mutt',
                         home,
-                        #home + '/.oh-my-zsh/',
-                        #home + '/.oh-my-zsh/custom/plugins/zsh-aliases/',
-                        #home + '/.oh-my-zsh/custom/plugins/drush/',
+                        home + '/.oh-my-zsh/',
+                        home + '/.oh-my-zsh/custom/plugins/zsh-aliases/',
+                        home + '/.oh-my-zsh/custom/plugins/drush/',
                      ]
         # arrays used in subprocess.call and such
         self.pull = ['git', 'pull']
@@ -95,7 +95,7 @@ class gup:
         return message
 
     def do_it(self, repo):
-        """ wrapper function, 
+        """ wrapper function,
         checks current working directory and does the right thing based on that """
         pwd = os.getcwd()
         os.chdir(repo)
