@@ -1,6 +1,7 @@
 #!/usr/bin/env python2
 import os, multiprocessing, subprocess
 class gup:
+    """ updates git stuff, hopefully in parallel"""
     def __init__(self):
         self.home = os.path.expanduser('~')
         home = self.home
