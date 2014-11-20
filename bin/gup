@@ -63,6 +63,7 @@ class gup:
             #push
             return 1
         else:
+            # notihing's equal
             return 2
 
     def pull_push(self, pull, push):
@@ -74,6 +75,7 @@ class gup:
             elif stat == 1:
                 print '\n' + os.getcwd() + '\n' + str(subprocess.call(push))
             else:
+                # since nothings equal, we'll pull, then push
                 print '\n' + os.getcwd() + '\n' + str(subprocess.call(pull))
                 print '\n' + os.getcwd() + '\n' + str(subprocess.call(push))
         else:
