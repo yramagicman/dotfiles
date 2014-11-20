@@ -36,7 +36,7 @@ let g:syntastic_php_phpcs_args="--standard=Drupal --tab-width=0"
 "@todo find a way to toggle this.
 let g:syntastic_php_phpcs_disable=0
 "}}}
-"{{{
+"{{{ supertab
     let g:SuperTabMappingForward = '<tab>'
     let g:SuperTabMappingBackward = '<s-tab>'
 "}}}
