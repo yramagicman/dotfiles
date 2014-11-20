@@ -2,6 +2,7 @@
 import os, multiprocessing, subprocess
 class gup:
     def __init__(self):
+        """ set up repos and commands"""
         self.home = os.path.expanduser('~')
         home = self.home
         self.repos = [
