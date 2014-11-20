@@ -12,6 +12,7 @@ class gup:
                         home + '/.oh-my-zsh/custom/plugins/zsh-aliases/',
                         home + '/.oh-my-zsh/custom/plugins/drush/',
                      ]
+        # arrays used in subprocess.call and such
         self.pull = ['git', 'pull']
         self.push = ['git', 'push']
         self.ppull = ['pass', 'git', 'pull']
@@ -25,6 +26,7 @@ class gup:
         self.merge_base = ['git', 'merge-base', '@', '@{u}']
 
     def num_changes(self):
+        """ Gets the number of changes to a git repo"""
         git = subprocess.Popen(['git', 'status'], stdout=subprocess.PIPE)
         grep = subprocess.Popen(['grep', 'modified'], stdin=git.stdout, stdout=subprocess.PIPE)
         wc = subprocess.Popen(['wc', '-l'], stdin=grep.stdout, stdout=subprocess.PIPE)
@@ -36,6 +38,7 @@ class gup:
             return output
 
     def list_changes(self):
+        """ Lists changes to a git repo """
         git = subprocess.Popen(['git', 'status'], stdout=subprocess.PIPE)
         grep = subprocess.Popen(['grep', 'modified'], stdin=git.stdout, stdout=subprocess.PIPE)
         git.stdout.close()
@@ -45,6 +48,7 @@ class gup:
             return output
 
     def check_status(self):
+        """ Supposed to see whose ahead and whose behind"""
         c_local = subprocess.check_output(self.local_status)
         c_remote = subprocess.check_output(self.remote_status)
         c_merge = subprocess.check_output(self.merge_base)
@@ -59,7 +63,9 @@ class gup:
             return 1
 
     def pull_push(self, pull, push):
+        """ Actually does the work """
         stat = self.check_status()
+        print stat
         if stat != 0:
             if stat == -1:
                 print '\n' + os.getcwd() + '\n' + str(subprocess.call(pull))
@@ -81,6 +87,8 @@ class gup:
         return message
 
     def do_it(self, repo):
+        """ wrapper function, 
+        checks current working directory and does the right thing based on that """
         pwd = os.getcwd()
         os.chdir(repo)
         if pwd != self.home + '/.oh-my-zsh':
@@ -92,6 +100,7 @@ class gup:
         return
 
     def run(self):
+        """ simplify calling stuff"""
         repos = self.repos
         jobs = []
         for repo in repos:
