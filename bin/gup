@@ -70,6 +70,7 @@ class gup:
 
     def pull_push(self, pull, push):
         """ Actually does the work """
+        #apparently I have to fetch before I can do anything
         subprocess.call(self.fetch)
         stat = self.check_status()
         if stat != 0:
