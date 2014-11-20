@@ -16,6 +16,7 @@ class gup:
                      ]
         # arrays used in subprocess.call and such
         self.pull = ['git', 'pull']
+        self.fetch = ['git', 'fetch']
         self.push = ['git', 'push']
         self.ppull = ['pass', 'git', 'pull']
         self.ppush = ['pass', 'git', 'push']
@@ -69,6 +70,7 @@ class gup:
 
     def pull_push(self, pull, push):
         """ Actually does the work """
+        subprocess.call(self.fetch)
         stat = self.check_status()
         if stat != 0:
             if stat == -1:
