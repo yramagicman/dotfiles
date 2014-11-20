@@ -1,0 +1,72 @@
+#!/usr/bin/env python
+import os, multiprocessing
+from subprocess import check_output, call
+print os.path.expanduser('~')
+class gup:
+    def __init__(self):
+        self.home = os.path.expanduser('~')
+        home = self.home
+        self.repos = [
+                        home + '/.password-store',
+                        home,
+                        home + '/.oh-my-zsh/',
+                        home + '/.oh-my-zsh/custom/plugins/zsh-aliases/',
+                        home + '/.oh-my-zsh/custom/plugins/drush/',
+                     ]
+        self.pull = ['git', 'pull']
+        self.push = ['git', 'push']
+        self.ppull = ['pass', 'git', 'pull']
+        self.ppush = ['pass', 'git', 'push']
+        self.zupdate = ['git', 'pull', '--rebase', '--stat', 'origin', 'master']
+        self.zcommit = ['git', 'commit', '-m', 'blah blah blah']
+        self.mcommit =['git', 'commit', '--all', '-m', "mail $now"]
+        self.mlink = ['ln', '-fv', '~/.mutt/.muttrc', '~/.muttrc']
+        self.local_status = ['git', 'rev-parse', '@']
+        self.remote_status = ['git', 'rev-parse', '@{u}']
+        self.merge_base = ['git', 'merge-base', '@', '@{u}']
+
+    def check_status(self):
+        c_local = check_output(self.local_status)
+        c_remote = check_output(self.remote_status)
+        c_merge = check_output(self.merge_base)
+        if c_local == c_remote:
+            # ok
+            return 0
+        elif c_local == c_merge:
+            # pull
+            return -1
+        else:
+            #push
+            return 1
+
+    def pull_push(self, pull, push):
+        stat = self.check_status()
+        if stat != 0:
+            if stat == -1:
+                print call(pull)
+            elif stat == 1:
+                print call(push)
+        else:
+            print os.getcwd() + ' is up to date'
+        return
+
+    def do_it(self):
+        pwd = os.getcwd()
+        if pwd != self.home + '/.oh-my-zsh':
+            self.pull_push(self.pull, self.push)
+        if pwd == self.home + '/.oh-my-zsh':
+            self.pull_push(self.zupdate, self.push)
+        if pwd == self.home + '/.password-store':
+            self.pull_push(self.ppull, self.ppush)
+        return
+
+    def run(self):
+        repos = self.repos
+        jobs = []
+        for repo in repos:
+            os.chdir(repo)
+            p = multiprocessing.Process(target=gup().do_it)
+            p.start()
+if __name__ == '__main__':
+    g = gup()
+    g.run()
