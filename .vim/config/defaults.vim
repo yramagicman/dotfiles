@@ -104,6 +104,10 @@ let localleader="/"
 ""set autochdir
 set nowrapscan
 ""set cryptmethod=blowfish2
+
+if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
+  runtime! macros/matchit.vim
+endif
 "}}}
 "{{{ Make tabs as wide as four spaces
 set tabstop=4

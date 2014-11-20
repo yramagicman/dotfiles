@@ -16,14 +16,17 @@ nnoremap <c-c>d :Gdiff<CR>
 nnoremap <c-c>ps :Git push<CR>
 nnoremap <c-c>pl :Git pull<CR>
 "}}}
-"{{{ Ctrlp
-let g:ctrlp_map='<c-y>'
+    "{{{ Ctrlp
+let g:ctrlp_map='<c-&>'
 let g:ctrlp_switch_buffer='ET'
 ""let g:ctrlp_by_filename=1
 let g:ctrlp_show_hidden =1
 nnoremap <c-p> :CtrlP getcwd()<CR>
 nnoremap -ev :CtrlP ~/.vim/config<CR>
-nnoremap <leader><leader><space> :CtrlPBuffer<CR>
+nnoremap <space><space> :CtrlPBuffer<CR>
+nnoremap <leader><Space><Space> :CtrlPBuffer<CR>
+inoremap <leader><leader><Space> <ESC>:CtrlPBuffer<CR>
+nnoremap <c-y> :CtrlPBufTagAll<CR>
 "}}}
 "{{{ syntastic
 let g:syntastic_php_phpcs_args="--standard=Drupal --tab-width=0"
@@ -64,6 +67,7 @@ augroup end
 "}}}
 "{{{ Tag list config
 nnoremap <c-t> :TlistOpen<CR>
+nnoremap <c-n> :TlistAddFiles
 ""set statusline+=\ \%{Tlist_Get_Tagname_By_Line()}\ \|
 let g:Tlist_Show_One_File=0
 let g:Tlist_Close_On_Select=1

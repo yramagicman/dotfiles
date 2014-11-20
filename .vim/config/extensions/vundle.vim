@@ -2,8 +2,8 @@
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'tobyS/pdv'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+""Plugin 'SirVer/ultisnips'
+""Plugin 'honza/vim-snippets'
 Plugin 'tobyS/vmustache'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'othree/html5.vim'
