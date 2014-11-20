@@ -1,6 +1,5 @@
 #!/usr/bin/env python2
 import os, multiprocessing, subprocess
-print os.path.expanduser('~')
 class gup:
     def __init__(self):
         self.home = os.path.expanduser('~')
