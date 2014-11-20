@@ -54,15 +54,12 @@ class gup:
         c_merge = subprocess.check_output(self.merge_base)
         if c_local == c_remote:
             # ok
-            print c_local, c_remote, c_merge
             return 0
         elif c_local == c_merge:
             # pull
-            print c_local, c_remote, c_merge
             return -1
         elif c_remote == c_merge:
             #push
-            print c_local, c_remote, c_merge
             return 1
         else:
             return 2
