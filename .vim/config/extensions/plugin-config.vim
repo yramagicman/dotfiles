@@ -34,8 +34,8 @@ let g:syntastic_php_phpcs_args="--standard=Drupal --tab-width=0"
 let g:syntastic_php_phpcs_disable=0
 "}}}
 "{{{
-    let g:SuperTabMappingForward = '<s-tab>'
-    let g:SuperTabMappingBackward = '<tab>'
+    let g:SuperTabMappingForward = '<tab>'
+    let g:SuperTabMappingBackward = '<s-tab>'
 "}}}
 "{{{ autocomplete
 let g:neocomplcache_enable_at_startup  = 1
