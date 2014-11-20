@@ -24,7 +24,7 @@ alias zshrc="vim ~/.zshrc"
 alias ohmy="vim ~/.oh-my-zsh"
 #}}}
 #{{{ plugins
-plugins=(z git tmux colored-man web-search zsh-aliases drush)
+plugins=(z tmux colored-man web-search zsh-aliases drush)
 ZSH_TMUX_AUTOSTART=true
 source $ZSH/oh-my-zsh.sh
 #}}}

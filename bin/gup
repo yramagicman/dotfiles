@@ -50,8 +50,9 @@ class gup:
             print os.getcwd() + ' is up to date'
         return
 
-    def do_it(self):
+    def do_it(self, repo):
         pwd = os.getcwd()
+        os.chdir(repo)
         if pwd != self.home + '/.oh-my-zsh':
             self.pull_push(self.pull, self.push)
         if pwd == self.home + '/.oh-my-zsh':
@@ -64,9 +65,9 @@ class gup:
         repos = self.repos
         jobs = []
         for repo in repos:
-            os.chdir(repo)
-            p = multiprocessing.Process(target=gup().do_it)
+            p = multiprocessing.Process(target=gup().do_it, args=(repo,))
             p.start()
+print __name__
 if __name__ == '__main__':
     g = gup()
     g.run()
