@@ -87,6 +87,7 @@ class gup:
         return
 
     def show_message(self):
+        """ returns the message displayed to the user"""
         changes = self.num_changes()
         if int(changes) == 1:
             message =  '\n' + os.getcwd() + ' is up to date with ' + self.num_changes() + ' change unstaged. \n\t' + self.list_changes()
