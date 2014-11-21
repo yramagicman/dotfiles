@@ -84,15 +84,16 @@ class gup:
         #apparently I have to fetch before I can do anything
         subprocess.call(self.fetch)
         stat = self.check_status()
+        dir = os.getcwd().replace(self.home, '~')
         if stat != 0:
             if stat == -1:
-                print '\n' + os.getcwd() + '\n' + str(subprocess.call(pull))
+                print '\n' + dir + '\n' + str(subprocess.call(pull))
             elif stat == 1:
-                print '\n' + os.getcwd() + '\n' + str(subprocess.call(push))
+                print '\n' + dir + '\n' + str(subprocess.call(push))
             else:
                 # since nothings equal, we'll pull, then push
-                print '\n' + os.getcwd() + '\n' + str(subprocess.call(pull))
-                print '\n' + os.getcwd() + '\n' + str(subprocess.call(push))
+                print '\n' + dir + '\n' + str(subprocess.call(pull))
+                print '\n' + dir + '\n' + str(subprocess.call(push))
         else:
             print self.show_message()
 
@@ -101,12 +102,12 @@ class gup:
         changes = self.num_changes()
         dir = os.getcwd().replace(self.home, '~')
         if int(changes) == 1:
-            message =  '\n' + dir + ' is up to date with ' + self.num_changes() + ' change unstaged. \n\t'
+            message =  '\n' + dir + ' is up to date with ' + changes + ' change unstaged. \n\t'
         else:
             if int(changes) > 0:
-                message =  '\n' +  dir + ' is up to date with ' + self.num_changes() + ' unstaged changes.\n\t'
+                message =  '\n' +  dir + ' is up to date with ' + changes + ' unstaged changes.\n\t'
             else:
-                message =  '\n' + dir + ' is up to date with ' + self.num_changes() + ' unstaged changes.'
+                message =  '\n' + dir + ' is up to date with ' + changes + ' unstaged changes.'
         message = message + self.list_changes()
         if '--diff' in sys.argv or '-d' in sys.argv:
             if '--ext' in sys.argv or '-e' in sys.argv:
