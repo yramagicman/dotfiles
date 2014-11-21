@@ -27,6 +27,7 @@ class gup:
         self.local_status = ['git', 'rev-parse', '@']
         self.remote_status = ['git', 'rev-parse', '@{u}']
         self.merge_base = ['git', 'merge-base', '@', '@{u}']
+        self.output = []
 
     def num_changes(self):
         """ Gets the number of changes to a git repo"""
@@ -94,7 +95,6 @@ class gup:
                 print '\n' + os.getcwd() + '\n' + str(subprocess.call(push))
         else:
             print self.show_message()
-        return
 
     def show_message(self):
         """ returns the message displayed to the user"""
@@ -126,12 +126,12 @@ class gup:
             self.pull_push(self.zupdate, self.push)
         if pwd == self.home + '/.password-store':
             self.pull_push(self.ppull, self.ppush)
-        return
+        return 1
 
     def run(self):
         """ simplify calling stuff"""
         repos = self.repos
-        jobs = []
+        self.jobs = []
         for repo in repos:
             p = multiprocessing.Process(target=gup().do_it, args=(repo,))
             p.start()
@@ -139,5 +139,7 @@ class gup:
 
 if __name__ == '__main__':
     g = gup()
-    g.run()
+    print g.run()
     subprocess.call(g.mlink)
+    print g.jobs
+    print g.output
