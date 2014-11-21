@@ -131,12 +131,12 @@ class gup:
     def run(self):
         """ simplify calling stuff"""
         repos = self.repos
-        subprocess.call(g.mlink)
         for repo in repos:
             p = multiprocessing.Process(target=gup().do_it, args=(repo,))
             p.start()
             if '--diff' in sys.argv or '-d' in sys.argv:
                 p.join()
+        subprocess.call(g.mlink)
 
 if __name__ == '__main__':
     g = gup()
