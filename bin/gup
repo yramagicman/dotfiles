@@ -110,10 +110,10 @@ class gup:
         if '--diff' in sys.argv or '-d' in sys.argv:
             if '--ext' in sys.argv or '-e' in sys.argv:
                 self.diff_changes(True)
-                return message
+                return message #end external diff
             self.diff_changes()
-            return message
-        return message
+            return message #end internal diff
+        return message #end function
 
     def do_it(self, repo):
         """ wrapper function,
@@ -131,15 +131,13 @@ class gup:
     def run(self):
         """ simplify calling stuff"""
         repos = self.repos
-        self.jobs = []
+        subprocess.call(g.mlink)
         for repo in repos:
             p = multiprocessing.Process(target=gup().do_it, args=(repo,))
             p.start()
-            p.join()
+            if '--diff' in sys.argv or '-d' in sys.argv:
+                p.join()
 
 if __name__ == '__main__':
     g = gup()
-    print g.run()
-    subprocess.call(g.mlink)
-    print g.jobs
-    print g.output
+    g.run()
