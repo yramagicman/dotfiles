@@ -99,13 +99,14 @@ class gup:
     def show_message(self):
         """ returns the message displayed to the user"""
         changes = self.num_changes()
+        dir = os.getcwd().replace(self.home, '~')
         if int(changes) == 1:
-            message =  '\n' + os.getcwd() + ' is up to date with ' + self.num_changes() + ' change unstaged. \n\t'
+            message =  '\n' + dir + ' is up to date with ' + self.num_changes() + ' change unstaged. \n\t'
         else:
             if int(changes) > 0:
-                message =  '\n' +  os.getcwd() + ' is up to date with ' + self.num_changes() + ' unstaged changes.\n\t'
+                message =  '\n' +  dir + ' is up to date with ' + self.num_changes() + ' unstaged changes.\n\t'
             else:
-                message =  '\n' + os.getcwd() + ' is up to date with ' + self.num_changes() + ' unstaged changes.'
+                message =  '\n' + dir + ' is up to date with ' + self.num_changes() + ' unstaged changes.'
         message = message + self.list_changes()
         if '--diff' in sys.argv or '-d' in sys.argv:
             if '--ext' in sys.argv or '-e' in sys.argv:
