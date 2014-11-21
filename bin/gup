@@ -135,6 +135,7 @@ class gup:
         for repo in repos:
             p = multiprocessing.Process(target=gup().do_it, args=(repo,))
             p.start()
+            p.join()
 
 if __name__ == '__main__':
     g = gup()
