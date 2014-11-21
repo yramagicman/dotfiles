@@ -53,7 +53,75 @@ augroup abbrevs
     autocmd FileType html inoremap <buffer> < <><ESC>i
     autocmd FileType html vnoremap <buffer> < xi<<ESC>pa<ESC>la
     autocmd FileType php  iabbrev <buffer> pp> print '<pre>';<Esc>$xxi;<ESC>xA
-    autocmd FileType php  iabbrev <buffer> /pp> print '</pre>';<Esc>$xxi;<ESC>xA
+    autocmd FileType php  iabbrev <buffer> gcpp> print '</pre>';<Esc>$xxi;<ESC>xA
     autocmd FileType php  iabbrev <buffer> dsm drupal_set_message()<Esc>i
     "}}}
 augroup end
+
+let b:squarebracket = 1
+let b:curlybracket = 1
+let b:paren = 1
+let b:singlequote = 1
+let b:doublequote = 1
+
+function! QuoteToggle(Toggle)
+    if a:Toggle == 1
+        norm xppi
+        let l:T = a:Toggle
+        let l:T = 0
+        return l:T
+    else
+        norm xa
+        let l:T = a:Toggle
+        let l:T = 1
+        return l:T
+    endif
+endfunction
+
+function! SingleQuote()
+    if !exists('b:singlequote')
+        let b:singlequote=1
+    endif
+    let b:singlequote = QuoteToggle(b:singlequote)
+    return b:singlequote
+endfunction
+
+function! DoubleQuote()
+    if !exists('b:doublequote')
+        let b:doublequote=1
+    endif
+    let b:doublequote = QuoteToggle(b:doublequote)
+    return b:doublequote
+endfunction
+
+function! BracketsOpen(Bracket)
+    let l:b = a:Bracket
+    let l:b=1
+    if l:b == 1
+        let l:b = 0
+        return l:b
+    endif
+endfunction
+
+function! BracketsClose(Bracket)
+    let l:b = a:Bracket
+    if l:b == 1
+        return
+    else
+        norm xa
+        let l:b = 1
+        return l:b
+    endif
+endfunction
+
+function! SquareBracketsOpen()
+    if !exists('b:squarebracket')
+        let b:squarebracket = 1
+    endif
+    let b:squarebracket = BracketsOpen(b:squarebracket)
+    return b:squarebracket
+endfunction
+inoremap [ []<Esc>:call SquareBracketsOpen()<cr>i
+inoremap ] ]<Esc>:call SquareBracketsClose()<cr>a
+inoremap " "<Esc>:call DoubleQuote()<cr>a
+inoremap ' '<Esc>:call SingleQuote()<cr>a
