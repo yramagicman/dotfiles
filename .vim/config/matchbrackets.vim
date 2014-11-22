@@ -57,12 +57,19 @@ augroup abbrevs
     autocmd FileType php  iabbrev <buffer> dsm drupal_set_message()<Esc>i
     "}}}
 augroup end
-
 let b:squarebracket = 1
 let b:curlybracket = 1
 let b:paren = 1
 let b:singlequote = 1
 let b:doublequote = 1
+augroup brackets
+    autocmd!
+    verbose autocmd InsertLeave * :let b:squarebracket = 1
+    verbose autocmd InsertLeave * :let b:curlybracket = 1
+    verbose autocmd InsertLeave * :let b:paren = 1
+    verbose autocmd InsertLeave * :let b:singlequote = 1
+    verbose autocmd InsertLeave * :let b:doublequote = 1
+augroup end
 
 function! QuoteToggle(Toggle)
     if a:Toggle == 1
@@ -121,7 +128,51 @@ function! SquareBracketsOpen()
     let b:squarebracket = BracketsOpen(b:squarebracket)
     return b:squarebracket
 endfunction
-inoremap [ []<Esc>:call SquareBracketsOpen()<cr>i
-inoremap ] ]<Esc>:call SquareBracketsClose()<cr>a
-inoremap " "<Esc>:call DoubleQuote()<cr>a
-inoremap ' '<Esc>:call SingleQuote()<cr>a
+
+function! SquareBracketsClose()
+    if !exists('b:squarebracket')
+        let b:squarebracket = 1
+    endif
+    let b:squarebracket = BracketsOpen(b:squarebracket)
+    return b:squarebracket
+endfunction
+
+function! CurlyBracketsOpen()
+    if !exists('b:curlybracket')
+        let b:curlybracket = 1
+    endif
+    let b:curlybracket = BracketsOpen(b:curlybracket)
+    return b:curlybracket
+endfunction
+
+function! CurlyBracketsClose()
+    if !exists('b:curlybracket')
+        let b:curlybracket = 1
+    endif
+    let b:curlybracket = BracketsOpen(b:curlybracket)
+    return b:curlybracket
+endfunction
+
+function! ParenOpen()
+    if !exists('b:paren')
+        let b:paren = 1
+    endif
+    let b:paren = BracketsOpen(b:paren)
+    return b:paren
+endfunction
+
+function! ParenClose()
+    if !exists('b:paren')
+        let b:paren = 1
+    endif
+    let b:paren = BracketsOpen(b:paren)
+    return b:paren
+endfunction
+inoremap [ []<Esc>:call SquareBracketsOpen()<CR>i
+inoremap ] ]<Esc>:call SquareBracketsClose()<CR>a
+inoremap { {}<Esc>:call CurlyBracketsOpen()<CR>i
+inoremap } }<Esc>:call CurlyBracketsClose()<CR>a
+inoremap ( ()<Esc>:call ParenOpen()<CR>i
+inoremap ) )<Esc>:call ParenClose()<CR>a
+inoremap " "<Esc>:call DoubleQuote()<CR>a
+inoremap ' '<Esc>:call SingleQuote()<CR>a

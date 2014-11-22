@@ -21,4 +21,5 @@ call vundle#begin()
     Plugin 'gregsexton/gitv'
     Plugin 'SirVer/ultisnips'
     Plugin 'honza/vim-snippets'
+    Plugin 'Auto-Pairs'
 call vundle#end()
