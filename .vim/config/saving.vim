@@ -30,6 +30,7 @@ nnoremap <leader>Q :q!
 inoremap <leader>Q <ESC>:q!
 vnoremap <leader>Q <ESC>:q!
 nnoremap QQ :q!
+command! QQ :q!
 "}}}
 "{{{ nice quit
 nnoremap <silent><leader>q :q<CR>
