@@ -1,13 +1,13 @@
 "matchbrackets.vim
 "{{{match pairs
-inoremap ' ''<ESC>i
-inoremap " ""<ESC>i
-inoremap ( ()<ESC>i
-inoremap { {}<ESC>i
-inoremap [ []<ESC>i
-inoremap [<CR> [<CR>]<ESC>O
-inoremap (<CR> (<Cr>)<ESC>O
-inoremap {<CR> {<CR>}<ESC>O
+"inoremap ' ''<ESC>i
+"inoremap " ""<ESC>i
+"inoremap ( ()<ESC>i
+"inoremap { {}<ESC>i
+"inoremap [ []<ESC>i
+"inoremap [<CR> [<CR>]<ESC>O
+"inoremap (<CR> (<Cr>)<ESC>O
+"inoremap {<CR> {<CR>}<ESC>O
 "}}}
 "{{{ If inserted quickly, don't reinsert matching character
 inoremap () ()
@@ -64,13 +64,12 @@ let b:singlequote = 1
 let b:doublequote = 1
 augroup brackets
     autocmd!
-    verbose autocmd InsertLeave * :let b:squarebracket = 1
-    verbose autocmd InsertLeave * :let b:curlybracket = 1
-    verbose autocmd InsertLeave * :let b:paren = 1
-    verbose autocmd InsertLeave * :let b:singlequote = 1
-    verbose autocmd InsertLeave * :let b:doublequote = 1
+    verbose autocmd CursorHold * :let b:squarebracket = 1
+    verbose autocmd CursorHold * :let b:curlybracket = 1
+    verbose autocmd CursorHold * :let b:paren = 1
+    verbose autocmd CursorHold * :let b:singlequote = 1
+    verbose autocmd CursorHold * :let b:doublequote = 1
 augroup end
-
 function! QuoteToggle(Toggle)
     if a:Toggle == 1
         norm xppi
