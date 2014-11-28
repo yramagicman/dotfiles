@@ -1,4 +1,4 @@
-lua_load ~/.config/conky/scripts/conky.lua
+lua_load ~/.config/conky/conky.lua
 background yes
 font Droid Sans Mono:size=10
 xftfont Droid Sans Mono:size=10
