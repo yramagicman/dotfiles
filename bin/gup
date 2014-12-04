@@ -23,7 +23,7 @@ class gup:
         self.zupdate = ['git', 'pull', '--rebase', '--stat', 'origin', 'master']
         self.zcommit = ['git', 'commit', '-m', 'blah blah blah']
         self.mcommit =['git', 'commit', '--all', '-m', "mail $now"]
-        self.mlink = ['ln', '-fv', home +'/.mutt/.muttrc', home + '/.muttrc']
+        #self.mlink = ['ln', '-fv', home +'/.mutt/.muttrc', home + '/.muttrc']
         self.local_status = ['git', 'rev-parse', '@']
         self.remote_status = ['git', 'rev-parse', '@{u}']
         self.merge_base = ['git', 'merge-base', '@', '@{u}']
@@ -138,7 +138,7 @@ class gup:
             p.start()
             if '--diff' in sys.argv or '-d' in sys.argv:
                 p.join()
-        subprocess.call(g.mlink)
+        #subprocess.call(g.mlink)
 
 if __name__ == '__main__':
     g = gup()
