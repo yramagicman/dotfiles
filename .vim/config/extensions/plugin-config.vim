@@ -33,9 +33,13 @@ inoremap <leader><leader><Space> <ESC>:CtrlPBuffer<CR>
 nnoremap <c-y> :CtrlPBufTagAll<CR>
 "}}}
 "{{{ syntastic
-let g:syntastic_php_phpcs_args="--standard=Drupal --tab-width=0"
 "@todo find a way to toggle this.
-let g:syntastic_php_phpcs_disable=0
+augroup syntastic
+        autocmd Bufenter,BufRead */drupal*/* let g:syntastic_php_phpcs_args="--standard=Drupal --tab-width=0"
+        autocmd Bufenter,BufRead */drupal*/* let g:syntastic_php_phpcs_disable=0
+        autocmd BufLeave */drupal*/* let g:syntastic_php_phpcs_args="--tab-width=0"
+        autocmd BufLeave */drupal*/* let g:syntastic_php_phpcs_disable=1
+augroup end
 "}}}
 "{{{ supertab
     let g:SuperTabMappingForward = '<s-tab>'
