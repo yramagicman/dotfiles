@@ -125,9 +125,10 @@ let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 "{{{ set status line
 " Always show status line
 set laststatus=2
-"fugitive statusline
 set statusline=\|\ %m%f%r\ \%y
-set statusline+=\ \%{fugitive#statusline()}
+if has('statusline') && exists('*fugitive#statusline')
+    set statusline+=\ \%{fugitive#statusline()}
+endif
 set statusline+=%=
 set statusline+=Line:
 set statusline+=%4l/%-4L
