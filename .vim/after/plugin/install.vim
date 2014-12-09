@@ -30,7 +30,6 @@ def check_installation():
             not_installed.append(i)
     return not_installed
 def execute():
-    print check_installation()
     if len(check_installation()) > 0:
         if 'Vundle.vim' in check_installation():
             pkgmanagerinstall()
