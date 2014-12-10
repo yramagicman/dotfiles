@@ -29,6 +29,14 @@ def check_installation():
         if i not in installed:
             not_installed.append(i)
     return not_installed
+def cleanup():
+    listed = readBundle(home + '/.vim/config/extensions/vundle.vim')
+    remove = checkdir()
+    to_remove = []
+    for i in remove:
+        if i not in listed:
+            to_remove.append(i)
+    return to_remove
 def execute():
     if len(check_installation()) > 0:
         if 'Vundle.vim' in check_installation():
@@ -36,6 +44,8 @@ def execute():
             vim.command('source $MYVIMRC')
         vim.command('PluginInstall')
         vim.command('source $MYVIMRC')
+    if len(cleanup()) > 1:
+        vim.command('PluginClean')
 execute()
 endpython
 endfunction
