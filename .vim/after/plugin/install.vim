@@ -25,6 +25,12 @@ def pkgmanagerinstall():
     os.chdir(home + '/.vim/bundle')
     call(['git', 'clone', 'https://github.com/gmarik/Vundle.vim.git'])
 def checkdir():
+
+    setup_folders, plugin_file = sanityCheck()
+    cmd= ['mkdir', '-p']
+    cmd = cmd + setup_folders
+    os.chdir(home + '/.vim/')
+    call(cmd)
     installed_packages = check_output(['ls', home + '/.vim/bundle'])
     installed_packages = installed_packages.split('\n')
     return installed_packages
