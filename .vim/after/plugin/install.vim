@@ -3,10 +3,25 @@ python << endpython
 import os, vim, time
 from subprocess import call, check_output
 home = os.path.expanduser('~')
+def sanityCheck():
+    dir_tree_defined = int(vim.eval('exists("g:Install_Setup_Folders")'))
+    plugin_file_defined = int(vim.eval('exists("g:Install_Plugin_File")'))
+    if dir_tree_defined and  plugin_file_defined:
+        dirtree = vim.eval("g:Install_Setup_Folders")
+        plugin_file = vim.eval("g:Install_Plugin_File")
+        return dirtree, plugin_file
+    elif dir_tree_defined and not plugin_file_defined:
+        plugin_file= vim.eval('$MYVIMRC')
+        dirtree = vim.eval("g:Install_Setup_Folders")
+        return dirtree, plugin_file
+    else:
+        print 'You must at least defing g:Install_Setup_Folders for this to work.'
 def pkgmanagerinstall():
+    setup_folders, plugin_file = sanityCheck()
+    cmd= ['mkdir', '-p']
+    cmd = cmd + setup_folders
     os.chdir(home + '/.vim/')
-    call(['mkdir', '-p', 'autoload', 'backup', 'bundle', 'colors', 'config',
-    'doc', 'snippets', 'spell', 'swaps', 'syntax', 'tags', 'undo' ])
+    call(cmd)
     os.chdir(home + '/.vim/bundle')
     call(['git', 'clone', 'https://github.com/gmarik/Vundle.vim.git'])
 def checkdir():
@@ -22,7 +37,8 @@ def readBundle(file):
             retVal.append(line[line.index('/') + 1: -1])
     return retVal
 def check_installation():
-    to_install = readBundle(home + '/.vim/config/extensions/vundle.vim')
+    setup_folders, plugin_file = sanityCheck()
+    to_install = readBundle(home + plugin_file)
     installed = checkdir()
     not_installed = []
     for i in to_install:
@@ -30,7 +46,8 @@ def check_installation():
             not_installed.append(i)
     return not_installed
 def cleanup():
-    listed = readBundle(home + '/.vim/config/extensions/vundle.vim')
+    setup_folders, plugin_file = sanityCheck()
+    listed = readBundle(home + plugin_file)
     remove = checkdir()
     to_remove = []
     for i in remove:
@@ -46,7 +63,6 @@ def execute():
         vim.command('source $MYVIMRC')
     if len(cleanup()) > 1:
         vim.command('PluginClean')
-execute()
 endpython
 endfunction
 
