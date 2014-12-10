@@ -17,15 +17,13 @@ def sanityCheck():
     else:
         print 'You must at least defing g:Install_Setup_Folders for this to work.'
 def pkgmanagerinstall():
-    setup_folders, plugin_file = sanityCheck()
     cmd= ['mkdir', '-p']
-    cmd = cmd + setup_folders
+    cmd = cmd + ['bundle']
     os.chdir(home + '/.vim/')
     call(cmd)
     os.chdir(home + '/.vim/bundle')
     call(['git', 'clone', 'https://github.com/gmarik/Vundle.vim.git'])
 def checkdir():
-
     setup_folders, plugin_file = sanityCheck()
     cmd= ['mkdir', '-p']
     cmd = cmd + setup_folders
