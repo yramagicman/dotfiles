@@ -63,6 +63,7 @@ def execute():
         vim.command('source $MYVIMRC')
     if len(cleanup()) > 1:
         vim.command('PluginClean')
+execute()
 endpython
 endfunction
 
