@@ -6,6 +6,11 @@ home = os.path.expanduser('~')
 def sanityCheck():
     dir_tree_defined = int(vim.eval('exists("g:Install_Setup_Folders")'))
     plugin_file_defined = int(vim.eval('exists("g:Install_Plugin_File")'))
+    if not os.path.exists(home + '/.vim/bundle'):
+        cmd= ['mkdir', '-p']
+        cmd = cmd + ['bundle']
+        os.chdir(home + '/.vim/')
+        call(cmd)
     if dir_tree_defined and  plugin_file_defined:
         dirtree = vim.eval("g:Install_Setup_Folders")
         plugin_file = vim.eval("g:Install_Plugin_File")
@@ -16,19 +21,11 @@ def sanityCheck():
         return dirtree, plugin_file
     else:
         print 'You must at least defing g:Install_Setup_Folders for this to work.'
+setup_folders, plugin_file = sanityCheck()
 def pkgmanagerinstall():
-    cmd= ['mkdir', '-p']
-    cmd = cmd + ['bundle']
-    os.chdir(home + '/.vim/')
-    call(cmd)
     os.chdir(home + '/.vim/bundle')
     call(['git', 'clone', 'https://github.com/gmarik/Vundle.vim.git'])
 def checkdir():
-    setup_folders, plugin_file = sanityCheck()
-    cmd= ['mkdir', '-p']
-    cmd = cmd + setup_folders
-    os.chdir(home + '/.vim/')
-    call(cmd)
     installed_packages = check_output(['ls', home + '/.vim/bundle'])
     installed_packages = installed_packages.split('\n')
     return installed_packages
@@ -41,7 +38,6 @@ def readBundle(file):
             retVal.append(line[line.index('/') + 1: -1])
     return retVal
 def check_installation():
-    setup_folders, plugin_file = sanityCheck()
     to_install = readBundle(home + plugin_file)
     installed = checkdir()
     not_installed = []
@@ -50,7 +46,6 @@ def check_installation():
             not_installed.append(i)
     return not_installed
 def cleanup():
-    setup_folders, plugin_file = sanityCheck()
     listed = readBundle(home + plugin_file)
     remove = checkdir()
     to_remove = []
