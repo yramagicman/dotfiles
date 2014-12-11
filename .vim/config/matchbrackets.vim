@@ -46,7 +46,7 @@ augroup abbrevs
     autocmd FileType php  iabbrev <buffer> dsm drupal_set_message()<Esc>i
     "}}}
 augroup end
-
+"{{{ Make backspace work nicely with autopairs
 function! Backspace()
     let l:current = strpart(getline('.'), col('.')-1, 1)
     let l:prev = strpart(getline('.'), col('.')-2, 1)
@@ -66,11 +66,14 @@ function! Backspace()
         return "\<BS>"
     endif
 endfunction
+"}}}
 inoremap <expr> <BS> Backspace()
+"{{{ Unwrap parens and brackets
 function! UnwrapParens()
     let l:current = strpart(getline('.'), col('.')-1, 1)
     if  l:current == "]" || l:current == ")" || l:current == "}" || l:current == "[" || l:current == "(" || l:current == "{"
-        norm ml%x`lx
+        norm ml%mkx`lx
     endif
 endfunction
+"}}}
 noremap <leader><BS> :call UnwrapParens()<CR>
