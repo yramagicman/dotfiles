@@ -10,9 +10,9 @@ vnoremap ] xi[]<ESC>hp<ESC>f]
 vnoremap ) xi()<ESC>hp<ESC>F(i
 "}}}
 "{{{ autocomplete quotes and brackets
-inoremap        (  ()<Left>
-inoremap        [  []<Left>
-inoremap        {  {}<Left>
+inoremap (  ()<Left>
+inoremap [  []<Left>
+inoremap {  {}<Left>
 inoremap [<CR> [<CR>]<ESC>O
 inoremap (<CR> (<CR>)<ESC>O
 inoremap {<CR> {<CR>}<ESC>O
@@ -23,8 +23,8 @@ inoremap <expr> " strpart(getline('.'), col('.')-1, 1) == "\"" ? "\<Right>" : "\
 inoremap <expr> ' strpart(getline('.'), col('.')-1, 1) == "\'" ? "\<Right>" : "\'\'\<Left>"
 "}}}
 "{{{ swap quotes not in insert mode, too likely to conflict with typing
-vnoremap <Leader>" yda'i""<ESC>"0pf"
-vnoremap <Leader>' yda"i''<ESC>"0pf'
+vnoremap <Leader>" yda'i""<ESC>h"0pf"
+vnoremap <Leader>' yda"i''<ESC>h"0pf'
 nnoremap <Leader>" <ESC>vi'yda'i""<ESC>h"0pf"
 nnoremap <Leader>' <ESC>vi"yda"i''<ESC>h"0pf'
 "}}}
@@ -46,3 +46,31 @@ augroup abbrevs
     autocmd FileType php  iabbrev <buffer> dsm drupal_set_message()<Esc>i
     "}}}
 augroup end
+
+function! Backspace()
+    let l:current = strpart(getline('.'), col('.')-1, 1)
+    let l:prev = strpart(getline('.'), col('.')-2, 1)
+    if l:current == '"' || l:current == "'" || l:current == "]" || l:current == ")" || l:current == "}"
+        if l:current == l:prev
+            return "\<Right>\<BS>\<BS>"
+        elseif l:prev == '[' && l:current == ']'
+            return "\<Right>\<BS>\<BS>"
+        elseif l:prev == "{" && l:current == "}"
+            return "\<Right>\<BS>\<BS>"
+        elseif l:prev == "(" && l:current == ")"
+            return "\<Right>\<BS>\<BS>"
+        else
+            return "\<BS>"
+        endif
+    else
+        return "\<BS>"
+    endif
+endfunction
+inoremap <expr> <BS> Backspace()
+function! UnwrapParens()
+    let l:current = strpart(getline('.'), col('.')-1, 1)
+    if  l:current == "]" || l:current == ")" || l:current == "}" || l:current == "[" || l:current == "(" || l:current == "{"
+        norm ml%x`lx
+    endif
+endfunction
+noremap <leader><BS> :call UnwrapParens()<CR>
