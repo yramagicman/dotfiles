@@ -1,6 +1,6 @@
 function! Install()
 python << endpython
-import os, vim
+import os, vim, datetime, time, itertools
 from subprocess import call, check_output
 home = os.path.expanduser('~')
 
@@ -97,4 +97,62 @@ call Install()
 " have to hit enter after errors or shell commands. Without this here, the
 " script just hangs after either installing Vundle or yelling about "Plugin
 " command not found."
+call feedkeys('<CR>')
+
+function! Update()
+python<<endpython
+def update_how_often():
+    often_set = int(vim.eval('exists("g:Install_Update_Frequency")'))
+    if often_set:
+        return vim.eval('g:Install_Update_Frequency')
+    else:
+        return False
+
+def read_update_cache():
+    try:
+        f = open(home + '/.vim/lastupdate', 'r')
+        dates = f.read()
+        f.close()
+        return dates
+    except:
+        print "File not found. Running updates and writing new file."
+        time.sleep(2)
+        vim.command('PluginUpdate')
+        return write_last_update()
+
+def get_last_update(dates):
+    date = dates.split('\n')
+    date= float(date[0])
+    return date
+
+def get_next_update(dates):
+    date = dates.split('\n')
+    date= float(date[1])
+    return date
+
+def write_last_update(days=30):
+    next = days * 24 * 60 * 60
+    f = open(home + '/.vim/lastupdate', 'w')
+    f.write(str(time.time()) + '\n')
+    f.write(str(time.time() + next))
+    f.close()
+    return str(time.time()) + '\n' + str(time.time() + next)
+
+def run_updates():
+    dates = read_update_cache()
+    next = get_next_update(dates)
+    freq = update_how_often()
+    if next < time.time():
+        vim.command('PluginUpdate')
+        if freq:
+            write_last_update(freq)
+        else:
+            write_last_update()
+run_updates()
+endpython
+endfunction
+
+command! Update :call Update()
+"Auto run every time Vim opens.
+call Update()
 call feedkeys('<CR>')
