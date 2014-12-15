@@ -22,5 +22,6 @@ call vundle#begin()
     Plugin 'SirVer/ultisnips'
     Plugin 'honza/vim-snippets'
     Plugin 'technosophos/drupal-snippets'
+    Plugin 'jeetsukumaran/vim-filebeagle'
     "Plugin 'Auto-Pairs'
 call vundle#end()
