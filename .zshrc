@@ -40,6 +40,7 @@ export HIST_IGNORE_DUPS=true
 export HIST_SAVE_NO_DUPS=true
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
+export PAGER="vimpager"
 #}}}
 #{{{ Archey, startup stuff
 function check_process(){
