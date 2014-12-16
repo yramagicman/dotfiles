@@ -24,4 +24,5 @@ call vundle#begin()
     Plugin 'technosophos/drupal-snippets'
     Plugin 'jeetsukumaran/vim-filebeagle'
     "Plugin 'Auto-Pairs'
+    Plugin 'sjl/gundo.vim'
 call vundle#end()

@@ -86,3 +86,7 @@ augroup tagliststuff
     autocmd FileType taglist vertical resize +15
 augroup end
 "}}}
+"{{{ Gundo
+noremap Z :GundoToggle<CR>
+inoremap <leader>Z :GundoToggle<CR>
+"}}}
