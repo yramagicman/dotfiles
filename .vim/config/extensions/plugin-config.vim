@@ -21,11 +21,14 @@ nnoremap <c-c>pl :Git pull<CR>
 nnoremap <c-c>A :Git commit --amend<CR>
 "}}}
     "{{{ Ctrlp
-let g:ctrlp_map='<c-&>'
+let g:ctrlp_map='<c-p>'
 let g:ctrlp_switch_buffer='ET'
 ""let g:ctrlp_by_filename=1
 let g:ctrlp_show_hidden =1
-nnoremap <c-p> :CtrlP getcwd()<CR>
+let g:ctrlp_custom_ignore = { 'dir': '\v/(Library|Applications*|Pictures|Music|Movies|Gits|Projects|Public|VirtualBox*|.oh-my-zsh|Dropbox|Calibre*|.node-gyp|undo|bundle|.pip|.mutt)', 'file': '\v*\.(xcodeproj|tar|gz|pages|plist)$', 'link': '\v/(usrlocal)$'}
+let g:ctrlp_max_files=7000
+let g:ctrlp_max_depth=30
+nnoremap <c-p> :CtrlP<CR>
 nnoremap -ev :CtrlP ~/.vim/config<CR>
 nnoremap <space><space> :CtrlPBuffer<CR>
 nnoremap <leader><Space><Space> :CtrlPBuffer<CR>
@@ -85,4 +88,8 @@ augroup tagliststuff
     autocmd!
     autocmd FileType taglist vertical resize +15
 augroup end
+"}}}
+"{{{ Gundo
+noremap Z :GundoToggle<CR>
+inoremap <leader>Z :GundoToggle<CR>
 "}}}
