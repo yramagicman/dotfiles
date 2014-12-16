@@ -25,4 +25,5 @@ call vundle#begin()
     Plugin 'jeetsukumaran/vim-filebeagle'
     "Plugin 'Auto-Pairs'
     Plugin 'sjl/gundo.vim'
+    Plugin 'vim-scripts/YankRing.vim'
 call vundle#end()
