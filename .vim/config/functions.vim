@@ -19,7 +19,7 @@ function! IndentGuides()
         execute '2match IndentGuides /\%(\_^\s*\)\@<=\%(\%'.(0*&sw+1).'v\|\%'.(1*&sw+1).'v\|\%'.(2*&sw+1).'v\|\%'.(3*&sw+1).'v\|\%'.(4*&sw+1).'v\|\%'.(5*&sw+1).'v\|\%'.(6*&sw+1).'v\|\%'.(7*&sw+1).'v\)\s/'
     endif
 endfunction
-nnoremap <silent> <leader>I :call IndentGuides()<CR>
+nnoremap <silent> <leader>i :call IndentGuides()<CR>
 "call IndentGuides()
 "}}}
 "{{{ Fix Line Endings
@@ -128,7 +128,7 @@ function! PresMode()
         return g:presmode
     endif
 endfunction
-noremap <leader>x :call PresMode()<CR>
+noremap <localleader>p :call PresMode()<CR>
 command! Pres :call PresMode()
 "}}}
 "{{{ line numbers on or off

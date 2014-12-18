@@ -21,6 +21,8 @@ noremap { {zz
 noremap ( (zz
 noremap } }zz
 noremap ) )zz
+noremap % %zz
+noremap <Tab> <Tab>zz
 noremap n nzz
 noremap N Nzz
 vnoremap j j

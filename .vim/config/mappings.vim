@@ -1,4 +1,4 @@
-"mappings.vim
+"mappings.Vim
 "{{{ Indenting
 "bind \] to indent
 nnoremap <localleader>] >>
@@ -53,7 +53,7 @@ noremap <silent><leader><space> <ESC>:let @/ = ""<CR>
 inoremap <C-u> <ESC>mzgUiwe
 nnoremap <C-u> <ESC>mzgUiwe
 " Toggle [i]nvisible characters
-nnoremap <silent><leader>i :set list!<CR>
+nnoremap <silent><leader>I :set list!<CR>
 " reset color scheme
 nnoremap U :syntax sync fromstart<CR>:redraw!<CR>
 " make this_style into cammelCase
@@ -67,7 +67,8 @@ nnoremap --s :set spell!<CR>
 nnoremap -s zg
 nnoremap -d ]szo
 nnoremap -a [szo
-nnoremap -w z=
+nnoremap -w 1z=
+nnoremap --w z=
 "}}}
 "{{{ No... I don't want to record a macro now
 "I never use replace mode anyway

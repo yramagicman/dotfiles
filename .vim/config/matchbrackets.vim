@@ -37,13 +37,12 @@ augroup abbrevs
     autocmd FileType * iabbrev <buffer> etap Etapestry
     autocmd FileType * iabbrev <buffer> durpal Drupal
     autocmd FileType * iabbrev <buffer> drupal Drupal
-    autocmd FileType mail inoremap <buffer> ' '
+    autocmd FileType mail,text,gitcommit inoremap <buffer> ' '
     autocmd FileType html inoremap <buffer> <> <>
     autocmd FileType html inoremap <buffer> < <><ESC>i
     autocmd FileType html vnoremap <buffer> < xi<<ESC>pa<ESC>la
     autocmd FileType php  iabbrev <buffer> pp> print '<pre>';<Esc>$xxi;<ESC>xA
-    autocmd FileType php  iabbrev <buffer> gcpp> print '</pre>';<Esc>$xxi;<ESC>xA
-    autocmd FileType php  iabbrev <buffer> dsm drupal_set_message()<Esc>i
+    autocmd FileType php  iabbrev <buffer> cpp> print '</pre>';<Esc>$xxi;<ESC>xA
     "}}}
 augroup end
 "{{{ Make backspace work nicely with autopairs
@@ -74,6 +73,22 @@ function! UnwrapParens()
     if  l:current == "]" || l:current == ")" || l:current == "}" || l:current == "[" || l:current == "(" || l:current == "{"
         norm ml%mkx`lx
     endif
+    if l:current == '"'
+        try
+            norm mlf"mkx`lx
+        catch
+            norm mlF"mkx`lx
+        endtry
+    endif
+    if l:current == "'"
+        try
+            norm mlf'mkx`lx
+        catch
+            norm mlF'mkx`lx
+        endtry
+    endif
 endfunction
 "}}}
-noremap <leader><BS> :call UnwrapParens()<CR>
+inoremap <localleader><BS> <Esc>:call UnwrapParens()<CR>
+noremap <leader>x :call UnwrapParens()<CR>
+autocmd! FileType vim inoremap " "

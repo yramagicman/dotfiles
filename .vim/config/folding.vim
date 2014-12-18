@@ -3,6 +3,7 @@
 nnoremap <CR> za
 nnoremap <leader><CR> zO
 nnoremap <Leader>z zMzvzz
+nnoremap <Leader><Leader>z zMzOzz
 "}}}
 "{{{close all folds
 nnoremap <localleader><localleader><CR> <ESC>gg0vG$zC<ESC>
