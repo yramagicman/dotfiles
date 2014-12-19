@@ -94,3 +94,8 @@ nnoremap <silent>--fm :set foldmethod=marker<CR>
 nnoremap <silent>--fi :set foldmethod=indent<CR>
 nnoremap <silent>--fs :set foldmethod=syntax<CR>
 "}}}
+"{{{ Command line abbreviations
+cnoreabbrev ack Ack
+cnoreabbrev push Git push
+cnoreabbrev pull Git pull
+"}}}
