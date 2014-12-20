@@ -24,7 +24,7 @@ alias zshrc="vim ~/.zshrc"
 alias ohmy="vim ~/.oh-my-zsh"
 #}}}
 #{{{ plugins
-plugins=(z tmux web-search zsh-aliases drush)
+plugins=(z tmux web-search colored-man zsh-aliases drush)
 ZSH_TMUX_AUTOSTART=true
 source $ZSH/oh-my-zsh.sh
 #}}}
@@ -40,7 +40,6 @@ export HIST_IGNORE_DUPS=true
 export HIST_SAVE_NO_DUPS=true
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
-export PAGER="vimpager"
 #}}}
 #{{{ Archey, startup stuff
 function check_process(){
