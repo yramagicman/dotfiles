@@ -2,7 +2,7 @@
 import pynotify
 import commands
 import time
-packages = commands.getstatusoutput('pacman -Qu')
+packages = commands.getstatusoutput('yaourt -Qu')
 configpath = '/home/jonathan/.config/updates/'
 if len(packages[1]) > 0:
     retVal = packages[0]
