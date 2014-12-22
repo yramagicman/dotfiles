@@ -25,5 +25,6 @@ call vundle#begin()
     Plugin 'jeetsukumaran/vim-filebeagle'
     "Plugin 'Auto-Pairs'
     Plugin 'sjl/clam.vim'
+    Plugin 'mattn/emmet-vim'
     Plugin 'sjl/gundo.vim'
 call vundle#end()
