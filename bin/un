@@ -11,7 +11,7 @@ packages = packages[1]
 packages = packages.strip('\n')
 packagecount=len((packages.split('\n')))
 notified = 0
-if retVal == 0 and packagecount > 5:
+if retVal == 0 and packagecount > 3:
     n = pynotify.Notification("Updates Availible", packages)
     n.show()
     updates = open(configpath + time.strftime("%m%d%Y")+'.txt','w+')

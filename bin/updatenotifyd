@@ -16,7 +16,7 @@ while True:
     if notified > 4:
         time.sleep(60*10)
         notified = 0
-    while retVal == 0 and packagecount > 5 and notified <= 5:
+    while retVal == 0 and packagecount > 3 and notified <= 5:
         n = pynotify.Notification("Updates Availible", packages)
         n.show()
         updates = open(configpath + time.strftime("%m%d%Y")+'.txt','w+')
