@@ -99,4 +99,4 @@ cnoreabbrev ack Ack
 cnoreabbrev push Git push
 cnoreabbrev pull Git pull
 "}}}
-nnoremap <leader>dca :!drush cc all<cr>
+nnoremap <leader>dca :!drush cc all<CR>
