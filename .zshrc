@@ -47,10 +47,11 @@ function check_process(){
     PROCESS_NUM=$(ps -ef | grep "$1" | grep -v "grep" | wc -l)
     if [ $PROCESS_NUM -eq 0 ];
     then
-       $1 &
+       $@ &
     fi
 }
 check_process $HOME/bin/tmuxcopy
+check_process glances -w
 clear
 #if [[ ! -a $HOME/.session-active ]]; then
 #    touch .session-active
