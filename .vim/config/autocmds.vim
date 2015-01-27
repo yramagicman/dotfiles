@@ -54,7 +54,6 @@ if has("autocmd")
         autocmd!
         "{{{ drupal coding standards
         autocmd VimEnter,Bufenter,BufRead */drupal*/* set tabstop=2
-        autocmd VimEnter,Bufenter,BufRead */drupal*/* set smartindent
         autocmd VimEnter,Bufenter,BufRead */drupal*/* set shiftwidth=2
         autocmd VimEnter,Bufenter,BufRead */drupal*/* set expandtab
         autocmd VimEnter,Bufenter,BufRead */drupal*/* set foldmethod=marker

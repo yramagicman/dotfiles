@@ -117,7 +117,9 @@ endif
 "}}}
 "{{{ Make tabs as wide as four spaces
 set tabstop=4
+set smarttab
 set smartindent
+set autoindent
 set shiftwidth=4
 "tabs to spaces
 set expandtab
