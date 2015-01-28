@@ -23,8 +23,8 @@ call vundle#begin()
     Plugin 'honza/vim-snippets'
     Plugin 'technosophos/drupal-snippets'
     Plugin 'jeetsukumaran/vim-filebeagle'
-    "Plugin 'Auto-Pairs'
     Plugin 'sjl/clam.vim'
     Plugin 'mattn/emmet-vim'
     Plugin 'sjl/gundo.vim'
+    Plugin 'Sass'
 call vundle#end()
