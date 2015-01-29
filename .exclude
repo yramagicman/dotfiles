@@ -5,7 +5,6 @@ Applications*
 *cache*
 *Cache*
 .cache*
-.config/
 .atom/
 .cups/
 .DS_Store
@@ -15,3 +14,4 @@ Applications*
 .git/
 .npm/
 .node-gyp/
+.cabal/
