@@ -15,3 +15,5 @@ Applications*
 .npm/
 .node-gyp/
 .cabal/
+.PyCharm30/
+.thumbnails/
