@@ -61,6 +61,8 @@ nnoremap CC 0f_x~
 nnoremap <leader>c :%!column -t<CR>
 nnoremap <leader>s :source %<CR>
 nnoremap <leader>S :source %<CR>
+nnoremap <leader>dca :!drush cc all<CR>
+nnoremap lcd :lcd %:p:h
 "}}}
 "{{{ spelling mappings
 nnoremap --s :set spell!<CR>
@@ -99,4 +101,3 @@ cnoreabbrev ack Ack
 cnoreabbrev push Git push
 cnoreabbrev pull Git pull
 "}}}
-nnoremap <leader>dca :!drush cc all<CR>
