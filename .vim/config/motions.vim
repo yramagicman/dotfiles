@@ -29,9 +29,8 @@ vnoremap j j
 vnoremap k k
 "}}}
 "{{{ jump to ...
-noremap <S-l> g_
+noremap $ g_
 noremap <S-j> G
-noremap <S-h> ^
 noremap <S-k> gg
 nnoremap <tab> %
 vnoremap <tab> %
