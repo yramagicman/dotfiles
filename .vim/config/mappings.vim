@@ -87,8 +87,8 @@ nnoremap '; ;
 nnoremap ": ,
 "}}}
 "{{{ insert blank lines in normal mode
-nnoremap <leader>O O<ESC>
-nnoremap <leader>o o<ESC>
+nnoremap <leader>O O<ESC>j
+nnoremap <leader>o o<ESC>k
 "}}}
 "{{{ set buffer, also set foldmethod
 nnoremap <silent>-b :set buftype=<CR>
