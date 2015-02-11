@@ -2,7 +2,7 @@ hi      clear
 syntax  reset
 set     background=light
 let     colors_name      =               "muttclone-light"
-hi      Normal           ctermbg=253     ctermfg=234    guifg=#dadada  guibg=#1c1c1c
+hi      Normal           ctermbg=255     ctermfg=234    guifg=#dadada  guibg=#e4e4e4
 hi      Type             gui=bold        term=bold      cterm=none     ctermfg=23     guifg=#00af00
 hi      VertSplit        guifg=#808080   guibg=#080808  gui=bold       ctermbg=250    ctermfg=247    cterm=bold
 hi      String           term=underline  cterm=NONE     ctermfg=25     guifg=#5f87ff  gui=underline
