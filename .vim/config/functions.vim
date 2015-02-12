@@ -128,7 +128,6 @@ function! PresMode()
         return g:presmode
     endif
 endfunction
-noremap <localleader>p :call PresMode()<CR>
 command! Pres :call PresMode()
 "}}}
 "{{{ line numbers on or off
