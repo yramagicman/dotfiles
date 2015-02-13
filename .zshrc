@@ -32,8 +32,6 @@ source $ZSH/oh-my-zsh.sh
 #homebrew, personal scripts and programs
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$HOME/.gem/ruby/2.1.0/bin:$PATH
 export MANPATH="/usr/local/man:$MANPATH"
-#drush
-export PATH=/Applications/MAMP/Library/bin:/Applications/MAMP/bin/php/php5.5.18/bin:$PATH
 export EDITOR='vim'
 export SAVEHIST=1000
 export HIST_IGNORE_DUPS=true
