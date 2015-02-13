@@ -31,6 +31,7 @@ source $ZSH/oh-my-zsh.sh
 #{{{ exports
 #homebrew, personal scripts and programs
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$HOME/.gem/ruby/2.1.0/bin:$PATH
+export PATH=/Applications/MAMP/Library/bin:/Applications/MAMP/bin/php/php5.5.18/bin:$PATH
 export MANPATH="/usr/local/man:$MANPATH"
 export EDITOR='vim'
 export SAVEHIST=1000
