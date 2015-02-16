@@ -2,7 +2,10 @@
 
 import os, time, sys, subprocess
 file_location = sys.argv[1]
-re = sys.argv[2]
+if len(sys.argv) > 2:
+    re = sys.argv[2]
+else:
+    re = 0
 file = os.path.expanduser('~') + '/.timestat'
 module  = file_location[file_location.find('modules') + len('modules') + 1 :file_location.rindex('/')]
 os.chdir(file_location[:file_location.find('modules') + len('modules')])
@@ -14,13 +17,13 @@ while True:
     r = open(file, 'r')
     mod = r.readline()
     if mod != time.ctime(os.path.getmtime(file_location)):
-        #if re == '-u':
-        #    subprocess.check_output(['drush', 'dis', module, '-y'])
-        #    subprocess.check_output(['drush', 'pmu', module, '-y'])
-        #subprocess.check_output(['drush', 'cc', 'all' ])
-        #if re == '-u':
-        #    subprocess.check_output(['drush', 'en', module, '-y'])
-        #    subprocess.check_output(['tput', 'bel'])
+        if re == '-u':
+            subprocess.check_output(['drush', 'dis', module, '-y'])
+            subprocess.check_output(['drush', 'pmu', module, '-y'])
+        subprocess.check_output(['drush', 'cc', 'all' ])
+        if re == '-u':
+            subprocess.check_output(['drush', 'en', module, '-y'])
+            subprocess.check_output(['tput', 'bel'])
         print '\n'
         print '\n'
     time.sleep(0.5)
