@@ -41,6 +41,7 @@ endfunction
 "}}}
 "{{{ save, kill whitespace at end of lines, and end of file, convert tabs
 function! Save()
+    checktime
     syntax sync fromstart
     redraw!
     %retab

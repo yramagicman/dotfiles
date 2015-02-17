@@ -16,6 +16,7 @@ noremap <leader>rl <ESC>:source ~/.vimrc<CR>
 "{{{ Make Vim work logically
 " Don't move on *
 nnoremap * *<c-o>
+vnoremap * *<c-o>
 "paste in insert mode
 inoremap <leader>p <ESC>pa
 "paste from x clipboard
@@ -79,6 +80,8 @@ vnoremap R q
 " there, now q won't do dumb stuff
 nnoremap q <NOP>
 vnoremap q <NOP>
+" q: is actually useful when you have it configured right
+nnoremap ch q:
 "}}}
 "{{{ I've needed these mappings forever. Map '; to ; and ": to , also quickfix
 " last search
@@ -100,4 +103,5 @@ nnoremap <silent>--fs :set foldmethod=syntax<CR>
 cnoreabbrev ack Ack
 cnoreabbrev push Git push
 cnoreabbrev pull Git pull
+cnoreabbrev tw Tw
 "}}}

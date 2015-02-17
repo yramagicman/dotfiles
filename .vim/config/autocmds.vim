@@ -80,11 +80,14 @@ if has("autocmd")
         " make Vim edit cron again
         autocmd BufEnter /private/tmp/crontab.* setl backupcopy=yes
         " always reload files when changed outside Vim
-        autocmd CursorHold,CursorMovedI,CursorMoved,Bufenter * :checktime
+        "autocmd CursorHold,CursorMovedI,CursorMoved,Bufenter * :checktime
+        autocmd Bufenter,FocusGained,BufLeave * :checktime
         " save on focus lost
         autocmd FocusLost,BufLeave * :silent! wall
         " leave insert mode on focus lost
         autocmd FocusLost,BufLeave * call feedkeys("\<ESC>")
+        autocmd CmdwinEnter * unmap <CR>
+        autocmd CmdwinLeave * map <CR> za
         " }}}
     augroup end
 endif
