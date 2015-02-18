@@ -7,9 +7,14 @@ if len(sys.argv) > 2:
 else:
     re = 0
 file = os.path.expanduser('~') + '/.timestat'
-module  = file_location[file_location.find('modules') + len('modules') + 1 :file_location.rindex('/')]
+module  = file_location
 os.chdir(file_location[:file_location.find('modules') + len('modules')])
 print module
+files = os.path.walk(file_location)
+def getTimes(files):
+    filtered = [i for i in files if '.git' not in i[0]]
+    for file in filtered:
+        time.ctime(file[2])
 while True:
     last_modified = time.ctime(os.path.getmtime(file_location))
     f = open(file, 'w')
