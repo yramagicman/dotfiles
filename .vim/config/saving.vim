@@ -6,14 +6,14 @@ inoremap <leader>ss <ESC>:call Save()<CR>
 vnoremap <leader>ss <ESC>:call Save()<CR>
 "}}}
 "{{{ save but don't retab
-nnoremap <leader><leader>ss :call SaveNoRt()<CR>
-inoremap <leader><leader>ss <ESC>:call SaveNoRt()<CR>
-vnoremap <leader><leader>ss <ESC>:call SaveNoRt()<CR>
+nnoremap <localleader>ss :call SaveNoRt()<CR>
+inoremap <localleader>ss <ESC>:call SaveNoRt()<CR>
+vnoremap <localleader>ss <ESC>:call SaveNoRt()<CR>
 "}}}
 "{{{ save and close
-nnoremap <silent><leader>ww :call Save()<CR>:close<CR>
-inoremap <silent><leader>ww <ESC>:call Save()<CR>:close<CR>
-vnoremap <silent><leader>ww <ESC>:call Save()<CR>:close<CR>
+nnoremap <silent><leader>ww :call SaveNoRt()<CR>:close<CR>
+inoremap <silent><leader>ww <ESC>:call SaveNoRt()<CR>:close<CR>
+vnoremap <silent><leader>ww <ESC>:call SaveNoR()<CR>:close<CR>
 "}}}
 "{{{ close but don't save
 nnoremap <leader>cl <ESC>:close!
@@ -21,9 +21,9 @@ inoremap <leader>cl <ESC>:close!
 vnoremap <leader>cl <ESC>:close!
 "}}}
 "{{{ save and quit
-nnoremap <silent><leader>wq :call Save()<CR>:qall<CR>
-inoremap <silent><leader>wq <ESC>:call Save()<CR>:qall<CR>
-vnoremap <silent><leader>wq <ESC>:call Save()<CR>:qall<CR>
+nnoremap <silent><leader>wq :call SaveNoRt()<CR>:qall<CR>
+inoremap <silent><leader>wq <ESC>:call SaveNoRt()<CR>:qall<CR>
+vnoremap <silent><leader>wq <ESC>:call SaveNoRt()<CR>:qall<CR>
 "}}}
 "{{{ quit without saving
 nnoremap <leader>Q :q!
