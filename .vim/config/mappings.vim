@@ -26,6 +26,8 @@ vnoremap <LocalLeader>p "+p
 " delete till the beginning of a line
 nnoremap <leader>D d0
 inoremap <leader>D <ESC>d0xi
+"repeat last command
+nnoremap <leader>. @:
 "}}}
 "{{{ Formatting, TextMate-style
 nnoremap Q gqip
@@ -100,6 +102,7 @@ nnoremap <silent>--fi :set foldmethod=indent<CR>
 nnoremap <silent>--fs :set foldmethod=syntax<CR>
 "}}}
 "{{{ Command line abbreviations
+cnoreabbrev clam Clam
 cnoreabbrev ack Ack
 cnoreabbrev push Git push
 cnoreabbrev pull Git pull

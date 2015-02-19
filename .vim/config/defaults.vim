@@ -94,6 +94,10 @@ set synmaxcol=800
 " break
 set scrolloff=2
 set nolist wrap linebreak sidescrolloff=15
+set showbreak=....
+if exists('+breakindent')
+    set breakindent
+endif
 " sensible completion
 set completeopt=longest,menuone
 set ofu=syntaxcomplete#Complete
