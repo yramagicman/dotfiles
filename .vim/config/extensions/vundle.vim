@@ -1,8 +1,8 @@
 "vundle.vim
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-    "Plugin 'tobyS/pdv'
-    "Plugin 'tobyS/vmustache'
+    Plugin 'tobyS/pdv'
+    Plugin 'tobyS/vmustache'
     Plugin 'gmarik/Vundle.vim'
     "Plugin 'othree/html5.vim'
     Plugin 'Shougo/neocomplcache.vim'
