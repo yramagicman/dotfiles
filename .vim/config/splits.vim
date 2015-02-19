@@ -27,7 +27,7 @@ nnoremap <C-s> <C-w>-
 "}}}
 "{{{ buffer management <c-z>
 nnoremap <c-z> <NOP>
-nnoremap <c-!> :suspend
+nnoremap -z :suspend<CR>
 "{{{ next buffer n
 nnoremap <C-z>n :bn<CR>
 vnoremap <C-z>n <ESC>:bn<CR>
