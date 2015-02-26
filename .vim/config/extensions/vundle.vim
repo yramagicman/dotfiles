@@ -12,7 +12,7 @@ call vundle#begin()
     Plugin 'tpope/vim-fugitive'
     "Plugin 'editorconfig/editorconfig-vim'
     Plugin 'bronson/vim-visual-star-search'
-    "Plugin 'vim-scripts/taglist.vim'
+    Plugin 'vim-scripts/taglist.vim'
     Plugin 'kien/ctrlp.vim'
     "Plugin 'joequery/Stupid-EasyMotion'
     Plugin 'shawncplus/phpcomplete.vim'
