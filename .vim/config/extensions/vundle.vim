@@ -16,7 +16,7 @@ call vundle#begin()
     Plugin 'kien/ctrlp.vim'
     Plugin 'joequery/Stupid-EasyMotion'
     Plugin 'shawncplus/phpcomplete.vim'
-    "Plugin 'mileszs/ack.vim'
+    Plugin 'mileszs/ack.vim'
     Plugin 'SirVer/ultisnips'
     Plugin 'honza/vim-snippets'
     Plugin 'technosophos/drupal-snippets'
