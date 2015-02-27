@@ -10,4 +10,4 @@ source ~/.vim/config/saving.vim
 source ~/.vim/config/folding.vim
 source ~/.vim/config/mappings.vim
 source ~/.vim/config/splits.vim
-"source ~/.vim/config/reg.vim
+source ~/.vim/config/extensions/reg.vim
