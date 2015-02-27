@@ -14,7 +14,7 @@ call vundle#begin()
     Plugin 'bronson/vim-visual-star-search'
     Plugin 'vim-scripts/taglist.vim'
     Plugin 'kien/ctrlp.vim'
-    "Plugin 'joequery/Stupid-EasyMotion'
+    Plugin 'joequery/Stupid-EasyMotion'
     Plugin 'shawncplus/phpcomplete.vim'
     "Plugin 'mileszs/ack.vim'
     Plugin 'SirVer/ultisnips'
