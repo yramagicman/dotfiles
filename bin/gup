@@ -15,7 +15,7 @@ class gup:
                         home + '/.oh-my-zsh/custom/plugins/drush/',
                      ]
         # arrays used in subprocess.call and such
-        self.pull = ['git', 'pull', '--rebase']
+        self.pull = ['git', 'up']
         self.fetch = ['git', 'fetch']
         self.push = ['git', 'push']
         self.ppull = ['pass', 'git', 'pull']
