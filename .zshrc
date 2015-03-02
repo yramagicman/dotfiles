@@ -30,7 +30,7 @@ source $ZSH/oh-my-zsh.sh
 #}}}
 #{{{ exports
 #homebrew, personal scripts and programs
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$HOME/.gem/ruby/2.1.0/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$HOME/.gem/ruby/2.1.0/bin:$HOME/.gem/ruby/2.2.0/bin:$PATH
 #export PATH=/Applications/MAMP/Library/bin:/Applications/MAMP/bin/php/php5.5.18/bin:$PATH
 export PATH=/Applications/MAMP/bin/php/php5.5.18/bin:$PATH
 export WORKON_HOME=$HOME/Sites/
