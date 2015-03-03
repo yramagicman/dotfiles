@@ -53,6 +53,7 @@ function check_process(){
 }
 check_process $HOME/bin/tmuxcopy
 check_process glances -w
+source /usr/local/bin/virtualenvwrapper.sh
 clear
 #if [[ ! -a $HOME/.session-active ]]; then
 #    touch .session-active
