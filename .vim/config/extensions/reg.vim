@@ -1,8 +1,10 @@
 "reg.vim"
-let @c = "/\/\/d"
-let @f = "/function Äkbf{i,ss"
 let @r = "/returnO,mjo,m"
-let @e = "/^}aRÄkb,m"
-let @z = "^vf(hyOif(function_exists(',p'){`jo}"
 let @d = "ddn"
-let @s = "F<v/spannf>x/google-src"
+let @g = "F<v/spannf>x/google-src"
+let @s = "vi["
+let @p = "vi("
+let @c = "vi{"
+let @q = "vi'"
+let @b = 'vi"'
+let @a = "vi<"
