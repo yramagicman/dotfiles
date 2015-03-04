@@ -14,9 +14,6 @@ nnoremap <silent> <leader>ev :e ~/.vim/config/<CR>
 noremap <leader>rl <ESC>:source ~/.vimrc<CR>
 "}}}
 "{{{ Make Vim work logically
-" Don't move on *
-nnoremap * *<c-o>
-vnoremap * *<c-o>
 "paste in insert mode
 inoremap <leader>p <ESC>pa
 "paste from x clipboard
