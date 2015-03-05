@@ -17,6 +17,7 @@ nnoremap <c-c>a :Git add %<CR>
 nnoremap <c-c>r :Git checkout %<CR>
 nnoremap <c-c>d :Gdiff<CR>
 nnoremap <c-c>ps :Git push<CR>
+nnoremap <c-c>pu :Git push<CR>
 nnoremap <c-c>pl :Git pull<CR>
 nnoremap <c-c>A :Git commit --amend<CR>
 "}}}
