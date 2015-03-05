@@ -250,6 +250,7 @@ if has("autocmd")
         "}}}
         "{{{ auto-reload vim files, auto resize splits on window resize
         autocmd BufWritePost $HOME/.vim/config/* :source %
+        autocmd BufWritePost $HOME/.vim/config/* :set visualbell
         autocmd BufWritePost $HOME/.vim/config/* :set foldmethod=marker
         au VimResized * exe "normal! \<c-w>="
         autocmd VimEnter * set vb t_vb=
@@ -295,7 +296,7 @@ if has("autocmd")
         autocmd VimEnter,Bufenter,BufRead */drupal*/* set tabstop=2
         autocmd VimEnter,Bufenter,BufRead */drupal*/* set shiftwidth=2
         autocmd VimEnter,Bufenter,BufRead */drupal*/* set expandtab
-        autocmd VimEnter,Bufenter,BufRead */drupal*/* set foldmethod=marker
+        autocmd VimEnter,Bufenter,BufRead */drupal*/* set foldmethod=indent
         autocmd VimEnter,Bufenter,BufRead *.module set filetype=php
         autocmd VimEnter,Bufenter,BufRead *.inc set filetype=php
         autocmd VimEnter,Bufenter,BufRead *.install set filetype=php
@@ -776,7 +777,8 @@ vnoremap <localleader>[ <gv
 inoremap <localleader>[ <C-O><<
 "}}}
 "{{{file navigation shortcuts
-nnoremap <silent> <leader>ev :e ~/.vim/config/<CR>
+nnoremap <silent> <leader>ev :e ~/.vim/config/vimrc.combined.vim<CR>
+nnoremap <silent> <leader>pe :e ~/.vim/config/extensions<CR>
 noremap <leader>rl <ESC>:source ~/.vimrc<CR>:set visualbell<CR>
 "}}}
 "{{{ Make Vim work logically
@@ -805,7 +807,7 @@ noremap <leader>W :w !sudo tee % > /dev/null<CR>
 "delete blank lines
 noremap <localleader>db :g/^$/d<ESC>:let @/ = ""<CR>
 " delete duplicate blank lines
-noremap <leader>db :%!cat -s<CR>
+noremap <leader>db mz:%!cat -s<CR>`z
 " toggle word wrap
 noremap <silent><leader>w <ESC>:set wrap!<CR>
 inoremap <silent><leader>w <ESC>:set wrap!<CR>i
@@ -974,4 +976,5 @@ let @c = "vi{"
 let @q = "vi'"
 let @b = 'vi"'
 let @a = "vi<"
+let @e = "jok"
 "}}}
