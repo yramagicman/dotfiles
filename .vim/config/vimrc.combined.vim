@@ -315,7 +315,6 @@ if has("autocmd")
         autocmd FileType mail set spell
         autocmd FileType make set noexpandtab
         autocmd FileType,BufEnter snippets set noexpandtab
-        autocmd BufRead /usr/local/* !ring
         autocmd BufNewFile,BufRead *.md set filetype=markdown
         autocmd BufEnter * execute "source ~/.vim/colors/" . g:colors_name . ".vim"
         " make Vim edit cron again
@@ -818,7 +817,7 @@ noremap <leader>r <ESC>:%retab<CR>
 "kill search highlighting
 noremap <silent><leader><space> <ESC>:let @/ = ""<CR>
 "uppercase words
-inoremap <C-u> <ESC>mzgUiwe
+inoremap <C-u> <ESC>mzgUiwea
 nnoremap <C-u> <ESC>mzgUiwe
 " Toggle [i]nvisible characters
 nnoremap <silent><leader>I :set list!<CR>
@@ -977,4 +976,5 @@ let @q = "vi'"
 let @b = 'vi"'
 let @a = "vi<"
 let @e = "jok"
+let @v = '0/\u~hi_, '
 "}}}
