@@ -99,4 +99,4 @@ let g:filebeagle_suppress_keymaps = 1
 map <silent> +  <Plug>FileBeagleOpenCurrentWorkingDir
 map <silent> =  <Plug>FileBeagleOpenCurrentBufferDir
 "}}}
-autocmd! VimEnter * Minimap
+"autocmd! VimEnter * Minimap
