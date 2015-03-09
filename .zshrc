@@ -37,10 +37,12 @@ export WORKON_HOME=$HOME/Sites/
 export MANPATH="/usr/local/man:$MANPATH"
 export EDITOR='vim'
 export SAVEHIST=1000
-export HIST_IGNORE_DUPS=true
-export HIST_SAVE_NO_DUPS=true
+setopt HIST_IGNORE_DUPS
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
+set NO_BEEP
+export HIST_SAVE_NO_DUPS=true
+zstyle ':completion:*:functions' ignored-patterns '_*'
 #}}}
 #{{{ Archey, startup stuff
 function check_process(){
@@ -76,4 +78,40 @@ zle -N zle-line-init
 zle -N zle-keymap-select
 bindkey -M vicmd '^R' history-incremental-search-backward
 bindkey -M viins '^R' history-incremental-search-backward
+# define function that retrieves and runs last command
+function run-again {
+    # get previous history item
+    zle up-history
+    # confirm command
+    zle accept-line
+}
+
+# define run-again widget from function of the same name
+zle -N run-again
+
+# bind widget to Ctrl+X in viins mode
+bindkey -M viins '^W' run-again
+# bind widget to Ctrl+X in vicmd mode
+bindkey -M vicmd '^W' run-again
+#}}}
+
+#{{{ Awesome cd extension
+DIRSTACKFILE="$HOME/.cache/zsh/dirs"
+if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then
+  dirstack=( ${(f)"$(< $DIRSTACKFILE)"} )
+  [[ -d $dirstack[1] ]] && cd $dirstack[1]
+fi
+chpwd() {
+  print -l $PWD ${(u)dirstack} >$DIRSTACKFILE
+}
+
+DIRSTACKSIZE=20
+
+setopt autopushd pushdsilent pushdtohome
+
+## Remove duplicate entries
+setopt pushdignoredups
+
+## This reverts the +/- operators.
+setopt pushdminus
 #}}}
