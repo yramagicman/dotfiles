@@ -44,6 +44,26 @@ set NO_BEEP
 export HIST_SAVE_NO_DUPS=true
 zstyle ':completion:*:functions' ignored-patterns '_*'
 #}}}
+#{{{ Awesome cd extension
+DIRSTACKFILE="$HOME/.cache/zsh/dirs"
+if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then
+  dirstack=( ${(f)"$(< $DIRSTACKFILE)"} )
+  #[[ -d $dirstack[1] ]] && cd $dirstack[1]
+fi
+chpwd() {
+  print -l $PWD ${(u)dirstack} >$DIRSTACKFILE
+}
+
+DIRSTACKSIZE=20
+
+setopt autopushd pushdsilent pushdtohome
+
+## Remove duplicate entries
+setopt pushdignoredups
+
+# This reverts the +/- operators.
+setopt pushdminus
+#}}}
 #{{{ Archey, startup stuff
 function check_process(){
     #PROCESS_NUM => get the process number regarding the given thread name
@@ -93,25 +113,4 @@ zle -N run-again
 bindkey -M viins '^W' run-again
 # bind widget to Ctrl+X in vicmd mode
 bindkey -M vicmd '^W' run-again
-#}}}
-
-#{{{ Awesome cd extension
-DIRSTACKFILE="$HOME/.cache/zsh/dirs"
-if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then
-  dirstack=( ${(f)"$(< $DIRSTACKFILE)"} )
-  [[ -d $dirstack[1] ]] && cd $dirstack[1]
-fi
-chpwd() {
-  print -l $PWD ${(u)dirstack} >$DIRSTACKFILE
-}
-
-DIRSTACKSIZE=20
-
-setopt autopushd pushdsilent pushdtohome
-
-## Remove duplicate entries
-setopt pushdignoredups
-
-## This reverts the +/- operators.
-setopt pushdminus
 #}}}
