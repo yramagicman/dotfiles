@@ -48,7 +48,7 @@ zstyle ':completion:*:functions' ignored-patterns '_*'
 DIRSTACKFILE="$HOME/.cache/zsh/dirs"
 if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then
   dirstack=( ${(f)"$(< $DIRSTACKFILE)"} )
-  #[[ -d $dirstack[1] ]] && cd $dirstack[1]
+  [[ -d $dirstack[1] ]] && builtin cd $dirstack[1]
 fi
 chpwd() {
   print -l $PWD ${(u)dirstack} >$DIRSTACKFILE
