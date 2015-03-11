@@ -2,7 +2,7 @@
 
 cd ~/bin/ffdev
 makepkg
-sudo pacman -U firefox-developer-38.0a2-1-x86_64.pkg.tar.xz
+sudo pacman -U --noconfirm firefox-developer-38.0a2-1-x86_64.pkg.tar.xz
 rm *.tar*
 rm -rv pkg
 rm -rv src
