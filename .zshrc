@@ -40,7 +40,7 @@ export SAVEHIST=1000
 setopt HIST_IGNORE_DUPS
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
-set NO_BEEP
+setopt nobeep
 export HIST_SAVE_NO_DUPS=true
 zstyle ':completion:*:functions' ignored-patterns '_*'
 #}}}
