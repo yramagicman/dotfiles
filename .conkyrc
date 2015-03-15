@@ -34,15 +34,15 @@ own_window_argb_visual yes
 own_window_argb_value 150
 pad_percents 1
 TEXT
-${alignc}[${time %A %B %d, %Y}]    \
-[Local Ip: ${addr wlp4s0}]     \
-[CPU TOTAL ${lua_parse format %2.0f ${cpu cpu0}}% \
+${alignc}[ ${time %A %B %d, %Y} ]    \
+[ Local Ip: ${addr wlp4s0} ]     \
+[ CPU TOTAL ${lua_parse format %2.0f ${cpu cpu0}}% \
 ${cpubar}  \
-Running processes: $running_processes]      \
-[RAM $mem/$memmax \
+CPU Temp ${exec sensors | grep 'id 0' | grep -o '[0-9][0-9]\.[0-9]' | head -n 1 } ]      \
+[ RAM $mem/$memmax \
 ${membar} \
-SWAP $swapperc%]     \
-[Disk Usage \
+SWAP $swapperc% ]     \
+[ Disk Usage \
 Root: ${fs_free /}/${fs_size /} \
-Home: ${fs_free /home}/${fs_size /home}]     \
-[Link Quality (max: 70) ${wireless_link_qual wlp4s0}]
+Home: ${fs_free /home}/${fs_size /home} ]     \
+[ Link Quality (max: 70) ${wireless_link_qual wlp4s0}]
