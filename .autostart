@@ -10,7 +10,7 @@ check_process(){
 }
 ( /home/jonathan/.screenlayout/single.sh) &
 ## Set root window colour
-(/home/jonathan/bin/rotate-wallpaper) &
+(/home/jonathan/bin/auto-rotate-wallpaper) &
 rm $HOME/.session-active &
 check_process urxvtd
 xset -dpms; xset s off &
