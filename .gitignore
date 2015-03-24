@@ -106,3 +106,4 @@ usrlocal
 .zcompdump-tardis-5.0.7
 Videos/
 thing/
+*.pyc
