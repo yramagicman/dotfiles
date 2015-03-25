@@ -862,6 +862,7 @@ nnoremap <leader>o o<ESC>k
 "}}}
 "{{{ set buffer, also set foldmethod
 nnoremap <silent>-b :set buftype=<CR>
+nnoremap <silent>-dh :set filetype=htmldjango<CR>
 nnoremap <silent>-fm :set foldmethod=marker<CR>
 nnoremap <silent>-fi :set foldmethod=indent<CR>
 nnoremap <silent>-fs :set foldmethod=syntax<CR>
