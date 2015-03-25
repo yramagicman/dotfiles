@@ -365,8 +365,8 @@ vnoremap <Leader>' yda"i''<ESC>h"0pf'
 nnoremap <Leader>" <ESC>vi'yda'i""<ESC>h"0pf"
 nnoremap <Leader>' <ESC>vi"yda"i''<ESC>h"0pf'
 "}}}
+"{{{ filetype specific mappings for characters and shortcuts
 augroup abbrevs
-    "{{{ filetype specific mappings for characters and shortcuts
     autocmd!
     autocmd FileType * iabbrev <buffer> api API
     autocmd FileType * iabbrev <buffer> iso ISO
@@ -379,8 +379,8 @@ augroup abbrevs
     autocmd FileType php  iabbrev <buffer> pp> print '<pre>';
     autocmd FileType php  iabbrev <buffer> cpp> print '</pre>';
     autocmd FileType vim inoremap " "
-    "}}}
 augroup end
+"}}}
 "{{{ Make backspace work nicely with autopairs
 function! Backspace()
     let l:current = strpart(getline('.'), col('.')-1, 1)
