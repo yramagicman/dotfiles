@@ -69,10 +69,10 @@ bind j:ctrl;alt;cmd   throw down  resize
 bind tab:alt hint
 
 bind i:cmd;alt;ctrl focus 'iTerm'
-bind m:cmd;alt;ctrl focus 'iTunes'
+bind t:cmd;alt;ctrl focus 'iTunes'
 bind c:cmd;alt;ctrl focus 'Clementine'
 bind b:cmd;alt;ctrl focus 'FirefoxDeveloperEdition'
 bind f:cmd;alt;ctrl focus 'Finder'
 bind v:cmd;alt;ctrl focus 'MacVim'
 bind s:cmd;alt;ctrl focus 'Skype'
-bind w:cmd;alt;ctrl focus 'Cisco WebEx Meetings'
+bind m:cmd;alt;ctrl focus 'Mail'
