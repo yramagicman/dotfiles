@@ -168,6 +168,24 @@ set wildignore+=.cache,.neocomplcache,.npm,.gem
 set wildignore+=node_modules,bower_components
 
 "}}}
+"{{{ GUI Options
+if has('gui')
+set guifont="Source Code Pro":h13
+" Better line-height
+set linespace=10
+" Disable error bells
+set noerrorbells
+set guioptions -=m
+set guioptions +=c
+set guioptions +=p
+set guioptions -=e
+set guioptions -=r
+set guioptions -=R
+set guioptions -=l
+set guioptions -=L
+set guioptions -=T
+endif
+"}}}
 "}}}
 "{{{motions
 "{{{ kill arrow keys
