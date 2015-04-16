@@ -123,8 +123,6 @@ class gup:
         os.chdir(repo)
         pwd = os.getcwd()
         if pwd != self.home + '/.zprezto':
-            print pwd
-            print self.pull, self.push
             self.pull_push(self.pull, self.push)
         if pwd == self.home + '/.zprezto':
             print self.zupdate
