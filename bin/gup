@@ -19,7 +19,7 @@ class gup:
         self.push = ['git', 'push']
         self.ppull = ['pass', 'git', 'pull']
         self.ppush = ['pass', 'git', 'push']
-        self.checkout = ['git', 'checkout', 'master']
+        self.checkout = ['git', 'checkout', '-q', 'master']
         self.zupdate = [self.home + '/bin/zupdate']
         self.mcommit =['git', 'commit', '--all', '-m', "mail $now"]
         #self.mlink = ['ln', '-fv', home +'/.mutt/.muttrc', home + '/.muttrc']
