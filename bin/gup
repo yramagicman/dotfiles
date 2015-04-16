@@ -10,9 +10,9 @@ class gup:
                         home + '/.password-store',
                         home + '/.mutt',
                         home,
-                        home + '/.oh-my-zsh/',
-                        home + '/.oh-my-zsh/custom/plugins/zsh-aliases/',
-                        home + '/.oh-my-zsh/custom/plugins/drush/',
+                        #home + '/.oh-my-zsh/',
+                        #home + '/.oh-my-zsh/custom/plugins/zsh-aliases/',
+                        #home + '/.oh-my-zsh/custom/plugins/drush/',
                      ]
         # arrays used in subprocess.call and such
         self.pull = ['git', 'up']
