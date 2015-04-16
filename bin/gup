@@ -10,18 +10,16 @@ class gup:
                         home + '/.password-store',
                         home + '/.mutt',
                         home,
-                        #home + '/.oh-my-zsh/',
-                        #home + '/.oh-my-zsh/custom/plugins/zsh-aliases/',
-                        #home + '/.oh-my-zsh/custom/plugins/drush/',
+                        #home + '/.zprezto',
                      ]
         # arrays used in subprocess.call and such
-        self.pull = ['git', 'up']
+        self.pull = ['git', 'pull', '--rebase']
         self.fetch = ['git', 'fetch']
         self.push = ['git', 'push']
         self.ppull = ['pass', 'git', 'pull']
         self.ppush = ['pass', 'git', 'push']
-        self.zupdate = ['git', 'pull', '--rebase', '--stat', 'origin', 'master']
-        self.zcommit = ['git', 'commit', '-m', 'blah blah blah']
+        self.zupdate = ['git', 'pull', '&&', 'git', 'submodule', 'update', '--init', '--recursive']
+        self.zcommit = ['git', 'commit', '-m', msg]
         self.mcommit =['git', 'commit', '--all', '-m', "mail $now"]
         #self.mlink = ['ln', '-fv', home +'/.mutt/.muttrc', home + '/.muttrc']
         self.local_status = ['git', 'rev-parse', '@']
@@ -122,9 +120,9 @@ class gup:
         checks current working directory and does the right thing based on that """
         pwd = os.getcwd()
         os.chdir(repo)
-        if pwd != self.home + '/.oh-my-zsh':
+        if pwd != self.home + '/.zprezto':
             self.pull_push(self.pull, self.push)
-        if pwd == self.home + '/.oh-my-zsh':
+        if pwd == self.home + '/.zprezto':
             self.pull_push(self.zupdate, self.push)
         if pwd == self.home + '/.password-store':
             self.pull_push(self.ppull, self.ppush)
