@@ -10,7 +10,7 @@ class gup:
                         home + '/.password-store',
                         home + '/.mutt',
                         home,
-                        #home + '/.zprezto',
+                        home + '/.zprezto',
                      ]
         # arrays used in subprocess.call and such
         self.pull = ['git', 'pull', '--rebase']
