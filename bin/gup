@@ -19,7 +19,8 @@ class gup:
         self.push = ['git', 'push']
         self.ppull = ['pass', 'git', 'pull']
         self.ppush = ['pass', 'git', 'push']
-        self.zupdate = ['git', 'pull', '&&', 'git', 'submodule', 'update', '--init', '--recursive']
+        self.checkout = ['git', 'checkout', 'master']
+        self.zupdate = [self.home + '/bin/zupdate']
         self.mcommit =['git', 'commit', '--all', '-m', "mail $now"]
         #self.mlink = ['ln', '-fv', home +'/.mutt/.muttrc', home + '/.muttrc']
         self.local_status = ['git', 'rev-parse', '@']
@@ -61,6 +62,7 @@ class gup:
 
     def check_status(self):
         """ Supposed to see whose ahead and whose behind"""
+        subprocess.call(self.checkout)
         c_local = subprocess.check_output(self.local_status)
         c_remote = subprocess.check_output(self.remote_status)
         c_merge = subprocess.check_output(self.merge_base)
@@ -118,11 +120,14 @@ class gup:
     def do_it(self, repo):
         """ wrapper function,
         checks current working directory and does the right thing based on that """
-        pwd = os.getcwd()
         os.chdir(repo)
+        pwd = os.getcwd()
         if pwd != self.home + '/.zprezto':
+            print pwd
+            print self.pull, self.push
             self.pull_push(self.pull, self.push)
         if pwd == self.home + '/.zprezto':
+            print self.zupdate
             subprocess.call(self.zupdate)
         if pwd == self.home + '/.password-store':
             self.pull_push(self.ppull, self.ppush)

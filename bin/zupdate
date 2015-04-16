@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 git fetch upstream
 git checkout master
 git up
