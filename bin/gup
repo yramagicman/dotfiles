@@ -125,7 +125,7 @@ class gup:
         if pwd != self.home + '/.zprezto':
             self.pull_push(self.pull, self.push)
         if pwd == self.home + '/.zprezto':
-            subprocess.call(self.zupdate)
+            self.pull_push(self.zupdate, self.push)
         if pwd == self.home + '/.password-store':
             self.pull_push(self.ppull, self.ppush)
         return 1
