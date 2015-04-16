@@ -122,12 +122,7 @@ class gup:
         if pwd != self.home + '/.zprezto':
             self.pull_push(self.pull, self.push)
         if pwd == self.home + '/.zprezto':
-            if num_changes() > 0:
-                list_changes()
-                msg = raw_input()
-                zcommit = ['git', 'commit', '-m', msg]
-                subprocess.call(zcommit)
-            self.pull_push(self.zupdate, self.push)
+            subprocess.call(self.zupdate)
         if pwd == self.home + '/.password-store':
             self.pull_push(self.ppull, self.ppush)
         return 1
