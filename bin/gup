@@ -19,7 +19,6 @@ class gup:
         self.ppull = ['pass', 'git', 'pull']
         self.ppush = ['pass', 'git', 'push']
         self.zupdate = ['git', 'pull', '&&', 'git', 'submodule', 'update', '--init', '--recursive']
-        self.zcommit = ['git', 'commit', '-m', msg]
         self.mcommit =['git', 'commit', '--all', '-m', "mail $now"]
         #self.mlink = ['ln', '-fv', home +'/.mutt/.muttrc', home + '/.muttrc']
         self.local_status = ['git', 'rev-parse', '@']
@@ -123,6 +122,11 @@ class gup:
         if pwd != self.home + '/.zprezto':
             self.pull_push(self.pull, self.push)
         if pwd == self.home + '/.zprezto':
+            if num_changes() > 0:
+                list_changes()
+                msg = raw_input()
+                zcommit = ['git', 'commit', '-m', msg]
+                subprocess.call(zcommit)
             self.pull_push(self.zupdate, self.push)
         if pwd == self.home + '/.password-store':
             self.pull_push(self.ppull, self.ppush)
