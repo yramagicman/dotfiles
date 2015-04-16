@@ -11,6 +11,7 @@ class gup:
                         home + '/.mutt',
                         home,
                         home + '/.zprezto',
+                        home + '/.zprezto/modules/zsh-aliases',
                      ]
         # arrays used in subprocess.call and such
         self.pull = ['git', 'pull', '--rebase']
