@@ -7,11 +7,11 @@ class gup:
         self.home = os.path.expanduser('~')
         home = self.home
         self.repos = [
-                        home + '/.password-store',
-                        home + '/.mutt',
                         home,
+                        home + '/.mutt',
                         home + '/.zprezto',
                         home + '/.zprezto/modules/zsh-aliases',
+                        home + '/.password-store',
                      ]
         # arrays used in subprocess.call and such
         self.pull = ['git', 'up']
@@ -122,11 +122,12 @@ class gup:
         checks current working directory and does the right thing based on that """
         os.chdir(repo)
         pwd = os.getcwd()
-        if pwd != self.home + '/.zprezto':
+        print pwd
+        if  pwd != self.home + '/.zprezto' and '/.password-store' not in pwd:
             self.pull_push(self.pull, self.push)
-        if pwd == self.home + '/.zprezto':
+        if '/.zprezto' in pwd:
             self.pull_push(self.zupdate, self.push)
-        if pwd == self.home + '/.password-store':
+        if '/.password-store' in pwd:
             self.pull_push(self.ppull, self.ppush)
         return 1
 
@@ -134,9 +135,10 @@ class gup:
         """ simplify calling stuff"""
         repos = self.repos
         for repo in repos:
-            p = multiprocessing.Process(target=gup().do_it, args=(repo,))
-            p.start()
-            p.join()
+            gup().do_it(repo)
+            #p = multiprocessing.Process(target=gup().do_it, args=(repo,))
+            #p.start()
+            #p.join()
 
 if __name__ == '__main__':
     g = gup()
