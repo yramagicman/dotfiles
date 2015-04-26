@@ -35,7 +35,7 @@ own_window_argb_value 150
 pad_percents 1
 TEXT
 ${alignc}[ ${time %A %B %d, %Y} ]   \
-[ Local Ip: ${addr wlp4s0} ]    \
+[ Local Ip: ${addr enp2s0} ]    \
 [ CPU TOTAL ${lua_parse format %2.0f ${cpu cpu0}}% \
 CPU Temp ${exec sensors | grep 'id 0' | grep -o '[0-9][0-9]' | head -n 1 } ]     \
 [ RAM $mem/$memmax \
