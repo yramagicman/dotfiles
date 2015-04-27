@@ -1,8 +1,18 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 import sqlite3
+import os
+home = os.path.expanduser('~')
+config=open(home + "/.config/ffclean")
+count = 0
+domains = []
+for line in config:
+    if count < 1:
+	path= line
+    else:
+	domains.append(line.strip())
+    count = count + 1
 con = sqlite3.connect('/Users/jonathan/Library/Application Support/Firefox/Profiles/oq78nng7.dev-edition-default/cookies.sqlite')
 c =con.cursor()
-domains = ['facebook.com','google.com', 'amazon.com','github.com', 'youtube.com','netflix.com','stackoverflow.com', 'pulse.me', 'ycombinator.com' ]
 delete = ['delete', 'from', 'moz_cookies', 'where']
 select = ['select', '*', 'from', 'moz_cookies', 'where']
 for i in domains:
