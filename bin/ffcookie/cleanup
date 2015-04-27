@@ -7,11 +7,11 @@ count = 0
 domains = []
 for line in config:
     if count < 1:
-	path= line
+        path= line
     else:
-	domains.append(line.strip())
-    count = count + 1
-con = sqlite3.connect('/Users/jonathan/Library/Application Support/Firefox/Profiles/oq78nng7.dev-edition-default/cookies.sqlite')
+        domains.append(line.strip())
+        count = count + 1
+con = sqlite3.connect(path)
 c =con.cursor()
 delete = ['delete', 'from', 'moz_cookies', 'where']
 select = ['select', '*', 'from', 'moz_cookies', 'where']
