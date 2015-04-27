@@ -1,0 +1,8 @@
+#!/usr/bin/env python2
+
+import subprocess
+
+gitdir = subprocess.check_output(['git', 'rev-parse', '--show-toplevel'])
+gitdir = gitdir.strip()
+gitdir = gitdir.split('/')
+print gitdir[-1]
