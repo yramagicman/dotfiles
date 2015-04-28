@@ -25,5 +25,5 @@ call vundle#begin()
     Plugin 'mattn/emmet-vim'
     Plugin 'sjl/gundo.vim'
     Plugin 'Sass'
-    Plugin 'yramagicman/vim-minimap'
+    Plugin 'severin-lemaignan/vim-minimap'
 call vundle#end()
