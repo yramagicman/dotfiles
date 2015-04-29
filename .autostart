@@ -8,6 +8,7 @@ check_process(){
        $1 &
     fi
 }
+xflux -z 45036
 ( /home/jonathan/.screenlayout/single.sh) &
 ## Set root window colour
 (/home/jonathan/bin/auto-rotate-wallpaper) &
