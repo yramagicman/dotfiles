@@ -135,10 +135,9 @@ class gup:
         """ simplify calling stuff"""
         repos = self.repos
         for repo in repos:
-            gup().do_it(repo)
-            #p = multiprocessing.Process(target=gup().do_it, args=(repo,))
-            #p.start()
-            #p.join()
+            p = multiprocessing.Process(target=gup().do_it, args=(repo,))
+            p.start()
+            p.join()
 
 if __name__ == '__main__':
     g = gup()
