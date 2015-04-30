@@ -6,5 +6,5 @@ if [ $? -eq  0 ]
     then
 curl -L https://raw.github.com/yramagicman/zsh-aliases/master/plugins/aliases/aliases.plugin.zsh | zsh
     else
-    echo " Not able to check internet connectivity!"
+    echo "Not able to check internet connectivity!"
 fi
