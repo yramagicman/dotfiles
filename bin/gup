@@ -122,7 +122,6 @@ class gup:
         checks current working directory and does the right thing based on that """
         os.chdir(repo)
         pwd = os.getcwd()
-        print pwd
         if  pwd != self.home + '/.zprezto' and '/.password-store' not in pwd:
             self.pull_push(self.pull, self.push)
         if '/.zprezto' in pwd:
