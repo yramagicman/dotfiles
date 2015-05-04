@@ -114,3 +114,4 @@ Applications alias
 .DS_Store
 .CFUserTextEncoding
 *.pyc
+.fetchmailrc
