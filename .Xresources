@@ -22,7 +22,6 @@ URxvt.perl-ext-common: default,clipboard
 URxvt.allow_bold:false
 URxvt*depth: 32
 URxvt*buffered: true
-zsh:1: command not found: zz
 !*******************************************************************************!
 !                                   Colors
 !*******************************************************************************!
