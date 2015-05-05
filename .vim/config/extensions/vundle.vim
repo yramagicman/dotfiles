@@ -26,5 +26,4 @@ call vundle#begin()
     Plugin 'sjl/gundo.vim'
     Plugin 'Sass'
     Plugin 'severin-lemaignan/vim-minimap'
-    Plugin 'yramagicman/vim-xclipboard-sync'
 call vundle#end()
