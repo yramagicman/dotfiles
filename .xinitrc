@@ -31,4 +31,4 @@ fi
 #xterm
 #exec xterm -geometry 80x66+0+0 -name login
 export DE="xfce"
-exec dwm
+exec $HOME/bin/dwmrestart
