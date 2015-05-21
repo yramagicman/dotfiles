@@ -3,5 +3,5 @@
 while
     do
         $HOME/bin/rotate-wallpaper
-        /bin/sleep 5m
+        /bin/sleep 15m
         done
