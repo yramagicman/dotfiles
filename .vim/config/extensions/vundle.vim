@@ -25,5 +25,5 @@ call vundle#begin()
     Plugin 'mattn/emmet-vim'
     Plugin 'sjl/gundo.vim'
     Plugin 'Sass'
-    "Plugin 'severin-lemaignan/vim-minimap'
+    Plugin 'vim-indent-object'
 call vundle#end()
