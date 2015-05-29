@@ -39,7 +39,6 @@ function! MyTabLabel(n)
         endif
         let bnames = bnamel[-2] .'/'. bnamel[-1]
     elseif len(bnamel) <= 2 && len(bnamel) != 0
-        echom len(bnamel)
         let bnames = bnamel[0]
     else
         let bnames = '[No Name]'
