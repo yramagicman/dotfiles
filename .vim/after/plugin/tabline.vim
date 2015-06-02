@@ -20,10 +20,7 @@ for key in vim.buffers:
             bufs.remove(bufname)
         except:
             pass
-if len(bufs) >= len(vim.windows):
-    vim.command('set showtabline=2')
-else:
-    vim.command('set showtabline=1')
+vim.command('set showtabline=2')
 vim.command('let g:mybuflist="' + '    '.join(bufs) + '"')
 endpy
 endfunction
