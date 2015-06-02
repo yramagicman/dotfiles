@@ -108,7 +108,7 @@ set lcs=tab:⟩\ ,trail:·,eol:↩,nbsp:_
 set nonumber
 set relativenumber
 " Change mapleader
-let mapleader="\<cr>"
+let mapleader="\<CR>"
 let localleader="/"
 ""set tags=.git/tags;
 ""set autochdir
