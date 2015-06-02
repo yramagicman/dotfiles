@@ -31,9 +31,6 @@ let g:ctrlp_max_files=7000
 let g:ctrlp_max_depth=30
 nnoremap <c-p> :CtrlP<CR>
 nnoremap -ev :CtrlP ~/.vim/config<CR>
-nnoremap <space><space> :CtrlPBuffer<CR>
-nnoremap <leader><Space><Space> :CtrlPBuffer<CR>
-inoremap <leader><leader><Space> <ESC>:CtrlPBuffer<CR>
 nnoremap <c-y> :CtrlPBufTagAll<CR>
 "}}}
 "{{{ syntastic
