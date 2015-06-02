@@ -700,9 +700,9 @@ endfunction
 "}}}
 "}}}
 "{{{ remap escape for easier access
-nnoremap <leader><leader> <ESC>:w<cr>l
-vnoremap <leader><leader> <ESC>:w<cr>l
-inoremap <leader><leader> <ESC>:w<cr>l
+nnoremap <leader><leader> <ESC>:w<CR>l
+vnoremap <leader><leader> <ESC>:w<CR>l
+inoremap <leader><leader> <ESC>:w<CR>l
 onoremap <leader><leader> <ESC>
 "}}}
 "{{{saving
