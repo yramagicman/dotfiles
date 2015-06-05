@@ -1,18 +1,25 @@
 #!/usr/bin/env python2
-import os, multiprocessing, subprocess, sys
+import os
+import multiprocessing
+import subprocess
+import sys
+
+
 class gup:
+
     """ updates git stuff, hopefully in parallel"""
+
     def __init__(self):
         """ set up repos and commands"""
         self.home = os.path.expanduser('~')
         home = self.home
         self.repos = [
-                        home,
-                        home + '/.mutt',
-                        home + '/.zprezto',
-                        home + '/.zprezto/modules/zsh-aliases',
-                        home + '/.password-store',
-                     ]
+            home,
+            home + '/.mutt',
+            home + '/.zprezto',
+            home + '/.zprezto/modules/zsh-aliases',
+            home + '/.password-store',
+        ]
         # arrays used in subprocess.call and such
         self.pull = ['git', 'up']
         self.fetch = ['git', 'fetch']
@@ -21,7 +28,7 @@ class gup:
         self.ppush = ['pass', 'git', 'push']
         self.checkout = ['git', 'checkout', '-q', 'master']
         self.zupdate = [self.home + '/bin/zupdate']
-        self.mcommit =['git', 'commit', '--all', '-m', "mail $now"]
+        self.mcommit = ['git', 'commit', '--all', '-m', "mail $now"]
         #self.mlink = ['ln', '-fv', home +'/.mutt/.muttrc', home + '/.muttrc']
         self.local_status = ['git', 'rev-parse', '@']
         self.remote_status = ['git', 'rev-parse', '@{u}']
@@ -31,8 +38,10 @@ class gup:
     def num_changes(self):
         """ Gets the number of changes to a git repo"""
         git = subprocess.Popen(['git', 'status'], stdout=subprocess.PIPE)
-        grep = subprocess.Popen(['grep', 'modified'], stdin=git.stdout, stdout=subprocess.PIPE)
-        wc = subprocess.Popen(['wc', '-l'], stdin=grep.stdout, stdout=subprocess.PIPE)
+        grep = subprocess.Popen(
+            ['grep', 'modified'], stdin=git.stdout, stdout=subprocess.PIPE)
+        wc = subprocess.Popen(
+            ['wc', '-l'], stdin=grep.stdout, stdout=subprocess.PIPE)
         git.stdout.close()
         grep.stdout.close()
         output, err = wc.communicate()
@@ -53,9 +62,10 @@ class gup:
     def list_changes(self):
         """ Lists changes to a git repo """
         git = subprocess.Popen(['git', 'status'], stdout=subprocess.PIPE)
-        grep = subprocess.Popen(['grep', 'modified'], stdin=git.stdout, stdout=subprocess.PIPE)
+        grep = subprocess.Popen(
+            ['grep', 'modified'], stdin=git.stdout, stdout=subprocess.PIPE)
         git.stdout.close()
-        output, err= grep.communicate()
+        output, err = grep.communicate()
         output = output.strip()
         if not err:
             return output
@@ -73,7 +83,7 @@ class gup:
             # pull
             return -1
         elif c_remote == c_merge:
-            #push
+            # push
             return 1
         else:
             # notihing's equal
@@ -81,7 +91,7 @@ class gup:
 
     def pull_push(self, pull, push):
         """ Actually does the work """
-        #apparently I have to fetch before I can do anything
+        # apparently I have to fetch before I can do anything
         subprocess.call(self.fetch)
         stat = self.check_status()
         dir = os.getcwd().replace(self.home, '~')
@@ -102,27 +112,30 @@ class gup:
         changes = self.num_changes()
         dir = os.getcwd().replace(self.home, '~')
         if int(changes) == 1:
-            message =  '\n' + dir + ' is up to date with ' + changes + ' change unstaged. \n\t'
+            message = '\n' + dir + ' is up to date with ' + \
+                changes + ' change unstaged. \n\t'
         else:
             if int(changes) > 0:
-                message =  '\n' +  dir + ' is up to date with ' + changes + ' unstaged changes.\n\t'
+                message = '\n' + dir + ' is up to date with ' + \
+                    changes + ' unstaged changes.\n\t'
             else:
-                message =  '\n' + dir + ' is up to date with ' + changes + ' unstaged changes.'
+                message = '\n' + dir + ' is up to date with ' + \
+                    changes + ' unstaged changes.'
         message = message + self.list_changes()
         if '--diff' in sys.argv or '-d' in sys.argv:
             if '--ext' in sys.argv or '-e' in sys.argv:
                 self.diff_changes(True)
-                return message #end external diff
+                return message  # end external diff
             self.diff_changes()
-            return message #end internal diff
-        return message #end function
+            return message  # end internal diff
+        return message  # end function
 
     def do_it(self, repo):
         """ wrapper function,
         checks current working directory and does the right thing based on that """
         os.chdir(repo)
         pwd = os.getcwd()
-        if  pwd != self.home + '/.zprezto' and '/.password-store' not in pwd:
+        if pwd != self.home + '/.zprezto' and '/.password-store' not in pwd:
             self.pull_push(self.pull, self.push)
         if '/.zprezto' in pwd:
             self.pull_push(self.zupdate, self.push)
