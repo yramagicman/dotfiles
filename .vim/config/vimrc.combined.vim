@@ -800,8 +800,6 @@ nnoremap <silent>-fs :set foldmethod=syntax<CR>
 "{{{ Command line abbreviations
 cnoreabbrev clam Clam
 cnoreabbrev ack Ack
-cnoreabbrev push Git push
-cnoreabbrev pull Git pull
 cnoreabbrev tw Tw
 "}}}
 "}}}
