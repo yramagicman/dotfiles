@@ -101,9 +101,8 @@ class gup:
             elif stat == 1:
                 print '\n' + dir + '\n' + str(subprocess.call(push))
             else:
-                # since nothings equal, we'll pull, then push
-                print '\n' + dir + '\n' + str(subprocess.call(pull))
-                print '\n' + dir + '\n' + str(subprocess.call(push))
+                # since nothings equal we'll diff it.
+                 subprocess.call(['git', 'diff', 'HEAD', 'master', 'origin/HEAD', 'origin/master'])
         else:
             print self.show_message()
 
