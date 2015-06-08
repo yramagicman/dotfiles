@@ -8,19 +8,6 @@ let g:UltiSnipsUsePythonVersion = 2
 let g:pdv_template_dir = $HOME . "/.vim/bundle/pdv/templates"
 nnoremap  --d :call pdv#DocumentCurrentLine()<CR>
 "}}}
-"{{{ git stuff
-nnoremap <c-c>w :Gwrite<CR>
-nnoremap <c-c>c :Gcommit<CR>
-nnoremap <c-c>s :Gstatus<CR>
-nnoremap <c-c>g :Git
-nnoremap <c-c>a :Git add %<CR>
-nnoremap <c-c>r :Git checkout %<CR>
-nnoremap <c-c>d :Gdiff<CR>
-nnoremap <c-c>ps :Git push<CR>
-nnoremap <c-c>pu :Git push<CR>
-nnoremap <c-c>pl :Git pull<CR>
-nnoremap <c-c>A :Git commit --amend<CR>
-"}}}
     "{{{ Ctrlp
 let g:ctrlp_map='<c-p>'
 let g:ctrlp_switch_buffer='ET'
