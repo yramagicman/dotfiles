@@ -5,8 +5,8 @@
 (define (execute-command proc-name)
     (define proc (find-executable-path proc-name))
     (lambda (args)
-	(with-output-to-string
-	    (thunk (apply system* proc args)))))
+    (with-output-to-string
+        (thunk (apply system* proc args)))))
 
 (define home (path->string (find-system-path 'home-dir)))
 (define repos (list home ".mutt" ".zprezto" ".zprezto/modules/zsh-aliases" ".password-store"))
@@ -14,21 +14,21 @@
 
 (define (makepath p)
       (if (not (equal? home p))
-	   (string->path (string-append home p))
-	   (string->path home)))
+       (string->path (string-append home p))
+       (string->path home)))
 
 (define paths (map makepath repos))
 
 (define (changes)
     (define ch (string-split ((execute-command "git") (list "status")) "\n" #:trim? #t))
     (define not-empty (filter
-	(lambda (x)
-	    (and (not (string=? "" x)) (> (string-length x) (string-length "modified")))) ch))
+    (lambda (x)
+        (and (not (string=? "" x)) (> (string-length x) (string-length "modified")))) ch))
     (define return-value (filter
-	(lambda (y)
-	    (string=? "modified" (substring y 1 (string-length "\tmodified")))) not-empty))
+    (lambda (y)
+        (string=? "modified" (substring y 1 (string-length "\tmodified")))) not-empty))
     (map (lambda (z)
-	(substring z 1)) return-value))
+        (substring z 1)) return-value))
 
 (define num-changes (length (changes)))
 
@@ -37,49 +37,52 @@
 
 (define (check-status)
     (define commands
-	'(("checkout" "-q" "master")
-	  ("rev-parse" "@")
-	  ("rev-parse" "@{u}")
-	  ("merge-base" "@" "@{u}")))
+    '(("checkout" "-q" "master")
+      ("rev-parse" "@")
+      ("rev-parse" "@{u}")
+      ("merge-base" "@" "@{u}")))
     (define result (map (execute-command "git") commands))
     (let ([local (second result)]
-	  [remote (third result)]
-	  [base (fourth result)])
-	(cond
-	    ((string=? local remote) 0)
-	    ((string=? base remote) 1)
-	    ((string=? base local) -1)
-	    (else 2))))
+      [remote (third result)]
+      [base (fourth result)])
+    (cond
+        ((string=? local remote) 0)
+        ((string=? base remote) 1)
+        ((string=? base local) -1)
+        (else 2))))
 
 (define (pull-push pull push)
     ((execute-command "git") "fetch")
     (define stat (check-status))
     (cond
-	((not (= stat 0))
-	(cond
-	    ((= stat -1) (pull))
-	    ((= stat 1) (push))
-	    (else ((pull) (push)))))
-	    (else ("HI"))))
+    ((not (= stat 0))
+    (cond
+        ((= stat -1) (pull))
+        ((= stat 1) (push))
+        (else ((execute-command "git" )  "diff" "HEAD" "master" "origin/HEAD" "origin/master"))))
+    (else ("HI"))))
 
 (define (pull)
     (let ([pass (list "pass" "git" "pull")]
-	  [git (list "git" "up")]
-	  [zprez (list (string->path (string-append home "bin/zupdate")))]
-	  [pwd (string->path (current-directory))])
+      [git (list "git" "up")]
+      [zprez (list (string->path (string-append home "bin/zupdate")))]
+      [pwd (string->path (current-directory))])
       (cond
-	  ((string=? (string-append home "/.zprezto") pwd) zprez)
-	  ((string=? (string-append home "/.password-store") pwd) pass)
-	  (else git))))
+          ((string=? (string-append home "/.zprezto") pwd) zprez)
+          ((string=? (string-append home "/.password-store") pwd) pass)
+          (else git))))
 
 (define (push)
     (let ([pass (list "pass" "git" "push")]
-	  [git (list "git" "push")]
-	  [pwd (string->path (current-directory))])
+      [git (list "git" "push")]
+      [pwd (string->path (current-directory))])
       (cond
-	  ((string=? (string-append home "/.password-store") pwd) pass)
-	  (else git))))
+      ((string=? (string-append home "/.password-store") pwd) pass)
+      (else git))))
 
+(define (run-git-processes repo)
+  (define cur-dir (path->string (current-directory)))
+  (current-directory (string->path repo)))
 (print (check-status))
 (show-changes)
 (print num-changes)
