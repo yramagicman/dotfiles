@@ -23,8 +23,8 @@ call vundle#begin()
     Plugin 'technosophos/drupal-snippets'
     Plugin 'tobyS/pdv'
     Plugin 'tobyS/vmustache'
-    Plugin 'tpope/vim-surround'
     Plugin 'tpope/vim-commentary'
+    Plugin 'tpope/vim-surround'
     Plugin 'vim-indent-object'
     Plugin 'vim-scripts/taglist.vim'
 call vundle#end()
