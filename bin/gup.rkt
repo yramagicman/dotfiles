@@ -70,17 +70,17 @@
         [zprez (list (string->path (string-append home "bin/zupdate")))]
         [pwd (string->path (current-directory))])
     (cond
-      ((string=? (string-append home "/.zprezto") pwd) zprez)
-      ((string=? (string-append home "/.password-store") pwd) pass)
-      (else git))))
+      ((string=? (string-append home "/.zprezto") pwd) ((execute-command (first zprez)) (rest zprez)))
+      ((string=? (string-append home "/.password-store") pwd) ((execute-command (first pass)) (rest pass)))
+      (else ((execute-command (first git)) (rest git))))))
 
 (define (push)
   (let ([pass (list "pass" "git" "push")]
         [git (list "git" "push")]
         [pwd (path->string (current-directory))])
     (cond
-      ((string=? (string-append home "/.password-store") pwd) pass)
-      (else git))))
+      ((string=? (string-append home "/.password-store") pwd) ((execute-command (first pass)) (rest pass)))
+      (else ((execute-command (first git)) (rest git))))))
 
 (define (run-git-processes repo)
   (current-directory repo)
