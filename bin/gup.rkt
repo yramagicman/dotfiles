@@ -68,7 +68,7 @@
   (let ([pass (list "pass" "git" "pull")]
         [git (list "git" "up")]
         [zprez (list (string->path (string-append home "bin/zupdate")))]
-        [pwd (string->path (current-directory))])
+        [pwd (path->string (current-directory))])
     (cond
       ((string=? (string-append home "/.zprezto") pwd) ((execute-command (first zprez)) (rest zprez)))
       ((string=? (string-append home "/.password-store") pwd) ((execute-command (first pass)) (rest pass)))
