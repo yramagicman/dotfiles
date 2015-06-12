@@ -23,11 +23,11 @@
   (define ch (string-split ((execute-command "git") (list "status")) "\n" #:trim? #t))
   (define not-empty (filter
                      (lambda (x)
-                       (and (not (string=? "" x)) (> (string-length x) (string-length "modified")))) 
+                       (and (not (string=? "" x)) (> (string-length x) (string-length "modified"))))
                      ch))
   (define return-value (filter
                         (lambda (y)
-                          (string=? "modified" (substring y 1 (string-length "\tmodified")))) 
+                          (string=? "modified" (substring y 1 (string-length "\tmodified"))))
                         not-empty))
   (map (lambda (z)
          (substring z 1)) return-value))
