@@ -77,7 +77,7 @@
 (define (push)
   (let ([pass (list "pass" "git" "push")]
         [git (list "git" "push")]
-        [pwd (string->path (current-directory))])
+        [pwd (path->string (current-directory))])
     (cond
       ((string=? (string-append home "/.password-store") pwd) pass)
       (else git))))
