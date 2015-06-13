@@ -87,4 +87,5 @@
   (define cur-dir (path->string (current-directory)))
   (display (string-append cur-dir "...\r"))
   (list cur-dir (pull-push pull push)))
+
 (display-lines (map run-git-processes paths))
