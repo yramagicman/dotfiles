@@ -1,6 +1,8 @@
 #lang racket
+;(provide main)
 (require racket/system)
 (require racket/trace)
+(require racket/place)
 
 (define (execute-command proc-name)
   (define proc (find-executable-path proc-name))
@@ -86,6 +88,30 @@
   (current-directory repo)
   (define cur-dir (path->string (current-directory)))
   (display (string-append cur-dir "...\r"))
-  (list cur-dir (pull-push pull push)))
+  (pull-push pull push))
 
-(display-lines (map run-git-processes paths))
+;(define (recursive-thread channel lst)
+;  (if (not (empty? lst))
+;      (and
+;       (display (path->string (first lst)))
+;       (place-channel-put channel (first lst))
+;       (recursive-thread channel (rest lst)))
+;      0))
+
+(define (recursive-thread fn lst)
+  (if (not (empty? lst))
+      (and
+       ;(display (path->string (first lst)))
+       (fn (first lst))
+       (recursive-thread fn (rest lst)))
+      0))
+
+(recursive-thread (lambda (y) (display "x")) paths)
+
+;(define (main)
+;  (define p
+;    (place ch
+;           (define l (place-channel-get ch))
+;           (define l-thing (run-git-processes paths))
+;           (place-channel-put ch l-thing)))
+;  (place-channel-get p))
