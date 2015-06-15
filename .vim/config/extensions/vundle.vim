@@ -10,7 +10,7 @@ call vundle#begin()
     Plugin 'gmarik/Vundle.vim'
     Plugin 'hail2u/vim-css3-syntax'
     Plugin 'honza/vim-snippets'
-    "Plugin 'jeetsukumaran/vim-filebeagle'
+    Plugin 'jeetsukumaran/vim-filebeagle'
     Plugin 'joequery/Stupid-EasyMotion'
     Plugin 'kien/ctrlp.vim'
     Plugin 'mattn/emmet-vim'
