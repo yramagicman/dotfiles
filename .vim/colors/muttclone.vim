@@ -15,7 +15,7 @@ hi      SpecialKey       term=bold       cterm=NONE     ctermfg=238    guifg=#44
 hi      Boolean          ctermfg=135     guifg=#af5fff
 hi      Search           ctermbg=233     ctermfg=250    guibg=#000000  guifg=#ffffff
 hi      CursorLine       ctermbg=236     cterm=none     guibg=#262626
-hi      FoldColumn       ctermbg=234     ctermfg=234    guifg=#1c1c1c  guibg=#1c1c1c
+hi      FoldColumn       ctermbg=234     ctermfg=247    guifg=#1c1c1c  guibg=#1c1c1c
 hi      Folded           ctermbg=234     ctermfg=247    guifg=#9e9e9e  guibg=#1c1c1c
 hi      VisualNOS        ctermbg=238     guibg=#444444
 hi      Visual           ctermbg=240     guibg=#585858
