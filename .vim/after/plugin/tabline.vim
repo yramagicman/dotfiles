@@ -1,17 +1,14 @@
 function! s:listofbuffers()
 python << endpy
 import vim
+import os
 bufs = []
 for key in vim.buffers:
     loaded = int(vim.eval('buflisted("' + key.name + '")'))
-    if len(bufs) < 5:
-        bufname = key.name.split('/')[-2:]
-        if bufname[0] == 'jonathan':
-            bufname[0] = '~'
-        bufname = '/'.join(bufname)
-    else:
-        bufname = key.name.split('/')[-1:]
-
+    bufname = key.name.split('/')[-2:]
+    if bufname[0] == 'jonathan':
+        bufname[0] = '~'
+    bufname = '/'.join(bufname)
     if key.name == vim.current.buffer.name:
         try:
             bufs.remove(bufname)
@@ -24,6 +21,15 @@ for key in vim.buffers:
             bufs.remove(bufname)
         except:
             pass
+
+indexes = []
+pwd = os.getcwd().split('/')[-1]
+for i in bufs:
+    if pwd in i:
+        indexes.append(bufs.index(i))
+for i in indexes:
+    bufs[i] = bufs[i].split('/')[-1]
+
 vim.command('set showtabline=2')
 vim.command('let g:mybuflist="' + '    '.join(bufs) + '"')
 endpy
