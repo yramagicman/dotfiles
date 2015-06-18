@@ -4,10 +4,14 @@ import vim
 bufs = []
 for key in vim.buffers:
     loaded = int(vim.eval('buflisted("' + key.name + '")'))
-    bufname = key.name.split('/')[-2:]
-    if bufname[0] == 'jonathan':
-        bufname[0] = '~'
-    bufname = '/'.join(bufname)
+    if len(bufs) < 5:
+        bufname = key.name.split('/')[-2:]
+        if bufname[0] == 'jonathan':
+            bufname[0] = '~'
+        bufname = '/'.join(bufname)
+    else:
+        bufname = key.name.split('/')[-1:]
+
     if key.name == vim.current.buffer.name:
         try:
             bufs.remove(bufname)
@@ -36,7 +40,7 @@ function! MyTabLabel(n)
         endif
         let bnames = bnamel[-2] .'/'. bnamel[-1]
     elseif len(bnamel) <= 2 && len(bnamel) != 0
-	let bnames = bnamel[-1]
+    let bnames = bnamel[-1]
     else
         let bnames = '[No Name]'
     endif
