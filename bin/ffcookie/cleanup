@@ -2,7 +2,7 @@
 import sqlite3
 import os
 home = os.path.expanduser('~')
-config=open(home + "/.config/ffclean")
+config = open(home + "/.config/ffclean")
 domains = []
 # Read config file
 count = 0
@@ -19,8 +19,8 @@ delete = ['delete', 'from', 'moz_cookies', 'where']
 select = ['select', '*', 'from', 'moz_cookies', 'where']
 # loop through file and extract relavent data
 for i in domains:
-    delete.append('baseDomain <> "' +  i + '" AND ')
-    select.append('baseDomain <> "' +  i + '" AND ')
+    delete.append('baseDomain <> "' + i + '" AND ')
+    select.append('baseDomain <> "' + i + '" AND ')
 # Create queries by joining lists
 d = " ".join(delete)
 s = " ".join(select)
@@ -29,7 +29,7 @@ s = s[:-4]
 d = d[:-4]
 # Connect to the sqlite3 database
 con = sqlite3.connect(path.strip())
-c =con.cursor()
+c = con.cursor()
 # Delete stuff and make sure it's gone
 c.execute(d)
 c.execute(s)
