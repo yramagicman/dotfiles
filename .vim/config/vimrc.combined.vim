@@ -789,6 +789,14 @@ nnoremap <silent>-fs :set foldmethod=syntax<CR>
 cnoreabbrev clam Clam
 cnoreabbrev ack Ack
 cnoreabbrev tw Tw
+cnoreabbrev git !git
+cnoreabbrev gab !git add %
+cnoreabbrev ga !git add %
+cnoreabbrev gac !git add %
+cnoreabbrev ga% !git add %
+cnoreabbrev gcm !git commit -m
+cnoreabbrev gd !git diff
+
 "}}}
 "}}}
 "{{{splits
