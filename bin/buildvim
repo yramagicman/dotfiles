@@ -19,6 +19,6 @@ grep -v ^$ >> ~/Gits/mobileVimrc/.vimrc
 #commit change and push to github
 builtin cd ~/Gits/mobileVimrc/
 pwd
-git add -v ~/Gits/mobileVimrc/.vimrc
+git add -fv ./.vimrc
 git commit -m "$msg"
 git push
