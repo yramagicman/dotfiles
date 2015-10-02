@@ -416,7 +416,7 @@ augroup end
 function! Backspace()
     let l:current = strpart(getline('.'), col('.')-1, 1)
     let l:prev = strpart(getline('.'), col('.')-2, 1)
-    if l:current == '"' || l:current == "'" || l:current == "]" || l:current == ")" || l:current == "}"
+    if l:current == '"' || l:current == "'" || l:current == "]" || l:current == ")" || l:current == "}" || l:current == ">"
         if l:current == l:prev
             return "\<Right>\<BS>\<BS>"
         elseif l:prev == '[' && l:current == ']'
@@ -424,6 +424,8 @@ function! Backspace()
         elseif l:prev == "{" && l:current == "}"
             return "\<Right>\<BS>\<BS>"
         elseif l:prev == "(" && l:current == ")"
+            return "\<Right>\<BS>\<BS>"
+        elseif l:prev == "<" && l:current == ">"
             return "\<Right>\<BS>\<BS>"
         else
             return "\<BS>"
