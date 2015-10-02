@@ -18,6 +18,6 @@ egrep -v ^' '\{0,50}$|\
 grep -v ^$ >> ~/Gits/mobileVimrc/.vimrc
 #commit change and push to github
 cd ~/Gits/mobileVimrc/
-git add ./
-git commit -q -m "$msg"
-git push -q
+git add -v ./
+git commit -m "$msg"
+git push
