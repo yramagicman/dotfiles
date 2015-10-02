@@ -11,7 +11,7 @@ sed 's/set cc=81/set cc=0/'|\
 #swap color scheme
 sed 's/muttclone/default/' |\
 grep -v 'source ~/.vim/colors/'|\
-sed 's/background=dark/background=light/' |\
+#sed 's/background=dark/background=light/' |\
 #remove empty lines
 egrep -v ^' '\{0,50}$|\
 ## I probably don't need to remove empty lines twice, but oh well
