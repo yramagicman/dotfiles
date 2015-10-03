@@ -22,6 +22,6 @@ function! JsBeautify() range
 endfunction
 augroup formatters
     autocmd!
-    autocmd FileType djangohtml,html,css,javascript,json,php command! -bar -nargs=0 -buffer -range=% Format <line1>,<line2>call JsBeautify()
+    autocmd FileType htmldjango,djangohtml,html,css,javascript,json,php command! -bar -nargs=0 -buffer -range=% Format <line1>,<line2>call JsBeautify()
     autocmd FileType python command! -bar -nargs=0 -buffer -range=% Format <line1>,<line2>call PyFormat()
 augroup end
