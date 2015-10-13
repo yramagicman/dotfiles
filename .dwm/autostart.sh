@@ -13,7 +13,6 @@ xflux -z 45036
 ## Set root window colour
 (/home/jonathan/bin/auto-rotate-wallpaper) &
 rm $HOME/.session-active &
-check_process urxvtd
 xset -dpms; xset s off &
 ## Volume keys daemon
 #check_process xfce4-volumed
