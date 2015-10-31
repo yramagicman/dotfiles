@@ -11,15 +11,15 @@ def bytes_to_mb(value):
 def humanize(bytes):
     bytes_str = str(bytes)
     if len(bytes_str) < 10:
-        return str(bytes_to_mb(bytes))
+        return str(bytes_to_mb(bytes)) + ' MB'
     else:
-        return bytes_to_gb(bytes)
+        return str(bytes_to_gb(bytes))  + ' GB'
 
 while True:
     mem = psutil.virtual_memory()
     used = humanize(mem[3])
     free = humanize(mem[1])
     t = time.strftime('%I:%M:%S')
-    status = '# Ram: free: ' + str(free) + 'GB used: ' + str(used) + 'GB # ' + t + ' #'
+    status = '# Ram: free: ' + str(free) + ' used: ' + str(used) + ' # ' + t + ' #'
     subprocess.call(['xsetroot', '-name', status])
     time.sleep(1)
