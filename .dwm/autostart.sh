@@ -8,6 +8,7 @@ check_process(){
        $1 &
     fi
 }
+(check_process /home/jonathan/bin/dwmstatus)
 xflux -z 45036
 ( /home/jonathan/.screenlayout/default.sh) &
 ## Set root window colour
