@@ -68,7 +68,7 @@ set smartcase
 " Highlight dynamically as pattern is typed
 set incsearch
 " Enable mouse in all modes
-set mouse=a
+"set mouse=a
 " Disable error bells
 set novisualbell
 set noerrorbells
