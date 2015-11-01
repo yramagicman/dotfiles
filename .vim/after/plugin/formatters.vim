@@ -9,7 +9,7 @@ command! -bar -nargs=0 Pyformat call PyFormat()
 function! JsBeautify() range
     let cmd = [
                 \ '!js-beautify',
-                \ '-f -'
+                \ '-i -'
                 \ ]
     let type =(&filetype ==# 'javascript' || &filetype ==# 'php') ? 'js' : &filetype
     if &expandtab
