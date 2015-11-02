@@ -12,7 +12,6 @@ call vundle#begin()
     Plugin 'honza/vim-snippets'
     Plugin 'jeetsukumaran/vim-filebeagle'
     Plugin 'joequery/Stupid-EasyMotion'
-    Plugin 'kien/ctrlp.vim'
     Plugin 'mattn/emmet-vim'
     Plugin 'mileszs/ack.vim'
     Plugin 'othree/html5.vim'
