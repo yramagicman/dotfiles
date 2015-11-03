@@ -299,8 +299,11 @@ if has("autocmd")
         autocmd!
         autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
         "}}}
-        "{{{ fix my fat fingers, change 90 to () in js
+        "{{{ always use strict equal and not equal
         autocmd Bufenter *.js iabbr == ===
+        autocmd BufEnter *.js iabbr != !==
+        autocmd BufLeave *.js iabbr === ==
+        autocmd BufLeave *.js iabbr !== !=
         "}}}
     augroup end
     augroup css
