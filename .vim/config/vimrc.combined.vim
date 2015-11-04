@@ -292,6 +292,7 @@ if has("autocmd")
         autocmd BufWritePre * call Knl()
         autocmd BufWritePre * %retab
         autocmd BufWritePost * call CheckErrorFn()
+        autocmd CursorHold * w
         "}}}
     augroup end
     augroup js
