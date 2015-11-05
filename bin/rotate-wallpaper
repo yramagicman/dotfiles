@@ -1,6 +1,8 @@
 #! /bin/bash
 # ~/.scripts/ch_wallpaper.sh
 WALLPAPERS="/home/jonathan/Dropbox/Photos/dualMonitor/"
+find $WALLPAPERS -name ' (*.last' -delete
+find $WALLPAPERS -name '(*.last' -delete
 ALIST=( `ls -w1 $WALLPAPERS` )
 RANGE=${#ALIST[@]}
 let "number = $RANDOM"
