@@ -118,7 +118,7 @@ filetype plugin indent on
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
   runtime! macros/matchit.vim
 endif
-set pastetoggle=<C-e>
+set pastetoggle=<F1>
 "}}}
 "{{{ Make tabs as wide as four spaces
 set tabstop=4
