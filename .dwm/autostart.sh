@@ -36,5 +36,4 @@ xset b off &
 (sleep 5s && check_process /home/jonathan/bin/updatenotifyd) &
 # Autostart the Dropbox deamon
 (sleep 10s && ~/.dropbox-dist/dropboxd) &
-(sleep 3s && ~/.mountdrive.sh) &
 exit
