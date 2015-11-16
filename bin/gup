@@ -137,7 +137,8 @@ class gup:
         if pwd != self.home + '/.zprezto' and '/.password-store' not in pwd:
             self.pull_push(self.pull, self.push)
         if '/.zprezto' in pwd:
-            subprocess.call(self.zupdate)
+            if pwd[pwd.rindex('/'):] == '/.zprezto':
+                subprocess.call(self.zupdate)
             self.pull_push(self.zupdate, self.push)
         if '/.password-store' in pwd:
             self.pull_push(self.ppull, self.ppush)
