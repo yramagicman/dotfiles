@@ -37,7 +37,7 @@
 (define num-changes (length (changes)))
 
 (define (show-changes)
-  (string-join (changes)))
+  (string-append (string-join (changes)) (make-string 20 #\space)))
 
 (define (check-status)
   (define commands
@@ -87,7 +87,7 @@
 (define (run-git-processes repo)
   (current-directory repo)
   (define cur-dir (path->string (current-directory)))
-  (display (string-append cur-dir "...\r"))
+  (display (string-append cur-dir "..." (make-string 20 #\space) "\r"))
   (pull-push pull push))
 
-(map run-git-processes paths)
+(map displayln (map run-git-processes paths))
