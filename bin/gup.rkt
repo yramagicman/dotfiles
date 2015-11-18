@@ -90,28 +90,4 @@
   (display (string-append cur-dir "...\r"))
   (pull-push pull push))
 
-;(define (recursive-thread channel lst)
-;  (if (not (empty? lst))
-;      (and
-;       (display (path->string (first lst)))
-;       (place-channel-put channel (first lst))
-;       (recursive-thread channel (rest lst)))
-;      0))
-
-(define (recursive-thread fn lst)
-  (if (not (empty? lst))
-      (and
-       ;(display (path->string (first lst)))
-       (fn (first lst))
-       (recursive-thread fn (rest lst)))
-      0))
-
-(recursive-thread (lambda (y) (display "x")) paths)
-
-;(define (main)
-;  (define p
-;    (place ch
-;           (define l (place-channel-get ch))
-;           (define l-thing (run-git-processes paths))
-;           (place-channel-put ch l-thing)))
-;  (place-channel-get p))
+(map run-git-processes paths)
