@@ -24,7 +24,7 @@ while True:
     mem = psutil.virtual_memory()
     used = humanize(mem[3])
     free = humanize(mem[1])
-    t = time.strftime('%I:%M')
+    t = time.strftime('%I:%M %p # %a %d/%m/%y')
     status = '# Ram: free: ' + \
         str(free) + ' used: ' + str(used) + ' # ' + t + ' #'
     subprocess.call(['xsetroot', '-name', status])
