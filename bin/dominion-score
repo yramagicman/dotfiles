@@ -20,7 +20,7 @@ cards = {
 }
 
 
-def which_cards():
+def which_cards(cards):
     default_cards_set = {
         'Duchy': cards['Duchy'],
         'Estate': cards['Estate'],
@@ -28,25 +28,26 @@ def which_cards():
     }
     cards_set = default_cards_set
     print('Select Victory cards, the basic cards are included automatically:')
-
-    for k in cards.keys():
-        print(k)
-    c = ''
+    keyz = cards.keys()
+    display = [k for k in keyz]
+    for k in range(len(display)):
+        print(k + 1, display[k])
     print()
-    while c != 'done':
-        c = input('Pick a card: ')
-        if c in cards.keys():
-            cards_set[c] = cards[c]
-        elif c == 'done':
-            break
-        elif c == 'basic':
-            cards_set = default_cards_set
-            break
-        else:
-            print('Please input a card that exists')
-            c = input('Pick a card: ')
-    return cards_set
-cards_set = which_cards()
+    c = input('Type the numbers that correspond to the victory cards \
+             \nyou are using followed by spaces. The basic cards are \
+             \nincluded automatically. \
+             \n \
+             \nType "basic" if you are just doing a basic game: ')
+    if c == 'basic':
+        return default_cards_set
+    else:
+        cards_list = c.split(' ')
+        cards_list = [int(j) for j in cards_list]
+        print(cards_list)
+        for c in cards_list:
+            c = c - 1
+            cards_set[display[c]] = cards[display[c]]
+        return cards_set
 
 
 def calculate(cards_set):
@@ -59,9 +60,31 @@ def calculate(cards_set):
             count = input('How many groups of ' +
                           str(c[1]) + ' ' + str(c[2]) + ' do you have? ')
             total = total + ((int(count) * c[0]) * int(multiplier))
-            print(total)
         else:
             count = int(input('How many ' + card + ' do you have? '))
             total = total + (count * cards[card][0])
-            print(total)
-calculate(cards_set)
+    return total
+
+
+def multi_player():
+    players = {}
+    num_players = int(input('How many players:'))
+    for player in range(num_players):
+        name = input('Name: ')
+        players[name] = {'score': 0}
+    return players
+
+
+cards_set = which_cards(cards)
+print('You have chosen the following cards.')
+for k in cards_set.keys():
+    print(k)
+
+players = multi_player()
+for player in players.keys():
+    print()
+    print(player + ':')
+    players[player]['score'] = calculate(cards_set)
+
+for p in players:
+    print(p + ':', players[p]['score'])
