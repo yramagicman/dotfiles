@@ -6,7 +6,6 @@ import sys
 
 
 class gup:
-
     """ updates git stuff, hopefully in parallel"""
 
     def __init__(self):
@@ -102,7 +101,8 @@ class gup:
                 print '\n' + dir + '\n' + str(subprocess.call(push))
             else:
                 # since nothings equal we'll diff it.
-                 subprocess.call(['git', 'diff', 'HEAD', 'master', 'origin/HEAD', 'origin/master'])
+                subprocess.call(['git', 'diff', 'HEAD', 'master',
+                                 'origin/HEAD', 'origin/master'])
         else:
             print self.show_message()
 
@@ -151,7 +151,6 @@ class gup:
             p = multiprocessing.Process(target=gup().do_it, args=(repo,))
             p.start()
             p.join()
-
 if __name__ == '__main__':
     g = gup()
     g.run()
