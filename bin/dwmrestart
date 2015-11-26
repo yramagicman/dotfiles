@@ -7,6 +7,7 @@ do
     if [ "$csum" != "$new_csum" ]
     then
         csum=$new_csum
+        pkill xflux
         dwm
     else
         exit 0
