@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 import os
 import multiprocessing
 import subprocess
@@ -28,7 +28,6 @@ class gup:
         self.checkout = ['git', 'checkout', '-q', 'master']
         self.zupdate = [self.home + '/bin/zupdate']
         self.mcommit = ['git', 'commit', '--all', '-m', "mail $now"]
-        #self.mlink = ['ln', '-fv', home +'/.mutt/.muttrc', home + '/.muttrc']
         self.local_status = ['git', 'rev-parse', '@']
         self.remote_status = ['git', 'rev-parse', '@{u}']
         self.merge_base = ['git', 'merge-base', '@', '@{u}']
@@ -56,7 +55,7 @@ class gup:
             return
         git = subprocess.Popen(['git', 'diff', '--no-ext-diff'])
         output = git.communicate()
-        return
+        return output
 
     def list_changes(self):
         """ Lists changes to a git repo """
@@ -96,15 +95,15 @@ class gup:
         dir = os.getcwd().replace(self.home, '~')
         if stat != 0:
             if stat == -1:
-                print '\n' + dir + '\n' + str(subprocess.call(pull))
+                print('\n' + dir + '\n' + str(subprocess.call(pull)))
             elif stat == 1:
-                print '\n' + dir + '\n' + str(subprocess.call(push))
+                print('\n' + dir + '\n' + str(subprocess.call(push)))
             else:
                 # since nothings equal we'll diff it.
                 subprocess.call(['git', 'diff', 'HEAD', 'master',
                                  'origin/HEAD', 'origin/master'])
         else:
-            print self.show_message()
+            print(self.show_message())
 
     def show_message(self):
         """ returns the message displayed to the user"""
@@ -112,15 +111,15 @@ class gup:
         dir = os.getcwd().replace(self.home, '~')
         if int(changes) == 1:
             message = '\n' + dir + ' is up to date with ' + \
-                changes + ' change unstaged. \n\t'
+                str(changes) + ' change unstaged. \n\t'
         else:
             if int(changes) > 0:
                 message = '\n' + dir + ' is up to date with ' + \
-                    changes + ' unstaged changes.\n\t'
+                    str(changes) + ' unstaged changes.\n\t'
             else:
                 message = '\n' + dir + ' is up to date with ' + \
-                    changes + ' unstaged changes.'
-        message = message + self.list_changes()
+                    str(changes) + ' unstaged changes.'
+        message = str(message) + str(self.list_changes())
         if '--diff' in sys.argv or '-d' in sys.argv:
             if '--ext' in sys.argv or '-e' in sys.argv:
                 self.diff_changes(True)
@@ -130,8 +129,8 @@ class gup:
         return message  # end function
 
     def do_it(self, repo):
-        """ wrapper function,
-        checks current working directory and does the right thing based on that """
+        """ wrapper function, checks current working directory and does the
+        right thing based on that """
         os.chdir(repo)
         pwd = os.getcwd()
         if pwd != self.home + '/.zprezto' and '/.password-store' not in pwd:
