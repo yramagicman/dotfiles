@@ -1,6 +1,13 @@
-#! /bin/bash
+#! /bin/zsh
 # ~/.scripts/ch_wallpaper.sh
-WALLPAPERS="/home/jonathan/Dropbox/Photos/dualMonitor/"
+hostname=$(hostname)
+if [ "$hostname"=="k-nine" ]
+    then
+    WALLPAPERS="/home/jonathan/Dropbox/Photos/DesktopPictures/"
+else
+    WALLPAPERS="/home/jonathan/Dropbox/Photos/dualMonitor/"
+fi
+
 find $WALLPAPERS -name ' (*.last' -delete
 find $WALLPAPERS -name '(*.last' -delete
 ALIST=( `ls -w1 $WALLPAPERS` )
