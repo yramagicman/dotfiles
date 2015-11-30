@@ -3,7 +3,7 @@
 
 include "/home/jonathan/.gtkrc-2.0.mine"
 gtk-theme-name="Clearlooks"
-gtk-icon-theme-name="flattr-icons"
+gtk-icon-theme-name="Flattr"
 gtk-font-name="Droid Sans 10"
 gtk-cursor-theme-name="OpenZone_Black"
 gtk-cursor-theme-size=0
