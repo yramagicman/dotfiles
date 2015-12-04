@@ -15,9 +15,9 @@ class gup:
         self.repos = [
             home,
             home + '/.mutt',
+            home + '/.password-store',
             home + '/.zprezto',
             home + '/.zprezto/modules/zsh-aliases',
-            home + '/.password-store',
         ]
         # arrays used in subprocess.call and such
         self.pull = ['git', 'up']
@@ -27,11 +27,9 @@ class gup:
         self.ppush = ['pass', 'git', 'push']
         self.checkout = ['git', 'checkout', '-q', 'master']
         self.zupdate = [self.home + '/bin/zupdate']
-        self.mcommit = ['git', 'commit', '--all', '-m', "mail $now"]
         self.local_status = ['git', 'rev-parse', '@']
         self.remote_status = ['git', 'rev-parse', '@{u}']
         self.merge_base = ['git', 'merge-base', '@', '@{u}']
-        self.output = []
 
     def num_changes(self):
         """ Gets the number of changes to a git repo"""
@@ -135,10 +133,9 @@ class gup:
         pwd = os.getcwd()
         if pwd != self.home + '/.zprezto' and '/.password-store' not in pwd:
             self.pull_push(self.pull, self.push)
-        if '/.zprezto' in pwd:
-            if pwd[pwd.rindex('/'):] == '/.zprezto':
-                subprocess.call(self.zupdate)
-            self.pull_push(self.zupdate, self.push)
+        if pwd[pwd.rindex('/'):] == '/.zprezto':
+            subprocess.call(self.zupdate)
+            self.pull_push(self.pull, self.push)
         if '/.password-store' in pwd:
             self.pull_push(self.ppull, self.ppush)
         return 1
