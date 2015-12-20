@@ -20,7 +20,7 @@ class gup:
             home + '/.zprezto/modules/zsh-aliases',
         ]
         # arrays used in subprocess.call and such
-        self.pull = ['git', 'up']
+        self.pull = ['git', 'pull', '--rebase']
         self.fetch = ['git', 'fetch']
         self.push = ['git', 'push']
         self.ppull = ['pass', 'git', 'pull']
