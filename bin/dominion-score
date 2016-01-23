@@ -17,6 +17,7 @@ cards = {
     'Silk Road': [1, 4, 'victory'],
     'Tunnel': [2],
     'Vineyard': [1, 3, 'action'],
+    'Curse': [-1]
 }
 
 
