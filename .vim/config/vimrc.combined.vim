@@ -100,7 +100,7 @@ endif
 set completeopt=longest,menuone
 set ofu=syntaxcomplete#Complete
 " Show "invisible” characters
-set lcs=tab:⟩\ ,trail:·,eol:↩,nbsp:_
+"set lcs=tab:⟩\ ,trail:·,eol:↩,nbsp:_
 "set list " breaks set linebreak
 " Enable line numbers
 set relativenumber
