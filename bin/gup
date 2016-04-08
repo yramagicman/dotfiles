@@ -18,6 +18,7 @@ class gup:
             home + '/.password-store',
             home + '/.zprezto',
             home + '/.zprezto/modules/zsh-aliases',
+            os.getcwd()
         ]
         # arrays used in subprocess.call and such
         self.pull = ['git', 'pull', '--rebase']
