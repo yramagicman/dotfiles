@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import os
-import multiprocessing
+# import multiprocessing
 import subprocess
 import sys
 import time
@@ -13,14 +13,9 @@ class gup:
         """ set up repos and commands"""
         self.home = os.path.expanduser('~')
         home = self.home
-        self.repos = [
-            home,
-            home + '/.mutt',
-            home + '/.password-store',
-            home + '/.zprezto',
-            home + '/.zprezto/modules/zsh-aliases',
-            os.getcwd()
-        ]
+        configfile = open(home + '/.config/gits')
+        self.repos = [l.strip() for l in configfile.readlines() if l[0] != '#']
+        self.repos.append(os.getcwd())
         # arrays used in subprocess.call and such
         self.pull = ['git', 'pull', '--rebase']
         self.fetch = ['git', 'fetch']
