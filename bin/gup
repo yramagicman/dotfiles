@@ -3,6 +3,7 @@ import os
 import multiprocessing
 import subprocess
 import sys
+import time
 
 
 class gup:
@@ -142,7 +143,8 @@ class gup:
             self.pull_push(self.pull, self.push)
         if '/.password-store' in pwd:
             self.pull_push(self.ppull, self.ppush)
-        subprocess.call(['git', 'gc'])
+        if round(time.time()) % 2.59 * 10**6 > 604800:
+            subprocess.call(['git', 'gc'])
         return 1
 
     def run(self):
