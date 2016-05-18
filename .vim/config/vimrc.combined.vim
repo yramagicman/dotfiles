@@ -98,7 +98,7 @@ if exists('+breakindent')
 endif
 " sensible completion
 set completeopt=longest,menuone
-set ofu=syntaxcomplete#Complete
+set ofu=syntaxcomplete#complete
 " Show "invisible” characters
 "set lcs=tab:⟩\ ,trail:·,eol:↩,nbsp:_
 "set list " breaks set linebreak
@@ -289,6 +289,8 @@ if has("autocmd")
         autocmd BufWritePre * call StripWhitespace()
         autocmd BufWritePre * call Knl()
         autocmd BufWritePre * %retab
+        autocmd BufWritePre *.py %s/#\w/# &/g
+        autocmd BufWritePre *.py %s/# #/# /g
         autocmd BufWritePost * call CheckErrorFn()
         autocmd CursorHold * if @% != '' | w
         "}}}
@@ -550,11 +552,11 @@ command! Scratch :call Scratch()
 let g:foldon=1
 function! FoldColumn()
     if g:foldon == 1
-        hi      FoldColumn       ctermbg=234     ctermfg=247    guifg=#1c1c1c  guibg=#1c1c1c
+        hi      FoldColumn       ctermbg=234     ctermfg=247    guifg=# c1c1c  guibg=# c1c1c
         let g:foldon=0
         return g:foldon
     else
-        hi      FoldColumn       ctermbg=234     ctermfg=234    guifg=#1c1c1c  guibg=#1c1c1c
+        hi      FoldColumn       ctermbg=234     ctermfg=234    guifg=# c1c1c  guibg=# c1c1c
         let g:foldon=1
         return g:foldon
     endif
@@ -596,7 +598,7 @@ endfunction
 " Type z/ to toggle highlighting on/off.
 function! AutoHighlightToggle()
     let @/ = ''
-    if exists('#auto_highlight')
+    if exists('# uto_highlight')
         au! auto_highlight
         augroup! auto_highlight
         setl updatetime=4000
