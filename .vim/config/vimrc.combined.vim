@@ -289,8 +289,8 @@ if has("autocmd")
         autocmd BufWritePre * call StripWhitespace()
         autocmd BufWritePre * call Knl()
         autocmd BufWritePre * %retab
-        autocmd BufWritePre *.py %s/#\w/# &/g
-        autocmd BufWritePre *.py %s/# #/# /g
+        autocmd BufWritePre *.py silent! %s/#\w/# &/g
+        autocmd BufWritePre *.py silent! %s/# #/# /g
         autocmd BufWritePost * call CheckErrorFn()
         autocmd CursorHold * if @% != '' | w
         "}}}
