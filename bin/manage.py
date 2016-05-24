@@ -26,9 +26,12 @@ def go_back(found):
 
 
 def manage():
-    found = find_managepy()
-    if not found:
-        back = go_back(found)
-        os.chdir(back)
-        manage()
+    try:
+        found = find_managepy()
+        if not found:
+            back = go_back(found)
+            os.chdir(back)
+            manage()
+    except KeyboardInterrupt:
+        exit()
 manage()
