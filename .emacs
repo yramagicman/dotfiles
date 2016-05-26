@@ -1,5 +1,6 @@
 (require 'cl)
 (require 'package)
+(require 'iso-transl)
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 (setq cfg-var:packages '(evil auto-complete relative-line-numbers muttrc-mode))
@@ -61,3 +62,7 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (add-hook 'before-save-hook 'evil-normal-state)
 (add-hook 'before-save-hook 'delete-blank-lines)
+
+(load "server")
+(unless (server-running-p)
+  (server-start))
