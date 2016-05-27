@@ -1,9 +1,8 @@
 (require 'cl)
 (require 'package)
 (require 'iso-transl)
-
 (add-to-list 'load-path "~/.emacs.d/lisp/")
-(setq cfg-var:packages '(evil auto-complete relative-line-numbers muttrc-mode))
+(setq cfg-var:packages '(evil auto-complete relative-line-numbers muttrc-mode helm evil-vimish-fold))
 (defun cfg:install-packages ()
     (let ((pkgs (remove-if #'package-installed-p cfg-var:packages)))
         (when pkgs
@@ -24,6 +23,7 @@
 (require 'auto-complete)
 (require 'key-chord)
 (evil-mode 1)
+(eldoc-mode)
 (global-set-key (kbd "C-S-z") 'evil-exit-emacs-state)
 (global-set-key (kbd "C-M-z") 'evil-emacs-state)
 (global-set-key (kbd "C-c") 'evil-force-normal-state)
@@ -40,6 +40,9 @@
  '(ac-trigger-key "TAB")
  '(blink-cursor-mode nil)
  '(custom-enabled-themes (quote (wombat)))
+ '(evil-vimish-fold-mode t)
+ '(helm-adaptive-mode t nil (helm-adaptive))
+ '(helm-mode t)
  '(linum-format (quote dynamic))
  '(menu-bar-mode nil)
  '(mode-require-final-newline nil)
