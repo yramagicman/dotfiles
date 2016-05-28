@@ -70,3 +70,5 @@
 (load "server")
 (unless (server-running-p)
   (server-start))
+(setq backup-inhibited t)
+(setq auto-save-default nill)
