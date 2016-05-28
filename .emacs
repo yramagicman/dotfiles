@@ -40,6 +40,8 @@
  '(ac-trigger-key "TAB")
  '(blink-cursor-mode nil)
  '(custom-enabled-themes (quote (wombat)))
+ '(electric-pair-mode t)
+ '(electric-pair-pairs (quote ((123 . 125) (34 . 34) (91 . 93))))
  '(evil-vimish-fold-mode t)
  '(helm-adaptive-mode t nil (helm-adaptive))
  '(helm-mode t)
@@ -65,7 +67,6 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (add-hook 'before-save-hook 'evil-normal-state)
 (add-hook 'before-save-hook 'delete-blank-lines)
-
 (load "server")
 (unless (server-running-p)
   (server-start))
