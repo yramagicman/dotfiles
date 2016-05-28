@@ -23,7 +23,6 @@
 (require 'auto-complete)
 (require 'key-chord)
 (evil-mode 1)
-(eldoc-mode)
 (global-set-key (kbd "C-S-z") 'evil-exit-emacs-state)
 (global-set-key (kbd "C-M-z") 'evil-emacs-state)
 (global-set-key (kbd "C-c") 'evil-force-normal-state)
@@ -71,4 +70,9 @@
 (unless (server-running-p)
   (server-start))
 (setq backup-inhibited t)
-(setq auto-save-default nill)
+(setq auto-save-default nil)
+
+(add-hook 'emacs-lisp-mode-hook
+	  (lambda nil
+	    (add-hook 'after-save-hook 'eval-buffer)
+	    (eldoc-mode)))
