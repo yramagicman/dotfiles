@@ -2,7 +2,7 @@
 (require 'package)
 (require 'iso-transl)
 (add-to-list 'load-path "~/.emacs.d/lisp/")
-(setq cfg-var:packages '(evil auto-complete relative-line-numbers muttrc-mode helm evil-vimish-fold))
+(setq cfg-var:packages '(evil auto-complete relative-line-numbers muttrc-mode helm evil-vimish-fold projectile epc jedi))
 (defun cfg:install-packages ()
     (let ((pkgs (remove-if #'package-installed-p cfg-var:packages)))
         (when pkgs
@@ -22,12 +22,6 @@
 (require 'evil)
 (require 'auto-complete)
 (require 'key-chord)
-(evil-mode 1)
-(global-set-key (kbd "C-S-z") 'evil-exit-emacs-state)
-(global-set-key (kbd "C-M-z") 'evil-emacs-state)
-(global-set-key (kbd "C-c") 'evil-force-normal-state)
-(global-set-key (kbd "C-s") 'save-buffer)
-(global-set-key (kbd "C-S-e") 'eval-buffer)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -61,8 +55,8 @@
 
 (global-relative-line-numbers-mode)
 (global-auto-complete-mode 1)
-(setq evil-motion-state-modes (append evil-emacs-state-modes evil-motion-state-modes))
-(setq evil-emacs-state-modes nil)
+;; (setq evil-motion-state-modes (append evil-emacs-state-modes evil-motion-state-modes))
+;; (setq evil-emacs-state-modes nil)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (add-hook 'before-save-hook 'evil-normal-state)
 (add-hook 'before-save-hook 'delete-blank-lines)
@@ -73,6 +67,14 @@
 (setq auto-save-default nil)
 
 (add-hook 'emacs-lisp-mode-hook
-	  (lambda nil
-	    (add-hook 'after-save-hook 'eval-buffer)
-	    (eldoc-mode)))
+      (lambda nil
+        (add-hook 'after-save-hook 'eval-buffer)
+        (eldoc-mode)))
+
+(evil-mode 1)
+(global-set-key (kbd "C-S-z") 'evil-exit-emacs-state)
+(global-set-key (kbd "C-M-z") 'evil-emacs-state)
+(global-set-key (kbd "C-c") 'evil-force-normal-state)
+(global-set-key (kbd "C-s") 'save-buffer)
+(global-set-key (kbd "C-S-e") 'eval-buffer)
+(require 'my-jedi-setup)
