@@ -8,7 +8,6 @@ call vundle#begin()
     Plugin 'gmarik/Vundle.vim'
     Plugin 'hail2u/vim-css3-syntax'
     Plugin 'honza/vim-snippets'
-    Plugin 'jeetsukumaran/vim-filebeagle'
     Plugin 'joequery/Stupid-EasyMotion'
     Plugin 'L9'
     Plugin 'mattn/emmet-vim'

@@ -66,11 +66,6 @@ augroup end
 noremap Z :GundoToggle<CR>
 inoremap <leader>Z :GundoToggle<CR>
 "}}}
-"{{{ Filebeagle
-let g:filebeagle_suppress_keymaps = 1
-map <silent> +  <Plug>FileBeagleOpenCurrentWorkingDir
-map <silent> =  <Plug>FileBeagleOpenCurrentBufferDir
-"}}}
 "{{{ fuzzyfinder
 inoremap <c-f> <Esc>:FufFileWithFullCwd<CR>
 nnoremap <c-f> <Esc>:FufFileWithFullCwd<CR>
