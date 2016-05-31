@@ -2,7 +2,16 @@
 (require 'package)
 (require 'iso-transl)
 (add-to-list 'load-path "~/.emacs.d/lisp/")
-(setq cfg-var:packages '(evil auto-complete relative-line-numbers muttrc-mode helm evil-vimish-fold projectile epc jedi))
+(setq cfg-var:packages '(evil
+             evil-matchit
+             auto-complete
+             relative-line-numbers
+             muttrc-mode
+             helm
+             evil-vimish-fold
+             projectile
+             epc
+             jedi))
 (defun cfg:install-packages ()
     (let ((pkgs (remove-if #'package-installed-p cfg-var:packages)))
         (when pkgs
@@ -38,6 +47,8 @@
  '(evil-vimish-fold-mode t)
  '(helm-adaptive-mode t nil (helm-adaptive))
  '(helm-mode t)
+ '(icomplete-mode t)
+ '(inhibit-startup-screen t)
  '(linum-format (quote dynamic))
  '(menu-bar-mode nil)
  '(mode-require-final-newline nil)
@@ -52,14 +63,15 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
 (global-relative-line-numbers-mode)
 (global-auto-complete-mode 1)
 ;; (setq evil-motion-state-modes (append evil-emacs-state-modes evil-motion-state-modes))
 ;; (setq evil-emacs-state-modes nil)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (add-hook 'before-save-hook 'evil-normal-state)
-(add-hook 'before-save-hook 'delete-blank-lines)
+;;(add-hook 'before-save-hook 'delete-blank-lines)
 (load "server")
 (unless (server-running-p)
   (server-start))
@@ -72,13 +84,22 @@
         (eldoc-mode)))
 
 (evil-mode 1)
-(global-set-key (kbd "C-S-z") 'evil-exit-emacs-state)
-(global-set-key (kbd "C-M-z") 'evil-emacs-state)
-(global-set-key (kbd "C-c") 'evil-force-normal-state)
-(global-set-key (kbd "C-s") 'save-buffer)
-(global-set-key (kbd "C-S-e") 'eval-buffer)
-
-
+(defun evil-map-key (key-str fn-quoted)
+    "map key for both insert and normal modes"
+    (define-key evil-insert-state-map (kbd key-str) fn-quoted)
+    (define-key evil-normal-state-map (kbd key-str) fn-quoted))
+(evil-map-key "C-S-z" 'evil-exit-emacs-state)
+(evil-map-key "C-M-z" 'evil-emacs-state)
+(evil-map-key "C-c" 'evil-force-normal-state)
+(evil-map-key "C-s" 'save-buffer)
+(evil-map-key "C-n" 'evil-normal-state)
+(evil-map-key "C-S-e" 'eval-buffer)
+(dolist (k '([mouse-1] [down-mouse-1] [drag-mouse-1] [double-mouse-1] [triple-mouse-1]
+             [mouse-2] [down-mouse-2] [drag-mouse-2] [double-mouse-2] [triple-mouse-2]
+             [mouse-3] [down-mouse-3] [drag-mouse-3] [double-mouse-3] [triple-mouse-3]
+             [mouse-4] [down-mouse-4] [drag-mouse-4] [double-mouse-4] [triple-mouse-4]
+             [mouse-5] [down-mouse-5] [drag-mouse-5] [double-mouse-5] [triple-mouse-5]))
+  (global-unset-key k))
 ;; Global Jedi config vars
 
 (defvar jedi-config:use-system-python nil
