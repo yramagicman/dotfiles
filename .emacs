@@ -11,6 +11,7 @@
              evil-vimish-fold
              projectile
              epc
+             sass-mode
              jedi))
 (defun cfg:install-packages ()
     (let ((pkgs (remove-if #'package-installed-p cfg-var:packages)))
