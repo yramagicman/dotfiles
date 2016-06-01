@@ -12,6 +12,7 @@
              projectile
              epc
              sass-mode
+             scss-mode
              jedi))
 (defun cfg:install-packages ()
     (let ((pkgs (remove-if #'package-installed-p cfg-var:packages)))
