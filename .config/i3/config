@@ -158,6 +158,6 @@ bar {
 # APP KEYS
 bindsym $mod+w exec firefox
 bindsym $mod+Shift+w exec "firefox --private"
-bindsym XK_Print exec gnome-screenshot
+bindsym Print exec gnome-screenshot
 bindsym Shift+F12 exec "systemctl poweroff"
 exec_always ~/.dwm/autostart.sh
