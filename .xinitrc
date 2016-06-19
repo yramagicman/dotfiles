@@ -31,4 +31,5 @@ fi
 #xterm
 #exec xterm -geometry 80x66+0+0 -name login
 export DE="xfce"
-exec $HOME/bin/dwmrestart
+#exec $HOME/bin/dwmrestart
+exec i3
