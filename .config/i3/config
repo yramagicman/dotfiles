@@ -156,8 +156,11 @@ bar {
 
 
 # APP KEYS
-bindsym $mod+w exec firefox
-bindsym $mod+Shift+w exec "firefox --private"
+bindsym $mod+w exec chromium
+bindsym $mod+Shift+w exec "chromium --incognito"
 bindsym Print exec gnome-screenshot
 bindsym Shift+F12 exec "systemctl poweroff"
 exec_always ~/.dwm/autostart.sh
+bindsym Control+h move scratchpad
+bindsym Control+s scratchpad show
+bindsym Control+f floating toggle
