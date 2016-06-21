@@ -161,6 +161,6 @@ bindsym $mod+Shift+w exec "chromium --incognito"
 bindsym Print exec gnome-screenshot
 bindsym Shift+F12 exec "systemctl poweroff"
 exec_always ~/.dwm/autostart.sh
-bindsym Control+h move scratchpad
-bindsym Control+s scratchpad show
-bindsym Control+f floating toggle
+bindsym Control+Shift+h move scratchpad
+bindsym Control+Shift+s scratchpad show
+bindsym Control+Shift+f floating toggle
