@@ -292,7 +292,7 @@ if has("autocmd")
         autocmd BufWritePre *.py silent! %s/#\w/# &/g
         autocmd BufWritePre *.py silent! %s/# #/# /g
         autocmd BufWritePost * call CheckErrorFn()
-        autocmd CursorHold * silent! if @% != '' | w
+        autocmd CursorHold * silent! if @% != '' | silent! w
         "}}}
     augroup end
     augroup js
