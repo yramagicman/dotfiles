@@ -213,8 +213,8 @@ noremap } }zz
 noremap ) )zz
 noremap % %zz
 noremap <Tab> <Tab>zz
-noremap n nzz
-noremap N Nzz
+noremap n nzzzO
+noremap N NzzzO
 "}}}
 "{{{ jump to ...
 noremap <S-j> G
