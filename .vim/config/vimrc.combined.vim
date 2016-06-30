@@ -291,6 +291,8 @@ if has("autocmd")
         autocmd BufWritePre * %retab
         autocmd BufWritePre *.py silent! %s/#\w/# &/g
         autocmd BufWritePre *.py silent! %s/# #/# /g
+        autocmd BufWritePre *.js silent! %s/\/\/\w/\/\/ &/g
+        autocmd BufWritePre *.js silent! %s/\/\/ \/\//\/\/ /g
         autocmd BufWritePost * call CheckErrorFn()
         autocmd CursorHold * silent! if @% != '' | silent! w
         "}}}
