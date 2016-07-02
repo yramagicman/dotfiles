@@ -164,3 +164,7 @@ exec_always ~/.dwm/autostart.sh
 bindsym Control+Shift+h move scratchpad
 bindsym Control+Shift+s scratchpad show
 bindsym Control+Shift+f floating toggle
+bindsym $mod+XF86MonBrightnessDown exec "xbacklight -set 25 -time 1 -steps 1"
+bindsym $mod+XF86MonBrightnessUp exec "xbacklight -set 65 -time 1 -steps 1"
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 10 -time 1 -steps 1"
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 10 -time 1 -steps 1"
