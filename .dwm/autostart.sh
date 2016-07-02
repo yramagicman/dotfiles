@@ -18,8 +18,8 @@ xset -dpms; xset s off &
 #check_process xfce4-volumed
 
 ## Enable power management
-xfce4-power-manager &
-#(sleep 1s && check_process compton) &
+#xfce4-power-manager &
+(sleep 1s && check_process compton) &
 (sleep 1s && /usr/bin/xscreensaver -no-splash) &
 
 (sleep 3s && check_process volumeicon) &
