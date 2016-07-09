@@ -2,7 +2,7 @@
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew tap homebrew/php
 brew tap homebrew/dupes
-brew install zsh vim zsh tmux mutt php54 python ruby tmux reattach-to-user-namespace git node cmus vim bash pass ack lynx pandoc tree tig sl pwgen htop nmap iftop drush wget ctags-exuberant
+brew install vim zsh tmux mutt php54 python ruby tmux reattach-to-user-namespace git node cmus bash pass ack lynx pandoc tree tig sl pwgen htop nmap iftop drush wget ctags-exuberant
 brew install macvim --override-system-vim
 brew linkapps
 gem install sass compass
