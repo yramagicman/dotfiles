@@ -27,4 +27,6 @@ call vundle#begin()
     Plugin 'tpope/vim-surround'
     Plugin 'vim-indent-object'
     Plugin 'vim-scripts/taglist.vim'
+    Plugin 'jceb/vim-orgmode'
+    Plugin 'tpope/vim-speeddating'
 call vundle#end()

@@ -30,6 +30,7 @@
 (package-initialize)
 
 (cfg:install-packages)
+(require 'org)
 (require 'evil)
 (require 'auto-complete)
 (require 'key-chord)
