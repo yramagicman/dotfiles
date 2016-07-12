@@ -14,6 +14,7 @@
              sass-mode
              scss-mode
              jedi))
+
 (defun cfg:install-packages ()
     (let ((pkgs (remove-if #'package-installed-p cfg-var:packages)))
         (when pkgs
@@ -60,12 +61,14 @@
  '(show-paren-delay 0.01)
  '(show-paren-mode t)
  '(tool-bar-mode nil))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 (global-relative-line-numbers-mode)
@@ -74,7 +77,7 @@
 ;; (setq evil-emacs-state-modes nil)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (add-hook 'before-save-hook 'evil-normal-state)
-;;(add-hook 'before-save-hook 'delete-blank-lines)
+
 (load "server")
 (unless (server-running-p)
   (server-start))
@@ -86,7 +89,10 @@
         (add-hook 'after-save-hook 'eval-buffer)
         (eldoc-mode)))
 
+(add-hook 'org-mode-hook 'org-indent-mode)
+
 (evil-mode 1)
+
 (defun evil-map-key (key-str fn-quoted)
     "map key for both insert and normal modes"
     (define-key evil-insert-state-map (kbd key-str) fn-quoted)
