@@ -71,6 +71,7 @@
  ;; If there is more than one, they won't work right.
  )
 
+(setq-default word-wrap t)
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 (global-relative-line-numbers-mode)
@@ -80,6 +81,7 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (add-hook 'before-save-hook 'evil-normal-state)
 
+(global-visual-line-mode t)
 (load "server")
 (unless (server-running-p)
   (server-start))
