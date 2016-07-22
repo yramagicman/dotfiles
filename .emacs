@@ -1,3 +1,6 @@
+;;; package --- Summary
+;;; Commentary:
+;;; Code:
 (require 'cl)
 (require 'package)
 (require 'iso-transl)
@@ -7,12 +10,12 @@
              auto-complete
              relative-line-numbers
              muttrc-mode
-             helm
-             evil-vimish-fold
              projectile
              epc
              sass-mode
              scss-mode
+             markdown-mode
+             flycheck
              jedi))
 
 (defun cfg:install-packages ()
@@ -51,8 +54,6 @@
  '(electric-pair-mode t)
  '(electric-pair-pairs (quote ((123 . 125) (34 . 34) (91 . 93))))
  '(evil-vimish-fold-mode t)
- '(helm-adaptive-mode t nil (helm-adaptive))
- '(helm-mode t)
  '(icomplete-mode t)
  '(inhibit-startup-screen t)
  '(linum-format (quote dynamic))
@@ -80,7 +81,9 @@
 ;; (setq evil-emacs-state-modes nil)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (add-hook 'before-save-hook 'evil-normal-state)
+(add-hook 'term-hook 'evil-emacs-state)
 
+(global-set-key (kbd "C-x t") 'ansi-term)
 (global-visual-line-mode t)
 (load "server")
 (unless (server-running-p)
@@ -96,11 +99,16 @@
 (add-hook 'org-mode-hook 'org-indent-mode)
 
 (evil-mode 1)
+(add-to-list 'auto-mode-alist '("/\\..*zsh\\'" . shell-script-mode))
+(add-to-list 'auto-mode-alist '(".zshrc" . shell-script-mode))
+(add-to-list 'auto-mode-alist '(".zpreztorc" . shell-script-mode))
 
 (defun evil-map-key (key-str fn-quoted)
     "map key for both insert and normal modes"
     (define-key evil-insert-state-map (kbd key-str) fn-quoted)
-    (define-key evil-normal-state-map (kbd key-str) fn-quoted))
+    (define-key evil-normal-state-map (kbd key-str) fn-quoted)
+    (define-key evil-visual-state-map (kbd key-str) fn-quoted))
+
 (evil-map-key "C-S-z" 'evil-exit-emacs-state)
 (evil-map-key "C-M-z" 'evil-emacs-state)
 (evil-map-key "C-c" 'evil-force-normal-state)
@@ -281,3 +289,8 @@ May be necessary for some GUI environments (e.g., Mac OS X)")
     (add-hook 'python-mode-hook 'jedi-config:setup-keys)
 
     ))
+
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
+(provide '.emacs)
+;;; .emacs ends here
