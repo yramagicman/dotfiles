@@ -40,7 +40,7 @@
 (require 'org)
 (require 'evil)
 (require 'auto-complete)
-(require 'key-chord)
+;(require 'key-chord)
 (require 'ido)
 (ido-mode t)
 (custom-set-variables
@@ -107,7 +107,7 @@
 (add-to-list 'auto-mode-alist '(".zpreztorc" . shell-script-mode))
 
 (defun evil-map-key (key-str fn-quoted)
-    "map key for both insert and normal modes"
+    "Map key for both insert and normal modes KEY-STR FN-QUOTED."
     (define-key evil-insert-state-map (kbd key-str) fn-quoted)
     (define-key evil-normal-state-map (kbd key-str) fn-quoted)
     (define-key evil-visual-state-map (kbd key-str) fn-quoted))
