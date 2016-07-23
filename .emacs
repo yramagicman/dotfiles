@@ -11,6 +11,8 @@
              relative-line-numbers
              muttrc-mode
              projectile
+             racket-mode
+             clojure-mode
              epc
              sass-mode
              scss-mode
@@ -19,6 +21,7 @@
              jedi))
 
 (defun cfg:install-packages ()
+  "Doc string."
     (let ((pkgs (remove-if #'package-installed-p cfg-var:packages)))
         (when pkgs
             (message "%s" "Emacs refresh packages database...")
@@ -93,7 +96,7 @@
 
 (add-hook 'emacs-lisp-mode-hook
       (lambda nil
-        (add-hook 'after-save-hook 'eval-buffer)
+        ;; (add-hook 'after-save-hook 'eval-buffer)
         (eldoc-mode)))
 
 (add-hook 'org-mode-hook 'org-indent-mode)
