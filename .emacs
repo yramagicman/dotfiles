@@ -1,11 +1,13 @@
-;;; package --- Summary
+;;; package --- .emacs
 ;;; Commentary:
 ;;; Code:
 (require 'cl)
 (require 'package)
 (require 'iso-transl)
 (add-to-list 'load-path "~/.emacs.d/lisp/")
-(setq cfg-var:packages '(evil
+(defvar cfg-var:packages)
+(setq cfg-var:packages '(
+             evil
              evil-matchit
              auto-complete
              relative-line-numbers
@@ -21,7 +23,7 @@
              jedi))
 
 (defun cfg:install-packages ()
-  "Doc string."
+  "Install packages from list."
     (let ((pkgs (remove-if #'package-installed-p cfg-var:packages)))
         (when pkgs
             (message "%s" "Emacs refresh packages database...")
@@ -86,11 +88,12 @@
 (add-hook 'before-save-hook 'evil-normal-state)
 (add-hook 'term-hook 'evil-emacs-state)
 
-(global-set-key (kbd "C-x t") 'ansi-term)
+(defun myterm (&optional prog)
+  "Run term with PROG or zsh."
+  (interactive)
+  (ansi-term (or prog "/usr/bin/zsh")))
+(global-set-key "\C-xt" 'myterm)
 (global-visual-line-mode t)
-(load "server")
-(unless (server-running-p)
-  (server-start))
 (setq backup-inhibited t)
 (setq auto-save-default nil)
 
@@ -295,5 +298,13 @@ May be necessary for some GUI environments (e.g., Mac OS X)")
 
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
+(add-hook 'dired-load-hook
+          (lambda ()
+            (require 'dired-x)))
+(add-hook 'dired-mode-hook
+          (lambda ()
+            (setq dired-omit-files "\*pyc")
+            (setq dired-omit-files-p t)
+            (dired-omit-mode)))
 (provide '.emacs)
 ;;; .emacs ends here
