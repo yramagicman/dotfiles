@@ -16,6 +16,7 @@
              racket-mode
              clojure-mode
              epc
+             magit
              sass-mode
              scss-mode
              markdown-mode
@@ -121,6 +122,12 @@
 (evil-map-key "C-s" 'save-buffer)
 (evil-map-key "C-n" 'evil-normal-state)
 (evil-map-key "C-S-e" 'eval-buffer)
+(evil-map-key "C-S-e" 'eval-buffer)
+(evil-map-key "C-h" 'evil-window-left)
+(evil-map-key "C-j" 'evil-window-down)
+(evil-map-key "C-k" 'evil-window-up)
+(evil-map-key "C-l" 'evil-window-right)
+
 (dolist (k '([mouse-1] [down-mouse-1] [drag-mouse-1] [double-mouse-1] [triple-mouse-1]
              [mouse-2] [down-mouse-2] [drag-mouse-2] [double-mouse-2] [triple-mouse-2]
              [mouse-3] [down-mouse-3] [drag-mouse-3] [double-mouse-3] [triple-mouse-3]
