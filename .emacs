@@ -313,5 +313,6 @@ May be necessary for some GUI environments (e.g., Mac OS X)")
             (setq dired-omit-files "\*pyc")
             (setq dired-omit-files-p t)
             (dired-omit-mode)))
+(server-start)
 (provide '.emacs)
 ;;; .emacs ends here
