@@ -7,23 +7,18 @@ import sys
 import blessings
 watching = sys.argv[1:]
 def watchfile(watching):
-    mtime = os.path.getmtime(watching)
+    mtime = [os.path.getmtime(f) for f in watching]
 
     def watch():
         nonlocal mtime
         run_tests = [os.path.expanduser('~') + '/bin/manage.py', 'test']
         while True:
-            if mtime != os.path.getmtime(watching):
-                os.system('clear')
-                print(watching)
-                o = subprocess.check_output(run_tests, stderr=subprocess.STDOUT)
-                for l in o.splitlines()[:-3]:
-                    print(l.decode('utf-8'))
-                mtime = os.path.getmtime(watching)
-            time.sleep(1)
-    watch()
+            for f in watching:
+                if os.path.getmtime(f) not in mtime:
+                    local_mtime= [os.path.getmtime(f) for f in watching]
+                    mtime = local_mtime
+                    return local_mtime
+                time.sleep(1)
+    print(watch())
 
-for f in watching:
-    f = os.getcwd() + '/' + f
-    print(f)
-    watchfile(f)
+watchfile(watching)
