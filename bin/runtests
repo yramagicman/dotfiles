@@ -19,6 +19,7 @@ def watchfile(watching):
             else:
                 mtime = mtime
         return mtime
+
     def loop():
         run_tests = [os.path.expanduser('~') + '/bin/manage.py', 'test']
         times = watch()
@@ -27,12 +28,14 @@ def watchfile(watching):
             if times != loop_times:
                 os.system('clear')
                 print('running tests')
-                a = subprocess.check_output(run_tests, stderr=subprocess.STDOUT)
+                a = subprocess.check_output(
+                    run_tests, stderr=subprocess.STDOUT)
                 for l in a.splitlines()[:-3]:
                     print(l.decode('utf-8'))
                 times = loop_times
                 if a.splitlines()[-4] != b'OK':
-                    subprocess.call(['mplayer', os.path.expanduser('~') + '/.sounds/beep.mp3', '-really-quiet'])
+                    subprocess.call(['mplayer', os.path.expanduser(
+                        '~') + '/.sounds/beep.mp3', '-really-quiet'])
             time.sleep(1)
     loop()
 
