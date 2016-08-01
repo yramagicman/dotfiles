@@ -56,6 +56,7 @@
  '(ac-show-menu-immediately-on-auto-complete t)
  '(ac-trigger-key "TAB")
  '(blink-cursor-mode nil)
+ '(column-number-mode t)
  '(custom-enabled-themes (quote (wombat)))
  '(electric-pair-mode t)
  '(electric-pair-pairs (quote ((123 . 125) (34 . 34) (91 . 93))))
