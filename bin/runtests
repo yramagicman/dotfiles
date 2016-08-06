@@ -40,4 +40,9 @@ def watchfile(watching):
     loop()
 
 
-watchfile(watching)
+def rerun():
+    await watchfile(watching)
+    print('run tests')
+
+
+rerun()
