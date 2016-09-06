@@ -20,6 +20,10 @@
              sass-mode
              scss-mode
              markdown-mode
+             php-mode
+             ;ac-php
+             ;ac-php-core
+             ;php-eldoc
              flycheck
              jedi))
 
@@ -122,6 +126,7 @@
 (evil-map-key "C-M-z" 'evil-emacs-state)
 (evil-map-key "M-c" 'evil-force-normal-state)
 (evil-map-key "M-s" 'save-buffer)
+(evil-map-key "C-s" 'save-buffer)
 (evil-map-key "C-n" 'evil-normal-state)
 (evil-map-key "C-S-e" 'eval-buffer)
 (evil-map-key "C-h" 'evil-window-left)
