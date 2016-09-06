@@ -135,7 +135,7 @@
 (evil-map-key "C-j" 'evil-window-down)
 (evil-map-key "C-k" 'evil-window-up)
 (evil-map-key "C-l" 'evil-window-right)
-(define-key evil-normal-state-map (kbd "q") 'fill-paragraph)
+(define-key evil-normal-state-map (kbd "Q") 'fill-paragraph)
 (dolist (k '([mouse-1] [down-mouse-1] [drag-mouse-1] [double-mouse-1] [triple-mouse-1]
              [mouse-2] [down-mouse-2] [drag-mouse-2] [double-mouse-2] [triple-mouse-2]
              [mouse-3] [down-mouse-3] [drag-mouse-3] [double-mouse-3] [triple-mouse-3]
