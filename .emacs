@@ -323,5 +323,12 @@ May be necessary for some GUI environments (e.g., Mac OS X)")
             (dired-omit-mode)))
 (require 'server)
 (unless (server-running-p) (server-start))
+
+;; Find dictionary
+(executable-find "aspell")
+  (setq ispell-program-name "aspell")
+  ;; Please note ispell-extra-args contains ACTUAL parameters passed to aspell
+  (setq ispell-extra-args '("--sug-mode=ultra" "--lang=en_US"))
+
 (provide '.emacs)
 ;;; .emacs ends here
