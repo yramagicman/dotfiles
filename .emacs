@@ -21,9 +21,9 @@
              scss-mode
              markdown-mode
              php-mode
-             ;ac-php
-             ;ac-php-core
-             ;php-eldoc
+             ac-php
+             ac-php-core
+             php-eldoc
              flycheck
              jedi))
 
@@ -68,7 +68,6 @@
  '(icomplete-mode t)
  '(inhibit-startup-screen t)
  '(linum-format (quote dynamic))
- '(menu-bar-mode nil)
  '(mode-require-final-newline nil)
  '(require-final-newline nil)
  '(scroll-bar-mode nil)
@@ -324,6 +323,7 @@ May be necessary for some GUI environments (e.g., Mac OS X)")
 (require 'server)
 (unless (server-running-p) (server-start))
 
+(require 'ispell)
 ;; Find dictionary
 (executable-find "aspell")
   (setq ispell-program-name "aspell")
