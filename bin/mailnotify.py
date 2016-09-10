@@ -10,5 +10,6 @@ while True:
     if int(mails) > 0:
         n = pynotify.Notification("You have mail!", mails + "unread messages")
         n.show()
-    time.sleep(60*5)
-print mails
+        subprocess.call(['mplayer', '/home/jonathan/.sounds/beep.mp3',
+                         '-really-quiet'])
+    time.sleep(60*10)
