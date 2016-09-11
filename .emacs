@@ -71,6 +71,7 @@
  '(icomplete-mode t)
  '(inhibit-startup-screen t)
  '(linum-format (quote dynamic))
+ '(menu-bar-mode nil)
  '(mode-require-final-newline nil)
  '(require-final-newline nil)
  '(scroll-bar-mode nil)
