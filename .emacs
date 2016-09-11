@@ -62,9 +62,11 @@
  '(blink-cursor-mode nil)
  '(column-number-mode t)
  '(custom-enabled-themes (quote (wombat)))
+ '(display-time-mode t)
  '(electric-pair-mode t)
  '(electric-pair-pairs (quote ((123 . 125) (34 . 34) (91 . 93))))
  '(evil-vimish-fold-mode t)
+ '(fringe-mode 15 nil (fringe))
  '(icomplete-mode t)
  '(inhibit-startup-screen t)
  '(linum-format (quote dynamic))
@@ -129,11 +131,14 @@
 (evil-map-key "M-q" 'kill-emacs)
 (evil-map-key "C-s" 'save-buffer)
 (evil-map-key "C-n" 'evil-normal-state)
+(evil-map-key "M-n" 'evil-normal-state)
 (evil-map-key "C-S-e" 'eval-buffer)
 (evil-map-key "C-h" 'evil-window-left)
 (evil-map-key "C-j" 'evil-window-down)
 (evil-map-key "C-k" 'evil-window-up)
 (evil-map-key "C-l" 'evil-window-right)
+; Kill the annoyance of typing the wrong key
+(global-unset-key (kbd "C-x h"))
 (define-key evil-normal-state-map (kbd "Q") 'fill-paragraph)
 ;(dolist (k '([mouse-1] [down-mouse-1] [drag-mouse-1] [double-mouse-1] [triple-mouse-1]
 ;             [mouse-2] [down-mouse-2] [drag-mouse-2] [double-mouse-2] [triple-mouse-2]
