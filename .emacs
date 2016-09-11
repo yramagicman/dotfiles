@@ -61,6 +61,7 @@
  '(ac-trigger-key "TAB")
  '(blink-cursor-mode nil)
  '(column-number-mode t)
+ '(cua-mode t nil (cua-base))
  '(custom-enabled-themes (quote (wombat)))
  '(display-time-mode t)
  '(electric-pair-mode t)
