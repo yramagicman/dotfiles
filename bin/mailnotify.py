@@ -9,7 +9,7 @@ while True:
     mails = subprocess.check_output(['/home/jonathan/bin/mailmon'])
     if int(mails) > 0:
         notified = 0
-        while notified <= 5 and mails > 0:
+        while notified <= 5 and int(mails) > 0:
             n = pynotify.Notification("You have mail!", mails +
                                       "unread messages")
             n.show()
