@@ -95,7 +95,11 @@
 ;; (setq evil-emacs-state-modes nil)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (add-hook 'before-save-hook 'evil-normal-state)
-(add-hook 'term-hook 'evil-emacs-state)
+; make sure files are unix!
+(add-hook 'before-save-hook
+          (lambda nil
+            (set-buffer-file-coding-system 'undecided-unix)))
+(add-hook 'term-hook 'evil-mode)
 
 (defun myterm (&optional prog)
   "Run term with PROG or zsh."
