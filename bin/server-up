@@ -1,4 +1,5 @@
 #!/usr/bin/env zsh
+httpd -t
 sudo systemctl restart httpd
 sudo systemctl restart mysqld
 if [[ "$(hostname)" == tardis ]]; then
