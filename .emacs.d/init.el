@@ -136,3 +136,6 @@ May be necessary for some GUI environments (e.g., Mac OS X)")
     (interactive)
     (find-file "~/Dropbox/org/worklist.org"))
 (global-set-key (kbd "C-S-w") 'worklist)
+
+(require 'undohist)
+(undohist-initialize)
