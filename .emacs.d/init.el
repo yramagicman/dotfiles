@@ -69,7 +69,7 @@
 (global-relative-line-numbers-mode)
 (global-auto-complete-mode 1)
 ;; (setq evil-motion-state-modes (append evil-emacs-state-modes evil-motion-state-modes))
-;; (setq evil-emacs-state-modes nil)
+(add-to-list 'evil-emacs-state-modes 'term-mode)
 ; make sure files are unix!
 
 
