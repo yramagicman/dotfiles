@@ -32,6 +32,7 @@
              ac-php
              ac-php-core
              php-eldoc
+             web-mode
              flycheck
              jedi))
 
