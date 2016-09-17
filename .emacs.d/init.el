@@ -55,9 +55,9 @@
 (require 'evil)
 (require 'auto-complete)
 ;(require 'key-chord)
-;(require 'ido)
-;
-;(ido-mode t)
+(require 'ido)
+
+(ido-mode t)
 (setq custom-file
       (expand-file-name "lisp/custom.el" user-emacs-directory))
 (load custom-file)
