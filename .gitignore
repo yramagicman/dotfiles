@@ -119,7 +119,6 @@ VirtualBox VMs/
 .winff/
 .Xauthority
 .Xdefaults
-.Xmodmap
 .xscreensaver
 .xsel.log
 .z
