@@ -8,7 +8,6 @@
 
 
 
-(add-hook 'term-hook 'evil-mode)
 (add-hook 'emacs-lisp-mode-hook
       (lambda nil
         ;; (add-hook 'after-save-hook 'eval-buffer)
@@ -17,6 +16,7 @@
 (add-hook 'org-mode-hook 'org-indent-mode)
 
 (add-hook 'after-init-hook #'global-flycheck-mode)
+(add-hook 'after-init-hook 'flyspell-mode)
 
 (add-hook 'dired-load-hook
           (lambda ()

@@ -17,6 +17,10 @@
 (setq cfg-var:packages '(
              evil
              evil-matchit
+             evil-surround
+             evil-visualstar
+             evil-nerd-commenter
+             evil-numbers
              auto-complete
              relative-line-numbers
              muttrc-mode
@@ -32,7 +36,6 @@
              ac-php
              ac-php-core
              php-eldoc
-             web-mode
              flycheck
              jedi))
 

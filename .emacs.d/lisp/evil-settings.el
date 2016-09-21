@@ -1,8 +1,10 @@
 (evil-mode 1)
 (add-to-list 'auto-mode-alist '("/\\..*zsh\\'" . shell-script-mode))
+(add-to-list 'auto-mode-alist '("*.php" . web-mode))
 (add-to-list 'auto-mode-alist '(".zshrc" . shell-script-mode))
 (add-to-list 'auto-mode-alist '(".zpreztorc" . shell-script-mode))
 (add-to-list 'auto-mode-alist '(".zprofile" . shell-script-mode))
+(add-to-list 'auto-mode-alist '(".muttrc" . muttrc-mode))
 
 (defun evil-map-key (key-str fn-quoted)
     "Map key for both insert and normal modes KEY-STR FN-QUOTED."
