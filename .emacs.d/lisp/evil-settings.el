@@ -8,9 +8,10 @@
 
 (defun evil-map-key (key-str fn-quoted)
     "Map key for both insert and normal modes KEY-STR FN-QUOTED."
-    (define-key evil-insert-state-map (kbd key-str) fn-quoted)
-    (define-key evil-normal-state-map (kbd key-str) fn-quoted)
-    (define-key evil-visual-state-map (kbd key-str) fn-quoted))
+    (define-key evil-insert-state-map  (kbd key-str) fn-quoted)
+    (define-key evil-normal-state-map  (kbd key-str) fn-quoted)
+    (define-key evil-replace-state-map (kbd key-str) fn-quoted)
+    (define-key evil-visual-state-map  (kbd key-str) fn-quoted))
 
 (evil-map-key "C-S-z" 'evil-exit-emacs-state)
 (evil-map-key "C-M-z" 'evil-emacs-state)
@@ -36,4 +37,23 @@
 ;             [mouse-5] [down-mouse-5] [drag-mouse-5] [double-mouse-5] [triple-mouse-5]))
 ;  (global-unset-key k))
 
+(defun evil-font-increase nil
+  (interactive)
+  (text-scale-adjust 0.5))
+
+(defun evil-font-decrease nil
+  (interactive)
+  (text-scale-adjust -0.5))
+
+(defun evil-font-reset nil
+  (interactive)
+  (text-scale-set 0))
+
+(require 'evil-numbers)
+(evil-map-key "C-a" 'evil-numbers/inc-at-pt)
+(evil-map-key "C-x" 'evil-numbers/dec-at-pt)
+(evil-map-key "C-+" 'evil-font-increase)
+(evil-map-key "C-=" 'evil-font-increase)
+(evil-map-key "C--" 'evil-font-decrease)
+(evil-map-key "C-0" 'evil-font-reset)
 (provide 'evil-settings)
