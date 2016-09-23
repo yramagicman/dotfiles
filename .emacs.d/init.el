@@ -34,6 +34,7 @@
              markdown-mode
              php-mode
              ac-php
+             web-mode
              ac-php-core
              php-eldoc
              flycheck
@@ -81,7 +82,7 @@
   "Run term with PROG or zsh."
   (interactive)
   (ansi-term (or prog "/usr/bin/zsh")))
-(global-set-key "\C-xt" 'myterm)
+(global-set-key "\C-ct" 'myterm)
 (global-visual-line-mode t)
 (setq backup-inhibited t)
 (setq auto-save-default nil)

@@ -9,7 +9,7 @@ check_process(){
     fi
 }
 #(check_process /home/jonathan/bin/dwmstatus)
-xflux -z 45036
+# xflux -z 45036
 ( /home/jonathan/.screenlayout/default.sh) &
 ## Set root window colour
 (/home/jonathan/bin/auto-rotate-wallpaper) &
