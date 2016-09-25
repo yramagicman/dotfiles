@@ -1,6 +1,7 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
-(add-hook 'before-save-hook 'evil-normal-state)
 (add-hook 'before-save-hook 'untabify)
+(add-hook 'before-save-hook 'evil-normal-state)
+(add-hook 'evil-mode-hook 'evil-surround-mode)
 ; make sure files are unix!
 (add-hook 'before-save-hook
           (lambda nil
@@ -12,6 +13,7 @@
         (eldoc-mode)))
 
 (add-hook 'org-mode-hook 'org-indent-mode)
+(add-hook 'org-mode-hook 'flyspell-mode)
 
 (add-hook 'after-init-hook #'global-flycheck-mode)
 (add-hook 'message-mode-hook 'flyspell-mode)

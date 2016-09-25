@@ -23,6 +23,7 @@
              evil-numbers
              auto-complete
              relative-line-numbers
+             git-commit
              muttrc-mode
              projectile
              racket-mode

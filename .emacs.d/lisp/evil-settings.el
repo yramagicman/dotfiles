@@ -1,5 +1,5 @@
 (evil-mode 1)
-
+(global-evil-visualstar-mode)
 (defun evil-map-key (key-str fn-quoted)
     "Map key for both insert and normal modes KEY-STR FN-QUOTED."
     (define-key evil-insert-state-map  (kbd key-str) fn-quoted)
@@ -7,6 +7,8 @@
     (define-key evil-replace-state-map (kbd key-str) fn-quoted)
     (define-key evil-visual-state-map  (kbd key-str) fn-quoted))
 
+(define-key evil-visual-state-map  (kbd "TAB") 'evilmi-jump-items)
+(define-key evil-normal-state-map  (kbd "TAB") 'evilmi-jump-items)
 (evil-map-key "C-S-z" 'evil-exit-emacs-state)
 (evil-map-key "C-M-z" 'evil-emacs-state)
 (evil-map-key "M-c" 'evil-force-normal-state)
