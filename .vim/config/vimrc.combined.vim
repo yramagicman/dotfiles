@@ -288,6 +288,7 @@ if has("autocmd")
         autocmd BufWritePre * checktime
         autocmd BufWritePre * call StripWhitespace()
         autocmd BufWritePre * call Knl()
+        autocmd BufWritePre * call LineEndings()
         autocmd BufWritePre * %retab
         autocmd BufWritePre *.py silent! %s/#\w/# &/g
         autocmd BufWritePre *.py silent! %s/# #/# /g
