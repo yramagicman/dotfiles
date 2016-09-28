@@ -285,11 +285,11 @@ if has("autocmd")
         autocmd FileType lua setlocal foldmethod=marker
         "}}}
         "{{{ Saving
-        autocmd BufWritePre * checktime
-        autocmd BufWritePre * call StripWhitespace()
-        autocmd BufWritePre * call Knl()
-        autocmd BufWritePre * call LineEndings()
-        autocmd BufWritePre * %retab
+        autocmd BufWritePre * silent! checktime
+        autocmd BufWritePre * silent! call StripWhitespace()
+        autocmd BufWritePre * silent! call Knl()
+        autocmd BufWritePre * silent! call LineEndings()
+        autocmd BufWritePre * silent! %retab
         autocmd BufWritePre *.py silent! %s/#\w/# &/g
         autocmd BufWritePre *.py silent! %s/# #/# /g
         autocmd BufWritePre *.js silent! %s/\/\/\w/\/\/ &/g
