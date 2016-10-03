@@ -33,7 +33,7 @@
              sass-mode
              scss-mode
              markdown-mode
-             php-mode
+             ; php-mode
              ac-php
              web-mode
              ac-php-core
@@ -57,6 +57,7 @@
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
 (package-initialize)
 
+(cfg:install-packages)
 (require 'org)
 (require 'evil)
 (require 'auto-complete)
@@ -68,7 +69,6 @@
       (expand-file-name "lisp/custom.el" user-emacs-directory))
 (load custom-file)
 
-(cfg:install-packages)
 (setq-default word-wrap t)
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
