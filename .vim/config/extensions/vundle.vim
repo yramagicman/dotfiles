@@ -1,7 +1,8 @@
 "vundle.vim
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-    Plugin 'vim-log-syntax'
+    Plugin 'dzeban/vim-log-syntax'
+    Plugin 'gregsexton/gitv'
     Plugin 'bronson/vim-visual-star-search'
     Plugin 'editorconfig/editorconfig-vim'
     Plugin 'ervandew/supertab'
@@ -24,6 +25,7 @@ call vundle#begin()
     " Plugin 'tobyS/vmustache'
     Plugin 'tpope/vim-commentary'
     Plugin 'tpope/vim-surround'
+    Plugin 'tpope/vim-fugitive'
     Plugin 'vim-indent-object'
     Plugin 'vim-scripts/taglist.vim'
     Plugin 'jceb/vim-orgmode'
