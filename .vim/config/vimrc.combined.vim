@@ -106,11 +106,12 @@ set number
 " Change mapleader
 let mapleader=","
 let localleader="/"
-set tags ^=./.git/tags,./.tags
+set tags ^=./.git/tags,./.tags,.tags
 ""set autochdir
 set nowrapscan
 ""set cryptmethod=blowfish2
 filetype plugin indent on
+set omnifunc=syntaxcomplete#Complete
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
   runtime! macros/matchit.vim
 endif
