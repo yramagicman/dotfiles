@@ -3,7 +3,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
     Plugin 'bronson/vim-visual-star-search'
     Plugin 'editorconfig/editorconfig-vim'
-    " Plugin 'ervandew/supertab'
+    Plugin 'ervandew/supertab'
     " Plugin 'FuzzyFinder'
     Plugin 'gmarik/Vundle.vim'
     Plugin 'hail2u/vim-css3-syntax'

@@ -25,3 +25,4 @@ augroup end
 noremap Z :GundoToggle<CR>
 inoremap <leader>Z :GundoToggle<CR>
 "}}}
+let g:SuperTabDefaultCompletionType = 'context'
