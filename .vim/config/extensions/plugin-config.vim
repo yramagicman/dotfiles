@@ -25,4 +25,6 @@ augroup end
 noremap Z :GundoToggle<CR>
 inoremap <leader>Z :GundoToggle<CR>
 "}}}
-let g:SuperTabDefaultCompletionType = 'context'
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+inoremap <c-n> <c-x><c-o>
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"

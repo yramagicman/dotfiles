@@ -1,13 +1,14 @@
 "vundle.vim
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+    Plugin 'vim-log-syntax'
     Plugin 'bronson/vim-visual-star-search'
     Plugin 'editorconfig/editorconfig-vim'
     Plugin 'ervandew/supertab'
-    " Plugin 'FuzzyFinder'
     Plugin 'gmarik/Vundle.vim'
     Plugin 'hail2u/vim-css3-syntax'
     " Plugin 'honza/vim-snippets'
+    Plugin 'autocomplpop'
     " Plugin 'joequery/Stupid-EasyMotion'
     Plugin 'L9'
     " Plugin 'mattn/emmet-vim'
@@ -16,10 +17,8 @@ call vundle#begin()
     Plugin 'Sass'
     Plugin 'scrooloose/syntastic'
     Plugin 'shawncplus/phpcomplete.vim'
-    " Plugin 'Shougo/neocomplcache.vim'
     " Plugin 'SirVer/ultisnips'
     Plugin 'sjl/clam.vim'
-    " Plugin 'sjl/gundo.vim'
     " Plugin 'technosophos/drupal-snippets'
     " Plugin 'tobyS/pdv'
     " Plugin 'tobyS/vmustache'
