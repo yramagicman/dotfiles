@@ -26,10 +26,8 @@ set textwidth=82
 set cc=0
 " highlight long lines
 call matchadd('ColorColumn', '\%81v', 100)
-if has('mac')
-    "Use os clipboard with mac
-    set clipboard=unnamed
-endif
+"Use os clipboard with mac
+set clipboard^=unnamedplus,unnamed
 " Enhance command-line completion
 set wildmenu
 " Allow cursor keys in insert mode
@@ -108,7 +106,7 @@ set number
 " Change mapleader
 let mapleader=","
 let localleader="/"
-""set tags=.git/tags;
+set tags ^=./.git/tags,./.tags
 ""set autochdir
 set nowrapscan
 ""set cryptmethod=blowfish2
@@ -722,7 +720,7 @@ noremap <leader>db mz:%!cat -s<CR>`z
 noremap <silent><leader>w <ESC>:set wrap!<CR>
 inoremap <silent><leader>w <ESC>:set wrap!<CR>i
 "toggle file explorer
-noremap <silent><leader>e <ESC>:FileBeagle<CR>
+noremap <silent><leader>e <ESC>:Explore<CR>
 "retab
 noremap <leader>r <ESC>:%retab<CR>
 "kill search highlighting
@@ -783,9 +781,7 @@ nnoremap <silent>-fs :set foldmethod=syntax<CR>
 "}}}
 "{{{ Command line abbreviations
 cnoreabbrev clam Clam
-cnoreabbrev ack Ack
 cnoreabbrev tw Tw
-cnoreabbrev git !git
 cnoreabbrev gab !git add %
 cnoreabbrev ga !git add %
 cnoreabbrev gac !git add %
