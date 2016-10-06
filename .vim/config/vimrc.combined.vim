@@ -12,6 +12,7 @@ let g:VundleHelper_Plugin_File =  '/.vim/config/extensions/vundle.vim'
 let g:VundleHelper_Update_Frequency = 5
 "}}}
 "{{{ Defaults probably won't change... ever
+set lazyredraw
 set background=dark
 set autoread
 set spelllang=en_us
@@ -68,6 +69,9 @@ set incsearch
 " Disable error bells
 set novisualbell
 set noerrorbells
+if exists('&belloff')
+    set belloff=all
+endif
 " Don't reset cursor to start of line when moving around.
 set nostartofline
 " Show the cursor position
@@ -93,6 +97,15 @@ set nolist wrap linebreak sidescrolloff=15
 set showbreak=....
 if exists('+breakindent')
     set breakindent
+endif
+if has('folding')
+  if has('windows')
+    set fillchars=vert:┃              " BOX DRAWINGS HEAVY VERTICAL (U+2503, UTF-8: E2 94 83)
+  endif
+  set foldlevelstart=99               " start unfolded
+endif
+if v:version > 703 || v:version == 703 && has('patch541')
+  set formatoptions+=j                " remove comment leader when joining comment lines
 endif
 " sensible completion
 set completeopt=longest,menuone
