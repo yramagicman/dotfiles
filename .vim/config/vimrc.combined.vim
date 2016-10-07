@@ -163,7 +163,7 @@ set statusline+=\ \|
 "{{{ netrw settings
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 let g:netrw_banner=0        " disable annoying banner
-let g:netrw_browse_split=4  " open in prior window
+"let g:netrw_browse_split=4  " open in prior window
 let g:netrw_altv=1          " open splits to the right
 let g:netrw_liststyle=3     " tree view
 let g:netrw_list_hide=netrw_gitignore#Hide()
@@ -306,17 +306,17 @@ if has("autocmd")
         autocmd FileType lua setlocal foldmethod=marker
         "}}}
         "{{{ Saving
-        autocmd BufWritePre * silent! checktime
-        autocmd BufWritePre * silent! call StripWhitespace()
-        autocmd BufWritePre * silent! call Knl()
-        autocmd BufWritePre * silent! call LineEndings()
-        autocmd BufWritePre * silent! %retab
-        autocmd BufWritePre *.py silent! %s/#\w/# &/g
-        autocmd BufWritePre *.py silent! %s/# #/# /g
-        autocmd BufWritePre *.js silent! %s/\/\/\w/\/\/ &/g
-        autocmd BufWritePre *.js silent! %s/\/\/ \/\//\/\/ /g
+        autocmd BufEnter,BufWritePre * silent! checktime
+        autocmd BufEnter,BufWritePre * silent! call StripWhitespace()
+        autocmd BufEnter,BufWritePre * silent! call Knl()
+        autocmd BufEnter,BufWritePre * silent! call LineEndings()
+        autocmd BufEnter,BufWritePre * silent! %retab
+        autocmd BufEnter,BufWritePre *.py silent! %s/#\w/# &/g
+        autocmd BufEnter,BufWritePre *.py silent! %s/# #/# /g
+        autocmd BufEnter,BufWritePre *.js silent! %s/\/\/\w/\/\/ &/g
+        autocmd BufEnter,BufWritePre *.js silent! %s/\/\/ \/\//\/\/ /g
         autocmd BufWritePost * call CheckErrorFn()
-        autocmd CursorHold * silent! if @% != '' | silent! w
+        autocmd BufEnter,CursorHold * silent! if @% != '' | silent! w
         "}}}
     augroup end
     augroup js
@@ -861,3 +861,6 @@ let @a = "vi<"
 let @e = "jok"
 let @v = '0/\u~hi_, '
 "}}}
+"
+set list
+set listchars=tab:>-,trail:.
