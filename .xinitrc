@@ -3,7 +3,7 @@ userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
-setxkbmap -option ctrl:swapcaps
+setxkbmap -option caps:swapescape
 setxkbmap -option compose:menu
 # merge in defaults and keymaps
 if [ -f $sysresources ]; then
