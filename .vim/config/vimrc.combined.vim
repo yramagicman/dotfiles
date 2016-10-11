@@ -862,5 +862,5 @@ let @e = "jok"
 let @v = '0/\u~hi_, '
 "}}}
 "
-set list
-set listchars=tab:>-,trail:.
+" set list
+" set listchars=tab:>-,trail:.
