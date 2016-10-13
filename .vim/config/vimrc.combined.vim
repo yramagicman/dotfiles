@@ -695,10 +695,6 @@ inoremap qq qq
 "{{{folding
 nnoremap <Leader>z zMzvzz
 nnoremap <Leader><Leader>z zMzOzz
-"close all folds
-nnoremap <leader>zc <ESC>gg0vG$zC<ESC>
-"open all folds
-nnoremap <leader>za <ESC>gg0vG$zO<ESC>
 "{{{ folding options
 set foldmethod=indent
 set foldcolumn=2
@@ -851,6 +847,6 @@ let @a = "vi<"
 let @e = "jok"
 let @v = '0/\u~hi_, '
 "}}}
-"
+
 " set list
 " set listchars=tab:>-,trail:.
