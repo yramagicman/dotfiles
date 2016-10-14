@@ -451,6 +451,7 @@ function! Backspace()
         elseif l:prev == "{" && l:current == "}"
             return "\<Right>\<BS>\<BS>"
         elseif l:prev == "(" && l:current == ")"
+            echom 'bs'
             return "\<Right>\<BS>\<BS>"
         elseif l:prev == "<" && l:current == ">"
             return "\<Right>\<BS>\<BS>"
@@ -806,10 +807,10 @@ noremap <C-l> <C-w>l
 noremap <C-j> <C-w>j
 noremap <C-h> <C-w>h
 noremap <C-k> <C-w>k
-inoremap <C-l> <ESC><C-w>li
-inoremap <C-j> <ESC><C-w>ji
-inoremap <C-h> <ESC><C-w>hi
-inoremap <C-k> <ESC><C-w>ki
+"inoremap <C-l> <ESC><C-w>li
+"inoremap <C-j> <ESC><C-w>ji
+"inoremap <C-h> <ESC><C-w>hi
+"inoremap <C-k> <ESC><C-w>ki
 noremap <C-w>m :call Maximize()<CR>
 "splitting
 noremap <leader>sn <ESC>:new<CR>
