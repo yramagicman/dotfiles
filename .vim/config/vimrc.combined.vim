@@ -845,7 +845,7 @@ let @c = "vi{"
 let @q = "vi'"
 let @b = 'vi"'
 let @a = "vi<"
-let @e = "jok"
+let @u = "dt(,x"
 let @v = '0/\u~hi_, '
 "}}}
 
