@@ -172,5 +172,8 @@ bindsym XF86MonBrightnessDown exec "xbacklight -dec 10 -time 1 -steps 1"
 
 assign [class="^xterm-256color$"] 1
 assign [class="^chromium$"] 2
+assign [class="^Chromium$"] 2
+assign [class="^Navigator$"] 3
+assign [class="^Firefox$"] 3
 assign [class="^Google-chrome-beta$"] 2
 assign [class="^Geary$"] 4
