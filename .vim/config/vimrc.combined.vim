@@ -653,17 +653,26 @@ endfunction
 "}}}
 "{{{escape
 "{{{ remap escape for easier access
-nnoremap <leader>m <ESC>l
-vnoremap <leader>m <ESC>l
-inoremap <leader>m <ESC>l
+nnoremap <leader>m <ESC>
+vnoremap <leader>m <ESC>
+inoremap <leader>m <ESC>
 onoremap <leader>m <ESC>
-nnoremap <m <ESC>l
-vnoremap <m <ESC>l
-inoremap <m <ESC>l
+cnoremap <leader>m <ESC>
+nnoremap <m <ESC>
+vnoremap <m <ESC>
+inoremap <m <ESC>
 onoremap <m <ESC>
-inoremap <M <ESC>l
+cnoremap <m <ESC>
+inoremap <M <ESC>
+nnoremap <M <ESC>
+vnoremap <M <ESC>
 onoremap <M <ESC>
-
+cnoremap <M <ESC>
+inoremap <ESC> <NOP>
+nnoremap <ESC> <NOP>
+vnoremap <ESC> <NOP>
+onoremap <ESC> <NOP>
+cnoremap <ESC> <NOP>
 "}}}
 "}}}
 "{{{saving
