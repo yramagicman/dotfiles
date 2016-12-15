@@ -668,11 +668,6 @@ nnoremap <M <ESC>
 vnoremap <M <ESC>
 onoremap <M <ESC>
 cnoremap <M <ESC>
-inoremap <ESC> <NOP>
-nnoremap <ESC> <NOP>
-vnoremap <ESC> <NOP>
-onoremap <ESC> <NOP>
-cnoremap <ESC> <NOP>
 "}}}
 "}}}
 "{{{saving
