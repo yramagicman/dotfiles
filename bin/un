@@ -5,7 +5,7 @@ import time
 pynotify.init("Basic")
 
 configpath = '/home/jonathan/.config/updates/'
-packages = commands.getstatusoutput('yaourt -Qu')
+packages = commands.getstatusoutput('pacaur -Qu')
 retVal = packages[0]
 packages = packages[1]
 packages = packages.strip('\n')
@@ -18,11 +18,11 @@ if retVal == 0 and packagecount > 3:
     updates.write(packages)
 elif packagecount > 1:
     if packagecount > 2:
-	n = pynotify.Notification(
-	    "Don't check this so often", "There are some updates available")
+    n = pynotify.Notification(
+        "Don't check this so often", "There are some updates available")
     else:
-	n = pynotify.Notification(
-	    "Don't check this so often", "There is one update available")
+    n = pynotify.Notification(
+        "Don't check this so often", "There is one update available")
     n.show()
 else:
     n = pynotify.Notification("Nothing to update")
