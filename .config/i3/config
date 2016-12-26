@@ -195,3 +195,7 @@ assign [class="^Firefox$"] firefox
 assign [class="^Google-chrome-beta$"] chrome
 assign [class="^thunar$"] files
 assign [class="^Thunar$"] files
+workspace chrome output DVI-D-0
+workspace firefox output DVI-D-0
+workspace files output DVI-I-1
+workspace term output DVI-I-1
