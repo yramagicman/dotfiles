@@ -3,7 +3,7 @@
 
 include "/home/jonathan/.gtkrc-2.0.mine"
 gtk-theme-name="DarkWithe"
-gtk-icon-theme-name="Flattr"
+gtk-icon-theme-name="Paper"
 gtk-font-name="Droid Sans 10"
 gtk-cursor-theme-name="Adwaita"
 gtk-cursor-theme-size=0
