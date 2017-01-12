@@ -29,15 +29,24 @@ function my_load() {
     average=("${(@s/ /)load}")
     echo $average[9,-1]
 }
+
+function updates() {
+    updates=$(pacman -Qu | wc -l)
+        if [[ $updates -gt 0 ]]
+        then
+            echo "$updates updates available | "
+        fi
+}
+hn=$(hostname)
 if [[ "$hn" == "k-nine" ]];
 then
     while; do
-        echo "Current Window: $(current_window) | $(my_load) | Mail $($HOME/bin/mailmon) | Bat: $(my_bat)% | WIFI: $(my_wifi) $(wifi_strength) $($HOME/bin/tmuxip) | $(my_date)"
+        echo "$(updates)Current Window: $(current_window) | $(my_load) | Mail $($HOME/bin/mailmon) | Bat: $(my_bat)% | WIFI: $(my_wifi) $(wifi_strength) $($HOME/bin/tmuxip) | $(my_date)"
         sleep 0.01s
     done
 else
     while; do
-        echo "Current Window: $(current_window) | $(my_load) | Mail $($HOME/bin/mailmon) | WIFI: $(my_wifi) $(wifi_strength) $($HOME/bin/tmuxip) | $(my_date)"
+        echo "$(updates)Current Window: $(current_window) | $(my_load) | Mail $($HOME/bin/mailmon) | WIFI: $(my_wifi) $(wifi_strength) $($HOME/bin/tmuxip) | $(my_date)"
         sleep 0.01s
     done
 fi
