@@ -1,5 +1,6 @@
 #!/usr/bin/zsh
 
+hn=$(hostname)
 function my_date () {
     date +"%a %b %d %Y %I:%M"
 }
@@ -27,7 +28,14 @@ function current_window() {
 function my_load() {
     load=$(uptime)
     average=("${(@s/ /)load}")
-    echo $average[9,-1]
+
+    if [[ "$hn" == "k-nine" ]];
+    then
+        echo "Load: "$average[12,-1]
+    else
+        echo $average[9,-1]
+    fi
+
 }
 
 function updates() {
@@ -37,16 +45,22 @@ function updates() {
             echo "$updates updates available | "
         fi
 }
-hn=$(hostname)
+
+function my_mail() {
+    if [[ $($HOME/bin/mailmon) -gt 0 ]]
+    then
+        echo "$($HOME/bin/mailmon) emails | "
+    fi
+}
 if [[ "$hn" == "k-nine" ]];
 then
     while; do
-        echo "$(updates)Current Window: $(current_window) | $(my_load) | Mail $($HOME/bin/mailmon) | Bat: $(my_bat)% | WIFI: $(my_wifi) $(wifi_strength) $($HOME/bin/tmuxip) | $(my_date)"
+        echo "$(my_mail)$(updates)Current Window: $(current_window) | $(my_load) | Bat: $(my_bat)% | WIFI: $(my_wifi) $(wifi_strength) $($HOME/bin/tmuxip) | $(my_date)"
         sleep 0.01s
     done
 else
     while; do
-        echo "$(updates)Current Window: $(current_window) | $(my_load) | Mail $($HOME/bin/mailmon) | WIFI: $(my_wifi) $(wifi_strength) $($HOME/bin/tmuxip) | $(my_date)"
-        sleep 0.01s
+        echo "$(my_mail)$(updates)Current Window: $(current_window) | $(my_load) | WIFI: $(my_wifi) $(wifi_strength) $($HOME/bin/tmuxip) | $(my_date)"
+        sleep 60.01s
     done
 fi
