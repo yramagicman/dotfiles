@@ -30,13 +30,6 @@ xset -dpms; xset s off &
 ## Adjust the values according to your preferances.
 xset r rate 250 25 &
 
-if ! type "tint2" > /dev/null; then
-    st -e sudo pacman -S tint2
-    tint2 -c ~/bin/tint2rc &
-  # install foobar here
-else
-     tint2 -c ~/bin/tint2rc &
-fi
 ## Turn on/off system beep
 xset b off &
 #(sleep 2s && check_process tint2) &
