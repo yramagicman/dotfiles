@@ -61,6 +61,6 @@ then
 else
     while; do
         echo "$(my_mail)$(updates)Current Window: $(current_window) | $(my_load) | WIFI: $(my_wifi) $(wifi_strength) $($HOME/bin/tmuxip) | $(my_date)"
-        sleep 60.01s
+        sleep 0.01s
     done
 fi
