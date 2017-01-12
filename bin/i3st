@@ -24,15 +24,20 @@ function current_window() {
 
 }
 
+function my_load() {
+    load=$(uptime)
+    average=("${(@s/ /)load}")
+    echo $average[9,-1]
+}
 if [[ "$hn" == "k-nine" ]];
 then
     while; do
-        echo "Current Window: $(current_window) | Bat: $(my_bat)% | WIFI: $(my_wifi), strength $(wifi_strength) | $(my_date)"
+        echo "Current Window: $(current_window) | $(my_load) | Mail $($HOME/bin/mailmon) | Bat: $(my_bat)% | WIFI: $(my_wifi) $(wifi_strength) $($HOME/bin/tmuxip) | $(my_date)"
         sleep 0.01s
     done
 else
     while; do
-        echo "Current Window: $(current_window) | WIFI: $(my_wifi), strength $(wifi_strength) | $(my_date)"
+        echo "Current Window: $(current_window) | $(my_load) | Mail $($HOME/bin/mailmon) | WIFI: $(my_wifi) $(wifi_strength) $($HOME/bin/tmuxip) | $(my_date)"
         sleep 0.01s
     done
 fi
