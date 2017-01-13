@@ -53,7 +53,7 @@ function my_mail() {
     fi
 }
 function my_weather() {
-    if [[ $(date +'%S') -eq 0 ]]
+    if [[ $(date +'%M') -eq 0 ]]
     then
         rm $HOME/.config/weather
         $HOME/bin/weather.py > $HOME/.config/weather
@@ -65,12 +65,12 @@ function my_weather() {
 if [[ "$hn" == "k-nine" ]];
 then
     while; do
-        echo "$(my_mail)$(updates)Current Temp: $(my_weather) | Current Window: $(current_window) | $(my_load) | Bat: $(my_bat)% | WIFI: $(my_wifi) $(wifi_strength) $($HOME/bin/tmuxip) | $(my_date)"
+        echo "$(my_mail)$(updates)Current Window: $(current_window) | Current Temp: $(my_weather) | $(my_load) | Bat: $(my_bat)% | WIFI: $(my_wifi) $(wifi_strength) $($HOME/bin/tmuxip) | $(my_date)"
         sleep 0.01s
     done
 else
     while; do
-        echo "$(my_mail)$(updates)Current Temp: $(my_weather) | Current Window: $(current_window) | $(my_load) | WIFI: $(my_wifi) $(wifi_strength) $($HOME/bin/tmuxip) | $(my_date)"
+        echo "$(my_mail)$(updates)Current Window: $(current_window) | Current Temp: $(my_weather) | $(my_load) | WIFI: $(my_wifi) $(wifi_strength) $($HOME/bin/tmuxip) | $(my_date)"
         sleep 0.01s
     done
 fi
