@@ -7,6 +7,8 @@ augroup syntastic
         autocmd BufLeave */drupal*/* let g:syntastic_php_phpcs_args="--tab-width=0"
         autocmd BufLeave */drupal*/* let g:syntastic_php_phpcs_disable=1
 augroup end
+
+let g:syntastic_python_checkers = ['pyflakes']
 "}}}
 "{{{ Tag list config
 nnoremap <c-t> :TlistOpen<CR>

@@ -2,7 +2,7 @@
 
 hn=$(hostname)
 function my_date () {
-    date +"%a %b %d %Y %I:%M"
+    date +"%a %b %d %Y %I:%M:%S"
 }
 function my_bat() {
     cat /sys/class/power_supply/BAT1/capacity
@@ -52,15 +52,25 @@ function my_mail() {
         echo "$($HOME/bin/mailmon) emails | "
     fi
 }
+function my_weather() {
+    if [[ $(date +'%S') -eq 0 ]]
+    then
+        rm $HOME/.config/weather
+        $HOME/bin/weather.py > $HOME/.config/weather
+    else
+        weather=$(cat $HOME/.config/weather)
+    fi
+    echo $weather
+}
 if [[ "$hn" == "k-nine" ]];
 then
     while; do
-        echo "$(my_mail)$(updates)Current Window: $(current_window) | $(my_load) | Bat: $(my_bat)% | WIFI: $(my_wifi) $(wifi_strength) $($HOME/bin/tmuxip) | $(my_date)"
+        echo "$(my_mail)$(updates)Current Temp: $(my_weather) | Current Window: $(current_window) | $(my_load) | Bat: $(my_bat)% | WIFI: $(my_wifi) $(wifi_strength) $($HOME/bin/tmuxip) | $(my_date)"
         sleep 0.01s
     done
 else
     while; do
-        echo "$(my_mail)$(updates)Current Window: $(current_window) | $(my_load) | WIFI: $(my_wifi) $(wifi_strength) $($HOME/bin/tmuxip) | $(my_date)"
+        echo "$(my_mail)$(updates)Current Temp: $(my_weather) | Current Window: $(current_window) | $(my_load) | WIFI: $(my_wifi) $(wifi_strength) $($HOME/bin/tmuxip) | $(my_date)"
         sleep 0.01s
     done
 fi
