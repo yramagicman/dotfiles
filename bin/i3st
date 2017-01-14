@@ -47,9 +47,13 @@ function updates() {
 }
 
 function my_mail() {
-    if [[ $($HOME/bin/mailmon) -gt 0 ]]
+
+    if [[ $(date +'%S') -eq 0 ]]
     then
-        echo "$($HOME/bin/mailmon) emails | "
+         if [[ $($HOME/bin/mailmon) -gt 0 ]]
+         then
+             echo "$($HOME/bin/mailmon) emails | "
+         fi
     fi
 }
 function my_weather() {
