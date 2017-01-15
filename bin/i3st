@@ -50,10 +50,18 @@ function my_mail() {
 
     if [[ $(date +'%S') -eq 0 ]]
     then
-         if [[ $($HOME/bin/mailmon) -gt 0 ]]
-         then
-             echo "$($HOME/bin/mailmon) emails | "
-         fi
+        /usr/bin/rm $HOME/.config/mail
+        $HOME/bin/mailmon > $HOME/.config/mail
+        if [[ $(cat $HOME/.config/mail) -gt 0 ]]
+        then
+            echo "$(cat $HOME/.config/mail) emails | "
+        fi
+    else
+
+        if [[ $(cat $HOME/.config/mail) -gt 0 ]]
+        then
+            echo "$(cat $HOME/.config/mail) emails | "
+        fi
     fi
 }
 function my_weather() {

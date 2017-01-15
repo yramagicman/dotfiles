@@ -861,6 +861,7 @@ let @b = 'vi"'
 let @a = "vi<"
 let @u = "dt(,x"
 let @v = '0/\u~hi_, '
+let @q = ':wq'
 "}}}
 
 " set list
