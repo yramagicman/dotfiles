@@ -32,9 +32,6 @@ xset r rate 250 25 &
 
 ## Turn on/off system beep
 xset b off &
-#(sleep 2s && check_process tint2) &
-(sleep 5s && check_process /home/jonathan/bin/updatenotifyd) &
-(sleep 5s && check_process /home/jonathan/bin/mailnotify.py) &
 # Autostart the Dropbox deamon
 (sleep 10s && ~/.dropbox-dist/dropboxd) &
 rm ~/.config/weather
