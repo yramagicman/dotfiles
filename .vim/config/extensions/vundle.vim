@@ -5,7 +5,6 @@ call vundle#begin()
     Plugin 'gregsexton/gitv'
     Plugin 'bronson/vim-visual-star-search'
     Plugin 'editorconfig/editorconfig-vim'
-    Plugin 'ervandew/supertab'
     Plugin 'gmarik/Vundle.vim'
     Plugin 'hail2u/vim-css3-syntax'
     Plugin 'shougo/neocomplete.vim'
