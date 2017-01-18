@@ -34,6 +34,7 @@ xset r rate 250 25 &
 xset b off &
 # Autostart the Dropbox deamon
 (sleep 10s && ~/.dropbox-dist/dropboxd) &
+(sleep 10s && dropbox) &
 rm ~/.config/weather
 (sleep 45s && ~/bin/weather.py > ~/.config/weather) &
 emacs --daemon=supermacs
