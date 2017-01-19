@@ -305,7 +305,7 @@ if has("autocmd")
         autocmd BufWritePost $HOME/.vimrc :source %
         autocmd BufWritePost $HOME/.vimrc :set visualbell
         autocmd BufWritePost $HOME/.vimrc :set foldmethod=marker
-        au VimResized * exe "normal! \<c-w>="
+        autocmd VimResized * exe "normal! \<c-w>="
         autocmd VimEnter * set vb t_vb=
         "}}}
         "{{{ fold method marker for specific files
@@ -315,22 +315,22 @@ if has("autocmd")
         "}}}
         "{{{ Saving
         autocmd BufEnter,BufWritePre * silent! checktime
-        autocmd BufEnter,BufWritePre * silent! call functions#StripWhitespace()
-        autocmd BufEnter,BufWritePre * silent! call  functions#Knl()
-        autocmd BufEnter,BufWritePre * silent! call  functions#LineEndings()
-        autocmd BufEnter,BufWritePre * silent! %retab
-        autocmd BufEnter,BufWritePre *.py silent! %s/#\w/# &/g
-        autocmd BufEnter,BufWritePre *.py silent! %s/# #/# /g
-        autocmd BufEnter,BufWritePre *.js silent! %s/\/\/\w/\/\/ &/g
-        autocmd BufEnter,BufWritePre *.js silent! %s/\/\/ \/\//\/\/ /g
+        autocmd BufLeave,BufWritePre * silent! call functions#StripWhitespace()
+        autocmd BufLeave,BufWritePre * silent! call functions#Knl()
+        autocmd BufLeave,BufWritePre * silent! call functions#LineEndings()
+        autocmd BufLeave,BufWritePre * silent! %retab
+        autocmd BufLeave,BufWritePre *.py silent! %s/#\w/# &/g
+        autocmd BufLeave,BufWritePre *.py silent! %s/# #/# /g
+        autocmd BufLeave,BufWritePre *.js silent! %s/\/\/\w/\/\/ &/g
+        autocmd BufLeave,BufWritePre *.js silent! %s/\/\/ \/\//\/\/ /g
         autocmd BufWritePost * call CheckErrorFn()
-        autocmd BufEnter,CursorHold * silent! if @% != '' | silent! w
+        autocmd BufLeave,CursorHold * silent! if @% != '' | silent! w
         "}}}
     augroup end
     augroup js
-        "{{{ Treat .json files as .js
+        "{{{ Treat Leave files as .js
         autocmd!
-        autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
+        autocmd BufLeave,BufRead *.json setfiletype json syntax=javascript
         "}}}
         "{{{ always use strict equal and not equal
         autocmd Bufenter *.js iabbr == ===
