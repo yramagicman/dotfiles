@@ -2,7 +2,6 @@ import subprocess
 
 hostname = subprocess.run(['hostname'], check=True,
                           stdout=subprocess.PIPE).stdout
-# print(hostname.decode())
 localpackages = open(hostname.decode().strip())
 
 
@@ -13,10 +12,8 @@ current = current.decode().split('\n')
 
 hostname = hostname.strip()
 if hostname.decode() == 'tardis':
-    print('knine')
     remotepackages = open('knine')
 else:
-    print('tardis')
     remotepackages = open('tardis')
 
 remote = []
@@ -27,7 +24,6 @@ local = []
 for p in localpackages.readlines():
     local.append(p.strip())
     package = p[:p.index(' ')]
-    print(p.strip())
     if p.strip() not in remote:
         subprocess.run(['sudo', 'pacman', '-R',  package])
 
@@ -40,6 +36,5 @@ for p in remote:
 
 for p in current:
     package = p[:p.index(' ')]
-    print(p.strip())
     if (p.strip() not in remote) and (p.strip() not in local):
         subprocess.run(['sudo', 'pacman', '-R',  package])
