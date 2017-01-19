@@ -323,7 +323,7 @@ if has("autocmd")
         autocmd BufLeave,BufWritePre *.py silent! %s/# #/# /g
         autocmd BufLeave,BufWritePre *.js silent! %s/\/\/\w/\/\/ &/g
         autocmd BufLeave,BufWritePre *.js silent! %s/\/\/ \/\//\/\/ /g
-        autocmd BufWritePost * call CheckErrorFn()
+        autocmd BufWritePost * call functions#CheckErrorFn()
         autocmd BufLeave,CursorHold * silent! if @% != '' | silent! w
         "}}}
     augroup end
