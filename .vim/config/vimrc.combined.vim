@@ -339,19 +339,6 @@ if has("autocmd")
         autocmd BufLeave *.js iabbr !== !=
         "}}}
     augroup end
-    augroup css
-        "{{{ filetype stuff
-        autocmd!
-        autocmd BufRead,BufNewFile *.css set filetype=css
-        "}}}
-        "{{{ use 2 spaces  for css and related files
-        autocmd FileType css setlocal tabstop=2
-        autocmd FileType css setlocal shiftwidth=2
-        "}}}
-        "{{{ automattically add semicolons in css
-        autocmd FileType css inoremap <buffer> : :;<ESC>i
-        "}}}
-    augroup end
     augroup coding
         autocmd!
         "{{{ drupal coding standards
