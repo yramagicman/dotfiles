@@ -175,7 +175,7 @@ let g:netrw_banner=0        " disable annoying banner
 let g:netrw_altv=1          " open splits to the right
 let g:netrw_liststyle=3     " tree view
 let g:netrw_list_hide=netrw_gitignore#Hide()
-let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
+" let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 "}}}
 "{{{ buffer sanity
 set hidden
@@ -324,7 +324,7 @@ if has("autocmd")
         autocmd BufLeave,BufWritePre *.js silent! %s/\/\/\w/\/\/ &/g
         autocmd BufLeave,BufWritePre *.js silent! %s/\/\/ \/\//\/\/ /g
         autocmd BufWritePost * call functions#CheckErrorFn()
-        autocmd BufLeave,CursorHold * silent! if @% != '' | silent! w
+        autocmd BufLeave,CursorHold * silent! if @% != ''| silent! w
         "}}}
     augroup end
     augroup js

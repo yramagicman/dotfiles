@@ -121,15 +121,12 @@ VirtualBox VMs/
 .Xdefaults
 .xscreensaver
 .xsel.log
-.z
-.z.*
 .zcompcache/
 .zcompdump*
 .zhistory
 .zlogin
 .zlogout
 .z.p8UajO
-.zprezto/
 .zpreztorc
 .zprofile
 .zshenv
