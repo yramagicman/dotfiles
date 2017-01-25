@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set -e
+
+if tmux has-session -t prezto 2> /dev/null; then
+  tmux switch-client -t prezto
+  exit
+fi
+
+tmux new-session -d -s prezto
+tmux send-keys -t prezto "cd ~/" Enter
+tmux send-keys -t prezto "clear" Enter
+tmux switch-client -t prezto

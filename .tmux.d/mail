@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set -e
+
+if tmux has-session -t mail 2> /dev/null; then
+  tmux switch-client -t mail
+  exit
+fi
+
+tmux new-session -d -s mail -n mutt
+
+tmux send-keys -t mail:mutt "mutt" Enter
+tmux switch-client -t mail:mutt.left
