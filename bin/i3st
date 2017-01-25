@@ -21,7 +21,7 @@ function current_window() {
     xpropstr=$(xprop -root _NET_ACTIVE_WINDOW)
     id=("${(@s/ /)xpropstr}")
     $id[-1]
-    window=$(xprop -id $id[-1] _NET_WM_NAME)
+    window=$(xprop -id $id[-1] WM_NAME)
     wind_name=("${(@s/=/)window}")
     name=$wind_name[-1]
     echo $name[3,-2]

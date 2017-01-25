@@ -30,7 +30,7 @@ font pango:Souce Code Pro 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec st
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+q kill
@@ -198,6 +198,8 @@ bindsym XF86MonBrightnessDown exec "xbacklight -dec 10 -time 1 -steps 1"
 
 
 assign [class="^xterm-256color$"] term
+assign [class="^urxvt$"] term
+assign [class="^URxvt$"] term
 assign [class="^chromium$"] chrome
 assign [class="^Chromium$"] chrome
 assign [class="^Navigator$"] firefox

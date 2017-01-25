@@ -36,5 +36,8 @@ xset b off &
 (sleep 10s && dropbox) &
 rm ~/.config/weather
 (sleep 45s && ~/bin/weather.py > ~/.config/weather) &
+d=$(sort $HOME/.cache/zsh/dirs | uniq )
+rm "$HOME/.cache/zsh/dirs"
+echo "$d" > $HOME/.cache/zsh/dirs
 emacs --daemon=supermacs
 exit
