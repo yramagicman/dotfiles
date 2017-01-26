@@ -29,4 +29,5 @@ call vundle#begin()
     Plugin 'vim-scripts/taglist.vim'
     Plugin 'jceb/vim-orgmode'
     Plugin 'tpope/vim-speeddating'
+    Plugin 'jeetsukumaran/vim-filebeagle'
 call vundle#end()

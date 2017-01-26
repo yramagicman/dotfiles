@@ -13,7 +13,7 @@ let g:syntastic_python_checkers = ['pyflakes']
 "{{{ Tag list config
 nnoremap <c-t> :TlistOpen<CR>
 nnoremap <c-n> :TlistAddFiles
-""set statusline+=\ \%{Tlist_Get_Tagname_By_Line()}\ \|
+"set statusline+=\ \%{Tlist_Get_Tagname_By_Line()}\ \|
 let g:Tlist_Show_One_File=0
 let g:Tlist_Close_On_Select=1
 let g:Tlist_Compact_Format=1
@@ -70,6 +70,7 @@ function! s:my_cr_function()
 endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
 " inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 " inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
