@@ -2,7 +2,7 @@
 
 hn=$(hostname)
 function my_date () {
-    date +"%a %b %d %Y %I:%M"
+    date +"%a %b %d %Y %I:%M:%S"
 }
 function my_bat() {
     cat /sys/class/power_supply/BAT1/capacity
