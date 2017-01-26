@@ -8,7 +8,7 @@ if tmux has-session -t wp 2> /dev/null; then
 fi
 
 tmux new-session -c "$HOME/Sites/wp-content/themes" -d -s wp -n theme
-tmux send-keys -t wp:theme "themes" Enter
+tmux send-keys -t wp:theme "vim ." Enter
 
 tmux new-window -t wp -c "$HOME/Sites/wp-content/plugins/" -n plugins
 tmux send-keys -t wp:plugins "vim ." Enter
