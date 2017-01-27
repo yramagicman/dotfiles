@@ -3,7 +3,11 @@ httpd -t
 sudo systemctl restart httpd
 sudo systemctl restart mysqld
 if [[ "$(hostname)" == tardis ]]; then
-    sudo ip addr add 10.0.1.16/24 broadcast 10.0.1.255 dev wlp4s0
+    if [[ -z "$(ip addr show | grep 10.0.1.16)" ]]; then
+        sudo ip addr add 10.0.1.16/24 broadcast 10.0.1.255 dev wlp4s0
+    fi
 else
-    sudo ip addr add 10.0.1.16/24 broadcast 10.0.1.255 dev wlp2s0
+    if [[ -z "$(ip addr show | grep 10.0.1.16)" ]]; then
+        sudo ip addr add 10.0.1.16/24 broadcast 10.0.1.255 dev wlp2s0
+    fi
 fi
