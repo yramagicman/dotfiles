@@ -3,7 +3,7 @@
 set -e
 
 if tmux has-session -t django 2> /dev/null; then
-  tmux switch-client -t django
+  $HOME/bin/switch_or_attach django
   exit
 fi
 
@@ -28,4 +28,4 @@ tmux send-keys -t django:shell "workon tbs-django" Enter
 tmux send-keys -t django:shell "nohup google-chrome-beta --incognito http://127.0.0.1:8000 &" Enter
 tmux send-keys -t django:shell "nohup google-chrome-beta --incognito http://127.0.0.1:8000/admin &" Enter
 tmux send-keys -t django:shell "clear" Enter
-tmux switch-client -t django:1
+$HOME/bin/switch_or_attach django:1

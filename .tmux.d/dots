@@ -3,7 +3,7 @@
 set -e
 
 if tmux has-session -t dots 2> /dev/null; then
-  tmux switch-client -t dots
+  $HOME/bin/switch_or_attach dots
   exit
 fi
 
@@ -14,4 +14,4 @@ tmux new-window -t dots -c "$HOME/.zprezto/runcoms/" -n shellrc
 tmux send-keys -t dots:shellrc "vim ." Enter
 tmux new-window -t dots -c "$HOME/.zprezto/modules/zsh-aliases/" -n aliases
 tmux send-keys -t dots:aliases "vim ." Enter
-tmux switch-client -t dots:vim.left
+$HOME/bin/switch_or_attach dots:vim.left

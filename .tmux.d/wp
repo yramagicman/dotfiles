@@ -3,7 +3,7 @@
 set -e
 
 if tmux has-session -t wp 2> /dev/null; then
-  tmux switch-client -t wp
+  $HOME/bin/switch_or_attach wp
   exit
 fi
 
@@ -15,4 +15,4 @@ tmux send-keys -t wp:plugins "vim ." Enter
 
 tmux new-window -t wp -c "$HOME/Sites" -n shell
 tmux send-keys -t wp:shell "server-up" Enter
-tmux switch-client -t wp:shell.left
+$HOME/bin/switch_or_attach wp:shell.left
