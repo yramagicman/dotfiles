@@ -20,7 +20,7 @@ xset -dpms; xset s off &
 
 (sleep 3s && check_process volumeicon) &
 (sleep 4s && check_process nm-applet) &
-
+(sleep 3s && check_process $HOME/bin/tmuxcopy) &
 
 ## Set keyboard settings - 250 ms delay and 25 cps (characters per second) repeat rate.
 ## Adjust the values according to your preferances.
