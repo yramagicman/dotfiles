@@ -12,6 +12,7 @@ check_process(){
 i3-msg workspace 'term'
 xflux -z 45036
 ( /home/jonathan/.screenlayout/default.sh) &
+xsetroot -solid black
 (/home/jonathan/bin/auto-rotate-wallpaper) &
 xset -dpms; xset s off &
 (sleep 1s && check_process compton) &
