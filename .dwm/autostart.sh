@@ -8,17 +8,12 @@ check_process(){
        $1 &
     fi
 }
-#(check_process /home/jonathan/bin/dwmstatus)
+
+i3-msg workspace 'term'
 xflux -z 45036
 ( /home/jonathan/.screenlayout/default.sh) &
-## Set root window colour
 (/home/jonathan/bin/auto-rotate-wallpaper) &
 xset -dpms; xset s off &
-## Volume keys daemon
-#check_process xfce4-volumed
-
-## Enable power management
-#xfce4-power-manager &
 (sleep 1s && check_process compton) &
 (sleep 1s && /usr/bin/xscreensaver -no-splash) &
 
