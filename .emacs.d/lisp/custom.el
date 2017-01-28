@@ -21,7 +21,7 @@
  '(mode-require-final-newline nil)
  '(package-selected-packages
    (quote
-    (ac-php-core php-mode epc auto-complete evil-numbers evil-nerd-commenter evil-visualstar evil-visual-star evil-surround web-mode scss-mode sass-mode relative-line-numbers racket-mode projectile php-eldoc muttrc-mode markdown-mode magit jedi flycheck evil-matchit evil clojure-mode ac-php)))
+    (bind-map ac-php-core php-mode epc auto-complete evil-numbers evil-nerd-commenter evil-visualstar evil-visual-star evil-surround web-mode scss-mode sass-mode relative-line-numbers racket-mode projectile php-eldoc muttrc-mode markdown-mode magit jedi flycheck evil-matchit evil clojure-mode ac-php)))
  '(require-final-newline nil)
  '(scroll-bar-mode nil)
  '(show-paren-delay 0.01)

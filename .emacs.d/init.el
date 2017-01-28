@@ -33,7 +33,6 @@
              sass-mode
              scss-mode
              markdown-mode
-             ; php-mode
              ac-php
              web-mode
              ac-php-core
