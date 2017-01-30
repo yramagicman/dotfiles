@@ -16,6 +16,7 @@
 (defvar cfg-var:packages)
 (setq cfg-var:packages '(
              evil
+             evil-escape
              evil-matchit
              evil-surround
              evil-visualstar
@@ -145,5 +146,3 @@ May be necessary for some GUI environments (e.g., Mac OS X)")
 
 (require 'undohist)
 (undohist-initialize)
-
-
