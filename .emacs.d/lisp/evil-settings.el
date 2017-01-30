@@ -53,6 +53,12 @@
 (evil-map-key "C--" 'evil-font-decrease)
 (evil-map-key "C-0" 'evil-font-reset)
 
+(require 'general)
+
+(setq general-default-prefix ",")
+(general-evil-setup t)
+(nmap "ss" 'save-buffer
+        "w" 'visual-line-mode)
 
 
 (require 'evil-escape)
