@@ -53,15 +53,15 @@
 (evil-map-key "C--" 'evil-font-decrease)
 (evil-map-key "C-0" 'evil-font-reset)
 
-(bind-map my-base-leader-map
-  :keys ("M-m")
-  :evil-keys (",")
-  :evil-states (normal insert visual))
 
-(bind-map-set-keys my-base-leader-map
-                   "ss"  'save-buffer
-                   "m"  'evil-normal-state)  
+
+(require 'evil-escape)
+(setq-default evil-escape-key-sequence ",m")
+(setq evil-escape-unordered-key-sequence t)
+(evil-escape-mode)
+(setq-default evil-escape-delay 0.2)
+
+
+
 
 (provide 'evil-settings)
-
-; i wonder if finding

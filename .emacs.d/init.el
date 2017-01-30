@@ -30,11 +30,11 @@
              clojure-mode
              epc
              magit
+             general
              sass-mode
              scss-mode
              markdown-mode
              ac-php
-             bind-map
              web-mode
              ac-php-core
              php-eldoc
@@ -145,3 +145,5 @@ May be necessary for some GUI environments (e.g., Mac OS X)")
 
 (require 'undohist)
 (undohist-initialize)
+
+
