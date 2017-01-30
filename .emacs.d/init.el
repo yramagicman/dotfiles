@@ -34,6 +34,7 @@
              scss-mode
              markdown-mode
              ac-php
+             bind-map
              web-mode
              ac-php-core
              php-eldoc
