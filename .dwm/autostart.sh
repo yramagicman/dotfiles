@@ -17,7 +17,7 @@ xsetroot -solid black
 xset -dpms; xset s off &
 (sleep 1s && check_process compton) &
 (sleep 1s && /usr/bin/xscreensaver -no-splash) &
-
+(sleep 10s && xfce4-power-manager) &
 (sleep 3s && check_process volumeicon) &
 (sleep 4s && check_process nm-applet) &
 
