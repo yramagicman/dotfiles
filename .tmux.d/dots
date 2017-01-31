@@ -7,11 +7,11 @@ if tmux has-session -t dots 2> /dev/null; then
   exit
 fi
 
-tmux new-session -d -s dots -n vim
+tmux new-session -d -s dots -n emacsclient
 
-tmux send-keys -t dots:vim "vimrc" Enter
+tmux send-keys -t dots:emacsclient "emacsclient -c .emacs.d/" Enter
 tmux new-window -t dots -c "$HOME/.zprezto/runcoms/" -n shellrc
-tmux send-keys -t dots:shellrc "vim ." Enter
+tmux send-keys -t dots:shellrc "emacsclient -c ." Enter
 tmux new-window -t dots -c "$HOME/.zprezto/modules/zsh-aliases/" -n aliases
-tmux send-keys -t dots:aliases "vim ." Enter
-$HOME/bin/switch_or_attach dots:vim.left
+tmux send-keys -t dots:aliases "emacsclient -c ." Enter
+$HOME/bin/switch_or_attach dots:emacsclient.left
