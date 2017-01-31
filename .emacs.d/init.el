@@ -34,6 +34,7 @@
              general
              sass-mode
              scss-mode
+             key-chord
              markdown-mode
              ac-php
              web-mode
