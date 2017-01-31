@@ -57,7 +57,9 @@
 
 (setq general-default-prefix ",")
 (general-evil-setup t)
+
 (nmap "ss" 'save-buffer
+        "m" 'save-buffer
         "w" 'visual-line-mode)
 
 
