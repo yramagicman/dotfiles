@@ -38,6 +38,10 @@
              markdown-mode
              ac-php
              web-mode
+             helm
+             helm-git
+             helm-fuzzy-find
+             helm-projectile
              ac-php-core
              php-eldoc
              flycheck
