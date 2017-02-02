@@ -8,7 +8,10 @@
  '(ac-show-menu-immediately-on-auto-complete t)
  '(ac-trigger-key "TAB")
  '(column-number-mode t)
- '(custom-enabled-themes (quote (wombat)))
+ '(custom-enabled-themes (quote (base16-ocean)))
+ '(custom-safe-themes
+   (quote
+    ("78c1c89192e172436dbf892bd90562bc89e2cc3811b5f9506226e735a953a9c6" default)))
  '(display-time-mode t)
  '(electric-pair-mode t)
  '(electric-pair-pairs (quote ((123 . 125) (34 . 34) (91 . 93))))
@@ -33,4 +36,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#242424" :foreground "#f6f3e8" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "FBI " :family "Inconsolata")))))
+ '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "FBI " :family "Inconsolata")))))
