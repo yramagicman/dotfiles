@@ -1,9 +1,7 @@
-(add-hook 'before-save-hook 'evil-normal-state)
-(add-hook 'evil-mode-hook (lambda nil
-                            (evil-surround-mode)))
 ; make sure files are unix!
 (add-hook 'before-save-hook
           (lambda nil
+            (evil-normal-state)
             (set-buffer-file-coding-system 'undecided-unix)
             (delete-trailing-whitespace)
             (untabify)))
