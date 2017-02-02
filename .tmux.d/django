@@ -9,7 +9,7 @@ fi
 
 tmux new-session -d -s django -n emacsclient
 tmux send-keys -t django:emacsclient "workon tbs-django" Enter
-tmux send-keys -t django:emacsclient "emacsclient -c ." Enter
+tmux send-keys -t django:emacsclient "emacsclient ." Enter
 
 tmux new-window -t django -n http
 tmux send-keys -t django:http "workon tbs-django" Enter

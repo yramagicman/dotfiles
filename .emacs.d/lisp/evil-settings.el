@@ -1,4 +1,6 @@
 (evil-mode 1)
+(require 'evil-surround)
+(global-evil-surround-mode 1)
 (global-evil-visualstar-mode)
 (defun evil-map-key (key-str fn-quoted)
     "Map key for both insert and normal modes KEY-STR FN-QUOTED."

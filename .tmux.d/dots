@@ -9,7 +9,7 @@ fi
 
 tmux new-session -d -s dots -n emacsclient
 
-tmux send-keys -t dots:emacsclient "emacsclient -c .emacs.d/" Enter
+tmux send-keys -t dots:emacsclient "emacsclient  .emacs.d/" Enter
 tmux new-window -t dots -c "$HOME/.zprezto/runcoms/" -n shellrc
 tmux send-keys -t dots:shellrc "emacsclient ." Enter
 tmux new-window -t dots -c "$HOME/.zprezto/modules/zsh-aliases/" -n aliases
