@@ -11,7 +11,7 @@ tmux new-session -c "$HOME/Sites/TheBestSchools/wp-content/themes" -d -s wp -n t
 tmux send-keys -t wp:theme "emacsclient -c ." Enter
 
 tmux new-window -t wp -c "$HOME/Sites/TheBestSchools/wp-content/plugins/" -n plugins
-tmux send-keys -t wp:plugins "emacsclient -c ." Enter
+tmux send-keys -t wp:plugins "emacsclient ." Enter
 
 tmux new-window -t wp -c "$HOME/Sites" -n shell
 tmux send-keys -t wp:shell "server-up" Enter
