@@ -1,11 +1,12 @@
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
-(add-hook 'before-save-hook 'untabify)
 (add-hook 'before-save-hook 'evil-normal-state)
-(add-hook 'evil-mode-hook 'evil-surround-mode)
+(add-hook 'evil-mode-hook (lambda nil
+                            (evil-surround-mode)))
 ; make sure files are unix!
 (add-hook 'before-save-hook
           (lambda nil
-            (set-buffer-file-coding-system 'undecided-unix)))
+            (set-buffer-file-coding-system 'undecided-unix)
+            (delete-trailing-whitespace)
+            (untabify)))
 
 (add-hook 'emacs-lisp-mode-hook
       (lambda nil
