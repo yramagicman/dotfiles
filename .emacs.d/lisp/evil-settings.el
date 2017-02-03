@@ -62,7 +62,8 @@
 
 (nmap "ss" 'save-buffer
         "m" 'save-buffer
-        "w" 'visual-line-mode)
+        "wq" 'save-buffers-kill-terminal
+        "r" 'visual-line-mode)
 
 
 (require 'evil-escape)

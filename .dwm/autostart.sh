@@ -34,7 +34,7 @@ rm ~/.config/weather
 d=$(sort $HOME/.cache/zsh/dirs | uniq )
 rm "$HOME/.cache/zsh/dirs"
 echo "$d" > $HOME/.cache/zsh/dirs
-emacs --daemon=supermacs
+emacs --daemon
 
 z=$(cat $HOME/.tmux.d/digests | tail -n $(ls -1 $HOME/.tmux.d/ | wc -l) )
 rm "$HOME/.tmux.d/digests"
