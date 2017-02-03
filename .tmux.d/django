@@ -7,9 +7,9 @@ if tmux has-session -t django 2> /dev/null; then
   exit
 fi
 
-tmux new-session -d -s django -n emacsclient
-tmux send-keys -t django:emacsclient "workon tbs-django" Enter
-tmux send-keys -t django:emacsclient "emacsclient ." Enter
+tmux new-session -d -s django -n emacs
+tmux send-keys -t django:emacs "workon tbs-django" Enter
+tmux send-keys -t django:emacs "emacsclient ." Enter
 
 tmux new-window -t django -n http
 tmux send-keys -t django:http "workon tbs-django" Enter
