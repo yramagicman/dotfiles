@@ -36,6 +36,7 @@
 (add-to-list 'auto-mode-alist '(".muttrc" . muttrc-mode))
 (add-to-list 'auto-mode-alist '("mutt-tardis*" . message-mode))
 (add-to-list 'auto-mode-alist '("mutt-k-nine*" . message-mode))
+(add-to-list 'auto-mode-alist '("COMMIT_EDITMSG" . diff-mode))
 
 
 
