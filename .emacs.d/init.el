@@ -40,6 +40,7 @@
              ac-php
              web-mode
              helm
+             helm-flycheck
              helm-git
              helm-fuzzy-find
              helm-projectile
@@ -138,6 +139,7 @@ May be necessary for some GUI environments (e.g., Mac OS X)")
   (setq ispell-extra-args '("--sug-mode=ultra" "--lang=en_US"))
 
 (require 'user_hooks)
+(require 'helm-setting)
 
 (require 'server)
 (unless (server-running-p) (server-start))
