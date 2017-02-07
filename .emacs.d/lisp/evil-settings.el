@@ -61,9 +61,14 @@
 (general-evil-setup t)
 
 (nmap "ss" 'save-buffer
-        "m" 'save-buffer
-        "wq" 'save-buffers-kill-terminal
-        "r" 'visual-line-mode)
+      "m" 'save-buffer
+      "wq" 'save-buffers-kill-terminal
+      "z" 'narrow-to-defun
+      "a" 'widen
+      "o" 'evil-insert-line
+      "r" 'visual-line-mode)
+(vmap "z" 'narrow-to-region
+      "m" 'evil-normal-state)
 
 
 (require 'evil-escape)

@@ -82,15 +82,12 @@
 (setq-default tab-width 4)
 (global-relative-line-numbers-mode)
 (global-auto-complete-mode 1)
-;; (setq evil-motion-state-modes (append evil-emacs-state-modes evil-motion-state-modes))
-(add-to-list 'evil-emacs-state-modes 'term-mode)
-; make sure files are unix!
 
 
 (defun myterm (&optional prog)
   "Run term with PROG or zsh."
   (interactive)
-  (ansi-term (or prog "/usr/bin/zsh")))
+  (term (or prog "/usr/bin/zsh")))
 (global-set-key "\C-ct" 'myterm)
 (global-visual-line-mode t)
 (setq backup-inhibited t)
@@ -100,6 +97,7 @@
 
 
 (require 'evil-settings)
+
 ;; Global Jedi config vars
 
 (defvar jedi-config:use-system-python nil
@@ -154,3 +152,4 @@ May be necessary for some GUI environments (e.g., Mac OS X)")
 
 (require 'undohist)
 (undohist-initialize)
+(put 'narrow-to-region 'disabled nil)
