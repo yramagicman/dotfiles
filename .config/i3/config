@@ -217,3 +217,4 @@ workspace chrome output DVI-D-0
 workspace firefox output DVI-D-0
 workspace files output DVI-I-1
 workspace term output DVI-I-1
+workspace emacs output DVI-I-1
