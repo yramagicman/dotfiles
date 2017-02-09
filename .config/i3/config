@@ -184,7 +184,7 @@ new_float normal
 hide_edge_borders smart
 
 # APP KEYS
-bindsym $mod+w exec surf duckduckgo.com
+bindsym $mod+w exec chromium
 bindsym $mod+Shift+w exec "chromium --incognito"
 bindsym Print exec gnome-screenshot
 bindsym Shift+F12 exec "systemctl poweroff"
