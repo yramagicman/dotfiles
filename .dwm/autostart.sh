@@ -42,6 +42,7 @@ echo "$d" > $HOME/.cache/zsh/dirs
 
 #start emacs daemon
 emacs --daemon
+urxvtd -q -o -f
 
 # make sure tmux digests file isn't overly large
 z=$(cat $HOME/.tmux.d/digests | tail -n $(ls -1 $HOME/.tmux.d/ | wc -l) )
