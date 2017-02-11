@@ -26,6 +26,7 @@
     lol = log --pretty=oneline --abbrev-commit --graph --decorate
     add = add -up
     pull = pull --rebase
+    commit = commit --verbose
 
 [apply]
     # Detect whitespace errors when applying a patch
@@ -82,12 +83,6 @@
     pushInsteadOf = "git://gist.github.com/"
 [url "git://gist.github.com/"]
     insteadOf = "gist:"
-
-#[push]
-#    default = simple
-#[user]
-#    name = Jonathan Gilson
-#    email = jonathan@gilsons.org
 [diff]
     external = $HOME/bin/diffit
 [pager]
