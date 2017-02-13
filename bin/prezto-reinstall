@@ -10,3 +10,5 @@ cd $HOME/.zprezto
 git remote add upstream https://github.com/sorin-ionescu/prezto/
 cd
 ln -s ~/.zprezto/modules/zsh-aliases/prompt_lime_setup ~/.zprezto/modules/prompt/functions/prompt_lime_setup
+
+sed  -i 's#https://github.com/yramagicman/prezto.git#git@github.com:yramagicman/prezto.git#' ~/.zprezto/.git/config
