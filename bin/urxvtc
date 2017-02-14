@@ -2,15 +2,15 @@
 
 if ! type "urxvtc" > /dev/null; then
     xterm -e pacaur -S rxvt-unicode-patched
-    urxvtc "$@"
+    urxvtc -tr -sh 8 "$@"
     if [ $? -eq 2 ]; then
        urxvtd -q -o -f
-       urxvtc "$@"
+       urxvtc -tr -sh 8 "$@"
     fi
 else
-    urxvtc "$@"
+    urxvtc -tr -sh 8 "$@"
     if [ $? -eq 2 ]; then
        urxvtd -q -o -f
-       urxvtc "$@"
+        urxvtc -tr -sh 8 "$@"
     fi
 fi
