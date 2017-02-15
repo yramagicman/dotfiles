@@ -30,5 +30,5 @@ call vundle#begin()
     Plugin 'jceb/vim-orgmode'
     Plugin 'tpope/vim-speeddating'
     Plugin 'jeetsukumaran/vim-filebeagle'
-    Plugin 'miyakogi/seiya.vim'
+    Plugin 'yramagicman/seiya.vim'
 call vundle#end()
