@@ -95,7 +95,7 @@ set showcmd
 " Enable syntax highlighting
 syntax on
 "set max highlight column
-set synmaxcol=800
+set synmaxcol=200
 " Start scrolling two lines before the horizontal window border when will this
 " break
 set scrolloff=2
