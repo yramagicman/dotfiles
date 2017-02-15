@@ -370,7 +370,7 @@ if has("autocmd")
         autocmd FileType make set noexpandtab
         autocmd FileType,BufEnter snippets set noexpandtab
         autocmd BufNewFile,BufRead *.md set filetype=markdown
-        "autocmd BufEnter * execute "source ~/.vim/colors/" . g:colors_name . ".vim"
+        autocmd BufEnter * execute "source ~/.vim/colors/" . g:colors_name . ".vim"
         " make Vim edit cron again
         autocmd BufEnter /private/tmp/crontab.* setl backupcopy=yes
         " always reload files when changed outside Vim
