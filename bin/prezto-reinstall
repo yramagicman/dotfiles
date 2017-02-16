@@ -7,7 +7,7 @@ for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
     ln -fs "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 done
 cd $HOME/.zprezto
-git remote add upstream https://github.com/sorin-ionescu/prezto/
+git remote add upstream https://github.com/zsh-users/prezto/
 cd
 ln -s ~/.zprezto/modules/zsh-aliases/prompt_lime_setup ~/.zprezto/modules/prompt/functions/prompt_lime_setup
 
