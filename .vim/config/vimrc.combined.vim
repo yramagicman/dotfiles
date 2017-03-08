@@ -645,6 +645,7 @@ cnoreabbrev gac !git add %
 cnoreabbrev ga% !git add %
 cnoreabbrev gcm !git commit -m
 cnoreabbrev gd !git diff
+cnoreabbrev git Git
 
 "}}}
 "{{{ autoload functions
