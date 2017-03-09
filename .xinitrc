@@ -4,7 +4,6 @@ usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
-setxkbmap -option compose:menu
 # merge in defaults and keymaps
 if [ -f $sysresources ]; then
     xrdb -merge $sysresources
@@ -34,4 +33,6 @@ fi
 #exec xterm -geometry 80x66+0+0 -name login
 export DE="xfce"
 #exec $HOME/bin/dwmrestart
+
+setxkbmap -option compose:menu
 exec i3
