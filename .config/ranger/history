@@ -1,0 +1,15 @@
+search style
+shell git checkout staging
+shell git stash
+shell git checkout master
+shell git checkout refactor-css
+shell git stash pop
+search ranger
+cd /home/jonathan/.config/ranger
+cd /home/jonathan/.config
+
+rm %%s
+shell rm %%s
+shell $HOME/bin/weather.py > ~/.config/weather
+deletek
+delete
