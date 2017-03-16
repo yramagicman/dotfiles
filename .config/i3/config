@@ -157,7 +157,7 @@ bar {
         status_command exec /home/jonathan/bin/i3st
 
         colors {
-                background #222222
+                background #1c1c1c
                 statusline #777777
                 separator #666666
 
